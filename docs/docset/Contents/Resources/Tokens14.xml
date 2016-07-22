@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SWRLRegionManagerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLRegionManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Callbacks from the SWRLRegionManager</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLRegionManagerDelegate/regionManager:didEnterRegions:exitRegions:</TokenIdentifier>
+			<Abstract type="html">Called whenever the set of entered and/or exited regions changes</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)regionManager:(SWRLRegionManager *)manager didEnterRegions:(NSSet&lt;SWRLRegion*&gt; *)entered exitRegions:(NSSet&lt;SWRLRegion*&gt; *)exited</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLRegionManager</Abstract>
+				</Parameter><Parameter>
+					<Name>entered</Name>
+					<Abstract type="html">A set of SWRLRegions representing the regions that have been entered</Abstract>
+				</Parameter><Parameter>
+					<Name>exited</Name>
+					<Abstract type="html">A set of SWRLRegions representing the regions that have been exited</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/regionManager:didEnterRegions:exitRegions:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

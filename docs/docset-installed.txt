@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/Tom/Library/Developer/Shared/Documentation/DocSets/com.swirl.Swirl.docset
+Time: 2016-07-22 13:25:59 +0000
