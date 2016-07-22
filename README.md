@@ -128,7 +128,7 @@ A lot of time and effort has been put into making the Swirl SDK as simple as pos
 ## Additional Resources
 In addition to this guide, Swirl offers a number of additional resources to help you during and after the integration process to help ensure the best results for you and your users.
 * [Example Source Code](./examples/) 
-* [API Reference Documentation](https://rawgit.com/SwirlNetworks/swirl-sdk-ios/master/docs/html/index.html)
+* [API Reference Documentation](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
 * [Explorer in the App Store](https://itunes.apple.com/us/app/swirl-in-store-explorer/id781067361?mt=8) which can be used for testing signals and content.
 * [BeaconManager in the App Store](https://itunes.apple.com/us/app/swirl-beacon-manager/id855322103?mt=8) which can be used to configure and deploy beacons.
 * [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
