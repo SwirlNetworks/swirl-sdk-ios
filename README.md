@@ -20,8 +20,8 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 - [Technical Overview](#technical-overview)
 - [Integration](#integration)
 - [Additional Resources](#additional-resources)
+- [Release Notes](#release-notes)
 - [License](#license)
-- [Changelog](#changelog)
 
 ## Understanding Swirl
 ### Concepts and Objects
@@ -133,8 +133,12 @@ In addition to this guide, Swirl offers a number of additional resources to help
 * [BeaconManager in the App Store](https://itunes.apple.com/us/app/swirl-beacon-manager/id855322103?mt=8) which can be used to configure and deploy beacons.
 * [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
+## Release Notes
+**Version:** swirl-sdk-3.0-beta1  **Date:** 7/22/16
+This is the initial release of sdk3. sdk3 represents a completely rearchitected and rewritten code base for both iOS and Android.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.
+### Known Issues
+### Reporting Issues
+
 ## License
 We have included our standard commercial [license](LICENSE.md), but this repository is public currently for technical reasons ONLY and its accessibility should not be considered a grant of any rights.  Please see [Swirl](https://www.swirl.com) for more details or email us at [sales@swirl.com](mailto:sales@swirl.com) if you are interested in using our products.
 
-## Changelog
-This information is subject to change.
