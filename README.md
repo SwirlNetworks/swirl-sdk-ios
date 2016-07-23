@@ -134,10 +134,14 @@ In addition to this guide, Swirl offers a number of additional resources to help
 * [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
-`**Version:** swirl-sdk-3.0-beta1        **Date:** 7/22/16`
+**Version:** `swirl-sdk-3.0-beta1`        **Date:** `7/22/16`
+<p>
 This is the initial release of sdk3. sdk3 represents a completely rearchitected and rewritten code base for both iOS and Android.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.
 #### Known Issues
+1.
+2.
 #### Reporting Issues
+All issues can be reported to (tom@swirl.com)[mailto:tom@swirl.com].
 
 ## License
 We have included our standard commercial [license](LICENSE.md), but this repository is public currently for technical reasons ONLY and its accessibility should not be considered a grant of any rights.  Please see [Swirl](https://www.swirl.com) for more details or email us at [sales@swirl.com](mailto:sales@swirl.com) if you are interested in using our products.
