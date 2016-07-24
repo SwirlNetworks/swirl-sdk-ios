@@ -1,7 +1,5 @@
 **PRE-RELEASE DOCUMENTATION - All information is subject to change**
-
 ---
-
 # Swirl Proximity Framework
 The Swirl platform is designed as a complete proximity platform detecting a variety of proximity signals like geofence, wifi and beacons and managing presence tracking, notification and content delivery.  The Swirl framework is a component of this system which enables signal detection and content delivery on mobile devices.
 
@@ -17,12 +15,13 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 
 ## Documentation and Resources
 There are a number of additional documents and resource available to facilitate the integration and use of the Swirl Proximity Framework.
-##### For Implementation
+
+#### For Implementation
 * [Swirl Proximity Developer Guide](./docs/swirl-proximity-developer-guide-ios.md)
 * [Swirl Proximity Framework Reference](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
 * [Example Source Code](./examples/)
-* 
-##### For Testing
+
+#### For Testing
 * [BeaconManager in the App Store](https://itunes.apple.com/us/app/swirl-beacon-manager/id855322103?mt=8) which can be used to configure and deploy beacons.
 * [Explorer in the App Store](https://itunes.apple.com/us/app/swirl-in-store-explorer/id781067361?mt=8) which can be used for testing signals and content.
 * [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
