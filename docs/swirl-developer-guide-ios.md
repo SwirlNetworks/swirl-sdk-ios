@@ -1,4 +1,7 @@
 # Swirl Proximity Developer Guide
+
+## Contents
+
 ## Understanding Swirl
 ![](./images/sdk3-architecture-overview.png)
 
