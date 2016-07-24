@@ -1,5 +1,7 @@
-#
+# Swirl Proximity Developer Guide
 ## Understanding Swirl
+![./images/sdk3-architecture-overview.png]
+
 ### Concepts and Objects
 The Swirl platform and SDK use some key objects that are useful to define here.
 
