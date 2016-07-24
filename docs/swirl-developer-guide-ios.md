@@ -3,7 +3,6 @@
 ## Contents
 - [Understanding Swirl](#understanding-swirl)
   - [Concepts and Objects](#concepts-and-objects)
-  - 
 - [Technical Overview](#technical-overview)
   - [Architechture](#architecture)
 - [Integration](#integration)
