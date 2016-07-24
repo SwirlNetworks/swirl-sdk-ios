@@ -15,15 +15,18 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 * Beacon: SecureCast™, Eddystone (URL, UID, EID, TLM) and iBeacon, easy to extend
 * Content: Support for interstitials, deep links and custom content types (optional)
 
-## Additional Resources
-In addition to this guide, Swirl offers a number of additional resources to help you during and after the integration process to help ensure the best results for you and your users.
-* For implementation:
- * [API Reference Documentation](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
- * [Example Source Code](./examples/)
-* For testing:
- * [Explorer in the App Store](https://itunes.apple.com/us/app/swirl-in-store-explorer/id781067361?mt=8) which can be used for testing signals and content.
- * [BeaconManager in the App Store](https://itunes.apple.com/us/app/swirl-beacon-manager/id855322103?mt=8) which can be used to configure and deploy beacons.
- * [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
+## Documentation and Resources
+There are a number of additional documents and resource available to facilitate the integration and use of the Swirl Proximity Framework.
+
+#### For Implementation
+* [Swirl Proximity Developer Guide](./docs/swirl-proximity-developer-guide-ios.md)
+* [Swirl Proximity Framework Reference](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
+* [Example Source Code](./examples/)
+
+#### For Testing
+* [Explorer in the App Store](https://itunes.apple.com/us/app/swirl-in-store-explorer/id781067361?mt=8) which can be used for testing signals and content.
+* [BeaconManager in the App Store](https://itunes.apple.com/us/app/swirl-beacon-manager/id855322103?mt=8) which can be used to configure and deploy beacons.
+* [Customer Supoprt: support@swirl.com](mailto:support@swirl.com) Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
 **Version:** `3.0-beta1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `7/22/16`
