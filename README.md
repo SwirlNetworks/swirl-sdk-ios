@@ -15,15 +15,6 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 * Beacon: SecureCast™, Eddystone (URL, UID, EID, TLM) and iBeacon, easy to extend
 * Content: Support for interstitials, deep links and custom content types (optional)
 
-## Contents
-- [Understanding Swirl](#understanding-swirl)
-- [Technical Overview](#technical-overview)
-- [Integration](#integration)
-- [Additional Resources](#additional-resources)
-- [Release Notes](#release-notes)
-- [License](#license)
-
-
 ## Additional Resources
 In addition to this guide, Swirl offers a number of additional resources to help you during and after the integration process to help ensure the best results for you and your users.
 * For implementation:
