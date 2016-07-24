@@ -25,7 +25,7 @@ Earier versions of the Swirl SDK enforced a strict user opt-in policy which ofte
 ### Architecture
 The architecture of the Swirl SDK is similar on all platforms.  The Swirl object acts as a shell which establishes a working queue or thread, a common message bus and loads various managers into that enviorment.  The SDK glues together signal detection code that interacts with OS apis for detecting beacon, wifi and geofence signals with code that interacts with the swirl REST APIs to determine logical metadata like location, placement and other custom metadata.  In addition, the SDK tracks and accumulates dwell and can manage interaction with the platform to request and display targeted content.
 
-![](./docs/images/sdk3-ios-architecture.png)
+![](./images/sdk3-ios-architecture.png)
 
 #### Key components
 The following is a list of the key components of the SDK and a brief description of each.  Most of these components are internal to the SDK but their description here is provided to help understand the operaiton of the SDK.  It is important to note that developers can extend the operation of the Swirl SDK by adding their own managers to the internal message bus and participate fully in its operation.
@@ -59,7 +59,7 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
  2. The framework depends upon *CoreLocation*, *CoreBluetooth* and *SystemConfiguration* but those files should be automatically linked for you.  
  3. It is also recommended (but not required) to add some additional frameworks: *PassKit* for better user experience when the user decides to save delivered content to their wallet and *AdSupport* for access to the AdvertisingIdentifier.
 
- ![](./docs/images/sdk3-add-framework.png)
+ ![](./images/sdk3-add-framework.png)
 
 #### Adding the Framework Using Cocoapods
   1. *Coming soon*
@@ -73,7 +73,7 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
   1. In Xcode, open your application's target and click the Capabilities tab.
   2. Expand the “Background Modes” section, ensure that the section is ON and that Uses Bluetooth LE accessories is checked.
   
-  ![](./docs/images/sdk3-capabilities.png)
+  ![](./images/sdk3-capabilities.png)
 
 ### Make Code Changes
 
