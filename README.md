@@ -16,7 +16,7 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 * Content: Support for interstitials, deep links and custom content types (optional)
 
 ## Documentation and Resources
-There are a number of additional documents and resource available to facilitate the integration and use of the Swirl Proximity Framework.
+There are a number of additional documents and resources available to facilitate the integration and use of the Swirl Proximity Framework.
 
 #### For Implementation
 * [Swirl Proximity Developer Guide](./docs/swirl-proximity-developer-guide-ios.md)
@@ -32,7 +32,7 @@ There are a number of additional documents and resource available to facilitate 
 ## Release Notes
 **Version:** `3.0-beta1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `7/22/16`
 <p>
-This is the initial release of `Swirl.framework`. `Swirl.framework` represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.  **Don't be shy.**
+This is the initial release of *Swirl.framework*. *Swirl.framework* represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.  <u>Don't be shy</u>.
 
 #### Known Issues
  1. issue one
