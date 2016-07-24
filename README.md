@@ -3,7 +3,7 @@
 ---
 
 # Swirl Proximity Framework
-The Swirl platform is designed as a complete proximity platform detecting a variety of proximity signals like geofence, wifi and beacons and managing presence tracking, notification and content delivery.  The Swirl SDK is a component of this system which enables signal detection on mobile devices.
+The Swirl platform is designed as a complete proximity platform detecting a variety of proximity signals like geofence, wifi and beacons and managing presence tracking, notification and content delivery.  The Swirl framework is a component of this system which enables signal detection and content delivery on mobile devices.
 
 ![](./docs/images/sdk3-overview.png)
 
