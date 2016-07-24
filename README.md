@@ -32,7 +32,7 @@ There are a number of additional documents and resources available to facilitate
 ## Release Notes
 **Version:** `3.0-beta1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `7/22/16`
 <p>
-This is the initial release of *Swirl.framework*. *Swirl.framework* represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.  <u>Don't be shy</u>.
+This is the initial release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.  *Don't be shy*.
 
 #### Known Issues
  1. issue one
