@@ -1,6 +1,16 @@
 # Swirl Proximity Developer Guide
 
 ## Contents
+- [Understanding Swirl](#understanding-swirl)
+  - [Concepts and Objects](#concepts-and-objects)
+  - 
+- [Technical Overview](#technical-overview)
+  - [Architechture](#architecture)
+- [Integration](#integration)
+  - [Application Key](#application-key)
+  - [Verify Tools and Targets](#verify-tools-and-targets)
+  - [Add Framework to your Application](#add-framework-to-your-application)
+  - [Make Code Changes](#make-code-changes)
 
 ## Understanding Swirl
 ![](./images/sdk3-architecture-overview.png)
@@ -69,7 +79,9 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
 #### Adding the Framework Using Cocoapods
   1. *Coming soon*
 
-### Modify the Info.plist
+### Make Code Changes
+
+#### Modify the Info.plist
  **Location Services**
  Edit the Info.plist and ensure that `NSLocationAlwaysUsageDescription` or `NSLocationWhenInUseUsageDescription` exists with a user-visible usage description.  Location services will not work without one of these modes being set.  The SDK can function in either mode, but if you want to be able to receive background notifications, NSLocationAlwaysUsageDescription is required.
  
@@ -79,8 +91,6 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
   2. Expand the “Background Modes” section, ensure that the section is ON and that Uses Bluetooth LE accessories is checked.
   
   ![](./images/sdk3-capabilities.png)
-
-### Make Code Changes
 
 #### Permission Changes
 The Swirl SDK requires Location Services, Bluetooth and Local Notifications to be fully effective.  The host application is responsible for managing the opt-in flow and prompting the user for the necessary permissions.  When started, if the proper permissions have not been granted, then functionality will be limited.  If you do not already, you will need to request authorization using `requestAlwausAuthorization` or `requestWhenInUseAuthorization` on an instance of `CLLocationManager`.  You will also need to request the appropriate level of notification permissions using `registerUserNotificationSettings` on `UIApplication`.  Examples of how to do this are included in our sample application.
