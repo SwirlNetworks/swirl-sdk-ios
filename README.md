@@ -19,7 +19,7 @@ The Swirl platform is designed as a complete proximity platform detecting a vari
 There are a number of additional documents and resources available to facilitate the integration and use of the Swirl Proximity Framework.
 
 #### For Implementation
-* [Swirl Proximity Developer Guide](./docs/swirl-proximity-developer-guide-ios.md)
+* [Swirl Proximity Developer Guide */iOS/*](./docs/swirl-proximity-developer-guide-ios.md)
 * [Swirl Proximity Framework Reference](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
 * [Example Source Code](./examples/)
 
