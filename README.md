@@ -32,14 +32,14 @@ There are a number of additional documents and resources available to facilitate
 ## Release Notes
 **Version:** `3.0-beta1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `7/22/16`
 <p>
-This is the initial release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  If you have access to this repository, it is likely because we are hoping for feedback.  *Don't be shy*.
-
-#### Known Issues
- 1. issue one
- 2. issue two
+This is the initial release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  
 
 #### Reporting Issues
-All issues can be reported to [tom@swirl.com](mailto:tom@swirl.com)
+If you have access to this repository, it is likely because we are hoping for feedback.  *Don't be shy*.
+All issues can be reported to [tom@swirl.com](mailto:tom@swirl.com) 
+
+#### Known Issues
+You can see a list of current open defects and know issues [here](./docs/issues.md).
 
 ## License
 We have included our standard commercial [license](LICENSE.md), but this repository is public currently for technical reasons ONLY and its accessibility should not be considered a grant of any rights.  Please see [Swirl](https://www.swirl.com) for more details or email us at [sales@swirl.com](mailto:sales@swirl.com) if you are interested in using our products.
