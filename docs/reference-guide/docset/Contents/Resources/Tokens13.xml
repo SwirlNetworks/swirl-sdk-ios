@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLVisitManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLVisitManager</TokenIdentifier>
+			<Abstract type="html">A component which consumes the various Enter/Exit/Dwell events from the signal detectors and tracks enter and exit times,
+accumulates dwell and elapsed times by location and placement, and generates logical Visit objects and
+delegate callbacks Visit start, dwell and end.</Abstract>
+			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/recentVisit</TokenIdentifier>
+			<Abstract type="html">Gets current or most recent visit whether active or inactive.</Abstract>
+			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			
+			<Declaration>- (SWRLVisit *)recentVisit</Declaration>
+			
+			<ReturnValue><Abstract type="html">most recent visit</Abstract></ReturnValue>
+			<Anchor>//api/name/recentVisit</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/activeLocationVisits</TokenIdentifier>
+			<Abstract type="html">Gets all active (started and not ended) Location Visits sorted by signal and distance from most-specific and nearest
+to least-specific and farthest.  The sort order is Beacon, Wifi, Region and by distance where possible within each type.</Abstract>
+			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;SWRLVisit*&gt; *)activeLocationVisits</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array of Location Visits that are not ended</Abstract></ReturnValue>
+			<Anchor>//api/name/activeLocationVisits</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/activePlacementVisits</TokenIdentifier>
+			<Abstract type="html">Gets all active (started and not ended) Placement Visits sorted by signal and distance from most-specific and nearest
+to least-specific and farthest.  The sort order is Beacon, Wifi, Region and by distance where possible within each type.</Abstract>
+			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;SWRLVisit*&gt; *)activePlacementVisits</Declaration>
+			
+			<ReturnValue><Abstract type="html">Array of Placement Visits that are not ended</Abstract></ReturnValue>
+			<Anchor>//api/name/activePlacementVisits</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

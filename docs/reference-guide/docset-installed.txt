@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/Tom/Library/Developer/Shared/Documentation/DocSets/com.swirl.Swirl-Proximity-Framework.docset
+Time: 2016-07-25 14:33:35 +0000

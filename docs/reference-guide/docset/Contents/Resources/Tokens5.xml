@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLContentViewController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLContentViewController</TokenIdentifier>
+			<Abstract type="html">The SWRLContentViewController class defines the view controller used for presenting interstitial content.
+This class can be subclassed in order to customize some of its look and feel and behavior.</Abstract>
+			<DeclaredIn>SWRLContentViewController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>
