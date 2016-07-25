@@ -36,7 +36,7 @@ This is the initial release of **Swirl.framework** which represents a completely
 
 #### Reporting Issues
 If you have access to this repository, it is likely because we are hoping for feedback.  *Don't be shy*.
-All issues can be reported to [tom@swirl.com](mailto:tom@swirl.com) 
+<p>All issues can be reported to [tom@swirl.com](mailto:tom@swirl.com) 
 
 ## License
 We have included our standard commercial [license](LICENSE.md), but this repository is public currently for technical reasons ONLY and its accessibility should not be considered a grant of any rights.  Please see [Swirl](https://www.swirl.com) for more details or email us at [sales@swirl.com](mailto:sales@swirl.com) if you are interested in using our products.
