@@ -1,8 +1,8 @@
 # Known Issues
 
 |Jira|Summary|Priority
------------------------
-SWIRL-11258,"Analytics: Engine fired events prior to ""content"" event get lost",Major
+|----|-------------------|
+SWIRL-11258|"Analytics: Engine fired events prior to ""content"" event get lost"|Major
 SWIRL-11159,Chrome: Figure out what to replace SWIRL with,Major
 SWIRL-11201,Engine: Scrolling offer code details cause white footer to expand,Major
 SWIRL-8453,Feature: Mobile - use publisher chrome color to set carrier/status bar,Major
