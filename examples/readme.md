@@ -5,4 +5,4 @@
 
 ### Swirlx 
 [Swirlx](./Swirlx) is a useful test tool and a more complex example designed to use most of the APIs that Swirl provides as well as provide reference implementations for things like the 'mini-bar'.
-*** Not complete yet ***
+***Not complete yet***
