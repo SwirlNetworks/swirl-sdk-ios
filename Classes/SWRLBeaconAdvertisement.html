@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>SWRLWifiInfo Class Reference</title>
+	<title>SWRLBeaconAdvertisement Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,17 +56,13 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/attributes">attributes</option>
+		<option value="//api/name/dbm1">dbm1</option>
 		
 		<option value="//api/name/detected">detected</option>
 		
-		<option value="//api/name/error">error</option>
+		<option value="//api/name/device">device</option>
 		
-		<option value="//api/name/labels">labels</option>
-		
-		<option value="//api/name/location">location</option>
-		
-		<option value="//api/name/name">name</option>
+		<option value="//api/name/extraInfo">extraInfo</option>
 		
 		<option value="//api/name/rssi">rssi</option>
 		
@@ -89,16 +85,19 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">SWRLWifiInfo Class Reference</h1>
+					<h1 class="title">SWRLBeaconAdvertisement Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : NSObject</td>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>SWRLWifiManager.h<br />SWRLWifiManager.m</td>
+	<td>SWRLBeaconAdvertisement.h<br />SWRLBeaconAdvertisement.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -108,10 +107,9 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A SWRLWifiInfo object is a <a href="../Classes/SWRLSignal.html">SWRLSignal</a> which represents a wifi access point that the mobile device is or was
-connected to.  In order to activate detection, the SSIDs of the networks you are interested in need to be
-white-listed in the platform and all of the BSSIDs need to be added.  Any wifi events not related to the white-listed
-SSIDs and listed BSSIDs are not reported.</p>
+						<p>A SWRLBeaconAdvertisement is an object which represents a Bluetooth Beacon advertisement in a normalized way for
+consumption by the rest of the framework.  Beacon protocols broadcast beacon identity information and optionally
+other attributes, like telemetry (temperature, time, battery, etc).</p>
 					</div>
 					
 					
@@ -122,134 +120,11 @@ SSIDs and listed BSSIDs are not reported.</p>
 						<a title="Tasks" name="tasks"></a>
 						
 
-						<a title="Accessing Attributes" name="task_Accessing Attributes"></a>
+						<a title="Accessing Advertisement Attributes" name="task_Accessing Advertisement Attributes"></a>
 						
-<h2 class="task-title">Accessing Attributes</h2>
+<h2 class="task-title">Accessing Advertisement Attributes</h2>
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The name is the SSID of the wifi network.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The Location (and Placement) associated with this wifi network</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLLocation *location</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/rssi" title="rssi"></a>
-	<h3 class="method-title"><code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The Signal strength (if available) associated with the detection event.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int rssi</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/detected" title="detected"></a>
 	<h3 class="method-title"><code><a href="#//api/name/detected">&nbsp;&nbsp;detected</a></code>
 </h3>
@@ -261,7 +136,7 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>An timeIntervalSince1970 timestamp of when the network was first detected</p>
+				<p>A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.</p>
 			</div>
 			
 		    
@@ -284,15 +159,15 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
+				<p><code class="declared-in-ref">SWRLBeaconAdvertisement.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/attributes" title="attributes"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
+	<a name="//api/name/rssi" title="rssi"></a>
+	<h3 class="method-title"><code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
 </h3>
 
 	<div class="method-info">
@@ -302,12 +177,12 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Attributes associated to this network via the platform</p>
+				<p>The signal strength (RSSI) as reported by the operating system.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *attributes</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int rssi</code></div>
 
 		    
 			
@@ -325,15 +200,15 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
+				<p><code class="declared-in-ref">SWRLBeaconAdvertisement.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/labels" title="labels"></a>
-	<h3 class="method-title"><code><a href="#//api/name/labels">&nbsp;&nbsp;labels</a></code>
+	<a name="//api/name/dbm1" title="dbm1"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dbm1">&nbsp;&nbsp;dbm1</a></code>
 </h3>
 
 	<div class="method-info">
@@ -343,12 +218,12 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Labels associated to this network via the platform</p>
+				<p>The measured power included for some beacon protocols.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int dbm1</code></div>
 
 		    
 			
@@ -366,15 +241,15 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
+				<p><code class="declared-in-ref">SWRLBeaconAdvertisement.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
+	<a name="//api/name/extraInfo" title="extraInfo"></a>
+	<h3 class="method-title"><code><a href="#//api/name/extraInfo">&nbsp;&nbsp;extraInfo</a></code>
 </h3>
 
 	<div class="method-info">
@@ -384,12 +259,12 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Error (if present)</p>
+				<p>Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *extraInfo</code></div>
 
 		    
 			
@@ -407,7 +282,48 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
+				<p><code class="declared-in-ref">SWRLBeaconAdvertisement.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/device" title="device"></a>
+	<h3 class="method-title"><code><a href="#//api/name/device">&nbsp;&nbsp;device</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The peripheral UUID of the device generating these advertisements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUUID *device</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconAdvertisement.h</code></p>
 			</div>
 			
 			

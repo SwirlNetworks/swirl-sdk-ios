@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">Swirl </a>
+				<a href="../index.html">Swirl Proximity Framework </a>
 			</h1>
 
 			<p id="developer-home">
@@ -48,6 +48,8 @@
 
 	
 	
+	<option value="tasks">Tasks</option>
+	
 	
 
 	
@@ -55,6 +57,16 @@
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/contentManager:didReceiveContentCustom:">- contentManager:didReceiveContentCustom:</option>
+		
+		<option value="//api/name/contentManager:didReceiveContentSwirl:">- contentManager:didReceiveContentSwirl:</option>
+		
+		<option value="//api/name/contentManager:didReceiveContentURL:">- contentManager:didReceiveContentURL:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -88,12 +100,202 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Callbacks from the ContentManager</p>
+						<p>The SWRLContentManagerDelegate protocol defines the methods used to receive beacon update from the <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a>.
+Upon receiving a content event, you can use the result to update your user interface or perform other actions.
+The methods of your delegate object are called from the thread associated with the dispatch queue that you used
+when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 					</div>
 					
 					
 
 					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentManager:didReceiveContentURL:" title="contentManager:didReceiveContentURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentURL:">&ndash;&nbsp;contentManager:didReceiveContentURL:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that content of type URL has been received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentURL:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content object that was received.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentManager:didReceiveContentSwirl:" title="contentManager:didReceiveContentSwirl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentSwirl:">&ndash;&nbsp;contentManager:didReceiveContentSwirl:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that content of type Swirl has been received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentSwirl:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content object that was received.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentManager:didReceiveContentCustom:" title="contentManager:didReceiveContentCustom:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentCustom:">&ndash;&nbsp;contentManager:didReceiveContentCustom:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that content of type Custom has been received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentCustom:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content object that was received.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
 					
 
@@ -105,7 +307,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-22</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-25</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

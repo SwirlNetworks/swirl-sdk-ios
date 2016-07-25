@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>SWRLRegion Class Reference</title>
+	<title>SWRLVisit Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -56,27 +56,21 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/attributes">attributes</option>
+		<option value="//api/name/arrivalDate">arrivalDate</option>
 		
-		<option value="//api/name/info">info</option>
+		<option value="//api/name/departureDate">departureDate</option>
 		
-		<option value="//api/name/labels">labels</option>
+		<option value="//api/name/dwellTime">dwellTime</option>
+		
+		<option value="//api/name/elapsedTime">elapsedTime</option>
 		
 		<option value="//api/name/location">location</option>
 		
-		<option value="//api/name/region">region</option>
-		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/containsCoordinate:">- containsCoordinate:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -91,16 +85,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">SWRLRegion Class Reference</h1>
+					<h1 class="title">SWRLVisit Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>SWRLRegion.h<br />SWRLRegion.m</td>
+	<td>SWRLVisit.h<br />SWRLVisit.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,7 +104,20 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A SWRLRegion object represents a geofence.</p>
+						<p>A SWRLVisit object encapsulates information about places that the user has been. Visit objects are created by
+the framework and delivered by the <a href="../Classes/SWRLVisitManager.html">SWRLVisitManager</a> object to its delegate after it receives relevant signal events
+from other managers running within the framework.  It monitors the <a href="../Protocols/SWRLBeaconManagerDelegate.html">SWRLBeaconManagerDelegate</a>, the <a href="../Protocols/SWRLWifiManagerDelegate.html">SWRLWifiManagerDelegate</a>
+and the <a href="../Protocols/SWRLRegionManagerDelegate.html">SWRLRegionManagerDelegate</a> for events related to locations and translates those events into logical visit
+events.</p>
+
+<p>The visit includes the <a href="#//api/name/location">location</a> where the visit occurred and information about the arrival and departure times as
+relevant. You do not create visit objects directly, nor should you subclass a SWRLVisit.  You receive these objects
+by receiving delegate callbacks from the <a href="../Classes/SWRLVisitManager.html">SWRLVisitManager</a>. See <a href="../Protocols/SWRLVisitManagerDelegate.html">SWRLVisitManagerDelegate</a>.</p>
+
+<p>Visit objects contain as much information about the visit as possible but may not always include both the arrival
+and departure times. For example, when the user arrives at a <a href="#//api/name/location">location</a>, the system may send an event with only an
+arrival time. When the user departs a <a href="#//api/name/location">location</a>, the event can contain both the arrival time
+(if your app was monitoring visits prior to the user’s arrival) and the departure time.</p>
 					</div>
 					
 					
@@ -121,55 +128,11 @@
 						<a title="Tasks" name="tasks"></a>
 						
 
+						<a title="Accessing Location" name="task_Accessing Location"></a>
 						
-						
-
+<h2 class="task-title">Accessing Location</h2>
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/region" title="region"></a>
-	<h3 class="method-title"><code><a href="#//api/name/region">&nbsp;&nbsp;region</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>An CLCircularRegion which provides
-a center point (latitude and longitude) and a radius in meters which defines the area
-covered by the region or an outer bounding area for regions which are further refined by an arbitrary
-polygon.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLCircularRegion *region</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/location" title="location"></a>
 	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
 </h3>
@@ -181,7 +144,7 @@ polygon.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A logical Location and Placement associated to this geo<a href="#//api/name/region">region</a> through the platform.</p>
+				<p>The Location of the visit.</p>
 			</div>
 			
 		    
@@ -204,15 +167,15 @@ polygon.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+				<p><code class="declared-in-ref">SWRLVisit.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/attributes" title="attributes"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
+	<a name="//api/name/arrivalDate" title="arrivalDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/arrivalDate">&nbsp;&nbsp;arrivalDate</a></code>
 </h3>
 
 	<div class="method-info">
@@ -222,12 +185,12 @@ polygon.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A set of property value pairs associated to this Location-Placement through the platform.</p>
+				<p>The date of the most recent <a href="#//api/name/enter">enter</a> or distantPast if not entered.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *attributes</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *arrivalDate</code></div>
 
 		    
 			
@@ -245,15 +208,15 @@ polygon.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+				<p><code class="declared-in-ref">SWRLVisit.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/labels" title="labels"></a>
-	<h3 class="method-title"><code><a href="#//api/name/labels">&nbsp;&nbsp;labels</a></code>
+	<a name="//api/name/departureDate" title="departureDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/departureDate">&nbsp;&nbsp;departureDate</a></code>
 </h3>
 
 	<div class="method-info">
@@ -263,12 +226,12 @@ polygon.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A set of labels assigned to this Location-Placement through the platform.</p>
+				<p>The date of the most recent <a href="#//api/name/exit">exit</a> or distantFuture if not yet exited</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDate *departureDate</code></div>
 
 		    
 			
@@ -286,15 +249,15 @@ polygon.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+				<p><code class="declared-in-ref">SWRLVisit.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/info" title="info"></a>
-	<h3 class="method-title"><code><a href="#//api/name/info">&nbsp;&nbsp;info</a></code>
+	<a name="//api/name/dwellTime" title="dwellTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dwellTime">&nbsp;&nbsp;dwellTime</a></code>
 </h3>
 
 	<div class="method-info">
@@ -304,13 +267,12 @@ polygon.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A representation of the raw-JSON metadata that came from the server for this
-<a href="#//api/name/region">region</a></p>
+				<p>The accumulated dwell across potentially multiple enters and exits</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *info</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval dwellTime</code></div>
 
 		    
 			
@@ -328,15 +290,15 @@ polygon.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+				<p><code class="declared-in-ref">SWRLVisit.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/containsCoordinate:" title="containsCoordinate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/containsCoordinate:">&ndash;&nbsp;containsCoordinate:</a></code>
+	<a name="//api/name/elapsedTime" title="elapsedTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elapsedTime">&nbsp;&nbsp;elapsedTime</a></code>
 </h3>
 
 	<div class="method-info">
@@ -346,34 +308,16 @@ polygon.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Determine if a given lattitude and longitude lie within the Region or not.</p>
+				<p>The total elapsed time since the first <a href="#//api/name/enter">enter</a> until now or the last <a href="#//api/name/exit">exit</a> time</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)<em>coordinate</em></code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval elapsedTime</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>coordinate</code></th>
-						<td><p>A coordinate (latitude, longitude) to test for inclusion</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>YES if the coordinate is contained with in the bounding <a href="#//api/name/region">region</a> and where
-specified the arbitrary polygon within, NO otherwise.</p>
-			</div>
 			
 
 			
@@ -387,7 +331,7 @@ specified the arbitrary polygon within, NO otherwise.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+				<p><code class="declared-in-ref">SWRLVisit.h</code></p>
 			</div>
 			
 			

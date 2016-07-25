@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">Swirl </a>
+				<a href="../index.html">Swirl Proximity Framework </a>
 			</h1>
 
 			<p id="developer-home">
@@ -72,15 +72,25 @@
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shared">+ shared</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/addDelegate:">- addDelegate:</option>
 		
+		<option value="//api/name/addDelegate:queue:">- addDelegate:queue:</option>
+		
 		<option value="//api/name/logEvent:data:">- logEvent:data:</option>
 		
 		<option value="//api/name/postObject:">- postObject:</option>
+		
+		<option value="//api/name/removeDelegate:">- removeDelegate:</option>
 		
 		<option value="//api/name/reset">- reset</option>
 		
@@ -123,7 +133,9 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>The Swirl class is the main entry point into the Swirl proximity sdk for delivery of proximity and content
-events to your app.  You use a singleton instance of this class to <a href="#//api/name/start:">start:</a> and <a href="#//api/name/stop">stop</a> proximity detection and delivery of proximity
+events to your app.</p>
+
+<p>You use a singleton instance of this class to <a href="#//api/name/start:">start:</a> and <a href="#//api/name/stop">stop</a> proximity detection and delivery of proximity
 events.  It supports a multi-delegate interface so you can add one or many delegate objects to recieve callbacks from any of the
 protocols broadcast to the mult-delegate bus.</p>
 
@@ -148,8 +160,8 @@ protocols broadcast to the mult-delegate bus.</p>
 						<a title="Tasks" name="tasks"></a>
 						
 
-						<a title="Properties" name="task_Properties"></a>
-						<h2 class="task-title">Properties</h2>
+						<a title="System Information" name="task_System Information"></a>
+						<h2 class="task-title">System Information</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -164,7 +176,7 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>system status</p>
+				<p>The current system status</p>
 			</div>
 			
 		    
@@ -205,7 +217,7 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>version</p>
+				<p>The current version of the framework.</p>
 			</div>
 			
 		    
@@ -246,7 +258,7 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>last error reported</p>
+				<p>The last error reported.</p>
 			</div>
 			
 		    
@@ -276,6 +288,55 @@ protocols broadcast to the mult-delegate bus.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/location" title="location"></a>
+	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The frameworks currently maintained CLLocation</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocation *location</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="User Information" name="task_User Information"></a>
+						<h2 class="task-title">User Information</h2>
+
+						<div class="task-list">
+							<div class="section-method">
 	<a name="//api/name/userKey" title="userKey"></a>
 	<h3 class="method-title"><code><a href="#//api/name/userKey">&nbsp;&nbsp;userKey</a></code>
 </h3>
@@ -287,7 +348,7 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>uuid generated for this instance</p>
+				<p>A NSUUID generated for this device.</p>
 			</div>
 			
 		    
@@ -328,53 +389,12 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>property-values passed to server</p>
+				<p>A dictionary of property values that are associated with this device/user.</p>
 			</div>
 			
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSDictionary *userInfo</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>geo-location</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocation *location</code></div>
 
 		    
 			
@@ -433,7 +453,7 @@ protocols broadcast to the mult-delegate bus.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>delegate</code></th>
-						<td><p>the object to receive delegate callbacks</p></td>
+						<td><p>The object to receive delegate callbacks. This parameter must not be <code>nil</code>.</p></td>
 					</tr>
 				
 				</table>
@@ -445,9 +465,167 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 
 			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Delegates are added to the internal multicast delegate bus and can receive messages from any of the listed
+protocols (see x).  Delegates added via this method are added using the main queue.  This function simply
+calls <a href="#//api/name/addDelegate:queue:">addDelegate:queue:</a> with the result of <strong>dispatch_get_main_queue()</strong> as the queue argument.
+If the existing delegate has already been added, this function takes no action.</p>
+			</div>
+			
 
 			
 
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/removeDelegate:">- removeDelegate:</a>,<a href="#//api/name/addDelegate:queue:">- addDelegate:queue:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addDelegate:queue:" title="addDelegate:queue:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addDelegate:queue:">&ndash;&nbsp;addDelegate:queue:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Add a delegate to the internal delegate bus, specifying a queue.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addDelegate:(id)<em>delegate</em> queue:(dispatch_queue_t)<em>queue</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The object to receive delegate callbacks. This parameter must not be <code>nil</code>.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>The GCD dispatch queue on which messages should be delivered.  This parameter must not be <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Delegates are added to the internal multicast delegate bus and can receive messages from any of the listed
+protocols (see x).  All messages dispatched to this delegate will be delivered on the queue specified.
+If the existing delegate has already been added, this function takes no action.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/removeDelegate:">- removeDelegate:</a>,<a href="#//api/name/addDelegate:">- addDelegate:</a></p></code></li>
+					
+				</ul>
+			</div>
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeDelegate:" title="removeDelegate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeDelegate:">&ndash;&nbsp;removeDelegate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove a delegate that had been previously added via <a href="#//api/name/addDelegate:">addDelegate:</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)removeDelegate:(id)<em>delegate</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>delegate</code></th>
+						<td><p>The object to receive delegate callbacks. This paramter must not be <code>nil</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the delegate is not present, this method does nothing.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection see-also-section">
+				<h4 class="method-subtitle">See Also</h4>
+				<ul>
+					
+					<li><code><p><a href="#//api/name/addDelegate:">- addDelegate:</a>,<a href="#//api/name/addDelegate:queue:">- addDelegate:queue:</a></p></code></li>
+					
+				</ul>
+			</div>
 			
 
 			
@@ -547,6 +725,13 @@ protocols broadcast to the mult-delegate bus.</p>
 			
 
 			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is not typically used unless you want to stop all monitoring.  If this is called
+all monitoring will stop, including background monitoring.  Your application will no longer receive any notifications
+for proximity events and will not be restarted in the background by the operating system.</p>
+			</div>
+			
 
 			
 
@@ -589,6 +774,12 @@ After calling this function, the sdk will be in a stopped state.</p>
 			
 
 			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This method is not typically used.  It is provided for testing or to be used if you need to completely
+remove any state stored locally on the device when a user opts-out.</p>
+			</div>
+			
 
 			
 
@@ -607,11 +798,72 @@ After calling this function, the sdk will be in a stopped state.</p>
 						</div>
 						
 
-						<a title="Advanced" name="task_Advanced"></a>
-						<h2 class="task-title">Advanced</h2>
+						<a title="Passing Information to Swirl" name="task_Passing Information to Swirl"></a>
+						<h2 class="task-title">Passing Information to Swirl</h2>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/postObject:" title="postObject:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/postObject:">&ndash;&nbsp;postObject:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Post an object to the internal message bus</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)postObject:(id)<em>object</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>the object to post</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Posting an object is a convenient short hand to calling <a href="#//api/name/postMessage:withObject:">postMessage:withObject:</a>.  The method invoked
+on members of the internal bus is <code>on{[[object class] name]}:object</code>.  This method is used primarily to post
+UILocalNotifications to Swirl from applicaiton:didReceiveLocalNotification:, or to post CLLocation objects if
+you are running Swirl in a manual <a href="#//api/name/location">location</a> mode (when the framework does not maintain its own CLLocationManager).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/logEvent:data:" title="logEvent:data:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/logEvent:data:">&ndash;&nbsp;logEvent:data:</a></code>
 </h3>
@@ -670,8 +922,8 @@ After calling this function, the sdk will be in a stopped state.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/postObject:" title="postObject:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/postObject:">&ndash;&nbsp;postObject:</a></code>
+	<a name="//api/name/shared" title="shared"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shared">+&nbsp;shared</a></code>
 </h3>
 
 	<div class="method-info">
@@ -681,26 +933,14 @@ After calling this function, the sdk will be in a stopped state.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Post an object to the internal message bus</p>
+				<p>Swirl is a singleton.  You use shared to get access to the shared instance.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)postObject:(id)<em>object</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (instancetype)shared</code></div>
 
 		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>object</code></th>
-						<td><p>the object to post</p></td>
-					</tr>
-				
-				</table>
-			</div>
 			
 
 			
@@ -737,7 +977,7 @@ After calling this function, the sdk will be in a stopped state.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-22</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-25</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
