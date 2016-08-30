@@ -1,10 +1,7 @@
-//
-//  SWRBase.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 11/3/15.
-//
-//
+/*
+ * SWRLBase.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
 
 #ifndef __SWRLBASE__
 #define __SWRLBASE__

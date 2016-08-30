@@ -1,10 +1,10 @@
-//
-//  SWRRegion.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 10/29/15.
-//
-//
+/*
+ * SWRLRegion.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
+
+#ifndef __SWRLREGION__
+#define __SWRLREGION__
 
 #import <Swirl/SWRLBase.h>
 #import <Swirl/SWRLLocation.h>
@@ -21,6 +21,18 @@
  * polygon.
  */
 @property (nonatomic, readonly) CLCircularRegion *          region;
+
+/**
+ * For polygon regions, polyCount is the number of entries in the polyPoints array
+ */
+@property (nonatomic, readonly) NSInteger                   polyCount;
+
+/**
+ * For polygon regions, polyPoints is an array of polyCount coordinates that 
+ * represent the vertices of the polygon that refines the circular bounding region
+ */
+@property (nonatomic, readonly) CLLocationCoordinate2D *    polyCoords;
+
 /**
  * A logical Location and Placement associated to this georegion through the platform.
  */
@@ -39,6 +51,11 @@
  */
 @property (nonatomic, readonly) NSDictionary *              info;
 
+/**
+ * A string representing the type of region: control, geofence
+ */
+@property (nonatomic, readonly) NSString *                  regionType;
+
 - (instancetype) initWithDictionary:(NSDictionary *)info;
 
 /**
@@ -50,5 +67,14 @@
  */
 - (BOOL) containsCoordinate:(CLLocationCoordinate2D)coordinate;
 
+/**
+ * Determine the distance of a location to the region.
+ * @param location The location to use in determining distance from the region.
+ * @returns The distance from the region, negative values are inside the region.
+ */
+- (double) distanceFromLocation:(CLLocation *)location;
+
 @end
+
+#endif
 

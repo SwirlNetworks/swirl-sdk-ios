@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/SWRLSignalType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLSignalType</TokenIdentifier>
+			<Abstract type="html"> Signal Types </Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeBeacon</TokenIdentifier>
+            <Abstract type="html">Signal is Beacon</Abstract>
+            <Declaration>SWRLSignalTypeBeacon</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeWifi</TokenIdentifier>
+            <Abstract type="html">Signal is a WifiInfo</Abstract>
+            <Declaration>SWRLSignalTypeWifi</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeGeofence</TokenIdentifier>
+            <Abstract type="html">Signal is a Region</Abstract>
+            <Declaration>SWRLSignalTypeGeofence</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
+            <NodeRef refid="26"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

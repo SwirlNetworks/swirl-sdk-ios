@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/SWRLSignalType.html">
+	<File path="Constants/SWRLBeaconState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/SWRLSignalType</TokenIdentifier>
-			<Abstract type="html"> Signal Types </Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLBeaconState</TokenIdentifier>
+			<Abstract type="html">Beacon state relative to current threshold set for the beacon</Abstract>
+			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -14,31 +14,35 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeBeacon</TokenIdentifier>
-            <Abstract type="html">Signal is Beacon</Abstract>
-            <Declaration>SWRLSignalTypeBeacon</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateUnknown</TokenIdentifier>
+            <Abstract type="html">The state (range) of the beacon could not be determined.  This could be because there are insufficient
+valid advertisements to compute a range.  This can be because the beacon has timed out or it has just been
+detected and cannot make a determination yet.</Abstract>
+            <Declaration>SWRLBeaconStateUnknown</Declaration>
             
-            <DeclaredIn>SWRLLocation.h</DeclaredIn>
-            
-            <NodeRef refid="24"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeWifi</TokenIdentifier>
-            <Abstract type="html">Signal is a WifiInfo</Abstract>
-            <Declaration>SWRLSignalTypeWifi</Declaration>
-            
-            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeGeofence</TokenIdentifier>
-            <Abstract type="html">Signal is a Region</Abstract>
-            <Declaration>SWRLSignalTypeGeofence</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateOutside</TokenIdentifier>
+            <Abstract type="html">The rabge of the beacon is outside the range set for this beacon.  The SWRLBeaconManager
+has sufficient samples to make a determination and has determined the beacon to be out of range.</Abstract>
+            <Declaration>SWRLBeaconStateOutside</Declaration>
             
-            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
+            
+            <NodeRef refid="24"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateInside</TokenIdentifier>
+            <Abstract type="html">The range of the beacon is wihtin the range set for this beacon. The SWRLBeaconManager has sufficient samples
+to make a determination and has determined the beacon to be within range.</Abstract>
+            <Declaration>SWRLBeaconStateInside</Declaration>
+            
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
             
             <NodeRef refid="24"/>
         </Token>

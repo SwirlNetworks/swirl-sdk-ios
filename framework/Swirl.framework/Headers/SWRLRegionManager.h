@@ -1,10 +1,10 @@
-//
-//  SWRRegionManager.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 10/30/15.
-//
-//
+/*
+ * SWRLRegionManager.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
+
+#ifndef __SWRLREGIONMANAGER__
+#define __SWRLREGIONMANAGER__
 
 #import <Foundation/Foundation.h>
 #import <Swirl/SWRLManager.h>
@@ -21,10 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @interface SWRLRegionManager : SWRLManager
-@property (nonatomic, readonly) NSArray<SWRLRegion*> *allEntered;
+@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea;
+@property (nonatomic, copy, readonly) NSArray<SWRLRegion*> *monitoredRegions;
+@property (nonatomic, copy, readonly) NSArray<SWRLRegion*> *enteredRegions;
 
 - (void) start;
 - (void) stop;
+
++ (SWRLRegionManager *)shared;
 @end
 
 /**
@@ -43,4 +47,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif
 

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) addObserver:(id)observer;
 - (void) addObserver:(id)observer queue:(dispatch_queue_t)queue;
 - (void) removeObserver:(id)observer;
+- (id)   findObserverOfClass:(Class)aclass;
 
 - (void) suspend;
 - (void) resume;

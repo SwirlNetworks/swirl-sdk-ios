@@ -8,16 +8,20 @@
 #import <Swirl/Swirl.h>
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "MapViewController.h"
+#import "VisitViewController.h"
 #import "SettingsViewController.h"
 
-#define RESET_DELAY     10      /* reset delay allows backgrounding before start */
-#define DISPLAY_DELAY   0.50    /* display delay allows fast state transitions to be seen */
+#define RESET_DELAY     10.0    /* reset delay allows backgrounding before start */
+#define DISPLAY_DELAY   1.0     /* display delay allows fast state transitions to be seen */
 
-@interface MainViewController () <SWRLSwirlDelegate,SWRLVisitManagerDelegate>
-@property (nonatomic) UILabel * statusLabel;        // swirl running state display
-@property (nonatomic) UILabel * locationStatus;     // current 'closest' location label
-@property (nonatomic) UILabel * deviceStatus;       // current 'device status' as of last update
-@property (nonatomic) int       startPending;       // seconds til reset or 0
+@interface MainViewController () <SWRLSwirlDelegate,SWRLVisitManagerDelegate, SWRLContentManagerDelegate>
+@property (nonatomic) NSString *    contentAttributes;
+@property (nonatomic) UILabel *     statusLabel;        // swirl running state display
+@property (nonatomic) UILabel *     locationStatus;     // current 'closest' location label
+@property (nonatomic) UILabel *     deviceStatus;       // current 'device status' as of last update
+@property (nonatomic) UIButton *    activeVisits;
+@property (nonatomic) int           startPending;       // seconds til reset or 0
 @end
 
 @implementation MainViewController
@@ -46,46 +50,111 @@
 }
 
 - (void) updateStatus:(NSString *)status {
-    static NSTimeInterval last = 0;
+    static NSTimeInterval last = 0; if (last == 0) last = now();
     
-    NSTimeInterval delay = (last+DISPLAY_DELAY < now() ? 0 : last+DISPLAY_DELAY-now());
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay*NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.statusLabel.textAlignment = NSTextAlignmentCenter;
-        self.statusLabel.numberOfLines = 2;
-        self.statusLabel.text = status;
-        [self.statusLabel sizeToFit];
-        CGRect frame = self.statusLabel.frame;
-        frame.size.width = self.view.bounds.size.width;
-        self.statusLabel.frame = frame;
-        [self updateDeviceStatus:[Swirl shared].status];
-    });
-    last = now()+delay;
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (DISPLAY_DELAY-(now()-last)) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+		self.statusLabel.textAlignment = NSTextAlignmentCenter;
+		self.statusLabel.numberOfLines = 2;
+		self.statusLabel.text = status;
+		[self.statusLabel sizeToFit];
+		CGRect frame = self.statusLabel.frame;
+		frame.size.width = self.view.bounds.size.width;
+		self.statusLabel.frame = frame;
+		[self updateDeviceStatus:[Swirl shared].status];
+	});
+	last = now();
 }
 
 - (void) updateLocationStatus:(SWRLLocation *)location {
-    if (location && ([Swirl shared].status & SWRLStatusSwirlMask) == SWRLStatusRunning) {
-        NSString *attributes = @"";
-        if ([SWRLContentManager shared].lastContent.attributes != nil) {
-            attributes = [NSString stringWithFormat:@"Content Attributes: %@",
-                [SWRLContentManager shared].lastContent.attributes];
-        }
-		CLLocation *geo = [Swirl shared].location;
-		NSString *geo_string = [NSString stringWithFormat:@"Geo: %.4f, %.4f", geo.coordinate.latitude, geo.coordinate.longitude];
-		if ([location.signal isMemberOfClass:[SWRLRegion class]]) {
-			CLLocationCoordinate2D region_center = ((SWRLRegion *)location.signal).region.center;
-			CLLocation *region_location = [[CLLocation alloc] initWithLatitude:region_center.latitude longitude:region_center.longitude];
-			geo_string = [geo_string stringByAppendingString:[NSString stringWithFormat:@", distance: %.3fm", [geo distanceFromLocation:region_location]]];
-		}
-        self.locationStatus.text = [NSString stringWithFormat:@"%@\n%@\n%@\n\n%@\n\n\n\n\n\n",
-                location.description, location.signal.description, geo_string, attributes];
-    } else
-        self.locationStatus.text = @"No Signal Detected";
-    
+	if (location && ([Swirl shared].status & SWRLStatusSwirlMask) == SWRLStatusRunning) {
+		self.locationStatus.text = [NSString stringWithFormat:@"%@\n%@\n%@\n", location.description, location.signal.description,
+									self.contentAttributes ? self.contentAttributes : @""];
+		CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
+		CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
+		self.locationStatus.frame = frame;
+	} else {
+		self.locationStatus.text = @"No Signal Detected";
+		CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
+		CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
+		self.locationStatus.frame = frame;
+	}
 	[self updateDeviceStatus:[Swirl shared].status];
 }
 
+- (void) updateActiveVisits:(NSArray<SWRLVisit*> *)visits {
+	[self updateLocationStatus:visits.firstObject.location];
+	if (visits.count > 0) {
+		self.activeVisits.hidden = NO;
+		[self.activeVisits sizeToFit];
+		self.activeVisits.center = CGPointMake(self.view.center.x, CGRectGetMaxY(self.locationStatus.frame)+15);
+	} else {
+		self.activeVisits.hidden = YES;
+	}
+}
+
 // =====================================================================================================================
-#pragma mark - Swirl Delegates
+#pragma mark - ACTIONS
+// =====================================================================================================================
+
+- (void) startAfterCountdown {
+    if (_startPending > 0) {
+        [self updateStatus:[NSString stringWithFormat:@"Starting in %d", _startPending--]];
+        [self updateActiveVisits:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self startAfterCountdown];
+        });
+    } else {
+        [[Swirl shared] start:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]];
+    }
+}
+
+- (void) showContent:(UIButton *)unused {
+    [[SWRLContentManager shared] showContentViewController];
+}
+
+- (void) showMap:(UIButton *)unused {
+    [[self navigationController] pushViewController:[[MapViewController alloc] init] animated:YES];
+}
+
+- (void) showActiveVisits:(UIButton *)unused {
+    [[self navigationController] pushViewController:[[VisitViewController alloc] init] animated:YES];
+}
+
+- (void) reset {
+    if (_startPending == 0) {
+        _startPending = RESET_DELAY;
+        self.locationStatus.text = nil;
+        [self updateStatus:@"Resetting"];
+        [[Swirl shared] reset];
+        [self startAfterCountdown];
+    }
+}
+
+- (void) editSettings {
+    SettingsMetadata *meta = @[
+        @[  @{ @"title" : @"Domain",                @"key" : SWRLSettingApiHost,       @"type" : @"text",  @"user" : @NO,  },
+            @{ @"title" : @"Content Code",          @"key" : SWRLSettingContentCode,   @"type" : @"text",  @"user" : @NO,  },
+            @{ @"title" : @"Beacon Filter",         @"key" : SWRLSettingBeaconFilter,  @"type" : @"text",  @"user" : @NO,  },
+			@{ @"title" : @"Field 1",               @"key" : @"field_1",               @"type" : @"text",  @"user" : @YES, },
+			@{ @"title" : @"Field 2",               @"key" : @"field_2",               @"type" : @"text",  @"user" : @YES, },
+			@{ @"title" : @"Clear Location Locks",  @"key" : @"clear_locks",           @"type" : @"bool",  @"user" : @NO,  },
+		]
+    ];
+    SettingsViewController *vc = [[SettingsViewController alloc]
+        initWithMetadata:meta settings:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]
+                onchange:^(NSDictionary *settings, NSDictionary *user_info) {
+                    [[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"swirl_options"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+
+					[self reset];
+
+					[[Swirl shared] setUserInfo:user_info];
+                }];
+    [[self navigationController] pushViewController:vc animated:YES];
+}
+
+// =====================================================================================================================
+#pragma mark - SWIRL DELEGATE
 // =====================================================================================================================
 
 - (void) swirlDidUpdateStatus:(SWRLStatus)status {
@@ -103,69 +172,31 @@
 }
 
 - (void) visitManager:(SWRLVisitManager *)manager didBeginVisit:(SWRLVisit *)visit {
-    [self updateLocationStatus:manager.activePlacementVisits.firstObject.location];
+    [self updateActiveVisits:manager.activePlacementVisits];
 }
 
 - (void) visitManager:(SWRLVisitManager *)manager didUpdateDwellForVisit:(SWRLVisit *)visit {
-    [self updateLocationStatus:manager.activePlacementVisits.firstObject.location];
+    [self updateActiveVisits:manager.activePlacementVisits];
 }
 
 - (void) visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit {
-    [self updateLocationStatus:manager.activePlacementVisits.firstObject.location];
+    [self updateActiveVisits:manager.activePlacementVisits];
 }
 
-- (void) showContent:(UIButton *)unused {
-    [[SWRLContentManager shared] showContentViewController];
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content {
+    self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 
-// =====================================================================================================================
-#pragma mark - Commands
-// =====================================================================================================================
-
-- (void) startAfterCountdown {
-    if (_startPending > 0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self updateStatus:[NSString stringWithFormat:@"Starting in %d", _startPending--]];
-            [self updateLocationStatus:nil];
-            [self startAfterCountdown];
-        });
-    } else {
-        [[Swirl shared] start:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]];
-    }
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content {
+    self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 
-
-- (void) reset {
-    if (_startPending == 0) {
-        _startPending = RESET_DELAY;
-        self.locationStatus.text = nil;
-        [self updateStatus:@"Resetting"];
-        [[Swirl shared] reset];
-        [self startAfterCountdown];
-    }
-}
-
-- (void) editSettings {
-    SettingsMetadata *meta = @[
-        @[
-            @{ @"title" : @"Content Code",  @"key"  : SWRLSettingContentCode,    },
-            @{ @"title" : @"Beacon Filter", @"key"  : SWRLSettingBeaconFilter,   },
-			@{ @"title" : @"Field 1",       @"key"  : @"field_1",                },
-			@{ @"title" : @"Field 2",       @"key"  : @"field_2",                },
-        ]
-    ];
-    SettingsViewController *vc = [[SettingsViewController alloc]
-        initWithMetadata:meta settings:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]
-                onchange:^(NSDictionary *settings) {
-                    [[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"swirl_options"];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-                    [self reset];
-                }];
-    [[self navigationController] pushViewController:vc animated:YES];
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content {
+    self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 
 // =====================================================================================================================
-#pragma mark - View Configuration
+#pragma mark VIEW OVERRIDES
 // =====================================================================================================================
 
 - (BOOL) shouldAutorotate {
@@ -195,12 +226,20 @@
 	[self.view addSubview:self.statusLabel];
     
     // add location label (current visit information)
-	self.locationStatus = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 200)];
+	self.locationStatus = [[UILabel alloc] initWithFrame:CGRectMake(0, 220, self.view.bounds.size.width, 0)];
     self.locationStatus.textAlignment = NSTextAlignmentCenter;
     self.locationStatus.numberOfLines = 0;
     self.locationStatus.lineBreakMode = NSLineBreakByWordWrapping;
     self.locationStatus.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     [self.view addSubview:self.locationStatus];
+    
+    // add all active signals...
+    self.activeVisits = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.activeVisits.titleLabel.font = [UIFont italicSystemFontOfSize:[UIFont systemFontSize]];
+    [self.activeVisits setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.activeVisits addTarget:self action:@selector(showActiveVisits:) forControlEvents:UIControlEventTouchUpInside];
+    [self.activeVisits setTitle:@"[ Show All Visits ]" forState:UIControlStateNormal];
+    [self.view addSubview:self.activeVisits];
     
     // add return to content
     UIButton *content = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -209,8 +248,18 @@
     [content setTitle:@"[ Show Content View ]" forState:UIControlStateNormal];
     [content addTarget:self action:@selector(showContent:) forControlEvents:UIControlEventTouchUpInside];
     [content sizeToFit];
-    content.center = CGPointMake(self.view.center.x, self.view.bounds.size.height-75);
+    content.center = CGPointMake(self.view.center.x-CGRectGetWidth(content.bounds)/2-10, CGRectGetHeight(self.view.bounds)-75);
     [self.view addSubview:content];
+    
+    // add Show Map
+    UIButton *map = [UIButton buttonWithType:UIButtonTypeSystem];
+    map.titleLabel.font = [UIFont italicSystemFontOfSize:[UIFont smallSystemFontSize]];
+    [map setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [map setTitle:@"[ Show Map View ]" forState:UIControlStateNormal];
+    [map addTarget:self action:@selector(showMap:) forControlEvents:UIControlEventTouchUpInside];
+    [map sizeToFit];
+    map.center = CGPointMake(self.view.center.x+CGRectGetWidth(map.bounds)/2+20, CGRectGetHeight(self.view.bounds)-75);
+    [self.view addSubview:map];
     
     // add device status label
     self.deviceStatus = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-60, self.view.bounds.size.width, 20)];

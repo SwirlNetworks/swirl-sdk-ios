@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLRegionManagerDelegate.html">
+	<File path="Protocols/SWRLBeaconManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLRegionManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Callbacks from the SWRLRegionManager</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconManager protocol defines the methods used to receive beacon update from the SWRLBeaconManager.
+Upon receiving a beacon event, you can use the result to update your user interface or
+perform other actions.
+&lt;p&gt;
+The methods of your delegate object are called from the thread associated with the dispatch queue that you used
+when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,25 +18,102 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLRegionManagerDelegate/regionManager:didEnterRegions:exitRegions:</TokenIdentifier>
-			<Abstract type="html">Called whenever the set of entered and/or exited regions changes</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didResolveBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the beacon manager was able to resolve the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>- (void)regionManager:(SWRLRegionManager *)manager didEnterRegions:(NSSet&lt;SWRLRegion*&gt; *)entered exitRegions:(NSSet&lt;SWRLRegion*&gt; *)exited</Declaration>
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didResolveBeacon:(SWRLBeacon *)beacon</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
-					<Abstract type="html">The SWRLRegionManager</Abstract>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
 				</Parameter><Parameter>
-					<Name>entered</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been entered</Abstract>
-				</Parameter><Parameter>
-					<Name>exited</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been exited</Abstract>
+					<Name>beacon</Name>
+					<Abstract type="html">The resolved beacon</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/regionManager:didEnterRegions:exitRegions:</Anchor>
+			<Anchor>//api/name/beaconManager:didResolveBeacon:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didEnterBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device is within range of the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didEnterBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that has been entered</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didEnterBeacon:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didChangeNearest:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device changed the beacon it is closest to.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didChangeNearest:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that is now the nearest beacon</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didChangeNearest:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didDwellBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device is still within range of the beacon.  Called periodically.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didDwellBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that the mobile device is within range of</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didDwellBeacon:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didExitBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device left the range of the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didExitBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that was exited</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didExitBeacon:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

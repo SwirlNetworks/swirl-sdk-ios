@@ -1,10 +1,10 @@
-//
-//  SWRAPI.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 11/2/15.
-//
-//
+/*
+ * SWRLAPI.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
+
+#ifndef __SWRLAPI__
+#define __SWRLAPI__
 
 #import <Foundation/Foundation.h>
 #import <Swirl/SWRLSettings.h>
@@ -25,12 +25,17 @@
 - (void) wifiWithIdentifier:(NSString *)identifier rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
 - (void) beaconWithIdentifier:(NSString *)identifier extraInfo:(NSString *)extraInfo rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
 - (void) contentWithInfo:(NSDictionary *)info completion:(void (^)(NSDictionary *, NSDictionary *, NSError*))completion;
-- (void) contentWithLocation:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
+- (BOOL) contentWithLocation:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
                  completion:(void (^)(NSDictionary *, NSError *))completion;
 - (void) logEvent:(NSString *)event data:(NSString *)data;
 - (void) flush;
 - (void) reset;
 
+- (void) clearLocationLocks:(void (^)(NSError *))completion; // testing only
+
 + (instancetype)shared;
 
+
 @end
+
+#endif

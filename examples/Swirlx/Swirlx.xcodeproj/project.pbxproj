@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FBB50E11D74C58400C69E4D /* ContentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBB50E01D74C58400C69E4D /* ContentManager.m */; };
+		1FBB50E41D74C75E00C69E4D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBB50E31D74C75E00C69E4D /* MapViewController.m */; };
+		1FBB50E71D74C78D00C69E4D /* VisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBB50E61D74C78D00C69E4D /* VisitViewController.m */; };
 		E265ABAB1D423C2000DB6324 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E265ABAA1D423C2000DB6324 /* main.m */; };
 		E265ABAE1D423C2000DB6324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E265ABAD1D423C2000DB6324 /* AppDelegate.m */; };
 		E265ABB41D423C2000DB6324 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E265ABB21D423C2000DB6324 /* Main.storyboard */; };
@@ -18,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FBB50DF1D74C58400C69E4D /* ContentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentManager.h; sourceTree = "<group>"; };
+		1FBB50E01D74C58400C69E4D /* ContentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentManager.m; sourceTree = "<group>"; };
+		1FBB50E21D74C75E00C69E4D /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		1FBB50E31D74C75E00C69E4D /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		1FBB50E51D74C78D00C69E4D /* VisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitViewController.h; sourceTree = "<group>"; };
+		1FBB50E61D74C78D00C69E4D /* VisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitViewController.m; sourceTree = "<group>"; };
 		E265ABA61D423C2000DB6324 /* Swirlx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swirlx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E265ABAA1D423C2000DB6324 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E265ABAC1D423C2000DB6324 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,17 +74,23 @@
 		E265ABA81D423C2000DB6324 /* Swirlx */ = {
 			isa = PBXGroup;
 			children = (
-				E265ABC01D423D1300DB6324 /* MainViewController.h */,
-				E265ABC11D423D1300DB6324 /* MainViewController.m */,
-				E265ABC21D423D1300DB6324 /* SettingsViewController.h */,
-				E265ABC31D423D1300DB6324 /* SettingsViewController.m */,
 				E265ABAC1D423C2000DB6324 /* AppDelegate.h */,
 				E265ABAD1D423C2000DB6324 /* AppDelegate.m */,
-				E265ABB21D423C2000DB6324 /* Main.storyboard */,
 				E265ABB51D423C2000DB6324 /* Assets.xcassets */,
-				E265ABB71D423C2000DB6324 /* LaunchScreen.storyboard */,
+				1FBB50DF1D74C58400C69E4D /* ContentManager.h */,
+				1FBB50E01D74C58400C69E4D /* ContentManager.m */,
 				E265ABBA1D423C2000DB6324 /* Info.plist */,
+				E265ABB71D423C2000DB6324 /* LaunchScreen.storyboard */,
+				E265ABB21D423C2000DB6324 /* Main.storyboard */,
+				E265ABC01D423D1300DB6324 /* MainViewController.h */,
+				E265ABC11D423D1300DB6324 /* MainViewController.m */,
+				1FBB50E21D74C75E00C69E4D /* MapViewController.h */,
+				1FBB50E31D74C75E00C69E4D /* MapViewController.m */,
+				E265ABC21D423D1300DB6324 /* SettingsViewController.h */,
+				E265ABC31D423D1300DB6324 /* SettingsViewController.m */,
 				E265ABA91D423C2000DB6324 /* Supporting Files */,
+				1FBB50E51D74C78D00C69E4D /* VisitViewController.h */,
+				1FBB50E61D74C78D00C69E4D /* VisitViewController.m */,
 			);
 			path = Swirlx;
 			sourceTree = "<group>";
@@ -160,6 +175,9 @@
 			files = (
 				E265ABAE1D423C2000DB6324 /* AppDelegate.m in Sources */,
 				E265ABC41D423D1300DB6324 /* MainViewController.m in Sources */,
+				1FBB50E71D74C78D00C69E4D /* VisitViewController.m in Sources */,
+				1FBB50E11D74C58400C69E4D /* ContentManager.m in Sources */,
+				1FBB50E41D74C75E00C69E4D /* MapViewController.m in Sources */,
 				E265ABAB1D423C2000DB6324 /* main.m in Sources */,
 				E265ABC51D423D1300DB6324 /* SettingsViewController.m in Sources */,
 			);

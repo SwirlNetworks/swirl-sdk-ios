@@ -1,10 +1,10 @@
-//
-//  SWRLLocation.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 12/28/15.
-//
-//
+/*
+ * SWRLLocation.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
+
+#ifndef __SWRLLOCATION__
+#define __SWRLLOCATION__
 
 #import <Foundation/Foundation.h>
 
@@ -28,6 +28,7 @@ typedef NS_ENUM(int, SWRLSignalType) {
 @interface SWRLSignal : NSObject
 @property (nonatomic, readonly) NSString *          identifier;
 @property (nonatomic, readonly) SWRLSignalType      type;
+@property (nonatomic, readonly) double              range;
 
 - (instancetype) initWithIdentifier:(NSString *)identifier;
 @end
@@ -58,7 +59,7 @@ typedef NS_ENUM(int, SWRLSignalType) {
 @property (nonatomic, readonly) NSString *          timezone;
 @property (nonatomic, readonly) SWRLPlacement *     placement;
 @property (nonatomic, readonly) NSString *          externalIdentifier;
-@property (nonatomic, readonly) SWRLSignal *        signal;
+@property (nonatomic, weak, readonly) SWRLSignal *  signal;
 
 - (SWRLLocation *)location;
 
@@ -67,3 +68,5 @@ typedef NS_ENUM(int, SWRLSignalType) {
 @end
 
 NS_ASSUME_NONNULL_END
+
+#endif

@@ -7,6 +7,7 @@
 
 #import <Swirl/Swirl.h>
 #import "AppDelegate.h"
+#import "ContentManager.h"
 
 @implementation AppDelegate {
     CLLocationManager *locationManager; // used for requesting location permissions
@@ -42,7 +43,7 @@
 // =====================================================================================================================
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[Swirl shared] addDelegate:[SWRLContentManager new]];
+    [[Swirl shared] addDelegate:[ContentManager new]];
     
     // NOTE: because this a test application with some configurable options, we will write this
     // api-key to those options, but in a normal application this would not be required

@@ -64,7 +64,13 @@
 		
 		<option value="//api/name/location">location</option>
 		
+		<option value="//api/name/polyCoords">polyCoords</option>
+		
+		<option value="//api/name/polyCount">polyCount</option>
+		
 		<option value="//api/name/region">region</option>
+		
+		<option value="//api/name/regionType">regionType</option>
 		
 	</optgroup>
 	
@@ -75,6 +81,8 @@
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/containsCoordinate:">- containsCoordinate:</option>
+		
+		<option value="//api/name/distanceFromLocation:">- distanceFromLocation:</option>
 		
 	</optgroup>
 	
@@ -146,6 +154,89 @@ polygon.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLCircularRegion *region</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/polyCount" title="polyCount"></a>
+	<h3 class="method-title"><code><a href="#//api/name/polyCount">&nbsp;&nbsp;polyCount</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For polygon regions, polyCount is the number of entries in the polyPoints array</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger polyCount</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/polyCoords" title="polyCoords"></a>
+	<h3 class="method-title"><code><a href="#//api/name/polyCoords">&nbsp;&nbsp;polyCoords</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>For polygon regions, polyPoints is an array of <a href="#//api/name/polyCount">polyCount</a> coordinates that
+represent the vertices of the polygon that refines the circular bounding <a href="#//api/name/region">region</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationCoordinate2D *polyCoords</code></div>
 
 		    
 			
@@ -335,6 +426,47 @@ polygon.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/regionType" title="regionType"></a>
+	<h3 class="method-title"><code><a href="#//api/name/regionType">&nbsp;&nbsp;regionType</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A string representing the <a href="#//api/name/type">type</a> of region: control, geofence</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *regionType</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/containsCoordinate:" title="containsCoordinate:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/containsCoordinate:">&ndash;&nbsp;containsCoordinate:</a></code>
 </h3>
@@ -393,6 +525,64 @@ specified the arbitrary polygon within, NO otherwise.</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/distanceFromLocation:" title="distanceFromLocation:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/distanceFromLocation:">&ndash;&nbsp;distanceFromLocation:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determine the distance of a <a href="#//api/name/location">location</a> to the <a href="#//api/name/region">region</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (double)distanceFromLocation:(CLLocation *)<em>location</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>location</code></th>
+						<td><p>The <a href="#//api/name/location">location</a> to use in determining distance from the <a href="#//api/name/region">region</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The distance from the <a href="#//api/name/region">region</a>, negative values are inside the <a href="#//api/name/region">region</a>.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLRegion.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -408,7 +598,7 @@ specified the arbitrary polygon within, NO otherwise.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-25</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-08-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

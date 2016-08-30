@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLLocation.html">
+	<File path="Classes/SWRLContentToastView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLLocation</TokenIdentifier>
-			<Abstract type="html">SWRLLocation represents a physical street, city, state address or real world location.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLContentToastView</TokenIdentifier>
+			<Abstract type="html">A SWRLContentToastView is used to display a &apos;return-to-content&apos; control after the user has dismissed the content view.  The toast view
+offers a convenient way for application developers integrating the framework to provide a return to content button without having
+to put one into their current interface.</Abstract>
+			<DeclaredIn>SWRLContentToastView.h</DeclaredIn>
             
 			
 			<NodeRef refid="6"/>

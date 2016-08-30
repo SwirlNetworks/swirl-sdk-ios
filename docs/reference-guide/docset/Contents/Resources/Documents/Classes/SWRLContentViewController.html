@@ -48,13 +48,43 @@
 
 	
 	
+	<option value="tasks">Tasks</option>
+	
 	
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/closeHandler">closeHandler</option>
+		
+		<option value="//api/name/content">content</option>
+		
+		<option value="//api/name/emptyContentHtml">emptyContentHtml</option>
+		
+		<option value="//api/name/loadingView">loadingView</option>
+		
+		<option value="//api/name/toolbarItems">toolbarItems</option>
+		
+		<option value="//api/name/webView">webView</option>
+		
+		<option value="//api/name/webViewController">webViewController</option>
+		
+	</optgroup>
+	
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didHideLoadingView:">- didHideLoadingView:</option>
+		
+		<option value="//api/name/loadContent:completion:">- loadContent:completion:</option>
+		
+		<option value="//api/name/willShowLoadingView:">- willShowLoadingView:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -91,13 +121,481 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The SWRLContentViewController class defines the view controller used for presenting interstitial content.
+						<p>The SWRLContentViewController class defines the view controller used for presenting interstitial <a href="#//api/name/content">content</a>.
 This class can be subclassed in order to customize some of its look and feel and behavior.</p>
 					</div>
 					
 					
 
 					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Acessing Attributes" name="task_Acessing Attributes"></a>
+						
+<h2 class="task-title">Acessing Attributes</h2>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/webViewController" title="webViewController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webViewController">&nbsp;&nbsp;webViewController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UIViewController that contains the <a href="#//api/name/webView">webView</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIViewController *webViewController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/webView" title="webView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/webView">&nbsp;&nbsp;webView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UIWebView for rendering html <a href="#//api/name/content">content</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIWebView *webView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/content" title="content"></a>
+	<h3 class="method-title"><code><a href="#//api/name/content">&nbsp;&nbsp;content</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="../Classes/SWRLContent.html">SWRLContent</a> object that is being loaded.  If this is nil, then the most recent content in the content
+<a href="#//api/name/history">history</a> will be used.  If there is not such content, then the <a href="#//api/name/emptyContentHtml">emptyContentHtml</a> will be used.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLContent *content</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toolbarItems" title="toolbarItems"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toolbarItems">&nbsp;&nbsp;toolbarItems</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current array of toolbar items for the webview</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *toolbarItems</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/emptyContentHtml" title="emptyContentHtml"></a>
+	<h3 class="method-title"><code><a href="#//api/name/emptyContentHtml">&nbsp;&nbsp;emptyContentHtml</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The html string to display when there is no <a href="#//api/name/content">content</a> to show.  The default screen is white page with
+gray text that says <em>No Content</em>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *emptyContentHtml</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadingView" title="loadingView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadingView">&nbsp;&nbsp;loadingView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The current loading view.  This can be overridden if different behavior is desired.  The
+default loading view displays a 20% black mask with a white spinner.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIView *loadingView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeHandler" title="closeHandler"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeHandler">&nbsp;&nbsp;closeHandler</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The close handler is called when the user hits the &lsquo;X&rsquo; and during the completion for
+dismissViewControllerAnimated:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) void ( ^ ) ( void ) closeHandler</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/loadContent:completion:" title="loadContent:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/loadContent:completion:">&ndash;&nbsp;loadContent:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>loadContent is called by the <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> when <a href="#//api/name/content">content</a> is received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)loadContent:(SWRLContent *)<em>content</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The <a href="#//api/name/content">content</a> to load.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>The block that is executed with the <a href="#//api/name/content">content</a> load completes (or fails).</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/willShowLoadingView:" title="willShowLoadingView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/willShowLoadingView:">&ndash;&nbsp;willShowLoadingView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called before the loading view is shown.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)willShowLoadingView:(UIView *)<em>loadingView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>loadingView</code></th>
+						<td><p>By default this is the maskView.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didHideLoadingView:" title="didHideLoadingView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didHideLoadingView:">&ndash;&nbsp;didHideLoadingView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called after the loading view has been hidden.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didHideLoadingView:(UIView *)<em>loadingView</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>loadingView</code></th>
+						<td><p>By default this is the maskView.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentViewController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
 					
 					
 
@@ -109,7 +607,7 @@ This class can be subclassed in order to customize some of its look and feel and
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-25</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-08-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

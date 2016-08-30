@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLWifiManagerDelegate.html">
+	<File path="Protocols/SWRLSwirlDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLWifiManagerDelegate</TokenIdentifier>
-			<Abstract type="html">The SWRLWifiManagerDelegate protocol defines methods used to receive updates about wifi network events from the SWRLWifiManager.
-Upon receiving these events, you can use the result to update your user interface or take other actions.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLSwirlDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLSwirlDelegate protocol defines messages that the Swirl framework provides about its internal state.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
             
 			
 			<NodeRef refid="21"/>
@@ -14,42 +13,53 @@ Upon receiving these events, you can use the result to update your user interfac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLWifiManagerDelegate/wifiManager:didEnterWifi:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that an access point enter is detected for the connected wifi network</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateStatus:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the status field has changed.  Swirl has transitioned states.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>- (void)wifiManager:(SWRLWifiManager *)manager didEnterWifi:(SWRLWifiInfo *)wifi</Declaration>
+			<Declaration>- (void)swirlDidUpdateStatus:(SWRLStatus)status</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The WifiManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>wifi</Name>
-					<Abstract type="html">The WifiInfo object representing the entered access point</Abstract>
+					<Name>status</Name>
+					<Abstract type="html">The current system status. See SWRLStatus.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/wifiManager:didEnterWifi:</Anchor>
+			<Anchor>//api/name/swirlDidUpdateStatus:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLWifiManagerDelegate/wifiManager:didExitWifi:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate than an access point exit is detected for the connected wifi network</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidReportError:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that an error has been reported.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>- (void)wifiManager:(SWRLWifiManager *)manager didExitWifi:(SWRLWifiInfo *)wifi</Declaration>
+			<Declaration>- (void)swirlDidReportError:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The WifiManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>wifi</Name>
-					<Abstract type="html">the WifiInfo object representing the exited access point</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">The error that was reported.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/wifiManager:didExitWifi:</Anchor>
+			<Anchor>//api/name/swirlDidReportError:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateLocation:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the SDK updated its location</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)swirlDidUpdateLocation:(CLLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The updated location.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swirlDidUpdateLocation:</Anchor>
             <NodeRef refid="21"/>
 		</Token>
 		

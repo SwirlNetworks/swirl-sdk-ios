@@ -1,7 +1,6 @@
-/**
- *  @discussion Swirl Framework
- *
- *	@copyright 2015 Swirl Networks, Inc. All rights reserved.
+/*
+ *  Swirl Framework
+ *	Copyright 2015-2016 Swirl Networks, Inc. All rights reserved.
  */
 
 #ifndef __SWIRL__
@@ -20,6 +19,7 @@
 #import <Swirl/SWRLVisit.h>
 #import <Swirl/SWRLVisitManager.h>
 #import <Swirl/SWRLContentManager.h>
+#import <Swirl/SWRLContentToastView.h>
 #import <Swirl/SWRLContentViewController.h>
 #import <Swirl/SWRLSwirl.h>
 

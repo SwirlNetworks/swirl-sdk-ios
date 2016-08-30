@@ -1,10 +1,10 @@
-//
-//  SWRLVisitManager.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 12/28/15.
-//
-//
+/*
+ * SWRLVisitManager.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
+
+#ifndef __SWRLVISITMANAGER__
+#define __SWRLVISITMANAGER__
 
 #import <Foundation/Foundation.h>
 #import <Swirl/SWRLManager.h>
@@ -60,3 +60,5 @@
  */
 - (void) visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit;
 @end
+
+#endif

@@ -60,11 +60,17 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/contentManager:didDismissContentViewController:">- contentManager:didDismissContentViewController:</option>
+		
 		<option value="//api/name/contentManager:didReceiveContentCustom:">- contentManager:didReceiveContentCustom:</option>
 		
 		<option value="//api/name/contentManager:didReceiveContentSwirl:">- contentManager:didReceiveContentSwirl:</option>
 		
 		<option value="//api/name/contentManager:didReceiveContentURL:">- contentManager:didReceiveContentURL:</option>
+		
+		<option value="//api/name/contentManager:didRequestContentForVisit:">- contentManager:didRequestContentForVisit:</option>
+		
+		<option value="//api/name/contentManager:didShowContentViewController:">- contentManager:didShowContentViewController:</option>
 		
 	</optgroup>
 	
@@ -119,9 +125,67 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/contentManager:didRequestContentForVisit:" title="contentManager:didRequestContentForVisit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didRequestContentForVisit:">&ndash;&nbsp;contentManager:didRequestContentForVisit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that a content request was made in response to a visit event.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didRequestContentForVisit:(SWRLVisit *)<em>visit</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>visit</code></th>
+						<td><p>The visit object that triggered the content request.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/contentManager:didReceiveContentURL:" title="contentManager:didReceiveContentURL:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentURL:">&ndash;&nbsp;contentManager:didReceiveContentURL:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -179,7 +243,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 </div><div class="section-method">
 	<a name="//api/name/contentManager:didReceiveContentSwirl:" title="contentManager:didReceiveContentSwirl:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentSwirl:">&ndash;&nbsp;contentManager:didReceiveContentSwirl:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -237,7 +301,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 </div><div class="section-method">
 	<a name="//api/name/contentManager:didReceiveContentCustom:" title="contentManager:didReceiveContentCustom:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentCustom:">&ndash;&nbsp;contentManager:didReceiveContentCustom:</a></code>
-<span class="task-item-suffix">required method</span></h3>
+</h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -292,6 +356,122 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentManager:didShowContentViewController:" title="contentManager:didShowContentViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didShowContentViewController:">&ndash;&nbsp;contentManager:didShowContentViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that the content view controller has been shown</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didShowContentViewController:(SWRLContentViewController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentManager:didDismissContentViewController:" title="contentManager:didDismissContentViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didDismissContentViewController:">&ndash;&nbsp;contentManager:didDismissContentViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tells the delegate that the content view controller has been closed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didDismissContentViewController:(SWRLContentViewController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>The <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> reporting the event</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -307,7 +487,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-07-25</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-08-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLVisitManagerDelegate.html">
+	<File path="Protocols/SWRLRegionManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLVisitManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Callbacks from the VisitManager for events around Visits</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLRegionManagerDelegate</TokenIdentifier>
+			<Abstract type="html">Callbacks from the SWRLRegionManager</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -13,62 +13,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didBeginVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement is beginnng</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLRegionManagerDelegate/regionManager:didEnterRegions:exitRegions:</TokenIdentifier>
+			<Abstract type="html">Called whenever the set of entered and/or exited regions changes</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didBeginVisit:(SWRLVisit *)visit</Declaration>
+			<Declaration>- (void)regionManager:(SWRLRegionManager *)manager didEnterRegions:(NSSet&lt;SWRLRegion*&gt; *)entered exitRegions:(NSSet&lt;SWRLRegion*&gt; *)exited</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
+					<Abstract type="html">The SWRLRegionManager</Abstract>
 				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
+					<Name>entered</Name>
+					<Abstract type="html">A set of SWRLRegions representing the regions that have been entered</Abstract>
+				</Parameter><Parameter>
+					<Name>exited</Name>
+					<Abstract type="html">A set of SWRLRegions representing the regions that have been exited</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/visitManager:didBeginVisit:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didUpdateDwellForVisit:</TokenIdentifier>
-			<Abstract type="html">Called periodically as a user remains in a current Location and Placement</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didUpdateDwellForVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didUpdateDwellForVisit:</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didEndVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement has ended</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didEndVisit:</Anchor>
+			<Anchor>//api/name/regionManager:didEnterRegions:exitRegions:</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

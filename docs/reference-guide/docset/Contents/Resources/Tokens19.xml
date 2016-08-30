@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLSwirlDelegate.html">
+	<File path="Protocols/SWRLContentManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLSwirlDelegate</TokenIdentifier>
-			<Abstract type="html">The SWRLSwirlDelegate protocol defines messages that the Swirl framework provides about its internal state.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLContentManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLContentManagerDelegate protocol defines the methods used to receive beacon update from the SWRLContentManager.
+Upon receiving a content event, you can use the result to update your user interface or perform other actions.
+The methods of your delegate object are called from the thread associated with the dispatch queue that you used
+when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="19"/>
@@ -13,36 +16,122 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateStatus:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the status field has changed.  Swirl has transitioned states.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didRequestContentForVisit:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that a content request was made in response to a visit event.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)swirlDidUpdateStatus:(SWRLStatus)status</Declaration>
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didRequestContentForVisit:(SWRLVisit *)visit</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>status</Name>
-					<Abstract type="html">The current system status. See SWRLStatus.</Abstract>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>visit</Name>
+					<Abstract type="html">The visit object that triggered the content request.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/swirlDidUpdateStatus:</Anchor>
+			<Anchor>//api/name/contentManager:didRequestContentForVisit:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidReportError:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that an error has been reported.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentURL:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that content of type URL has been received.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)swirlDidReportError:(NSError *)error</Declaration>
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">The error that was reported.</Abstract>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content object that was received.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/swirlDidReportError:</Anchor>
+			<Anchor>//api/name/contentManager:didReceiveContentURL:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentSwirl:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that content of type Swirl has been received.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content object that was received.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/contentManager:didReceiveContentSwirl:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentCustom:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that content of type Custom has been received.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content object that was received.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/contentManager:didReceiveContentCustom:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didShowContentViewController:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the content view controller has been shown</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didShowContentViewController:(SWRLContentViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The SWRLContentViewController</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/contentManager:didShowContentViewController:</Anchor>
+            <NodeRef refid="19"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didDismissContentViewController:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the content view controller has been closed.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didDismissContentViewController:(SWRLContentViewController *)controller</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLContentManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>controller</Name>
+					<Abstract type="html">The SWRLContentViewController</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/contentManager:didDismissContentViewController:</Anchor>
             <NodeRef refid="19"/>
 		</Token>
 		

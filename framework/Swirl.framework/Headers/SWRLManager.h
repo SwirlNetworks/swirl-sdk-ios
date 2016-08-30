@@ -1,13 +1,10 @@
-//
-//  SWRLManager.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 11/20/15.
-//
-//
+/*
+ * SWRLManager.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
 
-#ifndef SWRLManager_h
-#define SWRLManager_h
+#ifndef __SWRLMANAGER__
+#define __SWRLMANAGER__
 
 #import <Foundation/Foundation.h>
 #import <Swirl/SWRLObserver.h>

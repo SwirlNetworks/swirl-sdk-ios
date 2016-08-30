@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLRegionManager.html">
+	<File path="Classes/SWRLPlacement.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegionManager</TokenIdentifier>
-			<Abstract type="html">A component which manages a working set of Region objects (retreived using the API) that are &apos;near&apos; the users location.
-These regions represent both geofences and &apos;control&apos; regions. Geofences have logical location, placement and other metadata associated.
-Control regions are used internally by the SDK to control other signal detection, like when to start and stop scanning for beacons or what
-iBeacon UUIDs are nearby. This component either starts its own os specific location manager or depends upon the host app
-to post location information onto the bus. It generates RegionEnter/RegionExit events onto the bus.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLPlacement</TokenIdentifier>
+			<Abstract type="html">SWRLPlacement represents a logical location associated with a signal.
+A logical and business-friendly name given to a specific area inside a location. For example - cosmetics, electronics department, checkout, neighborhood,
+parking lot, etc.  A SWRLPlacement is contained within a SWRLLocation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>

@@ -30,9 +30,9 @@ There are a number of additional documents and resources available to facilitate
   Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
-**Version:** `3.0-beta1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `7/22/16`
+**Version:** `3.0-beta2` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `8/27/16`
 <p>
-This is the initial release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, it has a number of bugs and issues which are highlighted below and remains subject to changes in functionality and interfaces.  You can see a list of current open defects and know issues [here](./docs/issues.md).
+This is the second beta release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, and still going through QA, it may have (probably does have) defects.  The documentation is mostly up-to-date, but is still not 100% complete.
 
 #### Reporting Issues
 If you have access to this repository, it is likely because we are hoping for feedback. ***Don't be shy***.
