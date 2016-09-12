@@ -7,9 +7,10 @@
 #define __SWIRL__
 
 #import <Swirl/SWRLBase.h>
+#import <Swirl/SWRLUtil.h>
 #import <Swirl/SWRLLocation.h>
-#import <Swirl/SWRLAPI.h>
 #import <Swirl/SWRLSettings.h>
+#import <Swirl/SWRLAPI.h>
 #import <Swirl/SWRLRegion.h>
 #import <Swirl/SWRLRegionManager.h>
 #import <Swirl/SWRLBeacon.h>

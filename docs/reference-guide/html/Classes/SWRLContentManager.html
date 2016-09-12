@@ -82,13 +82,13 @@
 		
 		<option value="//api/name/didDismissContentViewController:">- didDismissContentViewController:</option>
 		
-		<option value="//api/name/didReceiveContent:notify:">- didReceiveContent:notify:</option>
+		<option value="//api/name/didReceiveContent:fromNotification:">- didReceiveContent:fromNotification:</option>
 		
-		<option value="//api/name/didReceiveContentCustom:">- didReceiveContentCustom:</option>
+		<option value="//api/name/didReceiveContentCustom:fromNotification:">- didReceiveContentCustom:fromNotification:</option>
 		
-		<option value="//api/name/didReceiveContentSwirl:">- didReceiveContentSwirl:</option>
+		<option value="//api/name/didReceiveContentSwirl:fromNotification:">- didReceiveContentSwirl:fromNotification:</option>
 		
-		<option value="//api/name/didReceiveContentURL:">- didReceiveContentURL:</option>
+		<option value="//api/name/didReceiveContentURL:fromNotification:">- didReceiveContentURL:fromNotification:</option>
 		
 		<option value="//api/name/didShowContentViewController:">- didShowContentViewController:</option>
 		
@@ -404,8 +404,8 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/didReceiveContentURL:" title="didReceiveContentURL:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentURL:">&ndash;&nbsp;didReceiveContentURL:</a></code>
+	<a name="//api/name/didReceiveContentURL:fromNotification:" title="didReceiveContentURL:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentURL:fromNotification:">&ndash;&nbsp;didReceiveContentURL:fromNotification:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -420,7 +420,7 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentURL:(SWRLContent *)<em>content</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentURL:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
 
 		    
 			
@@ -431,6 +431,11 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 					<tr>
 						<th scope="row" class="argument-name"><code>content</code></th>
 						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
 					</tr>
 				
 				</table>
@@ -462,8 +467,8 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/didReceiveContentSwirl:" title="didReceiveContentSwirl:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentSwirl:">&ndash;&nbsp;didReceiveContentSwirl:</a></code>
+	<a name="//api/name/didReceiveContentSwirl:fromNotification:" title="didReceiveContentSwirl:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentSwirl:fromNotification:">&ndash;&nbsp;didReceiveContentSwirl:fromNotification:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -478,7 +483,7 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentSwirl:(SWRLContent *)<em>content</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentSwirl:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
 
 		    
 			
@@ -489,6 +494,11 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 					<tr>
 						<th scope="row" class="argument-name"><code>content</code></th>
 						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
 					</tr>
 				
 				</table>
@@ -520,8 +530,8 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/didReceiveContentCustom:" title="didReceiveContentCustom:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentCustom:">&ndash;&nbsp;didReceiveContentCustom:</a></code>
+	<a name="//api/name/didReceiveContentCustom:fromNotification:" title="didReceiveContentCustom:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentCustom:fromNotification:">&ndash;&nbsp;didReceiveContentCustom:fromNotification:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -536,7 +546,7 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentCustom:(SWRLContent *)<em>content</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentCustom:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
 
 		    
 			
@@ -547,6 +557,11 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 					<tr>
 						<th scope="row" class="argument-name"><code>content</code></th>
 						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
 					</tr>
 				
 				</table>
@@ -578,8 +593,8 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/didReceiveContent:notify:" title="didReceiveContent:notify:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/didReceiveContent:notify:">&ndash;&nbsp;didReceiveContent:notify:</a></code>
+	<a name="//api/name/didReceiveContent:fromNotification:" title="didReceiveContent:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContent:fromNotification:">&ndash;&nbsp;didReceiveContent:fromNotification:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -594,7 +609,7 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)didReceiveContent:(SWRLContent *)<em>content</em> notify:(BOOL)<em>notify</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContent:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
 
 		    
 			
@@ -608,8 +623,8 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>notify</code></th>
-						<td><p>If notifications are allowed to be generated or not.</p></td>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification.</p></td>
 					</tr>
 				
 				</table>
@@ -625,7 +640,7 @@ can override this property to return a subclass of <a href="../Classes/SWRLConte
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>This is the first method called when content is received.  Note that content can be received
 from the platform or it can be received as part of processing a notificaton.  When UILocalNotifications are opened
-this method will be called with <code>notify</code> equal to <code>NO</code>.  The default implementation of this method sets <a href="#//api/name/lastContent"><code>lastContent</code></a>
+this method will be called with <code>fromNotification</code> equal to <code>YES</code>.  The default implementation of this method sets <a href="#//api/name/lastContent"><code>lastContent</code></a>
 and its timestamp, switches on content type to call the type specific variants of <code>didReceiveContent...</code> and
 starts the display process for either a background notification or foreground content experience.</p><div class="warning"><p><strong>Warning:</strong> This method is critical to the proper operation of the SWRLContentManager. If you override this
 method, you must pass this message to <code>super</code>.</p></div>
@@ -975,7 +990,7 @@ this method:
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Called to create the toastView. The default implementation creates a SWRLToastView with a title and message attributes
+				<p>Called to create the toastView. The default implementation creates a <a href="../Classes/SWRLToastView.html">SWRLToastView</a> with a title and message attributes
 derived from the notification associated with this content.  If you just want to modify attributes of the standard
 toastView, call the super (default) implementation, make the changes and return that view.  If you do not want to
 show a toastView, return nil.</p>
@@ -1566,7 +1581,7 @@ or subclass it added when Swirl was started.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-08-30</p>
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-09-09</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

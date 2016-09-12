@@ -26,7 +26,7 @@
 - (void) beaconWithIdentifier:(NSString *)identifier extraInfo:(NSString *)extraInfo rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
 - (void) contentWithInfo:(NSDictionary *)info completion:(void (^)(NSDictionary *, NSDictionary *, NSError*))completion;
 - (BOOL) contentWithLocation:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
-                 completion:(void (^)(NSDictionary *, NSError *))completion;
+              placementEnter:(NSTimeInterval)entry completion:(void (^)(NSDictionary *, NSError *))completion;
 - (void) logEvent:(NSString *)event data:(NSString *)data;
 - (void) flush;
 - (void) reset;

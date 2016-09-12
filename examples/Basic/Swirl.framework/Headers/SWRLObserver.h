@@ -1,10 +1,7 @@
-//
-//  SWRLObservers.h
-//  Swirl
-//
-//  Created by Thomas Middleton on 4/28/16.
-//
-//
+/*
+ * SWRLStore.h
+ * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ */
 
 #import <Foundation/Foundation.h>
 

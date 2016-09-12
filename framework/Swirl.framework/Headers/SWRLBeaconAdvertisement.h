@@ -12,24 +12,28 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// A SWRLBeaconAdvertisement is an object which represents a Bluetooth Beacon advertisement in a normalized way for
-/// consumption by the rest of the framework.  Beacon protocols broadcast beacon identity information and optionally
-/// other attributes, like telemetry (temperature, time, battery, etc).
+/**
+ * A SWRLBeaconAdvertisement is an object which represents a Bluetooth Beacon advertisement in a normalized way for
+ * consumption by the rest of the framework.  Beacon protocols broadcast beacon identity information and optionally
+ * other attributes, like telemetry (temperature, time, battery, etc).
+ */
 
 @interface SWRLBeaconAdvertisement : NSObject<NSCopying>
-/// @name Accessing Advertisement Attributes
-/// The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
-/// on the client other than to test for equality.
+/** @name Accessing Advertisement Attributes */
+/** 
+ * The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
+ * on the client other than to test for equality.
+ */
 @property (nonatomic, readonly) NSString *      identifier;
-/// A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.
+/** A timestamp using timeIntervalSince1970 indicating when the advertisement was detected. */
 @property (nonatomic, readonly) NSTimeInterval  detected;
-/// The signal strength (RSSI) as reported by the operating system.
+/** The signal strength (RSSI) as reported by the operating system. */
 @property (nonatomic, readonly) int             rssi;
-/// The measured power included for some beacon protocols.
+/** The measured power included for some beacon protocols. */
 @property (nonatomic, readonly) int             dbm1;
-/// Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded.
+/** Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded. */
 @property (nonatomic, readonly) NSString *      extraInfo;
-/// The peripheral UUID of the device generating these advertisements
+/** The peripheral UUID of the device generating these advertisements */
 @property (nonatomic, readonly) NSUUID *        device;
 
 - (NSString *)uniquePrefix;

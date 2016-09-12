@@ -52,44 +52,44 @@
 - (void) updateStatus:(NSString *)status {
     static NSTimeInterval last = 0; if (last == 0) last = now();
     
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (DISPLAY_DELAY-(now()-last)) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-		self.statusLabel.textAlignment = NSTextAlignmentCenter;
-		self.statusLabel.numberOfLines = 2;
-		self.statusLabel.text = status;
-		[self.statusLabel sizeToFit];
-		CGRect frame = self.statusLabel.frame;
-		frame.size.width = self.view.bounds.size.width;
-		self.statusLabel.frame = frame;
-		[self updateDeviceStatus:[Swirl shared].status];
-	});
-	last = now();
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (DISPLAY_DELAY-(now()-last)) * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        self.statusLabel.textAlignment = NSTextAlignmentCenter;
+        self.statusLabel.numberOfLines = 2;
+        self.statusLabel.text = status;
+        [self.statusLabel sizeToFit];
+        CGRect frame = self.statusLabel.frame;
+        frame.size.width = self.view.bounds.size.width;
+        self.statusLabel.frame = frame;
+        [self updateDeviceStatus:[Swirl shared].status];
+    });
+    last = now();
 }
 
 - (void) updateLocationStatus:(SWRLLocation *)location {
-	if (location && ([Swirl shared].status & SWRLStatusSwirlMask) == SWRLStatusRunning) {
-		self.locationStatus.text = [NSString stringWithFormat:@"%@\n%@\n%@\n", location.description, location.signal.description,
-									self.contentAttributes ? self.contentAttributes : @""];
-		CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
-		CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
-		self.locationStatus.frame = frame;
-	} else {
-		self.locationStatus.text = @"No Signal Detected";
-		CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
-		CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
-		self.locationStatus.frame = frame;
-	}
+    if (location && ([Swirl shared].status & SWRLStatusSwirlMask) == SWRLStatusRunning) {
+        self.locationStatus.text = [NSString stringWithFormat:@"%@\n%@\n%@\n", location.description, location.signal.description,
+                                    self.contentAttributes ? self.contentAttributes : @""];
+        CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
+        CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
+        self.locationStatus.frame = frame;
+    } else {
+        self.locationStatus.text = @"No Signal Detected";
+        CGSize size = [self.locationStatus sizeThatFits:CGSizeMake(CGRectGetWidth(self.locationStatus.frame), CGFLOAT_MAX)];
+        CGRect frame = self.locationStatus.frame; frame.size.height = size.height;
+        self.locationStatus.frame = frame;
+    }
 	[self updateDeviceStatus:[Swirl shared].status];
 }
 
 - (void) updateActiveVisits:(NSArray<SWRLVisit*> *)visits {
-	[self updateLocationStatus:visits.firstObject.location];
-	if (visits.count > 0) {
-		self.activeVisits.hidden = NO;
-		[self.activeVisits sizeToFit];
-		self.activeVisits.center = CGPointMake(self.view.center.x, CGRectGetMaxY(self.locationStatus.frame)+15);
-	} else {
-		self.activeVisits.hidden = YES;
-	}
+    [self updateLocationStatus:visits.firstObject.location];
+    if (visits.count > 0) {
+        self.activeVisits.hidden = NO;
+        [self.activeVisits sizeToFit];
+        self.activeVisits.center = CGPointMake(self.view.center.x, CGRectGetMaxY(self.locationStatus.frame)+15);
+    } else {
+        self.activeVisits.hidden = YES;
+    }
 }
 
 // =====================================================================================================================
@@ -140,14 +140,14 @@
 			@{ @"title" : @"Clear Location Locks",  @"key" : @"clear_locks",           @"type" : @"bool",  @"user" : @NO,  },
 		]
     ];
+    NSMutableDictionary *settings = [[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"] mutableCopy];
     SettingsViewController *vc = [[SettingsViewController alloc]
-        initWithMetadata:meta settings:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]
-                onchange:^(NSDictionary *settings, NSDictionary *user_info) {
+        initWithMetadata:meta settings:settings
+                onchange:^(NSDictionary *updated, NSDictionary *user_info) {
+                    [settings addEntriesFromDictionary:updated];
                     [[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"swirl_options"];
                     [[NSUserDefaults standardUserDefaults] synchronize];
-
 					[self reset];
-
 					[[Swirl shared] setUserInfo:user_info];
                 }];
     [[self navigationController] pushViewController:vc animated:YES];
@@ -183,15 +183,15 @@
     [self updateActiveVisits:manager.activePlacementVisits];
 }
 
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content {
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content fromNotification:(BOOL)fromNotification {
     self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content {
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content fromNotification:(BOOL)fromNotification {
     self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content {
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content fromNotification:(BOOL)fromNotification {
     self.contentAttributes = content.attributes ? [NSString stringWithFormat:@"Content Attributes: %@", content.attributes] : @"";
 }
 

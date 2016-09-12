@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/SWRLStatus.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLStatus</TokenIdentifier>
+			<Abstract type="html">SWRLStatus Bit flags used to determine the running status of the framework</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+			
+			<NodeRef refid="32"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusNone</TokenIdentifier>
+            <Abstract type="html">This value indicates that the system is not running.</Abstract>
+            <Declaration>SWRLStatusNone</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusRunning</TokenIdentifier>
+            <Abstract type="html">If this bit is set, the system is either Running or if Pending is also set, Stopping.</Abstract>
+            <Declaration>SWRLStatusRunning</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusPending</TokenIdentifier>
+            <Abstract type="html">If this bit is set, the system is transitioning from Stopped to Running or the reverse.</Abstract>
+            <Declaration>SWRLStatusPending</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusError</TokenIdentifier>
+            <Abstract type="html">If this bit is set, the system has reported an error, which is available in the error property.</Abstract>
+            <Declaration>SWRLStatusError</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusLocation</TokenIdentifier>
+            <Abstract type="html">If this bit is set, Location Services are authorized.</Abstract>
+            <Declaration>SWRLStatusLocation</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusBluetooth</TokenIdentifier>
+            <Abstract type="html">If this bit is set, Bluetooth is available.</Abstract>
+            <Declaration>SWRLStatusBluetooth</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusNetwork</TokenIdentifier>
+            <Abstract type="html">If this bit is set, Network connectivity is available.</Abstract>
+            <Declaration>SWRLStatusNetwork</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusNotifications</TokenIdentifier>
+            <Abstract type="html">If this bit is set, Notification are enabled.</Abstract>
+            <Declaration>SWRLStatusNotifications</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusSwirlMask</TokenIdentifier>
+            <Abstract type="html">A mask for accessing swirl status portion.</Abstract>
+            <Declaration>SWRLStatusSwirlMask</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLStatusDeviceMask</TokenIdentifier>
+            <Abstract type="html">A mask for accessing device status portion.</Abstract>
+            <Declaration>SWRLStatusDeviceMask</Declaration>
+            
+            <DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

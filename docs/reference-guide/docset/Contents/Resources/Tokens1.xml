@@ -90,7 +90,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/setRange:</TokenIdentifier>
-			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramitically.</Abstract>
+			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramatically.</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double range</Declaration>
@@ -102,7 +102,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/range</TokenIdentifier>
-			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramitically.</Abstract>
+			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramatically.</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double range</Declaration>
@@ -114,7 +114,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeacon/range</TokenIdentifier>
-			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramitically.</Abstract>
+			<Abstract type="html">Current range of the beacon in meters.  This number is not very accurate and fluctuates dramatically.</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) double range</Declaration>
@@ -270,7 +270,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/setError:</TokenIdentifier>
-			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access.</Abstract>
+			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access).</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
@@ -282,7 +282,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/error</TokenIdentifier>
-			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access.</Abstract>
+			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access).</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
@@ -294,7 +294,7 @@ appropriate events through its delegate interface SWRLBeaconManagerDelegate.</Ab
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeacon/error</TokenIdentifier>
-			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access.</Abstract>
+			<Abstract type="html">Error (usually set if there is a beacon detected, but this application has no access).</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
@@ -362,6 +362,18 @@ Eddystone beacons, this would include TLM data base-64 encoded.</Abstract>
 			
 			
 			<Anchor>//api/name/serial</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLBeacon.m</DeclaredIn>
+			
+			<Declaration>- (SWRLSignalType)type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		

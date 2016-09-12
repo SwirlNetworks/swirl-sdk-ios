@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLPlacement.html">
+	<File path="Classes/SWRLIBeaconScanner.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLPlacement</TokenIdentifier>
-			<Abstract type="html">SWRLPlacement represents a logical location associated with a signal.
-A logical and business-friendly name given to a specific area inside a location. For example - cosmetics, electronics department, checkout, neighborhood,
-parking lot, etc.  A SWRLPlacement is contained within a SWRLLocation.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLIBeaconScanner</TokenIdentifier>
+			<Abstract type="html">The SWRLIBeaconScanner is a beacon scanner that uses the BeaconRegion monitoring APIs on CLLocationManager to monitor for
+iBeacon regions.  The scanner listens primarily for UUIDS and will consume one of the shared CLRegion spots for each UUID monitored.
+By default, the SWRIL UUID is monitored, but this can be altered through Settings. If the SWRLRegionManager is being used, then
+it can provide additional UUIDS to monitor on a region by region basis.</Abstract>
+			<DeclaredIn>SWRLBeaconScanner.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>

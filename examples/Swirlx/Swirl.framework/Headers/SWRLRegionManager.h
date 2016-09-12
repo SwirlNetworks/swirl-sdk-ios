@@ -21,8 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 
 @interface SWRLRegionManager : SWRLManager
+/**
+ * The monitoredArea represents the region encompassing the current working set of regions. 
+ */
 @property (nonatomic, copy, readonly) SWRLRegion *monitoredArea;
+/**
+ * The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+ * of latitude and longitude of the devices current position (normalized to degree boundries)
+ */
 @property (nonatomic, copy, readonly) NSArray<SWRLRegion*> *monitoredRegions;
+/** 
+ * The current set of entered regions.  This includes all types of regions (control and geofence). 
+ */
 @property (nonatomic, copy, readonly) NSArray<SWRLRegion*> *enteredRegions;
 
 - (void) start;
@@ -32,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- * Callbacks from the SWRLRegionManager
+ * Protocl which defines the callbacks from the SWRLRegionManager.
  *
  */
 @protocol SWRLRegionManagerDelegate <NSObject>

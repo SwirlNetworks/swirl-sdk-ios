@@ -15,6 +15,45 @@ other attributes, like telemetry (temperature, time, battery, etc).</Abstract>
 		
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
+on the client other than to test for equality.</Abstract>
+			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/identifier</TokenIdentifier>
+			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
+on the client other than to test for equality.</Abstract>
+			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/identifier</TokenIdentifier>
+			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
+on the client other than to test for equality.</Abstract>
+			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setDetected:</TokenIdentifier>
 			<Abstract type="html">A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.</Abstract>
 			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLVisitManagerDelegate.html">
+	<File path="Protocols/SWRLBeaconManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLVisitManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Callbacks from the VisitManager for events around Visits</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconManagerDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconManager protocol defines the methods used to receive beacon update from the SWRLBeaconManager.
+Upon receiving a beacon event, you can use the result to update your user interface or
+perform other actions.
+&lt;p&gt;
+The methods of your delegate object are called from the thread associated with the dispatch queue that you used
+when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -13,62 +18,102 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didBeginVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement is beginnng</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didResolveBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the beacon manager was able to resolve the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didBeginVisit:(SWRLVisit *)visit</Declaration>
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didResolveBeacon:(SWRLBeacon *)beacon</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
 				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
+					<Name>beacon</Name>
+					<Abstract type="html">The resolved beacon</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/visitManager:didBeginVisit:</Anchor>
+			<Anchor>//api/name/beaconManager:didResolveBeacon:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didUpdateDwellForVisit:</TokenIdentifier>
-			<Abstract type="html">Called periodically as a user remains in a current Location and Placement</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didEnterBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device is within range of the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didUpdateDwellForVisit:(SWRLVisit *)visit</Declaration>
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didEnterBeacon:(SWRLBeacon *)beacon</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
 				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that has been entered</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/visitManager:didUpdateDwellForVisit:</Anchor>
+			<Anchor>//api/name/beaconManager:didEnterBeacon:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didEndVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement has ended</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didChangeNearest:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device changed the beacon it is closest to.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit</Declaration>
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didChangeNearest:(SWRLBeacon *)beacon</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
 				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that is now the nearest beacon</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/visitManager:didEndVisit:</Anchor>
+			<Anchor>//api/name/beaconManager:didChangeNearest:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didDwellBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device is still within range of the beacon.  Called periodically.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didDwellBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that the mobile device is within range of</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didDwellBeacon:</Anchor>
+            <NodeRef refid="22"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didExitBeacon:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the mobile device left the range of the beacon.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didExitBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
+				</Parameter><Parameter>
+					<Name>beacon</Name>
+					<Abstract type="html">The beacon that was exited</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconManager:didExitBeacon:</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

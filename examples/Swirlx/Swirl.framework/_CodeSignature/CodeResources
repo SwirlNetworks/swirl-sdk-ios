@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SWRLAPI.h</key>
 		<data>
-		Mo3o2TVmfwnhYAM+OVFo8txDd1k=
+		bz3HmtsOyBLnrB3Fl+mNPT6N6UY=
 		</data>
 		<key>Headers/SWRLBase.h</key>
 		<data>
@@ -14,19 +14,19 @@
 		</data>
 		<key>Headers/SWRLBeacon.h</key>
 		<data>
-		sIr4ctPsK6ph0dWaHgTgrBA8ESo=
+		Vb00P5SnOIVh3z1VJqsELquGEE0=
 		</data>
 		<key>Headers/SWRLBeaconAdvertisement.h</key>
 		<data>
-		TaN+DpmTMb0+CPHMDTHnWX46CDE=
+		LGD2Vn6Cf30fa0kYcnGi2yCXCjw=
 		</data>
 		<key>Headers/SWRLBeaconManager.h</key>
 		<data>
-		F4sEFtl/1fGOVYXRego0MeLxPrk=
+		1McGnmi/lu1/sPuORaQyes0YCGQ=
 		</data>
 		<key>Headers/SWRLBeaconScanner.h</key>
 		<data>
-		1x3hsDhdocNnVVxSZJa2jzbCwYk=
+		VY6L3KwbhDSqmkv4ShX/Jg+8eZg=
 		</data>
 		<key>Headers/SWRLContent.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/SWRLContentManager.h</key>
 		<data>
-		AquKWbTiT8PoZmliQ/ehZ33nY/8=
+		/vhWRF+hZp9iPvMaSKj9OXev5P4=
 		</data>
 		<key>Headers/SWRLContentToastView.h</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Headers/SWRLLocation.h</key>
 		<data>
-		qi92cm4mAUJTGscutA+l0eC67UQ=
+		JLPwVkz7lKP0VGTRxb4OXPAI8is=
 		</data>
 		<key>Headers/SWRLManager.h</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/SWRLObserver.h</key>
 		<data>
-		VkQEC4aKYuGblS5gbujg7qieHp8=
+		bnY9OUeD5BWd29GCUIorhDyvyR0=
 		</data>
 		<key>Headers/SWRLRegion.h</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Headers/SWRLRegionManager.h</key>
 		<data>
-		hz6YBAwxXUkY2mvw/XiyqZgSplg=
+		MhngCnTJyPS1J1NbgrHfewUNw6Q=
 		</data>
 		<key>Headers/SWRLSettings.h</key>
 		<data>
-		P8RvIggCOMvizoeuAiqmZnONc7I=
+		GwxYugfTKrRcxZpZ+2BF00NBbuc=
 		</data>
 		<key>Headers/SWRLSwirl.h</key>
 		<data>
@@ -74,7 +74,11 @@
 		</data>
 		<key>Headers/SWRLToastView.h</key>
 		<data>
-		O7Hx248qsf0jknR5tvTnDQglWL4=
+		P5QEaNsjyHICGINRHlkLi1Ln7Uc=
+		</data>
+		<key>Headers/SWRLUtil.h</key>
+		<data>
+		jvLwoIHMFnf79AUYxvaBpkXTEFQ=
 		</data>
 		<key>Headers/SWRLVisit.h</key>
 		<data>
@@ -90,7 +94,7 @@
 		</data>
 		<key>Headers/Swirl.h</key>
 		<data>
-		pjNSsAMVPxkAkbiivnoz98zfikw=
+		mUl15Vsm6Vh+KAnNuBdXSYqJfGk=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -107,11 +111,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Mo3o2TVmfwnhYAM+OVFo8txDd1k=
+			bz3HmtsOyBLnrB3Fl+mNPT6N6UY=
 			</data>
 			<key>hash2</key>
 			<data>
-			nH0OK6fD2x3ukEj6weYQITZ4kJ9piOnzB/pbQc95sb8=
+			FZfv4RFgQFDgTJxtcDMXTHQs7nLGXMKrriP3umS3B+k=
 			</data>
 		</dict>
 		<key>Headers/SWRLBase.h</key>
@@ -129,44 +133,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sIr4ctPsK6ph0dWaHgTgrBA8ESo=
+			Vb00P5SnOIVh3z1VJqsELquGEE0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Gsgabw+XwN8Ebr5OBV3I26BD/ik8mFZGEvhiyw/1Rbc=
+			RRaX+JutV35GJJNKiIDOfGWpAs1rQeI0jZ5Oq6Pq4ak=
 			</data>
 		</dict>
 		<key>Headers/SWRLBeaconAdvertisement.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TaN+DpmTMb0+CPHMDTHnWX46CDE=
+			LGD2Vn6Cf30fa0kYcnGi2yCXCjw=
 			</data>
 			<key>hash2</key>
 			<data>
-			eeAV6RxGoGeqrRG81V0rQ3JrqFMUGS7sj+egGBnxasE=
+			OiRHays8gdKsgoLQtAYKVwp8nxl27Kx4YTPhRC99eAY=
 			</data>
 		</dict>
 		<key>Headers/SWRLBeaconManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F4sEFtl/1fGOVYXRego0MeLxPrk=
+			1McGnmi/lu1/sPuORaQyes0YCGQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			8bsgD1xj6Sky++Lvtk83OGSgAh/LYUiMcILRRSSXb7I=
+			ypNsr7GBNj1MPnD6xyk9kcSrJaSz5bpEgBfEBueNaho=
 			</data>
 		</dict>
 		<key>Headers/SWRLBeaconScanner.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1x3hsDhdocNnVVxSZJa2jzbCwYk=
+			VY6L3KwbhDSqmkv4ShX/Jg+8eZg=
 			</data>
 			<key>hash2</key>
 			<data>
-			O1oSXPxW/1c282YwXikqxZSnbdDDmbnjM3fa0GcxXd8=
+			BoZ4xfN19kQNRCmeFdEYDPV8BhKum1S/J0Ggj2n6vdc=
 			</data>
 		</dict>
 		<key>Headers/SWRLContent.h</key>
@@ -184,11 +188,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AquKWbTiT8PoZmliQ/ehZ33nY/8=
+			/vhWRF+hZp9iPvMaSKj9OXev5P4=
 			</data>
 			<key>hash2</key>
 			<data>
-			KXVKXaAsE4qnSFCeTue6OTOk6qkfeB9T+HnCf8t53yQ=
+			x0aFJx4iULso0ROVfdJORKoo1kn+ybcex1J9UraObBM=
 			</data>
 		</dict>
 		<key>Headers/SWRLContentToastView.h</key>
@@ -217,11 +221,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qi92cm4mAUJTGscutA+l0eC67UQ=
+			JLPwVkz7lKP0VGTRxb4OXPAI8is=
 			</data>
 			<key>hash2</key>
 			<data>
-			CJMLxbA1fSw2VsUQQosN8WlDpqk+BeRk/cknNbUnYFE=
+			SdmG5SYc/X7X/2iWx9qJXEPkem3jKQysliKOo2ihVmY=
 			</data>
 		</dict>
 		<key>Headers/SWRLManager.h</key>
@@ -239,11 +243,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VkQEC4aKYuGblS5gbujg7qieHp8=
+			bnY9OUeD5BWd29GCUIorhDyvyR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			jinlDbDXDZ3iig3tPOykDkOW1MKWelOHwMzP16OiQII=
+			lNhB+Y1x1W1MTj5orzfmC01ik2aTAjthYU9gApPFh10=
 			</data>
 		</dict>
 		<key>Headers/SWRLRegion.h</key>
@@ -261,22 +265,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hz6YBAwxXUkY2mvw/XiyqZgSplg=
+			MhngCnTJyPS1J1NbgrHfewUNw6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			xpE+4XglbMHNAE34t2elbWsVycILP7aZIr/Nx4CLSKA=
+			IAjfJ8ufioYGc48nFDAzSibWiiuXcin3qfB9zP2s914=
 			</data>
 		</dict>
 		<key>Headers/SWRLSettings.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			P8RvIggCOMvizoeuAiqmZnONc7I=
+			GwxYugfTKrRcxZpZ+2BF00NBbuc=
 			</data>
 			<key>hash2</key>
 			<data>
-			xq7HQxeDFaZH/Pv+oO11rjwqardJU9ZQa/FrwP6D0co=
+			5HlMDDGKPohI+gUKtsGrfaUgukguB5a/hZRVY0o4jkc=
 			</data>
 		</dict>
 		<key>Headers/SWRLSwirl.h</key>
@@ -294,11 +298,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			O7Hx248qsf0jknR5tvTnDQglWL4=
+			P5QEaNsjyHICGINRHlkLi1Ln7Uc=
 			</data>
 			<key>hash2</key>
 			<data>
-			eOD7JU2KMNRe7en50wh5JhcAFZWOSrUrPdhbFfPAuG0=
+			bIEZ5Vl/cOqAsax9e7d91sMK88u1uA1TeMCDAgVTO/8=
+			</data>
+		</dict>
+		<key>Headers/SWRLUtil.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jvLwoIHMFnf79AUYxvaBpkXTEFQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			+r2mCm8v1wUxM5Tg/VMdcS5Y00Ih/fOYMWlwMG4HC04=
 			</data>
 		</dict>
 		<key>Headers/SWRLVisit.h</key>
@@ -338,11 +353,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pjNSsAMVPxkAkbiivnoz98zfikw=
+			mUl15Vsm6Vh+KAnNuBdXSYqJfGk=
 			</data>
 			<key>hash2</key>
 			<data>
-			K6djwuQ3p7AlDBDJdykzqeX92Gh35Enx2WdjeEHUx6U=
+			z3+dD1wP/p94vgR1RO0OHNr3cmUAPXBDZDZ1brSrRP0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

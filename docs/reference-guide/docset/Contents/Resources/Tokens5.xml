@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLContentManager.html">
+	<File path="Classes/SWRLContent.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLContentManager</TokenIdentifier>
-			<Abstract type="html">A SWRLContentManager component if loaded, will consume Visit events using the SWRLVisitManagerDelegate protocol and use
-those events to trigger content requests through the API.  If content is returned, then depending upon the application state
-and settings, it is responsible for displaying local notifications (if the application is in the background) and launching
-a content view (full screen interstitial view controller) or opening an application deep link or exterunal URL.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLContent</TokenIdentifier>
+			<Abstract type="html">Each SWRLContent object represents a unique impression. A SWRLContent object encapsulates information about content
+that was received for a given visit in response to a content request made by the SWRLContentManager.
+Content requests are made in response to visit events like starting a visit and updating dwell time for a visit.
+For content that requires a dwell trigger, the server will push back that information to the client and the client will
+automatically delay making further content requests until the dwell triggers have been reached.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -16,531 +17,377 @@ a content view (full screen interstitial view controller) or opening an applicat
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setRecent:</TokenIdentifier>
-			<Abstract type="html">The most recent visit object.  This is either the current visit or a recently exited one.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLVisit *recent</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/recent</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/recent</TokenIdentifier>
-			<Abstract type="html">The most recent visit object.  This is either the current visit or a recently exited one.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/identifier</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLVisit *recent</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/recent</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/recent</TokenIdentifier>
-			<Abstract type="html">The most recent visit object.  This is either the current visit or a recently exited one.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/identifier</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLVisit *recent</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/recent</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setLastContent:</TokenIdentifier>
-			<Abstract type="html">The last piece of content received</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setVisit:</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContent *lastContent</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/lastContent</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/lastContent</TokenIdentifier>
-			<Abstract type="html">The last piece of content received</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/visit</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContent *lastContent</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/lastContent</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/lastContent</TokenIdentifier>
-			<Abstract type="html">The last piece of content received</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/visit</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContent *lastContent</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/lastContent</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setContentViewPresenter:</TokenIdentifier>
-			<Abstract type="html">The UIViewController from which to present the SWRLContentViewController.  Override this property to
-change which controller is used.  By default, the implementation searches for the top most UIViewController
-and returns that.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setContent:</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIViewController *contentViewPresenter</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewPresenter</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/contentViewPresenter</TokenIdentifier>
-			<Abstract type="html">The UIViewController from which to present the SWRLContentViewController.  Override this property to
-change which controller is used.  By default, the implementation searches for the top most UIViewController
-and returns that.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/content</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIViewController *contentViewPresenter</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewPresenter</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/contentViewPresenter</TokenIdentifier>
-			<Abstract type="html">The UIViewController from which to present the SWRLContentViewController.  Override this property to
-change which controller is used.  By default, the implementation searches for the top most UIViewController
-and returns that.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/content</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIViewController *contentViewPresenter</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewPresenter</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setContentViewController:</TokenIdentifier>
-			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setType:</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewController</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/contentViewController</TokenIdentifier>
-			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/type</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewController</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/contentViewController</TokenIdentifier>
-			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/type</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/contentViewController</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setContentToastView:</TokenIdentifier>
-			<Abstract type="html">The UIView which represents the current toast view (if displayed).</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setReceived:</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIView *contentToastView</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
 			
-			<Anchor>//api/name/contentToastView</Anchor>
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/contentToastView</TokenIdentifier>
-			<Abstract type="html">The UIView which represents the current toast view (if displayed).</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/received</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIView *contentToastView</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
 			
-			<Anchor>//api/name/contentToastView</Anchor>
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/contentToastView</TokenIdentifier>
-			<Abstract type="html">The UIView which represents the current toast view (if displayed).</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/received</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UIView *contentToastView</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
 			
-			<Anchor>//api/name/contentToastView</Anchor>
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentURL:</TokenIdentifier>
-			<Abstract type="html">Called when content of type URL is received.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setNotification:</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentURL:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
 			
-			<Anchor>//api/name/didReceiveContentURL:</Anchor>
+			
+			<Anchor>//api/name/notification</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentSwirl:</TokenIdentifier>
-			<Abstract type="html">Called when content of type Swirl is received.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/notification</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentSwirl:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
 			
-			<Anchor>//api/name/didReceiveContentSwirl:</Anchor>
+			
+			<Anchor>//api/name/notification</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentCustom:</TokenIdentifier>
-			<Abstract type="html">Called when content of type Custom is received.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/notification</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentCustom:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
 			
-			<Anchor>//api/name/didReceiveContentCustom:</Anchor>
+			
+			<Anchor>//api/name/notification</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContent:notify:</TokenIdentifier>
-			<Abstract type="html">Called when content of any type is received.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setUrl:</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContent:(SWRLContent *)content notify:(BOOL)notify</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter><Parameter>
-					<Name>notify</Name>
-					<Abstract type="html">If notifications are allowed to be generated or not.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
 			
-			<Anchor>//api/name/didReceiveContent:notify:</Anchor>
+			
+			<Anchor>//api/name/url</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/shouldShowURLContent:</TokenIdentifier>
-			<Abstract type="html">Called before a deep-link or external URL is activated.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/url</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)shouldShowURLContent:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that is about to be opened.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if you want to display the content, NO if you do not.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldShowURLContent:</Anchor>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/shouldShowContentView:</TokenIdentifier>
-			<Abstract type="html">Called before a web interstitial is about to be displayed.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/url</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)shouldShowContentView:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content that is about to be displayed.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if you want to display the content, NO if you do not.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldShowContentView:</Anchor>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/shouldShowNotification:content:</TokenIdentifier>
-			<Abstract type="html">Called before a local notification is generated.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setFallbackURL:</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)shouldShowNotification:(UILocalNotification *)note content:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>note</Name>
-					<Abstract type="html">The UILocalNotification that is about to be display.  It can be altered or modified at this point.</Abstract>
-				</Parameter><Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content from which the notification has been generated.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">YES if you want to display the notification, NO if you do not.</Abstract></ReturnValue>
-			<Anchor>//api/name/shouldShowNotification:content:</Anchor>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
+			
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didShowContentViewController:</TokenIdentifier>
-			<Abstract type="html">Called after the SWRLContentViewController has been shown.  The default implementation of
-this method, simply forwards the message to the delegate bus as contentManager:didShowContentViewController.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/fallbackURL</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didShowContentViewController:(SWRLContentViewController *)controller</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>controller</Name>
-					<Abstract type="html">The SWRLContentViewController</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
 			
-			<Anchor>//api/name/didShowContentViewController:</Anchor>
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didDismissContentViewController:</TokenIdentifier>
-			<Abstract type="html">Called after the SWRLContentViewController has been dismissed.  The default implementation of
-this method:
-[self.delegate contentManager:self didDismissContentViewController:controller;
-[self showToastView:[self toastViewForContent:controller.content]];</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/fallbackURL</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)didDismissContentViewController:(SWRLContentViewController *)controller</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>controller</Name>
-					<Abstract type="html">The SWRLContentViewController (.contentViewController</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
 			
-			<Anchor>//api/name/didDismissContentViewController:</Anchor>
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/toastViewForContent:</TokenIdentifier>
-			<Abstract type="html">Called to create the toastView. The default implementation creates a SWRLToastView with a title and message attributes
-derived from the notification associated with this content.  If you just want to modify attributes of the standard
-toastView, call the super (default) implementation, make the changes and return that view.  If you do not want to
-show a toastView, return nil.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setAttributes:</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (UIView *)toastViewForContent:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content for which to provide a toast.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">the view you want to use as the toast, or nil if no toast is desired.</Abstract></ReturnValue>
-			<Anchor>//api/name/toastViewForContent:</Anchor>
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
+			
+			
+			<Anchor>//api/name/attributes</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showToastView:</TokenIdentifier>
-			<Abstract type="html">Called to show the toastView.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/attributes</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)showToastView:(UIView *)view</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>view</Name>
-					<Abstract type="html">the view to use as the toast view, should do nothing it nil is passed</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
 			
-			<Anchor>//api/name/showToastView:</Anchor>
+			
+			<Anchor>//api/name/attributes</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showContentURL:</TokenIdentifier>
-			<Abstract type="html">Called to activate a deep or external link.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/attributes</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)showContentURL:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content containing the link to open.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
 			
-			<Anchor>//api/name/showContentURL:</Anchor>
+			
+			<Anchor>//api/name/attributes</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showContentViewController:</TokenIdentifier>
-			<Abstract type="html">Called to present interstitial content.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setThumbnail:</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)showContentViewController:(SWRLContent *)content</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>content</Name>
-					<Abstract type="html">The content containing the URL to display.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
 			
-			<Anchor>//api/name/showContentViewController:</Anchor>
+			
+			<Anchor>//api/name/thumbnail</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showContentViewController</TokenIdentifier>
-			<Abstract type="html">Call this method to force display of the SWRLContentViewController.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/thumbnail</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)showContentViewController</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
 			
 			
-			<Anchor>//api/name/showContentViewController</Anchor>
+			<Anchor>//api/name/thumbnail</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/requestContentPreview:completion:</TokenIdentifier>
-			<Abstract type="html">Call this method to request content with a demo-code</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/thumbnail</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)requestContentPreview:(NSString *)previewCode completion:(void ( ^ ) ( NSError *))completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>previewCode</Name>
-					<Abstract type="html">A preview code retrieved from the platform for a given creative.</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">Called when the content has been shown or there was an error</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/requestContentPreview:completion:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/SWRLContentManager/shared</TokenIdentifier>
-			<Abstract type="html">Call this to access the last content manager created.
-This method is provided as a convenience to save the programmer from having to keep a reference to the content manager
-or subclass it added when Swirl was started.</Abstract>
-			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
-			
-			<Declaration>+ (SWRLContentManager *)shared</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
 			
 			
-			<Anchor>//api/name/shared</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/visitManager:didBeginVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement is beginnng</Abstract>
-			<DeclaredIn>SWRLContentManager.m</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didBeginVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didBeginVisit:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/visitManager:didUpdateDwellForVisit:</TokenIdentifier>
-			<Abstract type="html">Called periodically as a user remains in a current Location and Placement</Abstract>
-			<DeclaredIn>SWRLContentManager.m</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didUpdateDwellForVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didUpdateDwellForVisit:</Anchor>
-            <NodeRef refid="5"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/visitManager:didEndVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement has ended</Abstract>
-			<DeclaredIn>SWRLContentManager.m</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didEndVisit:</Anchor>
+			<Anchor>//api/name/thumbnail</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

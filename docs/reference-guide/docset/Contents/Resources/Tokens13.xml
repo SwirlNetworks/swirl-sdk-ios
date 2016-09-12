@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLSwirl.html">
+	<File path="Classes/SWRLRegionManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLSwirl</TokenIdentifier>
-			<Abstract type="html">The Swirl class is the main entry point into the Swirl proximity sdk for delivery of proximity and content
-events to your app.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegionManager</TokenIdentifier>
+			<Abstract type="html">A component which manages a working set of Region objects (retreived using the API) that are &apos;near&apos; the users location.
+These regions represent both geofences and &apos;control&apos; regions. Geofences have logical location, placement and other metadata associated.
+Control regions are used internally by the SDK to control other signal detection, like when to start and stop scanning for beacons or what
+iBeacon UUIDs are nearby. This component either starts its own os specific location manager or depends upon the host app
+to post location information onto the bus. It generates RegionEnter/RegionExit events onto the bus.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -14,395 +17,113 @@ events to your app.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setStatus:</TokenIdentifier>
-			<Abstract type="html">The current system status</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredArea:</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLStatus status</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/status</TokenIdentifier>
-			<Abstract type="html">The current system status</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLStatus status</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/status</TokenIdentifier>
-			<Abstract type="html">The current system status</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLStatus status</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setVersion:</TokenIdentifier>
-			<Abstract type="html">The current version of the framework.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredRegions:</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *version</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/version</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/version</TokenIdentifier>
-			<Abstract type="html">The current version of the framework.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *version</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/version</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/version</TokenIdentifier>
-			<Abstract type="html">The current version of the framework.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *version</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/version</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setError:</TokenIdentifier>
-			<Abstract type="html">The last error reported.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setEnteredRegions:</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/error</TokenIdentifier>
-			<Abstract type="html">The last error reported.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/error</TokenIdentifier>
-			<Abstract type="html">The last error reported.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
-			
-			
-			<Anchor>//api/name/error</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setLocation:</TokenIdentifier>
-			<Abstract type="html">The frameworks currently maintained CLLocation</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocation *location</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/location</TokenIdentifier>
-			<Abstract type="html">The frameworks currently maintained CLLocation</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocation *location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/location</TokenIdentifier>
-			<Abstract type="html">The frameworks currently maintained CLLocation</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocation *location</Declaration>
-			
-			
-			<Anchor>//api/name/location</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setUserKey:</TokenIdentifier>
-			<Abstract type="html">A NSUUID generated for this device.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *userKey</Declaration>
-			
-			
-			<Anchor>//api/name/userKey</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/userKey</TokenIdentifier>
-			<Abstract type="html">A NSUUID generated for this device.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *userKey</Declaration>
-			
-			
-			<Anchor>//api/name/userKey</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/userKey</TokenIdentifier>
-			<Abstract type="html">A NSUUID generated for this device.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *userKey</Declaration>
-			
-			
-			<Anchor>//api/name/userKey</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setUserInfo:</TokenIdentifier>
-			<Abstract type="html">A dictionary of property values that are associated with this device/user.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) NSDictionary *userInfo</Declaration>
-			
-			
-			<Anchor>//api/name/userInfo</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/userInfo</TokenIdentifier>
-			<Abstract type="html">A dictionary of property values that are associated with this device/user.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) NSDictionary *userInfo</Declaration>
-			
-			
-			<Anchor>//api/name/userInfo</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/userInfo</TokenIdentifier>
-			<Abstract type="html">A dictionary of property values that are associated with this device/user.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic) NSDictionary *userInfo</Declaration>
-			
-			
-			<Anchor>//api/name/userInfo</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:</TokenIdentifier>
-			<Abstract type="html">Add a delegate to the internal delegate bus</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:queue:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)addDelegate:(id)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The object to receive delegate callbacks. This parameter must not be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addDelegate:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:queue:</TokenIdentifier>
-			<Abstract type="html">Add a delegate to the internal delegate bus, specifying a queue.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)addDelegate:(id)delegate queue:(dispatch_queue_t)queue</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The object to receive delegate callbacks. This parameter must not be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>queue</Name>
-					<Abstract type="html">The GCD dispatch queue on which messages should be delivered.  This parameter must not be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/addDelegate:queue:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/removeDelegate:</TokenIdentifier>
-			<Abstract type="html">Remove a delegate that had been previously added via addDelegate:.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-	<RelatedTokens>
-		<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:queue:</TokenIdentifier>
-		
-	</RelatedTokens>
-	
-			<Declaration>- (void)removeDelegate:(id)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">The object to receive delegate callbacks. This paramter must not be nil.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeDelegate:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/findDelegateOfClass:</TokenIdentifier>
-			<Abstract type="html">Find a delegate given a class.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (id)findDelegateOfClass:(Class)aclass</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>aclass</Name>
-					<Abstract type="html">The class of delegate to find.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The delegate if found, or nil.</Abstract></ReturnValue>
-			<Anchor>//api/name/findDelegateOfClass:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/start:</TokenIdentifier>
-			<Abstract type="html">Starts the sdk and all loaded managers</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (void)start:(nullable NSDictionary *)options</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>options</Name>
-					<Abstract type="html">all of the startup options (see x)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/start:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/stop</TokenIdentifier>
-			<Abstract type="html">Stops the sdk</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (void)stop</Declaration>
-			
-			
-			<Anchor>//api/name/stop</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/reset</TokenIdentifier>
-			<Abstract type="html">Removes all locally stored data and state.  If the sdk is currently running, it will call stop first.
-After calling this function, the sdk will be in a stopped state.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (void)reset</Declaration>
-			
-			
-			<Anchor>//api/name/reset</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/postObject:</TokenIdentifier>
-			<Abstract type="html">Post an object to the internal message bus</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (void)postObject:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">the object to post</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/postObject:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/logEvent:data:</TokenIdentifier>
-			<Abstract type="html">Log event to the log stream.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>- (void)logEvent:(NSString *)event data:(NSString *)data</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>event</Name>
-					<Abstract type="html">The event name (see the list of known events)</Abstract>
-				</Parameter><Parameter>
-					<Name>data</Name>
-					<Abstract type="html">The data for event (see the list of events)</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/logEvent:data:</Anchor>
-            <NodeRef refid="13"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/shared</TokenIdentifier>
-			<Abstract type="html">Swirl is a singleton.  You use shared to get access to the shared instance.</Abstract>
-			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
-			
-			<Declaration>+ (instancetype)shared</Declaration>
-			
-			
-			<Anchor>//api/name/shared</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		

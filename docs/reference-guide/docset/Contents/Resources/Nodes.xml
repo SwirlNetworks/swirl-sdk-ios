@@ -28,6 +28,10 @@
 						<NodeRef refid="15"/>
 						<NodeRef refid="16"/>
 						<NodeRef refid="17"/>
+						<NodeRef refid="18"/>
+						<NodeRef refid="19"/>
+						<NodeRef refid="20"/>
+						<NodeRef refid="21"/>
 						
 					</Subnodes>
 				</Node>
@@ -38,12 +42,13 @@
 					<Name>Protocols</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="18"/>
-						<NodeRef refid="19"/>
-						<NodeRef refid="20"/>
-						<NodeRef refid="21"/>
 						<NodeRef refid="22"/>
 						<NodeRef refid="23"/>
+						<NodeRef refid="24"/>
+						<NodeRef refid="25"/>
+						<NodeRef refid="26"/>
+						<NodeRef refid="27"/>
+						<NodeRef refid="28"/>
 						
 					</Subnodes>
 				</Node>
@@ -53,10 +58,10 @@
 					<Name>Constants</Name>
 					<Path>index.html</Path>
 					<Subnodes>
-						<NodeRef refid="24"/>
-						<NodeRef refid="25"/>
-						<NodeRef refid="26"/>
-						<NodeRef refid="27"/>
+						<NodeRef refid="29"/>
+						<NodeRef refid="30"/>
+						<NodeRef refid="31"/>
+						<NodeRef refid="32"/>
 						
 					</Subnodes>
 				</Node>
@@ -155,6 +160,11 @@
             
         </Node>
 		<Node id="4" type="file" documentType="reference">
+            <Name>SWRLBluetoothScanner</Name>
+            <Path>Classes/SWRLBluetoothScanner.html</Path>
+            
+        </Node>
+		<Node id="5" type="file" documentType="reference">
             <Name>SWRLContent</Name>
             <Path>Classes/SWRLContent.html</Path>
             
@@ -181,7 +191,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="5" type="file" documentType="reference">
+		<Node id="6" type="file" documentType="reference">
             <Name>SWRLContentManager</Name>
             <Path>Classes/SWRLContentManager.html</Path>
             
@@ -220,12 +230,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="6" type="file" documentType="reference">
+		<Node id="7" type="file" documentType="reference">
             <Name>SWRLContentToastView</Name>
             <Path>Classes/SWRLContentToastView.html</Path>
             
         </Node>
-		<Node id="7" type="file" documentType="reference">
+		<Node id="8" type="file" documentType="reference">
             <Name>SWRLContentViewController</Name>
             <Path>Classes/SWRLContentViewController.html</Path>
             
@@ -258,17 +268,66 @@
             </Subnodes>
             
         </Node>
-		<Node id="8" type="file" documentType="reference">
-            <Name>SWRLLocation</Name>
-            <Path>Classes/SWRLLocation.html</Path>
-            
-        </Node>
 		<Node id="9" type="file" documentType="reference">
-            <Name>SWRLPlacement</Name>
-            <Path>Classes/SWRLPlacement.html</Path>
+            <Name>SWRLIBeaconScanner</Name>
+            <Path>Classes/SWRLIBeaconScanner.html</Path>
             
         </Node>
 		<Node id="10" type="file" documentType="reference">
+            <Name>SWRLLocation</Name>
+            <Path>Classes/SWRLLocation.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SWRLLocation.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SWRLLocation.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SWRLLocation.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="11" type="file" documentType="reference">
+            <Name>SWRLPlacement</Name>
+            <Path>Classes/SWRLPlacement.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SWRLPlacement.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SWRLPlacement.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SWRLPlacement.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="12" type="file" documentType="reference">
             <Name>SWRLRegion</Name>
             <Path>Classes/SWRLRegion.html</Path>
             
@@ -301,17 +360,66 @@
             </Subnodes>
             
         </Node>
-		<Node id="11" type="file" documentType="reference">
+		<Node id="13" type="file" documentType="reference">
             <Name>SWRLRegionManager</Name>
             <Path>Classes/SWRLRegionManager.html</Path>
             
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SWRLRegionManager.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SWRLRegionManager.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SWRLRegionManager.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
         </Node>
-		<Node id="12" type="file" documentType="reference">
+		<Node id="14" type="file" documentType="reference">
+            <Name>SWRLSettings</Name>
+            <Path>Classes/SWRLSettings.html</Path>
+            
+        </Node>
+		<Node id="15" type="file" documentType="reference">
             <Name>SWRLSignal</Name>
             <Path>Classes/SWRLSignal.html</Path>
             
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SWRLSignal.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SWRLSignal.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SWRLSignal.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+            </Subnodes>
+            
         </Node>
-		<Node id="13" type="file" documentType="reference">
+		<Node id="16" type="file" documentType="reference">
             <Name>SWRLSwirl</Name>
             <Path>Classes/SWRLSwirl.html</Path>
             
@@ -350,7 +458,40 @@
             </Subnodes>
             
         </Node>
-		<Node id="14" type="file" documentType="reference">
+		<Node id="17" type="file" documentType="reference">
+            <Name>SWRLToastView</Name>
+            <Path>Classes/SWRLToastView.html</Path>
+            
+                <Subnodes>
+                <Node type="section">
+                    <Path>Classes/SWRLToastView.html</Path>
+                    <Name>Overview</Name>
+                    <Anchor>overview</Anchor>
+                </Node>
+                <Node type="section">
+                    <Path>Classes/SWRLToastView.html</Path>
+                    <Name>Tasks</Name>
+                    <Anchor>tasks</Anchor>
+                </Node>
+                
+                <Node type="section">
+                    <Path>Classes/SWRLToastView.html</Path>
+                    <Name>Properties</Name>
+                    <Anchor>properties</Anchor>
+                </Node>
+                
+                
+                
+                <Node type="section">
+                    <Path>Classes/SWRLToastView.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
+            </Subnodes>
+            
+        </Node>
+		<Node id="18" type="file" documentType="reference">
             <Name>SWRLVisit</Name>
             <Path>Classes/SWRLVisit.html</Path>
             
@@ -377,7 +518,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="15" type="file" documentType="reference">
+		<Node id="19" type="file" documentType="reference">
             <Name>SWRLVisitManager</Name>
             <Path>Classes/SWRLVisitManager.html</Path>
             
@@ -404,7 +545,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="16" type="file" documentType="reference">
+		<Node id="20" type="file" documentType="reference">
             <Name>SWRLWifiInfo</Name>
             <Path>Classes/SWRLWifiInfo.html</Path>
             
@@ -428,17 +569,23 @@
                 
                 
                 
+                <Node type="section">
+                    <Path>Classes/SWRLWifiInfo.html</Path>
+                    <Name>Instance Methods</Name>
+                    <Anchor>instance_methods</Anchor>
+                </Node>
+                
             </Subnodes>
             
         </Node>
-		<Node id="17" type="file" documentType="reference">
+		<Node id="21" type="file" documentType="reference">
             <Name>SWRLWifiManager</Name>
             <Path>Classes/SWRLWifiManager.html</Path>
             
         </Node>
 		
 		
-        <Node id="18" type="file" documentType="reference">
+        <Node id="22" type="file" documentType="reference">
             <Name>SWRLBeaconManagerDelegate</Name>
             <Path>Protocols/SWRLBeaconManagerDelegate.html</Path>
             
@@ -465,7 +612,12 @@
             </Subnodes>
             
         </Node>
-		<Node id="19" type="file" documentType="reference">
+		<Node id="23" type="file" documentType="reference">
+            <Name>SWRLBeaconScannerDelegate</Name>
+            <Path>Protocols/SWRLBeaconScannerDelegate.html</Path>
+            
+        </Node>
+		<Node id="24" type="file" documentType="reference">
             <Name>SWRLContentManagerDelegate</Name>
             <Path>Protocols/SWRLContentManagerDelegate.html</Path>
             
@@ -492,7 +644,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="20" type="file" documentType="reference">
+		<Node id="25" type="file" documentType="reference">
             <Name>SWRLRegionManagerDelegate</Name>
             <Path>Protocols/SWRLRegionManagerDelegate.html</Path>
             
@@ -519,7 +671,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="21" type="file" documentType="reference">
+		<Node id="26" type="file" documentType="reference">
             <Name>SWRLSwirlDelegate</Name>
             <Path>Protocols/SWRLSwirlDelegate.html</Path>
             
@@ -546,7 +698,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="22" type="file" documentType="reference">
+		<Node id="27" type="file" documentType="reference">
             <Name>SWRLVisitManagerDelegate</Name>
             <Path>Protocols/SWRLVisitManagerDelegate.html</Path>
             
@@ -573,7 +725,7 @@
             </Subnodes>
             
         </Node>
-		<Node id="23" type="file" documentType="reference">
+		<Node id="28" type="file" documentType="reference">
             <Name>SWRLWifiManagerDelegate</Name>
             <Path>Protocols/SWRLWifiManagerDelegate.html</Path>
             
@@ -601,22 +753,22 @@
             
         </Node>
 		
-        <Node id="24" type="file" documentType="reference">
+        <Node id="29" type="file" documentType="reference">
             <Name>SWRLBeaconState</Name>
             <Path>Constants/SWRLBeaconState.html</Path>
             
         </Node>
-		<Node id="25" type="file" documentType="reference">
+		<Node id="30" type="file" documentType="reference">
             <Name>SWRLContentType</Name>
             <Path>Constants/SWRLContentType.html</Path>
             
         </Node>
-		<Node id="26" type="file" documentType="reference">
+		<Node id="31" type="file" documentType="reference">
             <Name>SWRLSignalType</Name>
             <Path>Constants/SWRLSignalType.html</Path>
             
         </Node>
-		<Node id="27" type="file" documentType="reference">
+		<Node id="32" type="file" documentType="reference">
             <Name>SWRLStatus</Name>
             <Path>Constants/SWRLStatus.html</Path>
             

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLVisitManager.html">
+	<File path="Classes/SWRLSignal.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLVisitManager</TokenIdentifier>
-			<Abstract type="html">A component which consumes the various Enter/Exit/Dwell events from the signal detectors and tracks enter and exit times,
-accumulates dwell and elapsed times by location and placement, and generates logical Visit objects and
-delegate callbacks Visit start, dwell and end.</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLSignal</TokenIdentifier>
+			<Abstract type="html">SWRLSignal is an abstract base class for any presence signal object.  Concrete subclasses are Beacon, WifiInfo and Region.
+A signal is tied to a logical placement and location.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -15,40 +14,110 @@ delegate callbacks Visit start, dwell and end.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/recentVisit</TokenIdentifier>
-			<Abstract type="html">Gets current or most recent visit whether active or inactive.</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>- (SWRLVisit *)recentVisit</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
-			<ReturnValue><Abstract type="html">most recent visit</Abstract></ReturnValue>
-			<Anchor>//api/name/recentVisit</Anchor>
+			
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/activeLocationVisits</TokenIdentifier>
-			<Abstract type="html">Gets all active (started and not ended) Location Visits sorted by signal and distance from most-specific and nearest
-to least-specific and farthest.  The sort order is Beacon, Wifi, Region and by distance where possible within each type.</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/identifier</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>- (NSArray&lt;SWRLVisit*&gt; *)activeLocationVisits</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
-			<ReturnValue><Abstract type="html">Array of Location Visits that are not ended</Abstract></ReturnValue>
-			<Anchor>//api/name/activeLocationVisits</Anchor>
+			
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/activePlacementVisits</TokenIdentifier>
-			<Abstract type="html">Gets all active (started and not ended) Placement Visits sorted by signal and distance from most-specific and nearest
-to least-specific and farthest.  The sort order is Beacon, Wifi, Region and by distance where possible within each type.</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/identifier</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>- (NSArray&lt;SWRLVisit*&gt; *)activePlacementVisits</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
-			<ReturnValue><Abstract type="html">Array of Placement Visits that are not ended</Abstract></ReturnValue>
-			<Anchor>//api/name/activePlacementVisits</Anchor>
+			
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setType:</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setRange:</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/range</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/range</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
