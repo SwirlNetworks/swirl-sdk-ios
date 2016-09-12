@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLSettings.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLSettings</TokenIdentifier>
+			<Abstract type="html">SWRLSettings is a singleton that is initialized by the SWRLAPI.  It is local encrypted storage for
+the all of the swirl files and settings.</Abstract>
+			<DeclaredIn>SWRLSettings.h</DeclaredIn>
+            
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

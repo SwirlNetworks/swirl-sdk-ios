@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLRegionManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegionManager</TokenIdentifier>
+			<Abstract type="html">A component which manages a working set of Region objects (retreived using the API) that are &apos;near&apos; the users location.
+These regions represent both geofences and &apos;control&apos; regions. Geofences have logical location, placement and other metadata associated.
+Control regions are used internally by the SDK to control other signal detection, like when to start and stop scanning for beacons or what
+iBeacon UUIDs are nearby. This component either starts its own os specific location manager or depends upon the host app
+to post location information onto the bus. It generates RegionEnter/RegionExit events onto the bus.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredArea:</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredArea</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredArea</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredArea</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredRegions:</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/monitoredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setEnteredRegions:</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/enteredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/enteredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			
+			
+			<Anchor>//api/name/enteredRegions</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

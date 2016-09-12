@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SWRLContentManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Swirl Proximity Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Swirl</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/contentToastView">contentToastView</option>
+		
+		<option value="//api/name/contentViewController">contentViewController</option>
+		
+		<option value="//api/name/contentViewPresenter">contentViewPresenter</option>
+		
+		<option value="//api/name/lastContent">lastContent</option>
+		
+		<option value="//api/name/recent">recent</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shared">+ shared</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/didDismissContentViewController:">- didDismissContentViewController:</option>
+		
+		<option value="//api/name/didReceiveContent:fromNotification:">- didReceiveContent:fromNotification:</option>
+		
+		<option value="//api/name/didReceiveContentCustom:fromNotification:">- didReceiveContentCustom:fromNotification:</option>
+		
+		<option value="//api/name/didReceiveContentSwirl:fromNotification:">- didReceiveContentSwirl:fromNotification:</option>
+		
+		<option value="//api/name/didReceiveContentURL:fromNotification:">- didReceiveContentURL:fromNotification:</option>
+		
+		<option value="//api/name/didShowContentViewController:">- didShowContentViewController:</option>
+		
+		<option value="//api/name/requestContentPreview:completion:">- requestContentPreview:completion:</option>
+		
+		<option value="//api/name/shouldShowContentView:">- shouldShowContentView:</option>
+		
+		<option value="//api/name/shouldShowNotification:content:">- shouldShowNotification:content:</option>
+		
+		<option value="//api/name/shouldShowURLContent:">- shouldShowURLContent:</option>
+		
+		<option value="//api/name/showContentURL:">- showContentURL:</option>
+		
+		<option value="//api/name/showContentViewController">- showContentViewController</option>
+		
+		<option value="//api/name/showContentViewController:">- showContentViewController:</option>
+		
+		<option value="//api/name/showToastView:">- showToastView:</option>
+		
+		<option value="//api/name/toastViewForContent:">- toastViewForContent:</option>
+		
+		<option value="//api/name/visitManager:didBeginVisit:">- visitManager:didBeginVisit:</option>
+		
+		<option value="//api/name/visitManager:didEndVisit:">- visitManager:didEndVisit:</option>
+		
+		<option value="//api/name/visitManager:didUpdateDwellForVisit:">- visitManager:didUpdateDwellForVisit:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SWRLContentManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>SWRLManager : NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td><a href="../Protocols/SWRLVisitManagerDelegate.html">SWRLVisitManagerDelegate</a></td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SWRLContentManager.h<br />SWRLContentManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A SWRLContentManager component if loaded, will consume Visit events using the <a href="../Protocols/SWRLVisitManagerDelegate.html">SWRLVisitManagerDelegate</a> protocol and use
+those events to trigger content requests through the API.  If content is returned, then depending upon the application state
+and settings, it is responsible for displaying local notifications (if the application is in the background) and launching
+a content view (full screen interstitial view controller) or opening an application deep link or exterunal URL.</p>
+
+<p>This component is not loaded by default, so it must be loaded explicitly at startup or whenever content experiences
+are needed.</p>
+
+<p>If you need to be informed of content delivery event, then you can subscribe to the delegate interfaces which provide
+callbacks when various types of content is delivered.  However, since the multi-cast delegate system is a one way
+broadcast of information, if you need to customize the details of the flow, block certain creatives from launching at
+runtime, you will need to subclass this component and override various methods to alter its default behavior.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Accessing Attributes" name="task_Accessing Attributes"></a>
+						<h2 class="task-title">Accessing Attributes</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/recent" title="recent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/recent">&nbsp;&nbsp;recent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The most recent visit object.  This is either the current visit or a recently exited one.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLVisit *recent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/lastContent" title="lastContent"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastContent">&nbsp;&nbsp;lastContent</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The last piece of content received</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLContent *lastContent</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Customizing the Content View" name="task_Customizing the Content View"></a>
+						<h2 class="task-title">Customizing the Content View</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/contentViewPresenter" title="contentViewPresenter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentViewPresenter">&nbsp;&nbsp;contentViewPresenter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UIViewController from which to present the <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a>.  Override this property to
+change which controller is used.  By default, the implementation searches for the top most UIViewController
+and returns that.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIViewController *contentViewPresenter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentViewController" title="contentViewController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentViewController">&nbsp;&nbsp;contentViewController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UIViewController which is the default presentation view for content.  You
+can override this property to return a subclass of <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a> if needed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentToastView" title="contentToastView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentToastView">&nbsp;&nbsp;contentToastView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The UIView which represents the current toast view (if displayed).</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIView *contentToastView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Receiving Content Events" name="task_Receiving Content Events"></a>
+						<h2 class="task-title">Receiving Content Events</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/didReceiveContentURL:fromNotification:" title="didReceiveContentURL:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentURL:fromNotification:">&ndash;&nbsp;didReceiveContentURL:fromNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when content of type URL is received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentURL:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation just forwards the event via the delegate interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceiveContentSwirl:fromNotification:" title="didReceiveContentSwirl:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentSwirl:fromNotification:">&ndash;&nbsp;didReceiveContentSwirl:fromNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when content of type Swirl is received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentSwirl:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation just forwards the event via the delegate interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceiveContentCustom:fromNotification:" title="didReceiveContentCustom:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContentCustom:fromNotification:">&ndash;&nbsp;didReceiveContentCustom:fromNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when content of type Custom is received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContentCustom:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation just forwards the event via the delegate interface.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didReceiveContent:fromNotification:" title="didReceiveContent:fromNotification:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didReceiveContent:fromNotification:">&ndash;&nbsp;didReceiveContent:fromNotification:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when content of any type is received.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didReceiveContent:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that was just received.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>fromNotification</code></th>
+						<td><p>The content was received as part of a notification.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>This is the first method called when content is received.  Note that content can be received
+from the platform or it can be received as part of processing a notificaton.  When UILocalNotifications are opened
+this method will be called with <code>fromNotification</code> equal to <code>YES</code>.  The default implementation of this method sets <a href="#//api/name/lastContent"><code>lastContent</code></a>
+and its timestamp, switches on content type to call the type specific variants of <code>didReceiveContent...</code> and
+starts the display process for either a background notification or foreground content experience.</p><div class="warning"><p><strong>Warning:</strong> This method is critical to the proper operation of the SWRLContentManager. If you override this
+method, you must pass this message to <code>super</code>.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Controlling Content Display" name="task_Controlling Content Display"></a>
+						<h2 class="task-title">Controlling Content Display</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/shouldShowURLContent:" title="shouldShowURLContent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldShowURLContent:">&ndash;&nbsp;shouldShowURLContent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called before a deep-link or external URL is activated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldShowURLContent:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that is about to be opened.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if you want to display the content, NO if you do not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need to control the display of certain content items, you can override this method and inspect
+the content parameter and either return YES to continue the action or NO to suppress it.
+The default implementation always returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldShowContentView:" title="shouldShowContentView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldShowContentView:">&ndash;&nbsp;shouldShowContentView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called before a web interstitial is about to be displayed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldShowContentView:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content that is about to be displayed.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if you want to display the content, NO if you do not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need to control the display of certain content items, you can override this method and inspect
+the content parameter and either return YES to continue the action or NO to suppress it.
+The default implementation always returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldShowNotification:content:" title="shouldShowNotification:content:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldShowNotification:content:">&ndash;&nbsp;shouldShowNotification:content:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called before a local notification is generated.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)shouldShowNotification:(UILocalNotification *)<em>note</em> content:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>note</code></th>
+						<td><p>The UILocalNotification that is about to be display.  It can be altered or modified at this point.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content from which the notification has been generated.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if you want to display the notification, NO if you do not.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If you need to control the display of certain notifications, you can override this method and inspect
+the content parameter and either return YES to continue the action or NO to suppress it.
+The default implementation always returns YES.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didShowContentViewController:" title="didShowContentViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didShowContentViewController:">&ndash;&nbsp;didShowContentViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called after the <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a> has been shown.  The default implementation of
+this method, simply forwards the message to the delegate bus as contentManager:didShowContentViewController.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didShowContentViewController:(SWRLContentViewController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/didDismissContentViewController:" title="didDismissContentViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/didDismissContentViewController:">&ndash;&nbsp;didDismissContentViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called after the SWRLContentViewController has been dismissed.  The default implementation of
+this method:
+[self.delegate contentManager:self didDismissContentViewController:controller;
+[self showToastView:[self toastViewForContent:controller.content]];</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)didDismissContentViewController:(SWRLContentViewController *)<em>controller</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controller</code></th>
+						<td><p>The <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a> (.<a href="#//api/name/contentViewController">contentViewController</a>)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toastViewForContent:" title="toastViewForContent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toastViewForContent:">&ndash;&nbsp;toastViewForContent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to create the toastView. The default implementation creates a <a href="../Classes/SWRLToastView.html">SWRLToastView</a> with a title and message attributes
+derived from the notification associated with this content.  If you just want to modify attributes of the standard
+toastView, call the super (default) implementation, make the changes and return that view.  If you do not want to
+show a toastView, return nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (UIView *)toastViewForContent:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content for which to provide a toast.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the view you want to use as the toast, or nil if no toast is desired.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showToastView:" title="showToastView:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showToastView:">&ndash;&nbsp;showToastView:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to show the toastView.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showToastView:(UIView *)<em>view</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>view</code></th>
+						<td><p>the view to use as the toast view, should do nothing it nil is passed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation, calls size to fit on the toastView and then attempts to align the toast right
+under the top view controller&rsquo;s navigation bar.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showContentURL:" title="showContentURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showContentURL:">&ndash;&nbsp;showContentURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to activate a deep or external link.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showContentURL:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content containing the link to open.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation of this method first calls the <code>shouldShowURLContent</code> and depending upon
+its return value, either logs an event that the show was suppressed, or calls openURL.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showContentViewController:" title="showContentViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showContentViewController:">&ndash;&nbsp;showContentViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called to present interstitial content.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showContentViewController:(SWRLContent *)<em>content</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>content</code></th>
+						<td><p>The content containing the URL to display.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The default implementation of this method creates the <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a> if it does not exist
+and begins asynchronously loading that content.  When the content load completes, it calls the
+<code>shouldShowContentView</code> method to see if the content should be display and logs an event if the display is
+suppressed, otherwise it presents the <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a> from the result of calling <a href="#//api/name/contentViewPresenter">contentViewPresenter</a>.</p><div class="warning"><p><strong>Warning:</strong> It is not recommended that you override this method.  If for some reason you need to, you should make sure to
+call the implementation in <code>super</code>.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/showContentViewController" title="showContentViewController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/showContentViewController">&ndash;&nbsp;showContentViewController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to force display of the <a href="../Classes/SWRLContentViewController.html">SWRLContentViewController</a>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)showContentViewController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>You would call this method if you wanted to implement a return to content button or other interface widget that
+allows your users to dismiss and relaunch the content view.
+In order to facilitate access to the SWRLContentManager from other parts of the program, you can call <a href="#//api/name/shared"><code>[SWRLContentManager shared]</code></a>
+to access the last content manager created (usually there is only one).</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/requestContentPreview:completion:" title="requestContentPreview:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/requestContentPreview:completion:">&ndash;&nbsp;requestContentPreview:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to request content with a demo-code</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)requestContentPreview:(NSString *)<em>previewCode</em> completion:(void ( ^ ) ( NSError *))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>previewCode</code></th>
+						<td><p>A preview code retrieved from the platform for a given creative.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>Called when the content has been shown or there was an error</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Makes a request for content with a given preview code and if successful, begins the normal
+receive content flow which results in an interstitial view.  The completion is called in either case and
+an error is passed or nil when successful.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Other Methods" name="task_Other Methods"></a>
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/shared" title="shared"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shared">+&nbsp;shared</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this to access the last content manager created.
+This method is provided as a convenience to save the programmer from having to keep a reference to the content manager
+or subclass it added when Swirl was started.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (SWRLContentManager *)shared</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLContentManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/visitManager:didBeginVisit:" title="visitManager:didBeginVisit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visitManager:didBeginVisit:">&ndash;&nbsp;visitManager:didBeginVisit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when a Visit to a new Location and Placement is beginnng</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)visitManager:(SWRLVisitManager *)<em>manager</em> didBeginVisit:(SWRLVisit *)<em>visit</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>VisitManager</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>visit</code></th>
+						<td><p>Visit object which contains information on start, end and accumulated and elapsed dwell time</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLVisitManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visitManager:didUpdateDwellForVisit:" title="visitManager:didUpdateDwellForVisit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visitManager:didUpdateDwellForVisit:">&ndash;&nbsp;visitManager:didUpdateDwellForVisit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called periodically as a user remains in a current Location and Placement</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)visitManager:(SWRLVisitManager *)<em>manager</em> didUpdateDwellForVisit:(SWRLVisit *)<em>visit</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>VisitManager</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>visit</code></th>
+						<td><p>Visit object which contains information on start, end and accumulated and elapsed dwell time</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLVisitManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/visitManager:didEndVisit:" title="visitManager:didEndVisit:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/visitManager:didEndVisit:">&ndash;&nbsp;visitManager:didEndVisit:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Called when a Visit to a new Location and Placement has ended</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)visitManager:(SWRLVisitManager *)<em>manager</em> didEndVisit:(SWRLVisit *)<em>visit</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>manager</code></th>
+						<td><p>VisitManager</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>visit</code></th>
+						<td><p>Visit object which contains information on start, end and accumulated and elapsed dwell time</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLVisitManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-09-09</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

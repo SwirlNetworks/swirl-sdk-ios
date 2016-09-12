@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SWRLBeaconScannerDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconScannerDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconScannerDelegate protocol is how the built in beacon scanners communicate discovered beacons to the rest
+of the system.</Abstract>
+			<DeclaredIn>SWRLBeaconScanner.h</DeclaredIn>
+            
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

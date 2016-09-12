@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLBluetoothScanner.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLBluetoothScanner</TokenIdentifier>
+			<Abstract type="html">The SWRLBluetoothScanner is a beacon scanner that uses the CoreBluetooth APIs to scan for BLE advertisements and reports
+those advertisements to the rest of the system.  By default, the scanner monitors for FEEB and FEAA service types which
+correspond to SecureCast and Eddystone respectively.  The set of protocols to scan for can be customized through Settings.</Abstract>
+			<DeclaredIn>SWRLBeaconScanner.h</DeclaredIn>
+            
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

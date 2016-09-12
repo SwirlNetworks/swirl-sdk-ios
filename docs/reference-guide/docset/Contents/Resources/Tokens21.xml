@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLWifiManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLWifiManager</TokenIdentifier>
+			<Abstract type="html">An instance of the SWRLWifiManager class is instantiated by the framework and started when Swirl is started.  For the
+most part, you do not interact directly with this class.  If you are interested in receiving wifi related events, then
+you use the addDelegate: method on Swirl to add an object which implements some or all of the methods in the
+SWRLWifiManagerDelegate.</Abstract>
+			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="21"/>
+		</Token>
+		
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/SWRLSwirlDelegate.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLSwirlDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLSwirlDelegate protocol defines messages that the Swirl framework provides about its internal state.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+            
+			
+			<NodeRef refid="26"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateStatus:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the status field has changed.  Swirl has transitioned states.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)swirlDidUpdateStatus:(SWRLStatus)status</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>status</Name>
+					<Abstract type="html">The current system status. See SWRLStatus.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swirlDidUpdateStatus:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidReportError:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that an error has been reported.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)swirlDidReportError:(NSError *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">The error that was reported.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swirlDidReportError:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateLocation:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the SDK updated its location</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)swirlDidUpdateLocation:(CLLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The updated location.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/swirlDidUpdateLocation:</Anchor>
+            <NodeRef refid="26"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

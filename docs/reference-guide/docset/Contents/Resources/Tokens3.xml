@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/SWRLBeaconManager.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLBeaconManager</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconManager class is instantiated by the framework to coordinate and manage SWRLBeacons.  An instance
+of this class is created when the framework is initialized and started when the SWRLSwirl start: is called.
+For the most part, you do not need to interact with this class directly.  If you are interested in beacon level
+events and transitions, then you would add a delegate through the Swirl class and implement delegate methods.
+For information about the delegate methods you use to receive events, see SWRLBeaconManagerDelegate.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setNearest:</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setBeacons:</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
+			
+			
+			<Anchor>//api/name/beacons</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
+			
+			
+			<Anchor>//api/name/beacons</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/beacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
+			
+			
+			<Anchor>//api/name/beacons</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

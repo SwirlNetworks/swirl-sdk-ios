@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>SWRLToastView Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Swirl Proximity Framework </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Swirl</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/backgroundColor">backgroundColor</option>
+		
+		<option value="//api/name/contentView">contentView</option>
+		
+		<option value="//api/name/deleteAccessoryView">deleteAccessoryView</option>
+		
+		<option value="//api/name/displaySeconds">displaySeconds</option>
+		
+		<option value="//api/name/font">font</option>
+		
+		<option value="//api/name/message">message</option>
+		
+		<option value="//api/name/messageLabel">messageLabel</option>
+		
+		<option value="//api/name/swipeToDelete">swipeToDelete</option>
+		
+		<option value="//api/name/tabAccessoryView">tabAccessoryView</option>
+		
+		<option value="//api/name/textColor">textColor</option>
+		
+		<option value="//api/name/time">time</option>
+		
+		<option value="//api/name/timeLabel">timeLabel</option>
+		
+		<option value="//api/name/title">title</option>
+		
+		<option value="//api/name/titleLabel">titleLabel</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithTitle:message:time:actionHandler:">- initWithTitle:message:time:actionHandler:</option>
+		
+		<option value="//api/name/presentFromViewController:">- presentFromViewController:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">SWRLToastView Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>UIView</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>SWRLToastView.h<br />SWRLToastView.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A SWRLToastView is a floating notification view that allows the user to delete it from the screen,
+to move up and down and to slide it way to the right to get it out of the way.  It is used
+by the <a href="../Classes/SWRLContentManager.html">SWRLContentManager</a> to provide a default return to content button when the user dismisses content.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Accessing Information Attributes" name="task_Accessing Information Attributes"></a>
+						<h2 class="task-title">Accessing Information Attributes</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="method-title"><code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The toast title text.  Displays as the first line. If nil, it will collapse and take up no space.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) NSString *title</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/message" title="message"></a>
+	<h3 class="method-title"><code><a href="#//api/name/message">&nbsp;&nbsp;message</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The toast message.  Displays under the <a href="#//api/name/title">title</a> and if nil, will collapse to nothing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) NSString *message</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/time" title="time"></a>
+	<h3 class="method-title"><code><a href="#//api/name/time">&nbsp;&nbsp;time</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The toast timestamp.  Displays to the right of the <a href="#//api/name/title">title</a>.  If nil, will not display</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) NSDate *time</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Controlling the Appearance" name="task_Controlling the Appearance"></a>
+						<h2 class="task-title">Controlling the Appearance</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/font" title="font"></a>
+	<h3 class="method-title"><code><a href="#//api/name/font">&nbsp;&nbsp;font</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The font to use for all text.  By default uses the systemFont</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIFont *font</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textColor" title="textColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textColor">&nbsp;&nbsp;textColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The text color for all labels. By default is nill and will derive an approriate color based on the background</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIColor *textColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/backgroundColor" title="backgroundColor"></a>
+	<h3 class="method-title"><code><a href="#//api/name/backgroundColor">&nbsp;&nbsp;backgroundColor</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The background of the toast.  The default is black with a .60 alpha</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIColor *backgroundColor</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/displaySeconds" title="displaySeconds"></a>
+	<h3 class="method-title"><code><a href="#//api/name/displaySeconds">&nbsp;&nbsp;displaySeconds</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The <a href="#//api/name/time">time</a> to display.  Currently this field has no effect.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSTimeInterval displaySeconds</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tabAccessoryView" title="tabAccessoryView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tabAccessoryView">&nbsp;&nbsp;tabAccessoryView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The view to display when the toast is in its parked right position. The default is a tab.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIView *tabAccessoryView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteAccessoryView" title="deleteAccessoryView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteAccessoryView">&nbsp;&nbsp;deleteAccessoryView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The view to display when the toast is in its swiped left or delete mode.  The default is an X on red background</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) UIView *deleteAccessoryView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/swipeToDelete" title="swipeToDelete"></a>
+	<h3 class="method-title"><code><a href="#//api/name/swipeToDelete">&nbsp;&nbsp;swipeToDelete</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Boolean to control whether the user can swipe left to delete in a single motion. Default is NO</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) BOOL swipeToDelete</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/contentView" title="contentView"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentView">&nbsp;&nbsp;contentView</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Background view of the toast</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIView *contentView</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/titleLabel" title="titleLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/titleLabel">&nbsp;&nbsp;titleLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default titleLabel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UILabel *titleLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/timeLabel" title="timeLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/timeLabel">&nbsp;&nbsp;timeLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default timeLabel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UILabel *timeLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/messageLabel" title="messageLabel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/messageLabel">&nbsp;&nbsp;messageLabel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default messageLabel</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UILabel *messageLabel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithTitle:message:time:actionHandler:" title="initWithTitle:message:time:actionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithTitle:message:time:actionHandler:">&ndash;&nbsp;initWithTitle:message:time:actionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Construct and initialise a toastView with <a href="#//api/name/title">title</a>, <a href="#//api/name/message">message</a> and timestamp.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (instancetype)initWithTitle:(NSString *)<em>title</em> message:(NSString *)<em>message</em> time:(NSDate *)<em>time</em> actionHandler:(void ( ^ ) ( SWRLToastView *view , BOOL ))<em>actionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>title</code></th>
+						<td><p>The toast view <a href="#//api/name/title">title</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>message</code></th>
+						<td><p>The toast view <a href="#//api/name/message">message</a></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>time</code></th>
+						<td><p>The toast view timestamp (optional)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>actionHandler</code></th>
+						<td><p>The completion block that is called when the user activates the toast or deletes it.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentFromViewController:" title="presentFromViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentFromViewController:">&ndash;&nbsp;presentFromViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Present a toast view from a controller.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentFromViewController:(UIViewController *)<em>vc</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>vc</code></th>
+						<td><p>The viewController to use as the host of the toast view.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLToastView.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Swirl. All rights reserved. Updated: 2016-09-09</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.swirl.Swirl-Proximity-Framework</string>
+	<key>CFBundleName</key>
+	<string>Swirl Proximity Framework Documentation</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	
+	
+	
+	<key>DocSetFallbackURL</key>
+	<string>http://swirl.com/Swirl</string>
+	<key>DocSetFeedName</key>
+	<string>Swirl Proximity Framework Documentation</string>
+	<key>DocSetFeedURL</key>
+	<string>http://swirl.com/Swirl/Swirl.atom</string>
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	<key>DocSetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>DashDocSetFamily</key>
+	<string>appledoc</string>
+	<key>DocSetPublisherIdentifier</key>
+	<string>com.swirl.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>Swirl</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2016 Swirl. All rights reserved.</string>
+</dict>
+</plist>
