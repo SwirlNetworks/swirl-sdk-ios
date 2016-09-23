@@ -1,7 +1,3 @@
-**PRE-RELEASE DOCUMENTATION - All information is subject to change**
-
----
-
 # Swirl Proximity Framework
 The Swirl platform is designed as a complete proximity platform detecting a variety of proximity signals like geofence, wifi and beacons and managing presence tracking, notification and content delivery.  The Swirl framework is a component of this system which enables signal detection and content delivery on mobile devices.
 
@@ -30,13 +26,9 @@ There are a number of additional documents and resources available to facilitate
   Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
-**Version:** `3.0-beta2` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `8/27/16`
+**Version:** `3.0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `9/16/16`
 <p>
-This is the second beta release of **Swirl.framework** which represents a completely rearchitected and rewritten code base for iOS.  As this is pre-release software, and still going through QA, it may have (probably does have) defects.  The documentation is mostly up-to-date, but is still not 100% complete.
-
-#### Reporting Issues
-If you have access to this repository, it is likely because we are hoping for feedback. ***Don't be shy***.
-<br>All issues can be reported to [tom@swirl.com](mailto:tom@swirl.com) 
+This version of the SDK represents a completely rearchitected and rewritten code base for iOS.  
 
 ## License
 We have included our standard commercial [license](LICENSE.md), but this repository is public currently for technical reasons ONLY and its accessibility should not be considered a grant of any rights.  Please see [Swirl](https://www.swirl.com) for more details or email us at [sales@swirl.com](mailto:sales@swirl.com) if you are interested in using our products.

@@ -6,7 +6,7 @@
 - [Technical Overview](#technical-overview)
   - [Architechture](#architecture)
 - [Integration](#integration)
-  - [Application Key](#application-key)
+  - [Application Key](#get-application-key)
   - [Verify Tools and Targets](#verify-tools-and-targets)
   - [Add Framework to your Application](#add-framework-to-your-application)
   - [Make Code Changes](#make-code-changes)
@@ -76,7 +76,22 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
  ![](./images/sdk3-add-framework.png)
 
 #### Adding the Framework Using Cocoapods
-  1. *Coming soon*
+
+The Swirl framework pod is named **SwirlFramework**. The initial (and current) version is **3.0**.
+
+To include the pod simply add the following line to the target in your podfile:
+```ruby
+pod 'SwirlFramework', '3.0'
+```
+
+A simple podfile that includes the Swirl framework would look like this:
+```ruby
+target 'MyApp' do
+	pod 'SwirlFramework', '3.0'
+end
+```
+
+Refer to the [Using CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html) guide on [cocoapods.org](cocoapods.org) for more information.
 
 ### Make Code Changes
 
