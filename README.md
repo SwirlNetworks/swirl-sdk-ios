@@ -16,7 +16,7 @@ There are a number of additional documents and resources available to facilitate
 
 #### For Implementation
 * [Swirl Proximity Developer Guide for iOS](./docs/swirl-developer-guide-ios.md)
-* [Swirl Proximity Framework Reference for iOS](https://SwirlNetworks.github.io/swirl-sdk-ios/index.html)
+* [Swirl Proximity Framework Reference for iOS](https://swirlnetworks.github.io/swirl-sdk-ios/docs/reference-guide/html/index.html)
 * [Example Source Code for iOS](./examples/)
 
 #### For Testing
