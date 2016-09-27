@@ -161,16 +161,18 @@
 <h4>
 <a id="user-content-adding-the-framework-using-cocoapods" class="anchor" name="adding-the-framework-using-cocoapods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Adding the Framework Using Cocoapods</h4>
 
-<p>The Swirl framework pod is named <strong>SwirlFramework</strong>. The initial (and current) version is <strong>3.0</strong>.</p>
+<p>The Swirl framework pod is named <strong>swirl-sdk-ios</strong>. The initial (and current) version is <strong>3.0</strong>.</p>
+
+<p><strong>Note</strong>: There is another pod published with the name <em>SwirlFramework</em>. This pod is deprecated and should no longer be used.
 
 <p>To include the pod simply add the following line to the target in your podfile:</p>
 
-<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>SwirlFramework<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>3.0<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-source-ruby"><pre>pod <span class="pl-s"><span class="pl-pds">'</span>swirl-sdk-ios<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>3.0<span class="pl-pds">'</span></span></pre></div>
 
 <p>A simple podfile that includes the Swirl framework would look like this:</p>
 
 <div class="highlight highlight-source-ruby"><pre>target <span class="pl-s"><span class="pl-pds">'</span>MyApp<span class="pl-pds">'</span></span> <span class="pl-k">do</span>
-    pod <span class="pl-s"><span class="pl-pds">'</span>SwirlFramework<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>3.0<span class="pl-pds">'</span></span>
+    pod <span class="pl-s"><span class="pl-pds">'</span>swirl-sdk-ios<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>3.0<span class="pl-pds">'</span></span>
 <span class="pl-k">end</span></pre></div>
 
 <p>Refer to the <a href="https://guides.cocoapods.org/using/using-cocoapods.html">Using CocoaPods</a> guide on <a href="cocoapods.org">cocoapods.org</a> for more information.</p>
