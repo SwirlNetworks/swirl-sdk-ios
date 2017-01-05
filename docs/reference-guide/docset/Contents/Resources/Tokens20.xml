@@ -279,6 +279,18 @@ SSIDs and listed BSSIDs are not reported.</Abstract>
             <NodeRef refid="20"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/resolvedIdentifier</TokenIdentifier>
+			<Abstract type="html">This is the swirl internal identifier</Abstract>
+			<DeclaredIn>SWRLWifiManager.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)resolvedIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/resolvedIdentifier</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
         
         
 	</File>

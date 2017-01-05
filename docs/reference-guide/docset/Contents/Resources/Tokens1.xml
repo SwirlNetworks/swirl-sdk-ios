@@ -377,6 +377,18 @@ Eddystone beacons, this would include TLM data base-64 encoded.</Abstract>
             <NodeRef refid="1"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/resolvedIdentifier</TokenIdentifier>
+			<Abstract type="html">This is the swirl internal identifier</Abstract>
+			<DeclaredIn>SWRLBeacon.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)resolvedIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/resolvedIdentifier</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
         
 	</File>
