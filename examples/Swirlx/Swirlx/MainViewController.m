@@ -26,6 +26,43 @@
 
 @implementation MainViewController
 
+static SettingsMetadata *settings_meta;
+
++ (void)initialize {
+	if (self == MainViewController.class) {
+		settings_meta = @[
+			@[  @{ @"title" : @"Domain",                @"key" : SWRLSettingApiHost,       @"type" : @"text",  @"user" : @NO,  },
+				@{ @"title" : @"Content Code",          @"key" : SWRLSettingContentCode,   @"type" : @"text",  @"user" : @NO,  },
+				@{ @"title" : @"Beacon Filter",         @"key" : SWRLSettingBeaconFilter,  @"type" : @"text",  @"user" : @NO,  },
+				@{ @"title" : @"Field 1",               @"key" : @"field_1",               @"type" : @"text",  @"user" : @YES, },
+				@{ @"title" : @"Field 2",               @"key" : @"field_2",               @"type" : @"text",  @"user" : @YES, },
+				@{ @"title" : @"Clear Location Locks",  @"key" : @"clear_locks",           @"type" : @"bool",  @"user" : @NO,  },
+			]
+		];
+	}
+}
+
+- (NSDictionary*)settings {
+	return [[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"];
+}
+
+- (NSDictionary*)user_info {
+	NSDictionary* settings = self.settings;
+	NSMutableDictionary *user_info = [NSMutableDictionary new];
+	for (NSArray *group in settings_meta) {
+		for (NSDictionary *setting in group) {
+			if ([setting[@"user"] isEqual:@YES]) {
+				NSString *value = settings[setting[@"key"]];
+				if (value.length != 0) {
+					user_info[setting[@"key"]] = value;
+				}
+			}
+		}
+	}
+	return user_info;
+}
+
+
 // =====================================================================================================================
 #pragma mark - Status Labels
 // =====================================================================================================================
@@ -104,7 +141,7 @@
             [self startAfterCountdown];
         });
     } else {
-        [[Swirl shared] start:[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"]];
+        [[Swirl shared] start:self.settings];
     }
 }
 
@@ -126,30 +163,20 @@
         self.locationStatus.text = nil;
         [self updateStatus:@"Resetting"];
         [[Swirl shared] reset];
+		[[Swirl shared] setUserInfo:self.user_info];
         [self startAfterCountdown];
     }
 }
 
 - (void) editSettings {
-    SettingsMetadata *meta = @[
-        @[  @{ @"title" : @"Domain",                @"key" : SWRLSettingApiHost,       @"type" : @"text",  @"user" : @NO,  },
-            @{ @"title" : @"Content Code",          @"key" : SWRLSettingContentCode,   @"type" : @"text",  @"user" : @NO,  },
-            @{ @"title" : @"Beacon Filter",         @"key" : SWRLSettingBeaconFilter,  @"type" : @"text",  @"user" : @NO,  },
-			@{ @"title" : @"Field 1",               @"key" : @"field_1",               @"type" : @"text",  @"user" : @YES, },
-			@{ @"title" : @"Field 2",               @"key" : @"field_2",               @"type" : @"text",  @"user" : @YES, },
-			@{ @"title" : @"Clear Location Locks",  @"key" : @"clear_locks",           @"type" : @"bool",  @"user" : @NO,  },
-		]
-    ];
-    NSMutableDictionary *settings = [[[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"] mutableCopy];
-    SettingsViewController *vc = [[SettingsViewController alloc]
-        initWithMetadata:meta settings:settings
-                onchange:^(NSDictionary *updated, NSDictionary *user_info) {
-                    [settings addEntriesFromDictionary:updated];
-                    [[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"swirl_options"];
-                    [[NSUserDefaults standardUserDefaults] synchronize];
-					[self reset];
-					[[Swirl shared] setUserInfo:user_info];
-                }];
+    NSMutableDictionary *settings = [self.settings mutableCopy];
+    SettingsViewController *vc = [[SettingsViewController alloc] initWithMetadata:settings_meta settings:settings
+		onchange:^(NSDictionary *updated) {
+			[settings addEntriesFromDictionary:updated];
+			[[NSUserDefaults standardUserDefaults] setObject:settings forKey:@"swirl_options"];
+			[[NSUserDefaults standardUserDefaults] synchronize];
+			[self reset];
+		}];
     [[self navigationController] pushViewController:vc animated:YES];
 }
 

@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SWRLData : NSObject
+@interface SWRLCrypt : NSObject
++ (NSData *)sha1:(NSString *)source;
++ (NSData *)sha256:(NSString *)source;
++ (NSData *)hmac_sha256:(NSString *)source key:(NSData *)key;
 + (NSData *)encrypt:(NSData *)input key:(NSData *)key;
 + (NSData *)decrypt:(NSData *)input key:(NSData *)key;
++ (NSData *)decrypt:(NSData *)input iv:(NSData *)iv key:(NSData *)key;
++ (NSString *)hexDigest:(NSData *)data;
++ (NSString *)hexDigest:(NSData *)data offset:(int)off;
++ (NSString *)randomString:(int)length;
 @end
 
 @interface SWRLJSON : NSObject
@@ -21,13 +28,10 @@
 
 @interface SWRLUtil : NSObject
 + (uint32_t)crc32:(uint32_t)crc data:(const uint8_t *)data length:(size_t)length;
-+ (NSString *)SHA1:(NSString *)source;
-+ (NSString *)SHA256:(NSString *)source;
-+ (NSString *)hexString:(const uint8_t *)data length:(size_t)length;
++ (NSString *)dateStringWithFormat:(NSString *)format interval:(NSTimeInterval)interval;
 + (NSString *)dateStringWithFormat:(NSString *)format date:(NSDate *)date;
 + (NSString *)dateStringWithFormat:(NSString *)format date:(NSDate *)date locale:(NSLocale *)locale tzoffset:(NSInteger)tzoffset;
 + (NSString *)formatSameDayTime:(NSTimeInterval)time now:(NSTimeInterval)now;
-
 + (NSDictionary *)dictionaryWithLocation:(CLLocation *)location;
 + (CLLocation *)locationWithDictionary:(NSDictionary *)dictionary;
 
@@ -35,6 +39,7 @@
 @end
 
 @interface SWRLURL : NSObject
++ (NSString *)portWithURL:(NSURL *)url;
 + (NSDictionary *)queryParamsWithURL:(NSURL *)url;
 @end
 

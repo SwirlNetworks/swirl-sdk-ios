@@ -77,19 +77,19 @@ The Swirl SDK is packaged as a statically linked framework called *Swirl.framewo
 
 #### Adding the Framework Using Cocoapods
 
-The Swirl framework pod is named **swirl-sdk-ios**. The initial (and current) version is **3.0**.
+The Swirl framework pod is named **swirl-sdk-ios**. The initial version is **3.0**.
 
 **Note**: There is another pod published with the name *SwirlFramework*. This pod is deprecated and should no longer be used.
 
-To include the pod simply add the following line to the target in your podfile:
+To always include the latest version of the pod simply add the following line to the target in your podfile:
 ```ruby
-pod 'swirl-sdk-ios', '3.0'
+pod 'swirl-sdk-ios', '>=3.0'
 ```
 
-A simple podfile that includes the Swirl framework would look like this:
+A simple podfile that always includes the latest Swirl framework would look like this:
 ```ruby
 target 'MyApp' do
-	pod 'swirl-sdk-ios', '3.0'
+	pod 'swirl-sdk-ios', '>=3.0'
 end
 ```
 

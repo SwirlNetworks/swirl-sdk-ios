@@ -26,6 +26,14 @@ There are a number of additional documents and resources available to facilitate
   Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
+**Version:** `3.2` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `01/06/17`
+<p>
+Adds support for realtime streaming or events; improved support for eddystone; added improved security for API requests; added support for enter/exit zone signals, other bug fixes.  
+<p>
+**Version:** `3.1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `12/19/16`
+<p>
+Fixes a crash that can occur during background launches on some devices.  
+
 **Version:** `3.0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `9/16/16`
 <p>
 This version of the SDK represents a completely rearchitected and rewritten code base for iOS.  

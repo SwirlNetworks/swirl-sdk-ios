@@ -15,6 +15,7 @@
 
 #define SWRLBeaconInvalidRSSI       (-999)
 #define SWRLBeaconInvalidRange      ( 999)
+#define SWRLBeaconEnteredRSSI       (-1)
 
 /** Beacon state relative to current threshold set for the beacon. */
 typedef NS_ENUM(int, SWRLBeaconState) {
@@ -110,7 +111,6 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
 // ====================================================================================================================
 @property (nonatomic) NSTimeInterval lastEventTime;
 
-- (NSString *)resolvedIdentifier;
 - (void) setError:(NSError *)error;
 - (void) setEntered:(BOOL)value;
 

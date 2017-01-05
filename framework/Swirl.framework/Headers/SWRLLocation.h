@@ -34,6 +34,8 @@ typedef NS_ENUM(int, SWRLSignalType) {
 @property (nonatomic, readonly) SWRLSignalType      type;
 /** This is the approximate range to the beacon.  This is a rough approximation. */
 @property (nonatomic, readonly) double              range;
+/** This is the swirl internal identifier */
+@property (nonatomic, readonly) NSString *          resolvedIdentifier;
 
 - (instancetype) initWithIdentifier:(NSString *)identifier;
 @end

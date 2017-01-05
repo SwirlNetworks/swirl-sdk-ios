@@ -189,11 +189,21 @@ protocols broadcast to the mult-delegate bus.
 - (void) logEvent:(NSString *)event data:(NSString *)data;
 
 - (instancetype)init;
+- (instancetype)init:(NSArray<Class>*)classes;
 
 /**
  *  Swirl is a singleton.  You use shared to get access to the shared instance.
  */
 + (instancetype) shared;
+
+/**
+ * Advanced: This initalizes the singleton with non-default array of manager classes.
+ * Afterwards can access Swirl using the normal accessor [Swirl shared].
+ * Default classes: SWRLVisitManager, SWRLBeaconManager, SWRLRegionManager, SWRLWifiManager,
+ * SWRLIBeaconScanner, SWRLBluetoothScanner
+ * @param classes An array of class objects to initialize the managers/observers can be empty
+ */
++ (instancetype) with:(NSArray<Class> *)classes;
 
 @end
 

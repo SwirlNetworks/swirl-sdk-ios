@@ -199,6 +199,14 @@
  */
 - (void) showContentViewController;
 
+/**
+ *  Call this method to clear the content view.  
+ *  @param animated Use animation when removing the view
+ *
+ *  @discussion It will clear the view if it is currently presented otherwise it will do nothing.
+ */
+- (void) dismissContentViewController:(BOOL)animated;
+
 /** 
  * Call this method to request content with a demo-code
  *

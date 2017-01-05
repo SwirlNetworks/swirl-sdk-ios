@@ -460,6 +460,23 @@ show a toastView, return nil.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/dismissContentViewController:</TokenIdentifier>
+			<Abstract type="html">Call this method to clear the content view.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)dismissContentViewController:(BOOL)animated</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>animated</Name>
+					<Abstract type="html">Use animation when removing the view</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/dismissContentViewController:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/requestContentPreview:completion:</TokenIdentifier>
 			<Abstract type="html">Call this method to request content with a demo-code</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>

@@ -406,6 +406,26 @@ After calling this function, the sdk will be in a stopped state.</Abstract>
             <NodeRef refid="16"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/with:</TokenIdentifier>
+			<Abstract type="html">Advanced: This initalizes the singleton with non-default array of manager classes.
+Afterwards can access Swirl using the normal accessor [Swirl shared].
+Default classes: SWRLVisitManager, SWRLBeaconManager, SWRLRegionManager, SWRLWifiManager,
+SWRLIBeaconScanner, SWRLBluetoothScanner</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>+ (instancetype)with:(NSArray&lt;Class&gt; *)classes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classes</Name>
+					<Abstract type="html">An array of class objects to initialize the managers/observers can be empty</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/with:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
         
         
 	</File>

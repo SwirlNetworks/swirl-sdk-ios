@@ -12,6 +12,10 @@
 
 /** API Key.  This is the API key assigned through the platform */
 extern NSString *const SWRLSettingApiKey;
+/** API Secret.  This is the API secret assigned through the platform */
+extern NSString *const SWRLSettingApiSecret;
+/** API Enabled.  Failsafe used to disable the SDK remotely if necessary. Default:YES. */
+extern NSString *const SWRLSettingApiEnabled;
 /** API Host.  This is primarily used internally for switching between testing and live infrastrucures. */
 extern NSString *const SWRLSettingApiHost;
 /** UserInfo. This is the option which backs the userInfo property on Swirl. */
@@ -26,6 +30,8 @@ extern NSString *const SWRLSettingUseLocationSignificant;
 extern NSString *const SWRLSettingLocationFenceMin;
 /** Maximum size of the userFence in meters. Default is 5000.0 */
 extern NSString *const SWRLSettingLocationFenceMax;
+/** Minimum interval between GPS samples on foreground event (once per foreground). Default is 300.0 seconds */
+extern NSString *const SWRLSettingLocationForegroundGpsMin;
 /** An array of location change information. Mostly for debugging */
 extern NSString *const SWRLSettingLocationHistory;
 /** How many location changes to record. Default is 0 (location recording disabled) */
@@ -50,9 +56,11 @@ extern NSString *const SWRLSettingBeaconFilter;
 extern NSString *const SWRLSettingBeaconScanInterval;
 /** Default rest interval when scanning for beacons. Default is 2.0 */
 extern NSString *const SWRLSettingBeaconRestInterval;
+/** Force beacon scan to run always (regardless of location permissions, Default is NO */
+extern NSString *const SWRLSettingBeaconScanAlways;
 /** Boolean to control whether or not to run the beacon proximity check. Default is YES */
 extern NSString *const SWRLSettingBeaconProximityCheck;
-/** Comma separated list of UUIDs to always listen for (ibeacon). Default is 0c900860-7e44-9182-186d-5c49ad933f81 (Swirl UUID). */
+/** Comma separated list of services to scan for. Default is FEEB,FEAA (securecast, eddystone) */
 extern NSString *const SWRLSettingBeaconServicesAlways;
 /** List of region based service ids. Varies by Region. */
 extern NSString *const SWRLSettingBeaconServices;
@@ -78,7 +86,7 @@ extern NSString *const SWRLSettingsChangedKeys;
 @interface SWRLSettings : NSObject
 @property (nonatomic, readonly) NSDictionary *allSettings;
 
-- (instancetype)initWithPath:(NSString *)path prefix:(NSString *)name;
+- (instancetype)initWithPath:(NSString *)path prefix:(NSString *)name password:(NSString *)password;
 
 - (NSString *) stringForKey:(NSString *)key default:(NSString *)value;
 - (BOOL) boolForKey:(NSString *)key default:(BOOL)value;

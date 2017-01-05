@@ -12,5 +12,5 @@ typedef NSArray<NSArray<NSDictionary*>*> SettingsMetadata;
 @interface SettingsViewController : UITableViewController
 - (instancetype) initWithMetadata:(SettingsMetadata *)meta
                          settings:(NSDictionary *)settings
-                         onchange:(void (^)(NSDictionary *values, NSDictionary *user_info))onchange;
+                         onchange:(void (^)(NSDictionary *values))onchange;
 @end

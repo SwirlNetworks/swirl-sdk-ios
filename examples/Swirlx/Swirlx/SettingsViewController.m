@@ -79,17 +79,16 @@
 
 @end
 
-@interface SettingsViewController() <UIAlertViewDelegate>
+@interface SettingsViewController()
 @property (strong, nonatomic) SettingsMetadata  *metadata;
 @property (strong, nonatomic) NSMutableDictionary *settings;
-@property (copy, nonatomic) void (^onchange)(NSDictionary *, NSDictionary *);
+@property (copy, nonatomic) void (^onchange)(NSDictionary *);
 @property (nonatomic) BOOL changed;
-@property (strong, nonatomic) UIAlertView *locationLocksAlertView;
 @end
 
 @implementation SettingsViewController 
 
-- (instancetype) initWithMetadata:(SettingsMetadata *)meta settings:(NSDictionary *)settings onchange:(void (^)(NSDictionary *, NSDictionary *))onchange {
+- (instancetype) initWithMetadata:(SettingsMetadata *)meta settings:(NSDictionary *)settings onchange:(void (^)(NSDictionary *))onchange {
     if ((self = [super initWithStyle:UITableViewStyleGrouped]) != nil) {
         self.metadata = meta;
         self.settings = [settings mutableCopy];
@@ -103,20 +102,8 @@
 
 - (void) viewWillDisappear:(BOOL)animated {
     if (_changed) {
-		NSMutableDictionary *user_info = [NSMutableDictionary new];
-		for (NSArray *group in self.metadata) {
-			for (NSDictionary *setting in group) {
-				if ([setting[@"user"] isEqual:@YES]) {
-					NSString *value = _settings[setting[@"key"]];
-					if (value.length != 0) {
-						user_info[setting[@"key"]] = value;
-					}
-				}
-			}
-		}
-
-        Log_d(@"values changed: values = %@,\nuser_info = %@", _settings, user_info);
-        _onchange(_settings, user_info);
+        Log_d(@"values changed: values = %@", _settings);
+        _onchange(_settings);
     }
 }
 
@@ -164,44 +151,33 @@
 }
 
 - (void) clearLocks {
-	self.locationLocksAlertView = [[UIAlertView alloc] initWithTitle:@"Clear Location Locks"
-															 message:@"Clearing Swirl location locks for device, please wait..."
-															delegate:self
-												   cancelButtonTitle:nil
-												   otherButtonTitles:@"Dismiss",nil];
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Clear Location Locks" message:@"Clearing Swirl location locks for device, please wait...\n\n\n" preferredStyle:UIAlertControllerStyleAlert];
+	[alert addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:nil]];
+
 	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
 	spinner.color = [UIColor blackColor];
+	[spinner setTranslatesAutoresizingMaskIntoConstraints:false];
+	[alert.view addSubview:spinner];
+
+	NSLayoutConstraint *vertConstraint = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:alert.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0];
+	NSLayoutConstraint *horizConstraint = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:alert.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:15];
+	[alert.view addConstraints:@[vertConstraint, horizConstraint]];
+	[spinner setUserInteractionEnabled:false];
 	[spinner startAnimating];
-	[self.locationLocksAlertView setValue:spinner forKey:@"accessoryView"]; // iOS7+ only
-	[self.locationLocksAlertView show];
+
+	[self presentViewController:alert animated:true completion:nil];
 
 	[[SWRLAPI shared] clearLocationLocks:^(NSError *error) {
 		dispatch_async( dispatch_get_main_queue(), ^{
-			// didn't find nice/reliable way to 'update' existing alert view, so creating another
-			[self.locationLocksAlertView dismissWithClickedButtonIndex:0 animated:NO];
+			[spinner stopAnimating];
 
 			if (error) {
-				self.locationLocksAlertView = [[UIAlertView alloc] initWithTitle:@"Clear Location Locks"
-																		 message:@"Failed to clear Swirl location locks for this device. Please check the Internet connection and try again."
-																		delegate:self
-															   cancelButtonTitle:nil
-															   otherButtonTitles:@"OK", nil];
+				[alert setMessage:@"Failed to clear Swirl location locks for this device. Please check the Internet connection and try again."];
 			} else {
-				self.locationLocksAlertView = [[UIAlertView alloc] initWithTitle:@"Clear Location Locks"
-																		 message:@"Successfully cleared Swirl location locks for this device."
-																		delegate:self
-															   cancelButtonTitle:nil
-															   otherButtonTitles:@"OK", nil];
+				[alert setMessage:@"Successfully cleared Swirl location locks for this device."];
 			}
-			[self.locationLocksAlertView show];
 		});
 	}];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (alertView == self.locationLocksAlertView) {
-		self.locationLocksAlertView = nil;
-	}
 }
 
 @end

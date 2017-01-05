@@ -13,21 +13,22 @@
 #import <PassKit/PassKit.h>
 
 #define SWRLSwirlDomain                 @"com.swirl"
-#define SWRLSwirlVersion                @"3.0"
+#define SWRLSwirlVersion                @"3.2"
+#define SWRLCachePath                   @"~/Library/Caches/"
 
 #define NSErrorFromException(d, e)      [NSError errorWithDomain:d code:-1 userInfo:\
-                                            @{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
-                                                NSLocalizedFailureReasonErrorKey : exception.reason }]
+@{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
+NSLocalizedFailureReasonErrorKey : exception.reason }]
 
 #define NSError(d,ecode,msg)            [NSError errorWithDomain:d code:ecode userInfo:@{NSLocalizedDescriptionKey:msg}]
 
 #define SWRLError(ecode,msg)            NSError(SWRLSwirlDomain,ecode,msg)
 #define SWRLErrorFromException(e)       NSErrorFromException(SWRLSwirlDomain, e)
 #define SWRLErrorUnknown()              NSError(SWRLSwirlDomain, -1, @"unknown")
-
-#define SWRLCachePath                   @"~/Library/Caches/" SWRLSwirlDomain
+#define SWRLErrorDisabled()             NSError(SWRLSwirlDomain, -2, @"API disabled")
 
 #define weak_self_t                     typeof(self) __weak
+
 
 // =====================================================================================================================
 // DEBUG DEFINES
@@ -71,11 +72,13 @@ void SWRLLog_toast(NSString *tag, NSString *const fmt, ...) NS_FORMAT_FUNCTION(2
 // =====================================================================================================================
 
 #define now()                           [[NSDate date] timeIntervalSince1970]
+#define ISO8601BASIC                    @"yyyyMMdd'T'HHmmssZ"
 #define SECONDS(x)                      ((x))
 #define MINUTES(x)                      (SECONDS(x)*60.0)
 #define HOURS(x)                        (MINUTES(x)*60.0)
 #define END_OF_TIME                     DBL_MAX
-#define format_time(t)                  [NSString stringWithFormat:@"%.3f", t]
+#define format_ts(t)                    [SWRLUtil dateStringWithFormat:ISO8601BASIC interval:t]
+#define format_timestamp(t)             [NSString stringWithFormat:@"%.3f", t]
 
 #define empty_if_nil(s)                 (s?s:@"")
 
