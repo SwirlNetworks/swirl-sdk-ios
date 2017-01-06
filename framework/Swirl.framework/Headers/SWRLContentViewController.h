@@ -74,6 +74,12 @@
  */
 - (void) didHideLoadingView:(UIView *)loadingView;
 
+/**
+ * Called to close the view.
+ * @param sender The button
+ */
+- (void)close:(id)sender;
+
 @end
 
 #endif

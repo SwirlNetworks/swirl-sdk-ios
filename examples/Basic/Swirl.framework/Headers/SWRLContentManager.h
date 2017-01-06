@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) UIViewController *            contentViewPresenter;
 /**
  *  The UIViewController which is the default presentation view for content.  You
- *  can override this property to return a subclass of SWRLContentViewController if needed.
+ *  can override viewControllerForContent to change the default.
  */
 @property (nonatomic, readonly) SWRLContentViewController *   contentViewController;
 
@@ -219,6 +219,13 @@
 - (void) requestContentPreview:(NSString *)previewCode completion:(void (^)(NSError *))completion;
 
 /** @name Other Methods */
+
+/**
+ * Override this to return a subclass of SWRLContentViewController with your own customizations.
+ @ @return The view you want to use for the contentViewController. MUST be a subclass of SWRLContentViewController.
+ */
+- (SWRLContentViewController *)viewControllerForContent;
+
 /**
  *  Call this to access the last content manager created.  
  *  This method is provided as a convenience to save the programmer from having to keep a reference to the content manager
