@@ -331,6 +331,23 @@ dismissViewControllerAnimated:</Abstract>
             <NodeRef refid="8"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentViewController/close:</TokenIdentifier>
+			<Abstract type="html">Called to close the view.</Abstract>
+			<DeclaredIn>SWRLContentViewController.h</DeclaredIn>
+			
+			<Declaration>- (void)close:(id)sender</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>sender</Name>
+					<Abstract type="html">The button</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/close:</Anchor>
+            <NodeRef refid="8"/>
+		</Token>
+		
         
         
 	</File>

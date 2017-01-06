@@ -132,7 +132,7 @@ and returns that.</Abstract>
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/setContentViewController:</TokenIdentifier>
 			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
+can override viewControllerForContent to change the default.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
@@ -145,7 +145,7 @@ can override this property to return a subclass of SWRLContentViewController if 
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/contentViewController</TokenIdentifier>
 			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
+can override viewControllerForContent to change the default.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
@@ -158,7 +158,7 @@ can override this property to return a subclass of SWRLContentViewController if 
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instp/SWRLContentManager/contentViewController</TokenIdentifier>
 			<Abstract type="html">The UIViewController which is the default presentation view for content.  You
-can override this property to return a subclass of SWRLContentViewController if needed.</Abstract>
+can override viewControllerForContent to change the default.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLContentViewController *contentViewController</Declaration>
@@ -493,6 +493,19 @@ show a toastView, return nil.</Abstract>
 			</Parameters>
 			
 			<Anchor>//api/name/requestContentPreview:completion:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/viewControllerForContent</TokenIdentifier>
+			<Abstract type="html">* Override this to return a subclass of SWRLContentViewController with your own customizations.
+@ @return The view you want to use for the contentViewController. MUST be a subclass of SWRLContentViewController.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (SWRLContentViewController *)viewControllerForContent</Declaration>
+			
+			
+			<Anchor>//api/name/viewControllerForContent</Anchor>
             <NodeRef refid="6"/>
 		</Token>
 		
