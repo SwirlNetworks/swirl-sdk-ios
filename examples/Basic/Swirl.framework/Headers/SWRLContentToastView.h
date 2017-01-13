@@ -6,8 +6,8 @@
 #ifndef __SWRLCONTENTTOASTVIEW__
 #define __SWRLCONTENTTOASTVIEW__
 
-#import "SWRLContent.h"
-#import "SWRLToastView.h"
+#import <Swirl/SWRLContent.h>
+#import <Swirl/SWRLToastView.h>
 
 /**
  * A SWRLContentToastView is used to display a 'return-to-content' control after the user has dismissed the content view.  The toast view

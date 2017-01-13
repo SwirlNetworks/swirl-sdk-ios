@@ -192,6 +192,12 @@ protocols broadcast to the mult-delegate bus.
 - (instancetype)init:(NSArray<Class>*)classes;
 
 /**
+ * Control the log level.  Default level is @"W"
+ * @param level @"E", @"W", @"I" for error, warning or info levels, anything else will disable.
+ */
++ (void) setLogLevel:(NSString *)level;
+
+/**
  *  Swirl is a singleton.  You use shared to get access to the shared instance.
  */
 + (instancetype) shared;

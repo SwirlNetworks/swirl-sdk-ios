@@ -29,7 +29,6 @@ NSLocalizedFailureReasonErrorKey : exception.reason }]
 
 #define weak_self_t                     typeof(self) __weak
 
-
 // =====================================================================================================================
 // DEBUG DEFINES
 // =====================================================================================================================
@@ -50,22 +49,19 @@ NSLocalizedFailureReasonErrorKey : exception.reason }]
 // LOG
 // =====================================================================================================================
 
-#define Log_a
 #define Log_e(fmt, args...)             SWRLLog(@(__FILE__), @"E", fmt, ##args)
 #define Log_w(fmt, args...)             SWRLLog(@(__FILE__), @"W", fmt, ##args)
 #define Log_i(fmt, args...)             SWRLLog(@(__FILE__), @"I", fmt, ##args)
 #if DEBUG
 #define Log_d(fmt, args...)             SWRLLog(@(__FILE__), @"D", fmt, ##args)
 #define Log_v(fmt, args...)             SWRLLog(@(__FILE__), @"V", fmt, ##args)
-#define Log_t(fmt, args...)             SWRLLog_toast(@(__FILE__), fmt, ##args)
 #else
 #define Log_d(fmt, args...)
 #define Log_v(fmt, args...)
-#define Log_t(fmt, args...)
 #endif
 
 void SWRLLog(NSString *tag, NSString *level, NSString *const fmt, ...) NS_FORMAT_FUNCTION(3,4);
-void SWRLLog_toast(NSString *tag, NSString *const fmt, ...) NS_FORMAT_FUNCTION(2,3);
+void SWRLLogSetLevel(NSString *level);
 
 // =====================================================================================================================
 // TIME
