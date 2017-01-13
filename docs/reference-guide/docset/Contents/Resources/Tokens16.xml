@@ -395,6 +395,23 @@ After calling this function, the sdk will be in a stopped state.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/setLogLevel:</TokenIdentifier>
+			<Abstract type="html">Control the log level.  Default level is @&quot;W&quot;</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>+ (void)setLogLevel:(NSString *)level</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>level</Name>
+					<Abstract type="html">@&quot;E&quot;, @&quot;W&quot;, @&quot;I&quot; for error, warning or info levels, anything else will disable.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLogLevel:</Anchor>
+            <NodeRef refid="16"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/shared</TokenIdentifier>
 			<Abstract type="html">Swirl is a singleton.  You use shared to get access to the shared instance.</Abstract>
 			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
