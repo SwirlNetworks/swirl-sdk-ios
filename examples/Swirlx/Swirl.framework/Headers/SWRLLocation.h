@@ -83,6 +83,8 @@ typedef NS_ENUM(int, SWRLSignalType) {
 @property (nonatomic, readonly) NSString *          externalIdentifier;
 /** A signal that most recently triggered an event in this location */
 @property (nonatomic, weak, readonly) SWRLSignal *  signal;
+/** True if live event streaming is enabled for this location */
+@property (nonatomic, readonly) BOOL                streamEvents;
 
 - (SWRLLocation *)location;
 

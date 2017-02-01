@@ -13,12 +13,12 @@
 #import <PassKit/PassKit.h>
 
 #define SWRLSwirlDomain                 @"com.swirl"
-#define SWRLSwirlVersion                @"3.2.1"
+#define SWRLSwirlVersion                @"3.3"
 #define SWRLCachePath                   @"~/Library/Caches/"
 
 #define NSErrorFromException(d, e)      [NSError errorWithDomain:d code:-1 userInfo:\
-@{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
-NSLocalizedFailureReasonErrorKey : exception.reason }]
+                                        @{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
+                                        NSLocalizedFailureReasonErrorKey : exception.reason }]
 
 #define NSError(d,ecode,msg)            [NSError errorWithDomain:d code:ecode userInfo:@{NSLocalizedDescriptionKey:msg}]
 
@@ -26,6 +26,7 @@ NSLocalizedFailureReasonErrorKey : exception.reason }]
 #define SWRLErrorFromException(e)       NSErrorFromException(SWRLSwirlDomain, e)
 #define SWRLErrorUnknown()              NSError(SWRLSwirlDomain, -1, @"unknown")
 #define SWRLErrorDisabled()             NSError(SWRLSwirlDomain, -2, @"API disabled")
+#define SWRLErrorInvalidParameters()    NSError(SWRLSwirlDomain, -3, @"Invalid Parameters")
 
 #define weak_self_t                     typeof(self) __weak
 
@@ -72,6 +73,8 @@ void SWRLLogSetLevel(NSString *level);
 #define SECONDS(x)                      ((x))
 #define MINUTES(x)                      (SECONDS(x)*60.0)
 #define HOURS(x)                        (MINUTES(x)*60.0)
+#define SECS_PER_DAY                    (60L*60L*24L)
+#define SECS_PER_WEEK                   (7*SECS_PER_DAY)
 #define END_OF_TIME                     DBL_MAX
 #define format_ts(t)                    [SWRLUtil dateStringWithFormat:ISO8601BASIC interval:t]
 #define format_timestamp(t)             [NSString stringWithFormat:@"%.3f", t]

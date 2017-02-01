@@ -14,10 +14,20 @@
 extern NSString *const SWRLSettingApiKey;
 /** API Secret.  This is the API secret assigned through the platform */
 extern NSString *const SWRLSettingApiSecret;
+/** API User.  This is for user/password login for console users performing admin functions */
+extern NSString *const SWRLSettingApiUser;
+/** API Password. This for user/password login for consoleusers performaing admin functions */
+extern NSString *const SWRLSettingApiPassword;
+/** API Access Code.  This is for temporary API access using a code */
+extern NSString *const SWRLSettingApiAccessCode;
 /** API Enabled.  Failsafe used to disable the SDK remotely if necessary. Default:YES. */
 extern NSString *const SWRLSettingApiEnabled;
 /** API Host.  This is primarily used internally for switching between testing and live infrastrucures. */
 extern NSString *const SWRLSettingApiHost;
+/** API Ping Enabled.  Default: YES */
+extern NSString *const SWRLSettingApiPingEnabled;
+/** API Ping Window.  Seconds over which to randomize device registration */
+extern NSString *const SWRLSettingApiPingWindow;
 /** UserInfo. This is the option which backs the userInfo property on Swirl. */
 extern NSString *const SWRLSettingUserInfo;
 /** Allow the SDK to use IDFAs.  The default is YES. */
@@ -94,8 +104,8 @@ extern NSString *const SWRLSettingsChangedKeys;
 - (double) doubleForKey:(NSString *)key default:(double)value;
 - (NSTimeInterval)intervalForKey:(NSString *)key default:(NSTimeInterval)value;
 - (NSArray *)arrayForKey:(NSString *)key default:(id)value;
-
 - (NSDictionary *)dictionaryForKey:(NSString *)key default:(NSDictionary *)value;
+
 - (instancetype) setAll:(NSDictionary *)keyValues;
 - (instancetype) setValue:(id)value forKey:(NSString *)key;
 - (instancetype) setArray:(NSArray *)value forKey:(NSString *)key allowEmpty:(BOOL)allowEmpty;

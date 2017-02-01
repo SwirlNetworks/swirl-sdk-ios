@@ -26,6 +26,10 @@ There are a number of additional documents and resources available to facilitate
   Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
+**Version:** `3.3` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `02/01/17`
+<p>
+Replaced up-front device registration with just-in-time device registration (scalability).
+<p>
 **Version:** `3.2.1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `01/13/17`
 <p>
 Added ability to set log level. Minor bug fixes.

@@ -339,6 +339,42 @@ If a location represents the overall location (without regard to sub-area), the 
             <NodeRef refid="10"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setStreamEvents:</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/streamEvents</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/streamEvents</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
         
         
 	</File>

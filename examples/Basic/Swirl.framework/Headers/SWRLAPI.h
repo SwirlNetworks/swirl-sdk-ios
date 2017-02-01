@@ -16,11 +16,13 @@
 @property (nonatomic, readonly) NSString *  apiHost;
 @property (nonatomic, readonly) NSString *  apiKey;
 @property (nonatomic, readonly) NSString *  userKey;
+@property (nonatomic, readonly) NSString *  arbitrationKey;
 
 - (instancetype) initWithPath:(NSString *)path prefix:(NSString *)prefix queue:(dispatch_queue_t)queue;
-- (void) startWithCompletion:(void (^)(NSError *))completion;
+
+- (void) startWithOptions:(NSDictionary *)options completion:(void (^)(NSError *))completion;
 - (void) settingsWithCompletion:(void (^)(NSError *error))completion;
-- (void) registerWithCompletion:(void (^)(NSError *error))completion;
+- (void) ping;
 - (void) regionsWithCoordinate:(CLLocationCoordinate2D)coord completion:(void (^)(NSArray *regions, NSDictionary *area, NSTimeInterval expires, NSError *error))completion;
 - (void) wifiWithIdentifier:(NSString *)identifier rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
 - (void) beaconWithIdentifier:(NSString *)identifier extraInfo:(NSString *)extraInfo rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
@@ -31,6 +33,9 @@
 - (void) flush:(BOOL)wait;
 - (void) reset;
 
+- (void) processDeferred;
+
+// move to SWRLConfiguration
 - (void) clearLocationLocks:(void (^)(NSError *))completion; // testing only
 
 + (instancetype)shared;

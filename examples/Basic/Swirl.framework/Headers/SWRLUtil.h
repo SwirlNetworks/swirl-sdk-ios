@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+// =====================================================================================================================
+// SWRLCrypt
+// =====================================================================================================================
+
 @interface SWRLCrypt : NSObject
 + (NSData *)sha1:(NSString *)source;
 + (NSData *)sha256:(NSString *)source;
@@ -20,11 +24,19 @@
 + (NSString *)randomString:(int)length;
 @end
 
+// =====================================================================================================================
+// SWRLJSON
+// =====================================================================================================================
+
 @interface SWRLJSON : NSObject
 + (NSData *)dataWithObject:(id)object error:(NSError **)error;
 + (id)objectWithData:(NSData *)data error:(NSError **)error;
 + (NSString *)stringWithObject:(id)object;
 @end
+
+// =====================================================================================================================
+// SWRLUtil
+// =====================================================================================================================
 
 @interface SWRLUtil : NSObject
 + (uint32_t)crc32:(uint32_t)crc data:(const uint8_t *)data length:(size_t)length;
@@ -38,15 +50,27 @@
 + (BOOL) hasBackgroundMode:(NSString *)mode;
 @end
 
+// =====================================================================================================================
+// SWRLURL
+// =====================================================================================================================
+
 @interface SWRLURL : NSObject
 + (NSString *)portWithURL:(NSURL *)url;
 + (NSDictionary *)queryParamsWithURL:(NSURL *)url;
 @end
 
+// =====================================================================================================================
+// SWRLImage
+// =====================================================================================================================
+
 @interface SWRLImage : NSObject
 + (UIImage *)scaleImage:(UIImage *)image scale:(double)scale radius:(CGFloat)radius;
 + (UIImage *)imageFromView:(UIView *)view;
 @end
+
+// =====================================================================================================================
+// SWRLBackground
+// =====================================================================================================================
 
 @interface SWRLBackground : NSObject
 + (NSTimeInterval)  timeRemaining;

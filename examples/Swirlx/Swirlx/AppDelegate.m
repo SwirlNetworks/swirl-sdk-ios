@@ -22,6 +22,10 @@
     [application registerUserNotificationSettings:settings];
 }
 
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+	[SWRLBackground requestTime];
+}
+
 // =====================================================================================================================
 // application:didReceiveLocalNotifications:
 //
