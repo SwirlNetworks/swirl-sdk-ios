@@ -13,7 +13,7 @@
 #import <PassKit/PassKit.h>
 
 #define SWRLSwirlDomain                 @"com.swirl"
-#define SWRLSwirlVersion                @"3.3"
+#define SWRLSwirlVersion                @"3.3.1"
 #define SWRLCachePath                   @"~/Library/Caches/"
 
 #define NSErrorFromException(d, e)      [NSError errorWithDomain:d code:-1 userInfo:\
