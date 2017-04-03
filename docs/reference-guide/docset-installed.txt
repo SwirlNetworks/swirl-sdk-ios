@@ -1,4 +1,4 @@
 Documentation set was installed to Xcode!
 
 Path: /Users/vagrant/Library/Developer/Shared/Documentation/DocSets/com.swirl.Swirl-Proximity-Framework.docset
-Time: 2017-02-01 16:46:50 +0000
+Time: 2017-04-03 15:27:19 +0000
