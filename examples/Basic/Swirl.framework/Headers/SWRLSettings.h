@@ -60,6 +60,8 @@ extern NSString *const SWRLSettingContentLoadingTimeout;
 extern NSString *const SWRLSettingContentCode;
 /** Boolean that controls whether or not to show the content toast view when content is dismissed. */
 extern NSString *const SWRLSettingContentShowToast;
+/** Boolean that controls whether or not to show the content toolbar. */
+extern NSString *const SWRLSettingContentShowToolbar;
 /** Comma separated list of mac-addresses to allow through. Testing. */
 extern NSString *const SWRLSettingBeaconFilter;
 /** Default scan interval when scanning for beacons. Default is 3.0 */
