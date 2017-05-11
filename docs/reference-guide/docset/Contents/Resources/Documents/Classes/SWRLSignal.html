@@ -56,35 +56,19 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/attachments">attachments</option>
-		
-		<option value="//api/name/attributes">attributes</option>
-		
-		<option value="//api/name/error">error</option>
-		
-		<option value="//api/name/labels">labels</option>
-		
-		<option value="//api/name/lastDetected">lastDetected</option>
-		
-		<option value="//api/name/location">location</option>
+		<option value="//api/name/identifier">identifier</option>
 		
 		<option value="//api/name/range">range</option>
 		
+		<option value="//api/name/resolvedIdentifier">resolvedIdentifier</option>
+		
 		<option value="//api/name/type">type</option>
 		
-		<option value="//api/name/urn">urn</option>
-		
 	</optgroup>
 	
 
 	
 
-	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/attachmentsWithType:">- attachmentsWithType:</option>
-		
-	</optgroup>
 	
 	
 </select>
@@ -105,10 +89,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/SWRLObject.html">SWRLObject</a> : NSObject</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>SWRLSignal.h<br />SWRLSignal.m</td>
+	<td>SWRLLocation.h<br />SWRLLocation.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -119,7 +103,7 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>SWRLSignal is an abstract base class for any presence signal object.  Concrete subclasses are Beacon, WifiInfo and Region.
-A signal is tied to a logical placement and <a href="#//api/name/location">location</a>.</p>
+A signal is tied to a logical placement and location.</p>
 					</div>
 					
 					
@@ -131,12 +115,12 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 						
 
 						<a title="Accessing Attributes" name="task_Accessing Attributes"></a>
-						<h2 class="task-title">Accessing Attributes</h2>
-
+						
+<h2 class="task-title">Accessing Attributes</h2>
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/urn" title="urn"></a>
-	<h3 class="method-title"><code><a href="#//api/name/urn">&nbsp;&nbsp;urn</a></code>
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
 </h3>
 
 	<div class="method-info">
@@ -146,12 +130,12 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Protocol specific identifier derived from detection <a href="#//api/name/attributes">attributes</a> lat/long; beacon advertisement or wifi mac-address</p>
+				<p>Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *urn</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *identifier</code></div>
 
 		    
 			
@@ -169,7 +153,7 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
 			</div>
 			
 			
@@ -210,7 +194,7 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
 			</div>
 			
 			
@@ -251,15 +235,15 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/lastDetected" title="lastDetected"></a>
-	<h3 class="method-title"><code><a href="#//api/name/lastDetected">&nbsp;&nbsp;lastDetected</a></code>
+	<a name="//api/name/resolvedIdentifier" title="resolvedIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resolvedIdentifier">&nbsp;&nbsp;resolvedIdentifier</a></code>
 </h3>
 
 	<div class="method-info">
@@ -269,12 +253,12 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Timestamp of last detection of this signal.</p>
+				<p>This is the swirl internal <a href="#//api/name/identifier">identifier</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval lastDetected</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *resolvedIdentifier</code></div>
 
 		    
 			
@@ -292,274 +276,7 @@ A signal is tied to a logical placement and <a href="#//api/name/location">locat
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Error (set if there is a problem with this signal)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A logical Location and Placement associated to this georegion through the platform.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLLocation *location</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Accessing Custom Labels and Attributes" name="task_Accessing Custom Labels and Attributes"></a>
-						<h2 class="task-title">Accessing Custom Labels and Attributes</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/attributes" title="attributes"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A set of property value pairs associated to this Location-Placement through the platform.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *attributes</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/labels" title="labels"></a>
-	<h3 class="method-title"><code><a href="#//api/name/labels">&nbsp;&nbsp;labels</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A set of labels assigned to this Location-Placement through the platform.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/attachments" title="attachments"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attachments">&nbsp;&nbsp;attachments</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The set of attachments associated with this signal</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;SWRLAttachment*&gt; *attachments</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/attachmentsWithType:" title="attachmentsWithType:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attachmentsWithType:">&ndash;&nbsp;attachmentsWithType:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The set of <a href="#//api/name/attachments">attachments</a> that have a given namespace or <a href="#//api/name/type">type</a>.  Specify string/ to match namespace
-and specify /string to match <a href="#//api/name/type">type</a>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSArray&lt;SWRLAttachment*&gt; *)attachmentsWithType:(NSString *)<em>type</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>type</code></th>
-						<td><p>namespace/<a href="#//api/name/type">type</a>, namespace/ or /<a href="#//api/name/type">type</a></p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
 			</div>
 			
 			

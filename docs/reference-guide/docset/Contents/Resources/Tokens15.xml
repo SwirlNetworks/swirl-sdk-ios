@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLPlacement.html">
+	<File path="Classes/SWRLSignal.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLPlacement</TokenIdentifier>
-			<Abstract type="html">SWRLPlacement represents a logical and business-friendly name given to a specific area inside a location.
-For example - cosmetics, electronics department, checkout, neighborhood, parking lot, etc.
-A SWRLPlacement is contained within a SWRLLocation.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLSignal</TokenIdentifier>
+			<Abstract type="html">SWRLSignal is an abstract base class for any presence signal object.  Concrete subclasses are Beacon, WifiInfo and Region.
+A signal is tied to a logical placement and location.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
             
 			
@@ -15,38 +14,146 @@ A SWRLPlacement is contained within a SWRLLocation.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/setOverlapping:</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/overlapping</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/overlapping</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/identifier</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/overlapping</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLPlacement/overlapping</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/identifier</TokenIdentifier>
+			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/overlapping</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setType:</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setRange:</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/range</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/range</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setResolvedIdentifier:</TokenIdentifier>
+			<Abstract type="html">This is the swirl internal identifier</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/resolvedIdentifier</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/resolvedIdentifier</TokenIdentifier>
+			<Abstract type="html">This is the swirl internal identifier</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/resolvedIdentifier</Anchor>
+            <NodeRef refid="15"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/resolvedIdentifier</TokenIdentifier>
+			<Abstract type="html">This is the swirl internal identifier</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/resolvedIdentifier</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

@@ -13,50 +13,22 @@
 #import <PassKit/PassKit.h>
 
 #define SWRLSwirlDomain                 @"com.swirl"
-#define SWRLSwirlVersion                @"3.4"
+#define SWRLSwirlVersion                @"3.3.2"
 #define SWRLCachePath                   @"~/Library/Caches/"
-#define SWRLSettingsPath                @"~/Library/Application Support/"
 
-// =====================================================================================================================
-// ERRORS
-// =====================================================================================================================
-
-#define NSExceptionFromError(e)         [NSException exceptionWithName:[NSString stringWithFormat:@"%d", (int)e.code] \
-                                                                reason:e.userInfo[NSLocalizedDescriptionKey] userInfo:nil]
 #define NSErrorFromException(d, e)      [NSError errorWithDomain:d code:-1 userInfo:\
                                         @{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
-                                            NSLocalizedFailureReasonErrorKey : exception.reason }]
+                                        NSLocalizedFailureReasonErrorKey : exception.reason }]
+
 #define NSError(d,ecode,msg)            [NSError errorWithDomain:d code:ecode userInfo:@{NSLocalizedDescriptionKey:msg}]
 
 #define SWRLError(ecode,msg)            NSError(SWRLSwirlDomain,ecode,msg)
 #define SWRLErrorFromException(e)       NSErrorFromException(SWRLSwirlDomain, e)
+#define SWRLErrorUnknown()              NSError(SWRLSwirlDomain, -1, @"unknown")
+#define SWRLErrorDisabled()             NSError(SWRLSwirlDomain, -2, @"API disabled")
+#define SWRLErrorInvalidParameters()    NSError(SWRLSwirlDomain, -3, @"Invalid Parameters")
 
-#define SWRLErrorPending()              SWRLError(-999, @"The operation is pending")
-#define SWRLErrorUnknown()              SWRLError(-1, @"An unknown error occurred")
-#define SWRLErrorNotFound()             SWRLError(-2, @"The object was not found")
-#define SWRLErrorFiltered()             SWRLError(-3, @"The object was filtered")
-#define SWRLErrorParameters()           SWRLError(-4, @"The parameter is invalid")
-#define SWRLErrorRange()                SWRLError(-5, @"The parameter is out of range")
-#define SWRLErrorTimeout()              SWRLError(-6, @"The operation timed out")
-#define SWRLErrorCancelled()            SWRLError(-7, @"The operation was cancelled")
-#define SWRLErrorDisabled()             SWRLError(-8, @"The operation is disabled")
-#define SWRLErrorAccess()               SWRLError(-9, @"The operation was not permitted")
-#define SWRLErrorNotConnectable()       SWRLError(-20, @"The device is not connectable")
-#define SWRLErrorNotConnected()         SWRLError(-21, @"The device is not connected")
-
-#define SWRLErrorProgress(area,progress) [NSError errorWithDomain:SWRLSwirlDomain code:100 \
-                                        userInfo:@{NSLocalizedDescriptionKey:@"", SWRLErrorAreaKey:@(area), SWRLErrorProgressKey:@(progress)}]
-
-extern NSString *const SWRLErrorProgressKey;
-extern NSString *const SWRLErrorAreaKey;
-
-OBJC_EXTERN NSString *__attribute__((overloadable)) description(NSError *error);
-
-// =====================================================================================================================
-// MISC
-// =====================================================================================================================
-
-#define weak_self_t   typeof(self) __weak
+#define weak_self_t                     typeof(self) __weak
 
 // =====================================================================================================================
 // DEBUG DEFINES
@@ -88,7 +60,6 @@ OBJC_EXTERN NSString *__attribute__((overloadable)) description(NSError *error);
 #define Log_d(fmt, args...)
 #define Log_v(fmt, args...)
 #endif
-#define Log_0(fmt, args...)
 
 void SWRLLog(NSString *tag, NSString *level, NSString *const fmt, ...) NS_FORMAT_FUNCTION(3,4);
 void SWRLLogSetLevel(NSString *level);
@@ -131,13 +102,6 @@ NS_INLINE NSArray *arrayForKey(NSDictionary *d, NSString *k) { id value = object
     if ([value isKindOfClass:[NSArray class ]]) return value;
     if ([value isKindOfClass:[NSString class]]) return [value componentsSeparatedByString:@","];
     return [NSArray array];
-}
-
-NS_INLINE NSDictionary *appendArray(NSDictionary *d, NSString *property, NSArray *append) {
-    if (append == nil) return d;
-    NSMutableDictionary *md = d ? [d mutableCopy] : [NSMutableDictionary new];
-    md[property] = [(md[property] ? md[property] : [NSMutableArray new]) arrayByAddingObjectsFromArray:append];
-    return md;
 }
 
 #endif

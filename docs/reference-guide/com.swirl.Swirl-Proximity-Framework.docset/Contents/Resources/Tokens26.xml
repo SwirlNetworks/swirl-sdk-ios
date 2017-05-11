@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLBeaconManagerDelegate.html">
+	<File path="Protocols/SWRLSwirlDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconManagerDelegate</TokenIdentifier>
-			<Abstract type="html">The SWRLBeaconManager protocol defines the methods used to receive beacon update from the SWRLBeaconManager.
-Upon receiving a beacon event, you can use the result to update your user interface or
-perform other actions.
-&lt;p&gt;
-The methods of your delegate object are called from the thread associated with the dispatch queue that you used
-when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLSwirlDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLSwirlDelegate protocol defines messages that the Swirl framework provides about its internal state.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
             
 			
 			<NodeRef refid="26"/>
@@ -18,122 +13,53 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didDiscoverBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the beacon manager sighted a new beacon</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateStatus:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the status field has changed.  Swirl has transitioned states.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didDiscoverBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Declaration>- (void)swirlDidUpdateStatus:(SWRLStatus)status</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The new (unresolved) beacon</Abstract>
+					<Name>status</Name>
+					<Abstract type="html">The current system status. See SWRLStatus.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/beaconManager:didDiscoverBeacon:</Anchor>
+			<Anchor>//api/name/swirlDidUpdateStatus:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didResolveBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the beacon manager was able to resolve the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidReportError:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that an error has been reported.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didResolveBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Declaration>- (void)swirlDidReportError:(NSError *)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The resolved beacon</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">The error that was reported.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/beaconManager:didResolveBeacon:</Anchor>
+			<Anchor>//api/name/swirlDidReportError:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didEnterBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device is within range of the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLSwirlDelegate/swirlDidUpdateLocation:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that the SDK updated its location</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didEnterBeacon:(SWRLBeacon *)beacon</Declaration>
+			<Declaration>- (void)swirlDidUpdateLocation:(CLLocation *)location</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that has been entered</Abstract>
+					<Name>location</Name>
+					<Abstract type="html">The updated location.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/beaconManager:didEnterBeacon:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didChangeNearest:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device changed the beacon it is closest to.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
-			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didChangeNearest:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that is now the nearest beacon</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/beaconManager:didChangeNearest:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didDwellBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device is still within range of the beacon.  Called periodically.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
-			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didDwellBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that the mobile device is within range of</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/beaconManager:didDwellBeacon:</Anchor>
-            <NodeRef refid="26"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didExitBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device left the range of the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
-			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didExitBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that was exited</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/beaconManager:didExitBeacon:</Anchor>
+			<Anchor>//api/name/swirlDidUpdateLocation:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

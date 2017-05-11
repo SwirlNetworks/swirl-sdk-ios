@@ -11,19 +11,11 @@
 #import <Swirl/SWRLLocation.h>
 #import <Swirl/SWRLBeaconAdvertisement.h>
 
-@class SWRLPeripheral;
 @class SWRLBeaconScanner;
 
 #define SWRLBeaconInvalidRSSI       (-999)
 #define SWRLBeaconInvalidRange      ( 999)
 #define SWRLBeaconEnteredRSSI       (-1)
-
-typedef struct _SWRLRssiParameters {
-    int             minSamples;
-    NSTimeInterval  optSampleInterval;
-    NSTimeInterval  maxSampleInterval;
-    NSTimeInterval  sampleResolution;
-} SWRLRssiParameters;
 
 /** Beacon state relative to current threshold set for the beacon. */
 typedef NS_ENUM(int, SWRLBeaconState) {
@@ -60,31 +52,50 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
 @interface SWRLBeacon : SWRLSignal
 
 /** ====================================================================================================================
- *  @name Accessing Beacon Attributes
+ *  @name Accessing Beacon Location
  *  ====================================================================================================================
  */
 
-/** 
- * Current state of the beacon (uknown, outside, inside).  See SWRLBeaconState. 
- */
-@property (nonatomic, readonly) SWRLBeaconState     state;
+/** Logical location associated to this beacon through the plaform. See SWRLLocation. */
+@property (nonatomic, readonly) SWRLLocation *      location;
 
-/** 
- * Current average rssi 
+/** ====================================================================================================================
+ *  @name Accessing Beacon Range and State
+ *  ====================================================================================================================
  */
+/** Current state of the beacon (uknown, outside, inside).  See SWRLBeaconState. */
+@property (nonatomic, readonly) SWRLBeaconState     state;
+/** Current range of the beacon in meters.  This number is not very accurate and fluctuates dramatically. */
+@property (nonatomic, readonly) double              range;
+/** Current average rssi */
 @property (nonatomic, readonly) int                 rssi;
 
-/** 
- * Is the Placement associated with this beacon set to allow overlapping beacons. 
+/** ====================================================================================================================
+ *  @name Accessing Custom Labels and Attributes
+ *  ====================================================================================================================
  */
 
+/** Dictionary of optional custom attributes sent by the server for resolved beacons. */
+@property (nonatomic, readonly) NSDictionary *      attributes;
+/** Array of label strings sent by the server for resolved beacons. */
+@property (nonatomic, readonly) NSArray<NSString*> *labels;
+
+/** ====================================================================================================================
+ *  @name Accessing Other Beacon Attributes
+ *  ====================================================================================================================
+ */
+
+/** Timestamp (timeIntervalSince1970) of the last advertisement received. */
+@property (nonatomic, readonly) NSTimeInterval      lastDetected;
+/** Error (usually set if there is a beacon detected, but this application has no access). */
+@property (nonatomic, readonly) NSError *           error;
+
+/** Is the Placement associated with this beacon set to allow overlapping beacons. */
 - (BOOL) isOverlapping;
-
-/** 
- * Is the mobile device currently within the beacon range
- */
+/** Has this beacon been successfully resolved by the server. */
+- (BOOL) isResolved;
+/** Is the mobile device currently within the beacon range */
 - (BOOL) isEntered;
-- (void) setEntered:(BOOL)value;
 
 /** 
  *  Retrieve any additional non-identifier related data associated with the beacon advertisements.  In the case of
@@ -92,53 +103,16 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
  */
 - (NSString *)extraInfo;
 
-/**
- * Retrieve the manufacturer of the beacon device.
- */
-- (NSString *)manufacturer;
-
-/**
- * Retreive the model of the beacon device
- */
-- (NSString *)model;
-
-/** 
- * Retreive the serial number of the beacon device as recorded in the platform. 
- */
-
+/** Retreive the serial number of the beacon device as recorded in the platform. */
 - (NSString *)serial;
-/**
- * Retreive the protocol of the underlying advertisements
- */
-- (int)protocol;
-
-/**
- * Retreive the protocol description of the underlying advertisements
- */
-- (NSString *)protocolDescription;
-
-/**
- * Is the beacon in a connectable state
- */
-- (BOOL) isConnectable;
-
-/** 
- * Retreive the peripheral of the beacon if possible.
- */
-- (SWRLPeripheral *)peripheral;
-
-/**
- * Retreive the partner information for this beacon
- */
-- (SWRLObject *)partner;
 
 // ====================================================================================================================
 // Internal use
 // ====================================================================================================================
-
-+ (void) setRssiParameters:(SWRLRssiParameters *)params;
-
 @property (nonatomic) NSTimeInterval lastEventTime;
+
+- (void) setError:(NSError *)error;
+- (void) setEntered:(BOOL)value;
 
 - (instancetype)initWithAdvertisement:(SWRLBeaconAdvertisement *)advertisement;
 - (BOOL) isAdvertisement:(SWRLBeaconAdvertisement *)advertisement;
@@ -148,8 +122,10 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
 - (SWRLAdvertisements *)allAdvertisements;
 - (NSTimeInterval)oldestAdvertisement;
 
-- (SWRLBeaconScanner *)scanner;
 - (void)setScanner:(SWRLBeaconScanner *)scanner;
+- (SWRLBeaconScanner *)scanner;
+
+- (void) resolve:(NSDictionary *)info;
 
 @end
 

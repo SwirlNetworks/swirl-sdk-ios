@@ -100,7 +100,7 @@
  *  @param content  The content that is about to be opened.
  *  @return YES if you want to display only the toast view and not the full interstitial
  *
- *  @discussion The default implementation returns the value of the SWRLSettingContentShowToastFirst setting which 
+ *  @discussion The default implementation returns the value of the SWRLSettingContentShowToastFirst setting which
  *  defaults to NO.
  **/
 - (BOOL) shouldShowToastFirst:(SWRLContent *)content;
@@ -203,7 +203,7 @@
 /**
  *  Call this method to force display of the SWRLContentToastView
  *
- *  @param content content object from which the toast will be derived
+ *  @param content The content for which to provide a toast.
  *  @discussion This forces the display of the toast view for the content supplied
  */
 - (void) showContentToastView:(SWRLContent *)content;

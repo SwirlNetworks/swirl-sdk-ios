@@ -34,10 +34,27 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D *    polyCoords;
 
 /**
+ * A logical Location and Placement associated to this georegion through the platform.
+ */
+@property (nonatomic, readonly) SWRLLocation *              location;
+/**
+ * A set of property value pairs associated to this Location-Placement through the platform.
+ */
+@property (nonatomic, readonly) NSDictionary *              attributes;
+/**
+ * A set of labels assigned to this Location-Placement through the platform.
+ */
+@property (nonatomic, readonly) NSArray<NSString*> *        labels;
+/**
+ * A representation of the raw-JSON metadata that came from the server for this
+ * region
+ */
+@property (nonatomic, readonly) NSDictionary *              info;
+
+/**
  * A string representing the type of region: control, geofence
  */
 @property (nonatomic, readonly) NSString *                  regionType;
-
 
 - (instancetype) initWithDictionary:(NSDictionary *)info;
 
@@ -56,9 +73,6 @@
  * @returns The distance from the region, negative values are inside the region.
  */
 - (double) distanceFromLocation:(CLLocation *)location;
-
-
-- (void) setLastDetected:(NSTimeInterval)ts;
 
 @end
 

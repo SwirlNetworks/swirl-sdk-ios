@@ -1,128 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLObject.html">
+	<File path="Classes/SWRLSettings.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLObject</TokenIdentifier>
-			<Abstract type="html">SWRLObject is the base class for all objects returned from the platoform.  All objects
-have an identifier, name and additional attributes.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLSettings</TokenIdentifier>
+			<Abstract type="html">SWRLSettings is a singleton that is initialized by the SWRLAPI.  It is local encrypted storage for
+the all of the swirl files and settings.</Abstract>
+			<DeclaredIn>SWRLSettings.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The platform assigned internal identifier.  This is globally unique.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/identifier</TokenIdentifier>
-			<Abstract type="html">The platform assigned internal identifier.  This is globally unique.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLObject/identifier</TokenIdentifier>
-			<Abstract type="html">The platform assigned internal identifier.  This is globally unique.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/setName:</TokenIdentifier>
-			<Abstract type="html">A human readable name if available.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/name</TokenIdentifier>
-			<Abstract type="html">A human readable name if available.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLObject/name</TokenIdentifier>
-			<Abstract type="html">A human readable name if available.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/setProperties:</TokenIdentifier>
-			<Abstract type="html">The collection of properties (including identifier and name that were returned for this object from
-the platform.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *properties</Declaration>
-			
-			
-			<Anchor>//api/name/properties</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLObject/properties</TokenIdentifier>
-			<Abstract type="html">The collection of properties (including identifier and name that were returned for this object from
-the platform.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *properties</Declaration>
-			
-			
-			<Anchor>//api/name/properties</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLObject/properties</TokenIdentifier>
-			<Abstract type="html">The collection of properties (including identifier and name that were returned for this object from
-the platform.</Abstract>
-			<DeclaredIn>SWRLObject.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *properties</Declaration>
-			
-			
-			<Anchor>//api/name/properties</Anchor>
-            <NodeRef refid="14"/>
-		</Token>
 		
         
         
