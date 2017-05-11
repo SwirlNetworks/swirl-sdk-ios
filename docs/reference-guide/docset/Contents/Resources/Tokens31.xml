@@ -1,77 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLVisitManagerDelegate.html">
+	<File path="Constants/SWRLSignalType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLVisitManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Callbacks from the VisitManager for events around Visits</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLSignalType</TokenIdentifier>
+			<Abstract type="html"> Signal Types </Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
             
 			
 			<NodeRef refid="31"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didBeginVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement is beginnng</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didBeginVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didBeginVisit:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeBeacon</TokenIdentifier>
+            <Abstract type="html">Signal is Beacon</Abstract>
+            <Declaration>SWRLSignalTypeBeacon</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
             <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didUpdateDwellForVisit:</TokenIdentifier>
-			<Abstract type="html">Called periodically as a user remains in a current Location and Placement</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didUpdateDwellForVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didUpdateDwellForVisit:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeWifi</TokenIdentifier>
+            <Abstract type="html">Signal is a WifiInfo</Abstract>
+            <Declaration>SWRLSignalTypeWifi</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
             <NodeRef refid="31"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLVisitManagerDelegate/visitManager:didEndVisit:</TokenIdentifier>
-			<Abstract type="html">Called when a Visit to a new Location and Placement has ended</Abstract>
-			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
-			
-			<Declaration>- (void)visitManager:(SWRLVisitManager *)manager didEndVisit:(SWRLVisit *)visit</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">VisitManager</Abstract>
-				</Parameter><Parameter>
-					<Name>visit</Name>
-					<Abstract type="html">Visit object which contains information on start, end and accumulated and elapsed dwell time</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/visitManager:didEndVisit:</Anchor>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLSignalTypeGeofence</TokenIdentifier>
+            <Abstract type="html">Signal is a Region</Abstract>
+            <Declaration>SWRLSignalTypeGeofence</Declaration>
+            
+            <DeclaredIn>SWRLLocation.h</DeclaredIn>
+            
             <NodeRef refid="31"/>
-		</Token>
-		
+        </Token>
         
         
 	</File>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLBeaconManager.html">
+	<File path="Classes/SWRLContent.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLBeaconManager</TokenIdentifier>
-			<Abstract type="html">The SWRLBeaconManager class is instantiated by the framework to coordinate and manage SWRLBeacons.  An instance
-of this class is created when the framework is initialized and started when the SWRLSwirl start: is called.
-For the most part, you do not need to interact with this class directly.  If you are interested in beacon level
-events and transitions, then you would add a delegate through the Swirl class and implement delegate methods.
-For information about the delegate methods you use to receive events, see SWRLBeaconManagerDelegate.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLContent</TokenIdentifier>
+			<Abstract type="html">Each SWRLContent object represents a unique impression. A SWRLContent object encapsulates information about content
+that was received for a given visit in response to a content request made by the SWRLContentManager.
+Content requests are made in response to visit events like starting a visit and updating dwell time for a visit.
+For content that requires a dwell trigger, the server will push back that information to the client and the client will
+automatically delay making further content requests until the dwell triggers have been reached.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
             
 			
 			<NodeRef refid="5"/>
@@ -17,236 +17,413 @@ For information about the delegate methods you use to receive events, see SWRLBe
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setNearest:</TokenIdentifier>
-			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setIdentifier:</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/nearest</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/nearest</TokenIdentifier>
-			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/identifier</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/nearest</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/nearest</TokenIdentifier>
-			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/identifier</TokenIdentifier>
+			<Abstract type="html">The unique identifier (UUID) for this impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
 			
 			
-			<Anchor>//api/name/nearest</Anchor>
+			<Anchor>//api/name/identifier</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setAllBeacons:</TokenIdentifier>
-			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setVisit:</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/allBeacons</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/allBeacons</TokenIdentifier>
-			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/visit</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/allBeacons</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/allBeacons</TokenIdentifier>
-			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/visit</TokenIdentifier>
+			<Abstract type="html">The visit object associated with this content, usually the visit that triggered the content request.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			<Declaration>@property (nonatomic, nullable, readonly) SWRLVisit *visit</Declaration>
 			
 			
-			<Anchor>//api/name/allBeacons</Anchor>
+			<Anchor>//api/name/visit</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setActiveBeacons:</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setContent:</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/activeBeacons</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeBeacons</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/content</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/activeBeacons</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/activeBeacons</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/content</TokenIdentifier>
+			<Abstract type="html">This NSDictionary is a representation of the raw JSON content response.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDictionary *content</Declaration>
 			
 			
-			<Anchor>//api/name/activeBeacons</Anchor>
+			<Anchor>//api/name/content</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setActiveDevices:</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setType:</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/activeDevices</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeDevices</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/type</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/activeDevices</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/activeDevices</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/type</TokenIdentifier>
+			<Abstract type="html">The content type whose value will be one of SWRLContentType.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			<Declaration>@property (nonatomic, readonly) SWRLContentType type</Declaration>
 			
 			
-			<Anchor>//api/name/activeDevices</Anchor>
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeBeacons:</TokenIdentifier>
-			<Abstract type="html">All of the active beacons currently managed by the beacon manager with a max age.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setReceived:</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (NSArray&lt;SWRLBeacon*&gt; *)activeBeacons:(NSTimeInterval)age</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>age</Name>
-					<Abstract type="html">Maximum age for beacons returned</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
-			<Anchor>//api/name/activeBeacons:</Anchor>
+			
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeDevices:rssi:flags:</TokenIdentifier>
-			<Abstract type="html">All of the active devices currently managed by the beacon manager, filtered
-by age, rssi and flags.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/received</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (NSArray&lt;SWRLBeacon*&gt; *)activeDevices:(NSTimeInterval)age rssi:(int)rssi flags:(SWRLBeaconFilter)flags</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>age</Name>
-					<Abstract type="html">Maximum age for beacon devices returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>rssi</Name>
-					<Abstract type="html">Only signals stronger than this value will be returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>flags</Name>
-					<Abstract type="html">See SWRLBeaconFilter for values</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
-			<Anchor>//api/name/activeDevices:rssi:flags:</Anchor>
+			
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beaconWithIdentifier:urn:</TokenIdentifier>
-			<Abstract type="html">Find a beacon by identifier or URN return nil.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/received</TokenIdentifier>
+			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (SWRLBeacon *)beaconWithIdentifier:(nullable NSString *)identifier urn:(nullable NSString *)urn</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">Swirl returned identifier</Abstract>
-				</Parameter><Parameter>
-					<Name>urn</Name>
-					<Abstract type="html">an alternate beacon urn to look for</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval received</Declaration>
 			
-			<Anchor>//api/name/beaconWithIdentifier:urn:</Anchor>
+			
+			<Anchor>//api/name/received</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beaconWithIdentifier:urn:timeout:queue:completion:</TokenIdentifier>
-			<Abstract type="html">Find a beacon by identifier or URN will complete when discovered, or resolved as parameters determine.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setIsFromNotification:</TokenIdentifier>
+			<Abstract type="html">A boolean indicating whether the content was created from a notification.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconWithIdentifier:(nullable NSString *)identifier urn:(nullable NSString *)urn timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue completion:(void ( ^ ) ( SWRLBeacon *_Nullable , NSError *_Nullable ))completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>identifier</Name>
-					<Abstract type="html">Swirl returned identifier</Abstract>
-				</Parameter><Parameter>
-					<Name>urn</Name>
-					<Abstract type="html">Alternative beacon urn to look for</Abstract>
-				</Parameter><Parameter>
-					<Name>timeout</Name>
-					<Abstract type="html">Interval to remain pending, after which the operation will timeout</Abstract>
-				</Parameter><Parameter>
-					<Name>queue</Name>
-					<Abstract type="html">dispatch_queue to return completion on</Abstract>
-				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">completion to call with result</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isFromNotification</Declaration>
 			
-			<Anchor>//api/name/beaconWithIdentifier:urn:timeout:queue:completion:</Anchor>
+			
+			<Anchor>//api/name/isFromNotification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/isFromNotification</TokenIdentifier>
+			<Abstract type="html">A boolean indicating whether the content was created from a notification.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFromNotification</Declaration>
+			
+			
+			<Anchor>//api/name/isFromNotification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/isFromNotification</TokenIdentifier>
+			<Abstract type="html">A boolean indicating whether the content was created from a notification.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFromNotification</Declaration>
+			
+			
+			<Anchor>//api/name/isFromNotification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setNotification:</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/notification</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/notification</TokenIdentifier>
+			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
+of the notification that was sent or would be sent. Accessing this property does not cause
+any notifications to be sent.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setUrl:</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/url</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/url</TokenIdentifier>
+			<Abstract type="html">The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
+is a URL representing a call to format an HTML impression.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *url</Declaration>
+			
+			
+			<Anchor>//api/name/url</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setFallbackURL:</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
+			
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/fallbackURL</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
+			
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/fallbackURL</TokenIdentifier>
+			<Abstract type="html">This URL is used if there is a problem with dispatching the target url.  This is primarily used for deep link content.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSURL *fallbackURL</Declaration>
+			
+			
+			<Anchor>//api/name/fallbackURL</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setAttributes:</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
+			
+			
+			<Anchor>//api/name/attributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/attributes</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
+			
+			
+			<Anchor>//api/name/attributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/attributes</TokenIdentifier>
+			<Abstract type="html">This dictionary contains any custom attributes associated with this creative as created and assigned using the
+platform.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) NSDictionary *attributes</Declaration>
+			
+			
+			<Anchor>//api/name/attributes</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setThumbnail:</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/thumbnail</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
+            <NodeRef refid="5"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/thumbnail</TokenIdentifier>
+			<Abstract type="html">This is a thumbnail created of the creative.  This is only available if the creative has ever
+been rendered on the screen.</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
             <NodeRef refid="5"/>
 		</Token>
 		

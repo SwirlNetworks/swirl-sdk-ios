@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLBeaconAdvertisement.html">
+	<File path="Classes/SWRLBeaconManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLBeaconAdvertisement</TokenIdentifier>
-			<Abstract type="html">A SWRLBeaconAdvertisement is an object which represents a Bluetooth Beacon advertisement in a normalized way for
-consumption by the rest of the framework.  Beacon protocols broadcast beacon identity information and optionally
-other attributes, like telemetry (temperature, time, battery, etc).</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLBeaconManager</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconManager class is instantiated by the framework to coordinate and manage SWRLBeacons.  An instance
+of this class is created when the framework is initialized and started when the SWRLSwirl start: is called.
+For the most part, you do not need to interact with this class directly.  If you are interested in beacon level
+events and transitions, then you would add a delegate through the Swirl class and implement delegate methods.
+For information about the delegate methods you use to receive events, see SWRLBeaconManagerDelegate.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -15,257 +17,74 @@ other attributes, like telemetry (temperature, time, battery, etc).</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
-on the client other than to test for equality.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setNearest:</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/nearest</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/identifier</TokenIdentifier>
-			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
-on the client other than to test for equality.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/nearest</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/identifier</TokenIdentifier>
-			<Abstract type="html">The protocol specific identifier, represented as a urn. For the most part these are opaque and are not processed
-on the client other than to test for equality.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/nearest</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setDetected:</TokenIdentifier>
-			<Abstract type="html">A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setBeacons:</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
 			
 			
-			<Anchor>//api/name/detected</Anchor>
+			<Anchor>//api/name/beacons</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/detected</TokenIdentifier>
-			<Abstract type="html">A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
 			
 			
-			<Anchor>//api/name/detected</Anchor>
+			<Anchor>//api/name/beacons</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/detected</TokenIdentifier>
-			<Abstract type="html">A timestamp using timeIntervalSince1970 indicating when the advertisement was detected.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/beacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
-			
-			
-			<Anchor>//api/name/detected</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setRssi:</TokenIdentifier>
-			<Abstract type="html">The signal strength (RSSI) as reported by the operating system.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</Declaration>
 			
 			
-			<Anchor>//api/name/rssi</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/rssi</TokenIdentifier>
-			<Abstract type="html">The signal strength (RSSI) as reported by the operating system.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
-			
-			
-			<Anchor>//api/name/rssi</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/rssi</TokenIdentifier>
-			<Abstract type="html">The signal strength (RSSI) as reported by the operating system.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
-			
-			
-			<Anchor>//api/name/rssi</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setDbm1:</TokenIdentifier>
-			<Abstract type="html">The measured power included for some beacon protocols.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int dbm1</Declaration>
-			
-			
-			<Anchor>//api/name/dbm1</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/dbm1</TokenIdentifier>
-			<Abstract type="html">The measured power included for some beacon protocols.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int dbm1</Declaration>
-			
-			
-			<Anchor>//api/name/dbm1</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/dbm1</TokenIdentifier>
-			<Abstract type="html">The measured power included for some beacon protocols.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int dbm1</Declaration>
-			
-			
-			<Anchor>//api/name/dbm1</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setExtraInfo:</TokenIdentifier>
-			<Abstract type="html">Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *extraInfo</Declaration>
-			
-			
-			<Anchor>//api/name/extraInfo</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/extraInfo</TokenIdentifier>
-			<Abstract type="html">Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *extraInfo</Declaration>
-			
-			
-			<Anchor>//api/name/extraInfo</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/extraInfo</TokenIdentifier>
-			<Abstract type="html">Extra out-of-band data.  Like Eddystone TLM packet data.  Base-64 encoded.</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *extraInfo</Declaration>
-			
-			
-			<Anchor>//api/name/extraInfo</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setDevice:</TokenIdentifier>
-			<Abstract type="html">The address or idetnfiier of the device generating these advertisements</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUUID *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/device</TokenIdentifier>
-			<Abstract type="html">The address or idetnfiier of the device generating these advertisements</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUUID *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/device</TokenIdentifier>
-			<Abstract type="html">The address or idetnfiier of the device generating these advertisements</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSUUID *device</Declaration>
-			
-			
-			<Anchor>//api/name/device</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/setConnectable:</TokenIdentifier>
-			<Abstract type="html">YES it the beacon is in a connectable state</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL connectable</Declaration>
-			
-			
-			<Anchor>//api/name/connectable</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconAdvertisement/connectable</TokenIdentifier>
-			<Abstract type="html">YES it the beacon is in a connectable state</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL connectable</Declaration>
-			
-			
-			<Anchor>//api/name/connectable</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconAdvertisement/connectable</TokenIdentifier>
-			<Abstract type="html">YES it the beacon is in a connectable state</Abstract>
-			<DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL connectable</Declaration>
-			
-			
-			<Anchor>//api/name/connectable</Anchor>
+			<Anchor>//api/name/beacons</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		

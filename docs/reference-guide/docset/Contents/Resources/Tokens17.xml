@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLRegionManager.html">
+	<File path="Classes/SWRLToastView.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegionManager</TokenIdentifier>
-			<Abstract type="html">A component which manages a working set of Region objects (retreived using the API) that are &apos;near&apos; the users location.
-These regions represent both geofences and &apos;control&apos; regions. Geofences have logical location, placement and other metadata associated.
-Control regions are used internally by the SDK to control other signal detection, like when to start and stop scanning for beacons or what
-iBeacon UUIDs are nearby. This component either starts its own os specific location manager or depends upon the host app
-to post location information onto the bus. It generates RegionEnter/RegionExit events onto the bus.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLToastView</TokenIdentifier>
+			<Abstract type="html">A SWRLToastView is a floating notification view that allows the user to delete it from the screen,
+to move up and down and to slide it way to the right to get it out of the way.  It is used
+by the SWRLContentManager to provide a default return to content button when the user dismisses content.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -17,113 +15,549 @@ to post location information onto the bus. It generates RegionEnter/RegionExit e
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredArea:</TokenIdentifier>
-			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTitle:</TokenIdentifier>
+			<Abstract type="html">The toast title text.  Displays as the first line. If nil, it will collapse and take up no space.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredArea</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredArea</TokenIdentifier>
-			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/title</TokenIdentifier>
+			<Abstract type="html">The toast title text.  Displays as the first line. If nil, it will collapse and take up no space.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredArea</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredArea</TokenIdentifier>
-			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/title</TokenIdentifier>
+			<Abstract type="html">The toast title text.  Displays as the first line. If nil, it will collapse and take up no space.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *title</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredArea</Anchor>
+			<Anchor>//api/name/title</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredRegions:</TokenIdentifier>
-			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
-of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setMessage:</TokenIdentifier>
+			<Abstract type="html">The toast message.  Displays under the title and if nil, will collapse to nothing</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *message</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredRegions</Anchor>
+			<Anchor>//api/name/message</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredRegions</TokenIdentifier>
-			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
-of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/message</TokenIdentifier>
+			<Abstract type="html">The toast message.  Displays under the title and if nil, will collapse to nothing</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *message</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredRegions</Anchor>
+			<Anchor>//api/name/message</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredRegions</TokenIdentifier>
-			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
-of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/message</TokenIdentifier>
+			<Abstract type="html">The toast message.  Displays under the title and if nil, will collapse to nothing</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSString *message</Declaration>
 			
 			
-			<Anchor>//api/name/monitoredRegions</Anchor>
+			<Anchor>//api/name/message</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setEnteredRegions:</TokenIdentifier>
-			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTime:</TokenIdentifier>
+			<Abstract type="html">The toast timestamp.  Displays to the right of the title.  If nil, will not display</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDate *time</Declaration>
 			
 			
-			<Anchor>//api/name/enteredRegions</Anchor>
+			<Anchor>//api/name/time</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/enteredRegions</TokenIdentifier>
-			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/time</TokenIdentifier>
+			<Abstract type="html">The toast timestamp.  Displays to the right of the title.  If nil, will not display</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDate *time</Declaration>
 			
 			
-			<Anchor>//api/name/enteredRegions</Anchor>
+			<Anchor>//api/name/time</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/enteredRegions</TokenIdentifier>
-			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/time</TokenIdentifier>
+			<Abstract type="html">The toast timestamp.  Displays to the right of the title.  If nil, will not display</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
+			<Declaration>@property (nonatomic, nullable) NSDate *time</Declaration>
 			
 			
-			<Anchor>//api/name/enteredRegions</Anchor>
+			<Anchor>//api/name/time</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setFont:</TokenIdentifier>
+			<Abstract type="html">The font to use for all text.  By default uses the systemFont</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/font</TokenIdentifier>
+			<Abstract type="html">The font to use for all text.  By default uses the systemFont</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/font</TokenIdentifier>
+			<Abstract type="html">The font to use for all text.  By default uses the systemFont</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIFont *font</Declaration>
+			
+			
+			<Anchor>//api/name/font</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTextColor:</TokenIdentifier>
+			<Abstract type="html">The text color for all labels. By default is nill and will derive an approriate color based on the background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/textColor</TokenIdentifier>
+			<Abstract type="html">The text color for all labels. By default is nill and will derive an approriate color based on the background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/textColor</TokenIdentifier>
+			<Abstract type="html">The text color for all labels. By default is nill and will derive an approriate color based on the background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *textColor</Declaration>
+			
+			
+			<Anchor>//api/name/textColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setBackgroundColor:</TokenIdentifier>
+			<Abstract type="html">The background of the toast.  The default is black with a .60 alpha</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/backgroundColor</TokenIdentifier>
+			<Abstract type="html">The background of the toast.  The default is black with a .60 alpha</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/backgroundColor</TokenIdentifier>
+			<Abstract type="html">The background of the toast.  The default is black with a .60 alpha</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIColor *backgroundColor</Declaration>
+			
+			
+			<Anchor>//api/name/backgroundColor</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setDisplaySeconds:</TokenIdentifier>
+			<Abstract type="html">The time to display.  Currently this field has no effect.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSTimeInterval displaySeconds</Declaration>
+			
+			
+			<Anchor>//api/name/displaySeconds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/displaySeconds</TokenIdentifier>
+			<Abstract type="html">The time to display.  Currently this field has no effect.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSTimeInterval displaySeconds</Declaration>
+			
+			
+			<Anchor>//api/name/displaySeconds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/displaySeconds</TokenIdentifier>
+			<Abstract type="html">The time to display.  Currently this field has no effect.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSTimeInterval displaySeconds</Declaration>
+			
+			
+			<Anchor>//api/name/displaySeconds</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTabAccessoryView:</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its parked right position. The default is a tab.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *tabAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/tabAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/tabAccessoryView</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its parked right position. The default is a tab.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *tabAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/tabAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/tabAccessoryView</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its parked right position. The default is a tab.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *tabAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/tabAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setDeleteAccessoryView:</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its swiped left or delete mode.  The default is an X on red background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *deleteAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/deleteAccessoryView</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its swiped left or delete mode.  The default is an X on red background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *deleteAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/deleteAccessoryView</TokenIdentifier>
+			<Abstract type="html">The view to display when the toast is in its swiped left or delete mode.  The default is an X on red background</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) UIView *deleteAccessoryView</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAccessoryView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setSwipeToDelete:</TokenIdentifier>
+			<Abstract type="html">Boolean to control whether the user can swipe left to delete in a single motion. Default is NO</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL swipeToDelete</Declaration>
+			
+			
+			<Anchor>//api/name/swipeToDelete</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/swipeToDelete</TokenIdentifier>
+			<Abstract type="html">Boolean to control whether the user can swipe left to delete in a single motion. Default is NO</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL swipeToDelete</Declaration>
+			
+			
+			<Anchor>//api/name/swipeToDelete</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/swipeToDelete</TokenIdentifier>
+			<Abstract type="html">Boolean to control whether the user can swipe left to delete in a single motion. Default is NO</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) BOOL swipeToDelete</Declaration>
+			
+			
+			<Anchor>//api/name/swipeToDelete</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setContentView:</TokenIdentifier>
+			<Abstract type="html">Background view of the toast</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *contentView</Declaration>
+			
+			
+			<Anchor>//api/name/contentView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/contentView</TokenIdentifier>
+			<Abstract type="html">Background view of the toast</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *contentView</Declaration>
+			
+			
+			<Anchor>//api/name/contentView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/contentView</TokenIdentifier>
+			<Abstract type="html">Background view of the toast</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIView *contentView</Declaration>
+			
+			
+			<Anchor>//api/name/contentView</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTitleLabel:</TokenIdentifier>
+			<Abstract type="html">Default titleLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/titleLabel</TokenIdentifier>
+			<Abstract type="html">Default titleLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/titleLabel</TokenIdentifier>
+			<Abstract type="html">Default titleLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *titleLabel</Declaration>
+			
+			
+			<Anchor>//api/name/titleLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setTimeLabel:</TokenIdentifier>
+			<Abstract type="html">Default timeLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *timeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/timeLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/timeLabel</TokenIdentifier>
+			<Abstract type="html">Default timeLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *timeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/timeLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/timeLabel</TokenIdentifier>
+			<Abstract type="html">Default timeLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *timeLabel</Declaration>
+			
+			
+			<Anchor>//api/name/timeLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/setMessageLabel:</TokenIdentifier>
+			<Abstract type="html">Default messageLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *messageLabel</Declaration>
+			
+			
+			<Anchor>//api/name/messageLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/messageLabel</TokenIdentifier>
+			<Abstract type="html">Default messageLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *messageLabel</Declaration>
+			
+			
+			<Anchor>//api/name/messageLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLToastView/messageLabel</TokenIdentifier>
+			<Abstract type="html">Default messageLabel</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UILabel *messageLabel</Declaration>
+			
+			
+			<Anchor>//api/name/messageLabel</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/initWithTitle:message:time:actionHandler:</TokenIdentifier>
+			<Abstract type="html">Construct and initialise a toastView with title, message and timestamp.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message time:(NSDate *)time actionHandler:(void ( ^ ) ( SWRLToastView *view , BOOL ))actionHandler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>title</Name>
+					<Abstract type="html">The toast view title</Abstract>
+				</Parameter><Parameter>
+					<Name>message</Name>
+					<Abstract type="html">The toast view message</Abstract>
+				</Parameter><Parameter>
+					<Name>time</Name>
+					<Abstract type="html">The toast view timestamp (optional)</Abstract>
+				</Parameter><Parameter>
+					<Name>actionHandler</Name>
+					<Abstract type="html">The completion block that is called when the user activates the toast or deletes it.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithTitle:message:time:actionHandler:</Anchor>
+            <NodeRef refid="17"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLToastView/presentFromViewController:</TokenIdentifier>
+			<Abstract type="html">Present a toast view from a controller.</Abstract>
+			<DeclaredIn>SWRLToastView.h</DeclaredIn>
+			
+			<Declaration>- (void)presentFromViewController:(UIViewController *)vc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>vc</Name>
+					<Abstract type="html">The viewController to use as the host of the toast view.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/presentFromViewController:</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		

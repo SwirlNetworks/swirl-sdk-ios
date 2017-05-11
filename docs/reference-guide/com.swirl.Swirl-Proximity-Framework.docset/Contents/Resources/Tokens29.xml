@@ -1,40 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLRegionManagerDelegate.html">
+	<File path="Constants/SWRLBeaconState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLRegionManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Protocl which defines the callbacks from the SWRLRegionManager.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLBeaconState</TokenIdentifier>
+			<Abstract type="html">Beacon state relative to current threshold set for the beacon.</Abstract>
+			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
             
 			
 			<NodeRef refid="29"/>
 		</Token>
 		
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLRegionManagerDelegate/regionManager:didEnterRegions:exitRegions:</TokenIdentifier>
-			<Abstract type="html">Called whenever the set of entered and/or exited regions changes</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)regionManager:(SWRLRegionManager *)manager didEnterRegions:(NSSet&lt;SWRLRegion*&gt; *)entered exitRegions:(NSSet&lt;SWRLRegion*&gt; *)exited</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLRegionManager</Abstract>
-				</Parameter><Parameter>
-					<Name>entered</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been entered</Abstract>
-				</Parameter><Parameter>
-					<Name>exited</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been exited</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/regionManager:didEnterRegions:exitRegions:</Anchor>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateUnknown</TokenIdentifier>
+            <Abstract type="html">The state (range) of the beacon could not be determined.  This could be because there are insufficient
+valid advertisements to compute a range.  This can be because the beacon has timed out or it has just been
+detected and cannot make a determination yet.
+     </Abstract>
+            <Declaration>SWRLBeaconStateUnknown</Declaration>
+            
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
+            
             <NodeRef refid="29"/>
-		</Token>
-		
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateOutside</TokenIdentifier>
+            <Abstract type="html">The rabge of the beacon is outside the range set for this beacon.  The SWRLBeaconManager
+has sufficient samples to make a determination and has determined the beacon to be out of range.
+     </Abstract>
+            <Declaration>SWRLBeaconStateOutside</Declaration>
+            
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconStateInside</TokenIdentifier>
+            <Abstract type="html">The range of the beacon is wihtin the range set for this beacon. The SWRLBeaconManager has sufficient samples
+to make a determination and has determined the beacon to be within range.
+     </Abstract>
+            <Declaration>SWRLBeaconStateInside</Declaration>
+            
+            <DeclaredIn>SWRLBeacon.h</DeclaredIn>
+            
+            <NodeRef refid="29"/>
+        </Token>
         
         
 	</File>
