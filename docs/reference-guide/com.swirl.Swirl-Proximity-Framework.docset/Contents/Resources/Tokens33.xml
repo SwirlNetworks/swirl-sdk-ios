@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/SWRLBeaconFilter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLBeaconFilter</TokenIdentifier>
+			<Abstract type="html">SWRLStatus Bit flags used to determine the running status of the framework</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+            
+			
+			<NodeRef refid="33"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconFilterUnregisteredDevices</TokenIdentifier>
+            <Abstract type="html">Return unregisterd devices</Abstract>
+            <Declaration>SWRLBeaconFilterUnregisteredDevices</Declaration>
+            
+            <DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconFilterRegisteredDevices</TokenIdentifier>
+            <Abstract type="html">Return registered devices.</Abstract>
+            <Declaration>SWRLBeaconFilterRegisteredDevices</Declaration>
+            
+            <DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconFilterAll</TokenIdentifier>
+            <Abstract type="html">Return all devices, unregistered and registered</Abstract>
+            <Declaration>SWRLBeaconFilterAll</Declaration>
+            
+            <DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+            
+            <NodeRef refid="33"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

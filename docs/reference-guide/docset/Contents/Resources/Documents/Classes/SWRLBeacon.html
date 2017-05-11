@@ -56,18 +56,6 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/attributes">attributes</option>
-		
-		<option value="//api/name/error">error</option>
-		
-		<option value="//api/name/labels">labels</option>
-		
-		<option value="//api/name/lastDetected">lastDetected</option>
-		
-		<option value="//api/name/location">location</option>
-		
-		<option value="//api/name/range">range</option>
-		
 		<option value="//api/name/rssi">rssi</option>
 		
 		<option value="//api/name/state">state</option>
@@ -82,13 +70,29 @@
 		
 		<option value="//api/name/extraInfo">- extraInfo</option>
 		
+		<option value="//api/name/isConnectable">- isConnectable</option>
+		
 		<option value="//api/name/isEntered">- isEntered</option>
 		
 		<option value="//api/name/isOverlapping">- isOverlapping</option>
 		
-		<option value="//api/name/isResolved">- isResolved</option>
+		<option value="//api/name/lastDetected">- lastDetected</option>
 		
-		<option value="//api/name/resolvedIdentifier">- resolvedIdentifier</option>
+		<option value="//api/name/manufacturer">- manufacturer</option>
+		
+		<option value="//api/name/model">- model</option>
+		
+		<option value="//api/name/name">- name</option>
+		
+		<option value="//api/name/partner">- partner</option>
+		
+		<option value="//api/name/peripheral">- peripheral</option>
+		
+		<option value="//api/name/protocol">- protocol</option>
+		
+		<option value="//api/name/protocolDescription">- protocolDescription</option>
+		
+		<option value="//api/name/range">- range</option>
 		
 		<option value="//api/name/serial">- serial</option>
 		
@@ -115,7 +119,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : NSObject</td>
+	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : <a href="../Classes/SWRLObject.html">SWRLObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>SWRLBeacon.h<br />SWRLBeacon.m</td>
@@ -129,8 +133,8 @@
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>A SWRLBeacon object defines a <a href="#//api/name/type">type</a> of <a href="../Classes/SWRLSignal.html">SWRLSignal</a> that is based on the device’s proximity to a Bluetooth beacon, as opposed
-to a geographic <a href="#//api/name/location">location</a> or wifi network. A beacon aggregates a set of SWRLBeaconAdvertisements from a specific
-beacon device and matches that device with logical <a href="#//api/name/location">location</a>, placement, and custom <a href="#//api/name/attributes">attributes</a> specified through the platform.
+to a geographic location or wifi network. A beacon aggregates a set of SWRLBeaconAdvertisements from a specific
+beacon device and matches that device with logical location, placement, and custom attributes specified through the platform.
 When the beacon device comes in <a href="#//api/name/range">range</a>, the <a href="../Classes/SWRLBeaconManager.html">SWRLBeaconManager</a> will change the <a href="#//api/name/state">state</a> of the beacon and will generate
 appropriate events through its delegate interface <a href="../Protocols/SWRLBeaconManagerDelegate.html">SWRLBeaconManagerDelegate</a>.</p>
 					</div>
@@ -143,57 +147,8 @@ appropriate events through its delegate interface <a href="../Protocols/SWRLBeac
 						<a title="Tasks" name="tasks"></a>
 						
 
-						<a title="Accessing Beacon Location" name="task_Accessing Beacon Location"></a>
-						<h2 class="task-title">Accessing Beacon Location</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Logical location associated to this beacon through the plaform. See <a href="../Classes/SWRLLocation.html">SWRLLocation</a>.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLLocation *location</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Accessing Beacon Range and State" name="task_Accessing Beacon Range and State"></a>
-						<h2 class="task-title">Accessing Beacon Range and State</h2>
+						<a title="Accessing Beacon Attributes" name="task_Accessing Beacon Attributes"></a>
+						<h2 class="task-title">Accessing Beacon Attributes</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -214,47 +169,6 @@ appropriate events through its delegate interface <a href="../Protocols/SWRLBeac
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLBeaconState state</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/range" title="range"></a>
-	<h3 class="method-title"><code><a href="#//api/name/range">&nbsp;&nbsp;range</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Current range of the beacon in meters.  This number is not very accurate and fluctuates dramatically.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double range</code></div>
 
 		    
 			
@@ -319,186 +233,6 @@ appropriate events through its delegate interface <a href="../Protocols/SWRLBeac
 			
 		</div>
 	</div>
-</div>
-						</div>
-						
-
-						<a title="Accessing Custom Labels and Attributes" name="task_Accessing Custom Labels and Attributes"></a>
-						<h2 class="task-title">Accessing Custom Labels and Attributes</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/attributes" title="attributes"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Dictionary of optional custom attributes sent by the server for resolved beacons.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *attributes</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/labels" title="labels"></a>
-	<h3 class="method-title"><code><a href="#//api/name/labels">&nbsp;&nbsp;labels</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Array of label strings sent by the server for resolved beacons.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
-
-						<a title="Accessing Other Beacon Attributes" name="task_Accessing Other Beacon Attributes"></a>
-						<h2 class="task-title">Accessing Other Beacon Attributes</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/lastDetected" title="lastDetected"></a>
-	<h3 class="method-title"><code><a href="#//api/name/lastDetected">&nbsp;&nbsp;lastDetected</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Timestamp (timeIntervalSince1970) of the last advertisement received.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval lastDetected</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Error (usually set if there is a beacon detected, but this application has no access).</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
 </div><div class="section-method">
 	<a name="//api/name/isOverlapping" title="isOverlapping"></a>
 	<h3 class="method-title"><code><a href="#//api/name/isOverlapping">&ndash;&nbsp;isOverlapping</a></code>
@@ -517,47 +251,6 @@ appropriate events through its delegate interface <a href="../Protocols/SWRLBeac
 		    
 
 			<div class="method-subsection method-declaration"><code>- (BOOL)isOverlapping</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/isResolved" title="isResolved"></a>
-	<h3 class="method-title"><code><a href="#//api/name/isResolved">&ndash;&nbsp;isResolved</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Has this beacon been successfully resolved by the server.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (BOOL)isResolved</code></div>
 
 		    
 			
@@ -665,6 +358,88 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/manufacturer" title="manufacturer"></a>
+	<h3 class="method-title"><code><a href="#//api/name/manufacturer">&ndash;&nbsp;manufacturer</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retrieve the manufacturer of the beacon device.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)manufacturer</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/model" title="model"></a>
+	<h3 class="method-title"><code><a href="#//api/name/model">&ndash;&nbsp;model</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retreive the model of the beacon device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)model</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/serial" title="serial"></a>
 	<h3 class="method-title"><code><a href="#//api/name/serial">&ndash;&nbsp;serial</a></code>
 </h3>
@@ -682,6 +457,211 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>- (NSString *)serial</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/protocol" title="protocol"></a>
+	<h3 class="method-title"><code><a href="#//api/name/protocol">&ndash;&nbsp;protocol</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retreive the protocol of the underlying advertisements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (int)protocol</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/protocolDescription" title="protocolDescription"></a>
+	<h3 class="method-title"><code><a href="#//api/name/protocolDescription">&ndash;&nbsp;protocolDescription</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retreive the <a href="#//api/name/protocol">protocol</a> <a href="#//api/name/description">description</a> of the underlying advertisements</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)protocolDescription</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isConnectable" title="isConnectable"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isConnectable">&ndash;&nbsp;isConnectable</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Is the beacon in a connectable <a href="#//api/name/state">state</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)isConnectable</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/peripheral" title="peripheral"></a>
+	<h3 class="method-title"><code><a href="#//api/name/peripheral">&ndash;&nbsp;peripheral</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retreive the peripheral of the beacon if possible.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SWRLPeripheral *)peripheral</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeacon.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/partner" title="partner"></a>
+	<h3 class="method-title"><code><a href="#//api/name/partner">&ndash;&nbsp;partner</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Retreive the partner information for this beacon</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SWRLObject *)partner</code></div>
 
 		    
 			
@@ -748,15 +728,15 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
+				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
 			</div>
 			
 			
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/resolvedIdentifier" title="resolvedIdentifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resolvedIdentifier">&ndash;&nbsp;resolvedIdentifier</a></code>
+	<a name="//api/name/lastDetected" title="lastDetected"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastDetected">&ndash;&nbsp;lastDetected</a></code>
 </h3>
 
 	<div class="method-info">
@@ -766,12 +746,12 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>This is the swirl internal <a href="#//api/name/identifier">identifier</a></p>
+				<p>Timestamp of last detection of this signal.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSString *)resolvedIdentifier</code></div>
+			<div class="method-subsection method-declaration"><code>- (NSTimeInterval)lastDetected</code></div>
 
 		    
 			
@@ -789,7 +769,89 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
+				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="method-title"><code><a href="#//api/name/name">&ndash;&nbsp;name</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A human readable name if available.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)name</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/range" title="range"></a>
+	<h3 class="method-title"><code><a href="#//api/name/range">&ndash;&nbsp;range</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This is the approximate range to the beacon.  This is a rough approximation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (double)range</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
 			</div>
 			
 			
@@ -810,7 +872,7 @@ Eddystone beacons, this would include TLM data base-64 encoded.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-04-06</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

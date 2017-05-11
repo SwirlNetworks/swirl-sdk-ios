@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Constants/SWRLContentType.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/SWRLContentType</TokenIdentifier>
+			<Abstract type="html">The type of content delivered</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+            
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLContentTypeCustom</TokenIdentifier>
+            <Abstract type="html">Custom creative for delivering customr JSON attributes
+     </Abstract>
+            <Declaration>SWRLContentTypeCustom</Declaration>
+            
+            <DeclaredIn>SWRLContent.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLContentTypeURL</TokenIdentifier>
+            <Abstract type="html">URL creative for deep-link or third party application launch
+     </Abstract>
+            <Declaration>SWRLContentTypeURL</Declaration>
+            
+            <DeclaredIn>SWRLContent.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLContentTypeSwirl</TokenIdentifier>
+            <Abstract type="html">Swirl create for web content displayed via interstitial
+     </Abstract>
+            <Declaration>SWRLContentTypeSwirl</Declaration>
+            
+            <DeclaredIn>SWRLContent.h</DeclaredIn>
+            
+            <NodeRef refid="36"/>
+        </Token>
+        
+        
+	</File>
+</Tokens>

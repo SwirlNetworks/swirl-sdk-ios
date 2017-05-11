@@ -60,13 +60,9 @@
 		
 		<option value="//api/name/externalIdentifier">externalIdentifier</option>
 		
-		<option value="//api/name/identifier">identifier</option>
-		
 		<option value="//api/name/latitude">latitude</option>
 		
 		<option value="//api/name/longitude">longitude</option>
-		
-		<option value="//api/name/name">name</option>
 		
 		<option value="//api/name/placement">placement</option>
 		
@@ -81,6 +77,14 @@
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/identifier">- identifier</option>
+		
+		<option value="//api/name/location">- location</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -101,7 +105,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td><a href="../Classes/SWRLObject.html">SWRLObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>SWRLLocation.h<br />SWRLLocation.m</td>
@@ -114,7 +118,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>SWRLLocation represents a physical street, city, state <a href="#//api/name/address">address</a> or real world location.</p>
+						<p>SWRLLocation represents a physical street, city, state <a href="#//api/name/address">address</a> or real world <a href="#//api/name/location">location</a>.</p>
 					</div>
 					
 					
@@ -126,12 +130,12 @@
 						
 
 						<a title="Accessing Attributes" name="task_Accessing Attributes"></a>
-						
-<h2 class="task-title">Accessing Attributes</h2>
+						<h2 class="task-title">Accessing Attributes</h2>
+
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/identifier" title="identifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/identifier">&nbsp;&nbsp;identifier</a></code>
+	<a name="//api/name/externalIdentifier" title="externalIdentifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/externalIdentifier">&nbsp;&nbsp;externalIdentifier</a></code>
 </h3>
 
 	<div class="method-info">
@@ -141,53 +145,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Unique identifier of the <a href="#//api/name/location">location</a>.</p>
+				<p>A customer assigned <a href="#//api/name/identifier">identifier</a> or code associated with this <a href="#//api/name/location">location</a>.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *identifier</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>A friendly name associated with the <a href="#//api/name/location">location</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *externalIdentifier</code></div>
 
 		    
 			
@@ -376,8 +339,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/placement" title="placement"></a>
-	<h3 class="method-title"><code><a href="#//api/name/placement">&nbsp;&nbsp;placement</a></code>
+	<a name="//api/name/streamEvents" title="streamEvents"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamEvents">&nbsp;&nbsp;streamEvents</a></code>
 </h3>
 
 	<div class="method-info">
@@ -387,13 +350,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>If a <a href="#//api/name/location">location</a> represents a specific <a href="#//api/name/location">location</a> with content, the placement will be non-nil.
-If a <a href="#//api/name/location">location</a> represents the overall <a href="#//api/name/location">location</a> (without regard to sub-area), the placement will be nil.</p>
+				<p>True if live event streaming is enabled for this <a href="#//api/name/location">location</a></p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLPlacement *placement</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL streamEvents</code></div>
 
 		    
 			
@@ -418,8 +380,8 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/externalIdentifier" title="externalIdentifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/externalIdentifier">&nbsp;&nbsp;externalIdentifier</a></code>
+	<a name="//api/name/placement" title="placement"></a>
+	<h3 class="method-title"><code><a href="#//api/name/placement">&nbsp;&nbsp;placement</a></code>
 </h3>
 
 	<div class="method-info">
@@ -429,12 +391,13 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 			
 			
 			<div class="method-subsection brief-description">
-				<p>A customer assigned <a href="#//api/name/identifier">identifier</a> or code associated with this <a href="#//api/name/location">location</a>.</p>
+				<p>If a <a href="#//api/name/location">location</a> represents a specific <a href="#//api/name/location">location</a> with content, the placement will be non-nil.
+If a <a href="#//api/name/location">location</a> represents the overall <a href="#//api/name/location">location</a> (without regard to sub-area), the placement will be nil.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *externalIdentifier</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLPlacement *placement</code></div>
 
 		    
 			
@@ -500,8 +463,8 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/streamEvents" title="streamEvents"></a>
-	<h3 class="method-title"><code><a href="#//api/name/streamEvents">&nbsp;&nbsp;streamEvents</a></code>
+	<a name="//api/name/location" title="location"></a>
+	<h3 class="method-title"><code><a href="#//api/name/location">&ndash;&nbsp;location</a></code>
 </h3>
 
 	<div class="method-info">
@@ -511,12 +474,12 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 			
 			
 			<div class="method-subsection brief-description">
-				<p>True if live event streaming is enabled for this <a href="#//api/name/location">location</a></p>
+				<p>Returns a location that does not include any placment information.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL streamEvents</code></div>
+			<div class="method-subsection method-declaration"><code>- (SWRLLocation *)location</code></div>
 
 		    
 			
@@ -543,6 +506,55 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 </div>
 						</div>
 						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/identifier" title="identifier"></a>
+	<h3 class="method-title"><code><a href="#//api/name/identifier">&ndash;&nbsp;identifier</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The platform assigned internal identifier.  This is globally unique.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)identifier</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLObject.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
 					</div>
 					
 					
@@ -555,7 +567,7 @@ If a <a href="#//api/name/location">location</a> represents the overall <a href=
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-04-06</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-11</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
