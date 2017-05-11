@@ -18,24 +18,16 @@
  */
 
 @interface SWRLWifiInfo : SWRLSignal
-/** @name Accessing Attributes */
+/** ====================================================================================================================
+ *  @name Accessing Attributes
+ *  ====================================================================================================================
+ */
 
-/** The name is the SSID of the wifi network. */
-@property (nonatomic, readonly) NSString *          name;
-/** The Location (and Placement) associated with this wifi network */
-@property (nonatomic, readonly) SWRLLocation *      location;
-/** The Signal strength (if available) associated with the detection event. */
-@property (nonatomic, readonly) int                 rssi;
-/** An timeIntervalSince1970 timestamp of when the network was first detected */
-@property (nonatomic, readonly) NSTimeInterval      detected;
-/** Attributes associated to this network via the platform */
-@property (nonatomic, readonly) NSDictionary *      attributes;
-/** Labels associated to this network via the platform */
-@property (nonatomic, readonly) NSArray<NSString*> *labels;
-/** Error (if present) */
-@property (nonatomic, readonly) NSError *           error;
+/** 
+ * The Signal strength (if available) associated with the detection event. 
+ */
+@property (nonatomic, readonly) int rssi;
 
-- (BOOL) isResolved;
 @end
 
 /**

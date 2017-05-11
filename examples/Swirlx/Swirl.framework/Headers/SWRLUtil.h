@@ -18,10 +18,20 @@
 + (NSData *)hmac_sha256:(NSString *)source key:(NSData *)key;
 + (NSData *)encrypt:(NSData *)input key:(NSData *)key;
 + (NSData *)decrypt:(NSData *)input key:(NSData *)key;
-+ (NSData *)decrypt:(NSData *)input iv:(NSData *)iv key:(NSData *)key;
++ (NSData *)decrypt:(NSData *)input iv:(NSData *)iv key:(NSData *)key padding:(BOOL)padding;
 + (NSString *)hexDigest:(NSData *)data;
 + (NSString *)hexDigest:(NSData *)data offset:(int)off;
 + (NSString *)randomString:(int)length;
+@end
+
+// =====================================================================================================================
+// SWRLData
+// =====================================================================================================================
+
+@interface SWRLData : NSObject
++ (NSData *)dataWithBase64String:(NSString *)base64String;
++ (NSData *)dataWithHexString:(NSString *)hexString;
++ (NSString *)stringWithData:(NSData *)data;
 @end
 
 // =====================================================================================================================
@@ -31,6 +41,7 @@
 @interface SWRLJSON : NSObject
 + (NSData *)dataWithObject:(id)object error:(NSError **)error;
 + (id)objectWithData:(NSData *)data error:(NSError **)error;
++ (id)objectWithData:(NSData *)data key:(NSData *)key error:(NSError **)error;
 + (NSString *)stringWithObject:(id)object;
 @end
 
@@ -44,6 +55,7 @@
 + (NSString *)dateStringWithFormat:(NSString *)format date:(NSDate *)date;
 + (NSString *)dateStringWithFormat:(NSString *)format date:(NSDate *)date locale:(NSLocale *)locale tzoffset:(NSInteger)tzoffset;
 + (NSString *)formatSameDayTime:(NSTimeInterval)time now:(NSTimeInterval)now;
++ (NSString *)timestamp_RFC3339;
 + (NSDictionary *)dictionaryWithLocation:(CLLocation *)location;
 + (CLLocation *)locationWithDictionary:(NSDictionary *)dictionary;
 

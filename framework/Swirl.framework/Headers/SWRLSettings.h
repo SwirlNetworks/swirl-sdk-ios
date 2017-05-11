@@ -10,16 +10,12 @@
 
 /** @name Settings */
 
+/** API Access Code.  This is for temporary API access using a code */
+extern NSString *const SWRLSettingApiAccessCode;
 /** API Key.  This is the API key assigned through the platform */
 extern NSString *const SWRLSettingApiKey;
 /** API Secret.  This is the API secret assigned through the platform */
 extern NSString *const SWRLSettingApiSecret;
-/** API User.  This is for user/password login for console users performing admin functions */
-extern NSString *const SWRLSettingApiUser;
-/** API Password. This for user/password login for consoleusers performaing admin functions */
-extern NSString *const SWRLSettingApiPassword;
-/** API Access Code.  This is for temporary API access using a code */
-extern NSString *const SWRLSettingApiAccessCode;
 /** API Enabled.  Failsafe used to disable the SDK remotely if necessary. Default:YES. */
 extern NSString *const SWRLSettingApiEnabled;
 /** API Host.  This is primarily used internally for switching between testing and live infrastrucures. */
@@ -60,14 +56,28 @@ extern NSString *const SWRLSettingContentLoadingTimeout;
 extern NSString *const SWRLSettingContentCode;
 /** Boolean that controls whether or not to show the content toast view when content is dismissed. */
 extern NSString *const SWRLSettingContentShowToast;
+/** Boolean that controls whether or not to show the content toast before showing the full view. */
+extern NSString *const SWRLSettingContentShowToastFirst;
 /** Boolean that controls whether or not to show the content toolbar. */
 extern NSString *const SWRLSettingContentShowToolbar;
 /** Comma separated list of mac-addresses to allow through. Testing. */
 extern NSString *const SWRLSettingBeaconFilter;
+/** Controls whether all beacons (including unknown protocols) are reflected to server (Default:NO) */
+extern NSString *const SWRLSettingBeaconScanGeneric;
+/** Global RSSI threshold.  Default: -95 */
+extern NSString *const SWRLSettingBeaconThreshold;
 /** Default scan interval when scanning for beacons. Default is 3.0 */
 extern NSString *const SWRLSettingBeaconScanInterval;
 /** Default rest interval when scanning for beacons. Default is 2.0 */
 extern NSString *const SWRLSettingBeaconRestInterval;
+/** Optimal interval for rssi averaging. Default is 20.0 */
+extern NSString *const SWRLSettingBeaconOptSampleInterval;
+/** Maximum interval for rssi averaging (if can't get enought samples). Default is 60.0 */
+extern NSString *const SWRLSettingBeaconMaxSampleInterval;
+/** Minimum required samples to return a value. Default is 2 */
+extern NSString *const SWRLSettingBeaconMinSamples;
+/** Update frequency of cached rssi values in seconds. Default is 1.0 */
+extern NSString *const SWRLSettingBeaconSampleResolution;
 /** Force beacon scan to run always (regardless of location permissions, Default is NO */
 extern NSString *const SWRLSettingBeaconScanAlways;
 /** Boolean to control whether or not to run the beacon proximity check. Default is YES */
@@ -80,6 +90,24 @@ extern NSString *const SWRLSettingBeaconServices;
 extern NSString *const SWRLSettingBeaconUuidsAlways;
 /** List of region based iBeacon UUIDS. Varies by region. */
 extern NSString *const SWRLSettingBeaconUuids;
+/** Maximum number of IBeacon UUIDs to monitor. Default: 10 */
+extern NSString *const SWRLSettingBeaconMaxUuids;
+/** Flag to control if Ibeacons are resolved with swirl backend. Default:YES */
+extern NSString *const SWRLSettingBeaconResolveIBeacon;
+/** Flag to control if Eddystone EID beacons are resolved with swirl backend. Default:NO */
+extern NSString *const SWRLSettingBeaconResolveEddystoneEID;
+/** Flag to control if Eddystone UID beacons are resolved with swirl backend. Default:NO */
+extern NSString *const SWRLSettingBeaconResolveEddystoneUID;
+/** Interval to control how long before idle beacon removed from internal tables. Default:MINUTES(16) */
+extern NSString *const SWRLSettingBeaconExpiration;
+/** Time of last reset/settings initialization */
+extern NSString *const SWRLSettingLastResetTime;
+/** Enable administration/configuration: connect to beacons, include errored beacons, etc */
+extern NSString *const SWRLSettingConfigEnabled;
+/** Comma separated list of additional configuration services to scan for.  Default is FFC0 */
+extern NSString *const SWRLSettingConfigBeaconServices;
+/** Google Proximity Beacon API Key */
+extern NSString *const SWRLSettingGoogleBeaconApiKey;
 
 extern NSString *const SWRLSettingsDidChangeNotification;
 extern NSString *const SWRLSettingsDefaultsChanged;
@@ -97,8 +125,6 @@ extern NSString *const SWRLSettingsChangedKeys;
 
 @interface SWRLSettings : NSObject
 @property (nonatomic, readonly) NSDictionary *allSettings;
-
-- (instancetype)initWithPath:(NSString *)path prefix:(NSString *)name password:(NSString *)password;
 
 - (NSString *) stringForKey:(NSString *)key default:(NSString *)value;
 - (BOOL) boolForKey:(NSString *)key default:(BOOL)value;

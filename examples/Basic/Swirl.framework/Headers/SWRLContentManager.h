@@ -95,6 +95,17 @@
 
 /** @name Controlling Content Display */
 /**
+ *  Called before content is shown in foreground.
+ *
+ *  @param content  The content that is about to be opened.
+ *  @return YES if you want to display only the toast view and not the full interstitial
+ *
+ *  @discussion The default implementation returns the value of the SWRLSettingContentShowToastFirst setting which 
+ *  defaults to NO.
+ **/
+- (BOOL) shouldShowToastFirst:(SWRLContent *)content;
+
+/**
  *  Called before a deep-link or external URL is activated.
  *
  *  @param content  The content that is about to be opened.
@@ -188,6 +199,14 @@
  *  call the implementation in `super`.
  */
 - (void) showContentViewController:(SWRLContent *)content;
+
+/**
+ *  Call this method to force display of the SWRLContentToastView
+ *
+ *  @param content content object from which the toast will be derived
+ *  @discussion This forces the display of the toast view for the content supplied
+ */
+- (void) showContentToastView:(SWRLContent *)content;
 
 /**
  *  Call this method to force display of the SWRLContentViewController.
