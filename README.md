@@ -29,19 +29,19 @@ There are a number of additional documents and resources available to facilitate
 **Version:** `3.4` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `05/15/17`
 <p>
 Improved support for eddystone, proximity beacon api integration and attachements, Toast first mode. 
-<p>
+
 **Version:** `3.3` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `02/01/17`
 <p>
 Replaced up-front device registration with just-in-time device registration (scalability).
-<p>
+
 **Version:** `3.2.1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `01/13/17`
 <p>
 Added ability to set log level. Minor bug fixes.
-<p>
+
 **Version:** `3.2` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `01/06/17`
 <p>
 Adds support for realtime streaming or events; improved support for eddystone; added improved security for API requests; added support for enter/exit zone signals, other bug fixes.  
-<p>
+
 **Version:** `3.1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `12/19/16`
 <p>
 Fixes a crash that can occur during background launches on some devices.  
