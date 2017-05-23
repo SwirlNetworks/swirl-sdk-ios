@@ -72,11 +72,6 @@ extern NSString *const SWRLNotificationContentKey;
 @property (nonatomic, readonly) NSTimeInterval       received;
 
 /**
- * A boolean indicating whether the content was created from a notification.
- */
-@property (nonatomic, readonly) BOOL                 isFromNotification;
-
-/**
  * The notification associated with this content.  You can access this field at any time to get a copy
  * of the notification that was sent or would be sent. Accessing this property does not cause
  * any notifications to be sent. 
@@ -109,7 +104,6 @@ extern NSString *const SWRLNotificationContentKey;
 @property (nonatomic, nullable, readonly) UIImage *thumbnail;
 
 - (instancetype)initWithContent:(NSDictionary *)content visit:(nullable SWRLVisit *)visit;
-- (instancetype)initWithContent:(NSDictionary *)content visit:(nullable SWRLVisit *)visit fromNotification:(BOOL)fromNotification;
 - (void) setReceived:(NSTimeInterval)received;
 - (void) setThumbnail:(UIImage *)thumbnail;
 

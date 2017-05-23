@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLSignal.html">
+	<File path="Classes/SWRLRegionManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLSignal</TokenIdentifier>
-			<Abstract type="html">SWRLSignal is an abstract base class for any presence signal object.  Concrete subclasses are Beacon, WifiInfo and Region.
-A signal is tied to a logical placement and location.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegionManager</TokenIdentifier>
+			<Abstract type="html">A component which manages a working set of Region objects (retreived using the API) that are &apos;near&apos; the users location.
+These regions represent both geofences and &apos;control&apos; regions. Geofences have logical location, placement and other metadata associated.
+Control regions are used internally by the SDK to control other signal detection, like when to start and stop scanning for beacons or what
+iBeacon UUIDs are nearby. This component either starts its own os specific location manager or depends upon the host app
+to post location information onto the bus. It generates RegionEnter/RegionExit events onto the bus.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="15"/>
@@ -14,146 +17,113 @@ A signal is tied to a logical placement and location.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredArea:</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/identifier</TokenIdentifier>
-			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/identifier</TokenIdentifier>
-			<Abstract type="html">Unique identifier for this signal.  Generally used only to lookup and distinquish different signals.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredArea</TokenIdentifier>
+			<Abstract type="html">The monitoredArea represents the region encompassing the current working set of regions.</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) SWRLRegion *monitoredArea</Declaration>
 			
 			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/monitoredArea</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setType:</TokenIdentifier>
-			<Abstract type="html">Type of signal.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setMonitoredRegions:</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/type</TokenIdentifier>
-			<Abstract type="html">Type of signal.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/type</TokenIdentifier>
-			<Abstract type="html">Type of signal.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/monitoredRegions</TokenIdentifier>
+			<Abstract type="html">The current working set of regions.  Basically all of the regions that are active for this API key within 1 degree
+of latitude and longitude of the devices current position (normalized to degree boundries)</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) SWRLSignalType type</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *monitoredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/type</Anchor>
+			<Anchor>//api/name/monitoredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setRange:</TokenIdentifier>
-			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/setEnteredRegions:</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/range</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/range</TokenIdentifier>
-			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double range</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/range</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/range</TokenIdentifier>
-			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegionManager/enteredRegions</TokenIdentifier>
+			<Abstract type="html">The current set of entered regions.  This includes all types of regions (control and geofence).</Abstract>
+			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double range</Declaration>
-			
-			
-			<Anchor>//api/name/range</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/setResolvedIdentifier:</TokenIdentifier>
-			<Abstract type="html">This is the swirl internal identifier</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
+			<Declaration>@property (nonatomic, copy, readonly) NSArray&lt;SWRLRegion*&gt; *enteredRegions</Declaration>
 			
 			
-			<Anchor>//api/name/resolvedIdentifier</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLSignal/resolvedIdentifier</TokenIdentifier>
-			<Abstract type="html">This is the swirl internal identifier</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
-			
-			
-			<Anchor>//api/name/resolvedIdentifier</Anchor>
-            <NodeRef refid="15"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLSignal/resolvedIdentifier</TokenIdentifier>
-			<Abstract type="html">This is the swirl internal identifier</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *resolvedIdentifier</Declaration>
-			
-			
-			<Anchor>//api/name/resolvedIdentifier</Anchor>
+			<Anchor>//api/name/enteredRegions</Anchor>
             <NodeRef refid="15"/>
 		</Token>
 		

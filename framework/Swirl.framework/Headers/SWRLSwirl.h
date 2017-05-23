@@ -178,8 +178,8 @@ protocols broadcast to the mult-delegate bus.
  */
 - (void) postObject:(id)object;
 
-- (void) postMessage:(SEL)message withObject:(id)object1;
-- (void) postMessage:(SEL)message withObject:(id)object1 withObject:(id)object2;
+- (void) postMessage:(SEL)message withObject:(nullable id)object1;
+- (void) postMessage:(SEL)message withObject:(nullable id)object1 withObject:(nullable id)object2;
 
 /**
  * Log event to the log stream.
@@ -225,6 +225,10 @@ typedef SWRLSwirl Swirl;
  *  @param status  The current system status. See SWRLStatus.
  */
 - (void) swirlDidUpdateStatus:(SWRLStatus)status;
+/**
+ *  Tells the delegate that the sdk started without error.
+ */
+- (void) swirlDidStart;
 /**
  *  Tells the delegate that an error has been reported.
  *  @param error  The error that was reported.

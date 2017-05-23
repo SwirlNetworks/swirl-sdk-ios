@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLPlacement.html">
+	<File path="Classes/SWRLLocation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLPlacement</TokenIdentifier>
-			<Abstract type="html">SWRLPlacement represents a logical and business-friendly name given to a specific area inside a location.
-For example - cosmetics, electronics department, checkout, neighborhood, parking lot, etc.
-A SWRLPlacement is contained within a SWRLLocation.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLLocation</TokenIdentifier>
+			<Abstract type="html">SWRLLocation represents a physical street, city, state address or real world location.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
             
 			
@@ -15,110 +13,317 @@ A SWRLPlacement is contained within a SWRLLocation.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">Unique identifier of a placement.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setExternalIdentifier:</TokenIdentifier>
+			<Abstract type="html">A customer assigned identifier or code associated with this location.</Abstract>
 			<DeclaredIn>SWRLLocation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *externalIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/externalIdentifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/externalIdentifier</TokenIdentifier>
+			<Abstract type="html">A customer assigned identifier or code associated with this location.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *externalIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/externalIdentifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/externalIdentifier</TokenIdentifier>
+			<Abstract type="html">A customer assigned identifier or code associated with this location.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *externalIdentifier</Declaration>
+			
+			
+			<Anchor>//api/name/externalIdentifier</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setAddress:</TokenIdentifier>
+			<Abstract type="html">The street address for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/address</TokenIdentifier>
+			<Abstract type="html">The street address for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/address</TokenIdentifier>
+			<Abstract type="html">The street address for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setLatitude:</TokenIdentifier>
+			<Abstract type="html">Latitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/latitude</TokenIdentifier>
+			<Abstract type="html">Latitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/latitude</TokenIdentifier>
+			<Abstract type="html">Latitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double latitude</Declaration>
+			
+			
+			<Anchor>//api/name/latitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setLongitude:</TokenIdentifier>
+			<Abstract type="html">Longitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/longitude</TokenIdentifier>
+			<Abstract type="html">Longitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/longitude</TokenIdentifier>
+			<Abstract type="html">Longitude associated with the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double longitude</Declaration>
+			
+			
+			<Anchor>//api/name/longitude</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setTimezone:</TokenIdentifier>
+			<Abstract type="html">Timezone for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timezone</Declaration>
+			
+			
+			<Anchor>//api/name/timezone</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/timezone</TokenIdentifier>
+			<Abstract type="html">Timezone for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timezone</Declaration>
+			
+			
+			<Anchor>//api/name/timezone</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/timezone</TokenIdentifier>
+			<Abstract type="html">Timezone for the location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timezone</Declaration>
+			
+			
+			<Anchor>//api/name/timezone</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setStreamEvents:</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/streamEvents</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/streamEvents</TokenIdentifier>
+			<Abstract type="html">True if live event streaming is enabled for this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL streamEvents</Declaration>
+			
+			
+			<Anchor>//api/name/streamEvents</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setPlacement:</TokenIdentifier>
+			<Abstract type="html">If a location represents a specific location with content, the placement will be non-nil.
+If a location represents the overall location (without regard to sub-area), the placement will be nil.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLPlacement *placement</Declaration>
+			
+			
+			<Anchor>//api/name/placement</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/placement</TokenIdentifier>
+			<Abstract type="html">If a location represents a specific location with content, the placement will be non-nil.
+If a location represents the overall location (without regard to sub-area), the placement will be nil.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLPlacement *placement</Declaration>
+			
+			
+			<Anchor>//api/name/placement</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/placement</TokenIdentifier>
+			<Abstract type="html">If a location represents a specific location with content, the placement will be non-nil.
+If a location represents the overall location (without regard to sub-area), the placement will be nil.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) SWRLPlacement *placement</Declaration>
+			
+			
+			<Anchor>//api/name/placement</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/setSignal:</TokenIdentifier>
+			<Abstract type="html">A signal that most recently triggered an event in this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) SWRLSignal *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/signal</TokenIdentifier>
+			<Abstract type="html">A signal that most recently triggered an event in this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) SWRLSignal *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLLocation/signal</TokenIdentifier>
+			<Abstract type="html">A signal that most recently triggered an event in this location</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak, readonly) SWRLSignal *signal</Declaration>
+			
+			
+			<Anchor>//api/name/signal</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/location</TokenIdentifier>
+			<Abstract type="html">Returns a location that does not include any placment information.</Abstract>
+			<DeclaredIn>SWRLLocation.h</DeclaredIn>
+			
+			<Declaration>- (SWRLLocation *)location</Declaration>
+			
+			
+			<Anchor>//api/name/location</Anchor>
+            <NodeRef refid="11"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLLocation/identifier</TokenIdentifier>
+			<Abstract type="html">The platform assigned internal identifier.  This is globally unique.</Abstract>
+			<DeclaredIn>SWRLLocation.m</DeclaredIn>
+			
+			<Declaration>- (NSString *)identifier</Declaration>
 			
 			
 			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/identifier</TokenIdentifier>
-			<Abstract type="html">Unique identifier of a placement.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLPlacement/identifier</TokenIdentifier>
-			<Abstract type="html">Unique identifier of a placement.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/setName:</TokenIdentifier>
-			<Abstract type="html">Display name of the placement.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/name</TokenIdentifier>
-			<Abstract type="html">Display name of the placement.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLPlacement/name</TokenIdentifier>
-			<Abstract type="html">Display name of the placement.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/setOverlapping:</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
-			
-			
-			<Anchor>//api/name/overlapping</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLPlacement/overlapping</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
-			
-			
-			<Anchor>//api/name/overlapping</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLPlacement/overlapping</TokenIdentifier>
-			<Abstract type="html">A placement flagged as overlapping allows beacons to overlap with other beacons in other placements.</Abstract>
-			<DeclaredIn>SWRLLocation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL overlapping</Declaration>
-			
-			
-			<Anchor>//api/name/overlapping</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLBeaconManagerDelegate.html">
+	<File path="Classes/SWRLWifiInfo.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconManagerDelegate</TokenIdentifier>
-			<Abstract type="html">The SWRLBeaconManager protocol defines the methods used to receive beacon update from the SWRLBeaconManager.
-Upon receiving a beacon event, you can use the result to update your user interface or
-perform other actions.
-&lt;p&gt;
-The methods of your delegate object are called from the thread associated with the dispatch queue that you used
-when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLWifiInfo</TokenIdentifier>
+			<Abstract type="html">A SWRLWifiInfo object is a SWRLSignal which represents a wifi access point that the mobile device is or was
+connected to.  In order to activate detection, the SSIDs of the networks you are interested in need to be
+white-listed in the platform and all of the BSSIDs need to be added.  Any wifi events not related to the white-listed
+SSIDs and listed BSSIDs are not reported.</Abstract>
+			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="22"/>
@@ -18,102 +16,62 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didResolveBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the beacon manager was able to resolve the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setRssi:</TokenIdentifier>
+			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
+			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didResolveBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The resolved beacon</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
 			
-			<Anchor>//api/name/beaconManager:didResolveBeacon:</Anchor>
+			
+			<Anchor>//api/name/rssi</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didEnterBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device is within range of the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/rssi</TokenIdentifier>
+			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
+			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didEnterBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that has been entered</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
 			
-			<Anchor>//api/name/beaconManager:didEnterBeacon:</Anchor>
+			
+			<Anchor>//api/name/rssi</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didChangeNearest:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device changed the beacon it is closest to.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/rssi</TokenIdentifier>
+			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
+			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didChangeNearest:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that is now the nearest beacon</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
 			
-			<Anchor>//api/name/beaconManager:didChangeNearest:</Anchor>
+			
+			<Anchor>//api/name/rssi</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didDwellBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device is still within range of the beacon.  Called periodically.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/lastDetected</TokenIdentifier>
+			<Abstract type="html">Timestamp of last detection of this signal.</Abstract>
+			<DeclaredIn>SWRLWifiManager.m</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didDwellBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that the mobile device is within range of</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSTimeInterval)lastDetected</Declaration>
 			
-			<Anchor>//api/name/beaconManager:didDwellBeacon:</Anchor>
+			
+			<Anchor>//api/name/lastDetected</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLBeaconManagerDelegate/beaconManager:didExitBeacon:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that the mobile device left the range of the beacon.</Abstract>
-			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLWifiManager.m</DeclaredIn>
 			
-			<Declaration>- (void)beaconManager:(SWRLBeaconManager *)manager didExitBeacon:(SWRLBeacon *)beacon</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLBeaconManager reporting the event</Abstract>
-				</Parameter><Parameter>
-					<Name>beacon</Name>
-					<Abstract type="html">The beacon that was exited</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (SWRLSignalType)type</Declaration>
 			
-			<Anchor>//api/name/beaconManager:didExitBeacon:</Anchor>
+			
+			<Anchor>//api/name/type</Anchor>
             <NodeRef refid="22"/>
 		</Token>
 		

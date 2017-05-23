@@ -8,6 +8,8 @@
 
 #import <Swirl/SWRLBase.h>
 #import <Swirl/SWRLUtil.h>
+#import <Swirl/SWRLObject.h>
+#import <Swirl/SWRLSignal.h>
 #import <Swirl/SWRLLocation.h>
 #import <Swirl/SWRLSettings.h>
 #import <Swirl/SWRLAPI.h>
@@ -23,5 +25,7 @@
 #import <Swirl/SWRLContentToastView.h>
 #import <Swirl/SWRLContentViewController.h>
 #import <Swirl/SWRLSwirl.h>
+#import <Swirl/SWRLConfig.h>                /* for admin/configuration */
+#import <Swirl/SWRLPeripheral.h>            /* for admin/configuration */
 
 #endif

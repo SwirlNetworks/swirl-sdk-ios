@@ -10,10 +10,13 @@
 #import <Swirl/SWRLManager.h>
 #import <Swirl/SWRLBeaconAdvertisement.h>
 
+@class SWRLPeripheral;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface  SWRLBeaconScanner : SWRLManager
-- (void) squelchBeaconAdvertisement:(SWRLBeaconAdvertisement *)advertisement expiration:(NSTimeInterval)expiration;
+- (void) squelchBeaconWithAdvertisement:(SWRLBeaconAdvertisement *)advertisement timeout:(NSTimeInterval)timeout;
+- (SWRLPeripheral *)peripheralForAdvertisement:(SWRLBeaconAdvertisement *)advertisement;
 @end
 
 /**

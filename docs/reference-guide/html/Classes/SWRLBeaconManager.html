@@ -56,7 +56,11 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/beacons">beacons</option>
+		<option value="//api/name/activeBeacons">activeBeacons</option>
+		
+		<option value="//api/name/activeDevices">activeDevices</option>
+		
+		<option value="//api/name/allBeacons">allBeacons</option>
 		
 		<option value="//api/name/nearest">nearest</option>
 		
@@ -65,6 +69,18 @@
 
 	
 
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/activeBeacons:">- activeBeacons:</option>
+		
+		<option value="//api/name/activeDevices:rssi:flags:">- activeDevices:rssi:flags:</option>
+		
+		<option value="//api/name/beaconWithIdentifier:urn:">- beaconWithIdentifier:urn:</option>
+		
+		<option value="//api/name/beaconWithIdentifier:urn:timeout:queue:completion:">- beaconWithIdentifier:urn:timeout:queue:completion:</option>
+		
+	</optgroup>
 	
 	
 </select>
@@ -162,8 +178,8 @@ For information about the delegate methods you use to receive events, see <a hre
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/beacons" title="beacons"></a>
-	<h3 class="method-title"><code><a href="#//api/name/beacons">&nbsp;&nbsp;beacons</a></code>
+	<a name="//api/name/allBeacons" title="allBeacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/allBeacons">&nbsp;&nbsp;allBeacons</a></code>
 </h3>
 
 	<div class="method-info">
@@ -178,9 +194,339 @@ For information about the delegate methods you use to receive events, see <a hre
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *beacons</code></div>
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</code></div>
 
 		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeBeacons" title="activeBeacons"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeBeacons">&nbsp;&nbsp;activeBeacons</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>All of the active beacons currently managed by the beacon manager</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeDevices" title="activeDevices"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeDevices">&nbsp;&nbsp;activeDevices</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>All of the active beacons currently managed by the beacon manager, de-duped by peripheral</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeBeacons:" title="activeBeacons:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeBeacons:">&ndash;&nbsp;activeBeacons:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>All of the active beacons currently managed by the beacon manager with a max age.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;SWRLBeacon*&gt; *)activeBeacons:(NSTimeInterval)<em>age</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>age</code></th>
+						<td><p>Maximum age for beacons returned</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/activeDevices:rssi:flags:" title="activeDevices:rssi:flags:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/activeDevices:rssi:flags:">&ndash;&nbsp;activeDevices:rssi:flags:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>All of the active devices currently managed by the beacon manager, filtered
+by age, rssi and flags.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray&lt;SWRLBeacon*&gt; *)activeDevices:(NSTimeInterval)<em>age</em> rssi:(int)<em>rssi</em> flags:(SWRLBeaconFilter)<em>flags</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>age</code></th>
+						<td><p>Maximum age for beacon devices returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rssi</code></th>
+						<td><p>Only signals stronger than this value will be returned.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flags</code></th>
+						<td><p>See <a href="../Constants/SWRLBeaconFilter.html">SWRLBeaconFilter</a> for values</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconWithIdentifier:urn:" title="beaconWithIdentifier:urn:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconWithIdentifier:urn:">&ndash;&nbsp;beaconWithIdentifier:urn:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Find a beacon by identifier or URN return nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (SWRLBeacon *)beaconWithIdentifier:(nullable NSString *)<em>identifier</em> urn:(nullable NSString *)<em>urn</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>Swirl returned identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>urn</code></th>
+						<td><p>an alternate beacon urn to look for</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLBeaconManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/beaconWithIdentifier:urn:timeout:queue:completion:" title="beaconWithIdentifier:urn:timeout:queue:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/beaconWithIdentifier:urn:timeout:queue:completion:">&ndash;&nbsp;beaconWithIdentifier:urn:timeout:queue:completion:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Find a beacon by identifier or URN will complete when discovered, or resolved as parameters determine.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)beaconWithIdentifier:(nullable NSString *)<em>identifier</em> urn:(nullable NSString *)<em>urn</em> timeout:(NSTimeInterval)<em>timeout</em> queue:(dispatch_queue_t)<em>queue</em> completion:(void ( ^ ) ( SWRLBeacon *_Nullable , NSError *_Nullable ))<em>completion</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>Swirl returned identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>urn</code></th>
+						<td><p>Alternative beacon urn to look for</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timeout</code></th>
+						<td><p>Interval to remain pending, after which the operation will timeout</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>queue</code></th>
+						<td><p>dispatch_queue to return completion on</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>completion to call with result</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -217,7 +563,7 @@ For information about the delegate methods you use to receive events, see <a hre
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-11</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

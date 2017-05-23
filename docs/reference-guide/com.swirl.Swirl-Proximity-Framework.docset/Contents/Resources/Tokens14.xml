@@ -1,17 +1,255 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLSettings.html">
+	<File path="Classes/SWRLRegion.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLSettings</TokenIdentifier>
-			<Abstract type="html">SWRLSettings is a singleton that is initialized by the SWRLAPI.  It is local encrypted storage for
-the all of the swirl files and settings.</Abstract>
-			<DeclaredIn>SWRLSettings.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLRegion</TokenIdentifier>
+			<Abstract type="html">A SWRLRegion object represents a geofence.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
             
 			
 			<NodeRef refid="14"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/setRegion:</TokenIdentifier>
+			<Abstract type="html">An CLCircularRegion which provides
+a center point (latitude and longitude) and a radius in meters which defines the area
+covered by the region or an outer bounding area for regions which are further refined by an arbitrary
+polygon.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLCircularRegion *region</Declaration>
+			
+			
+			<Anchor>//api/name/region</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/region</TokenIdentifier>
+			<Abstract type="html">An CLCircularRegion which provides
+a center point (latitude and longitude) and a radius in meters which defines the area
+covered by the region or an outer bounding area for regions which are further refined by an arbitrary
+polygon.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLCircularRegion *region</Declaration>
+			
+			
+			<Anchor>//api/name/region</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegion/region</TokenIdentifier>
+			<Abstract type="html">An CLCircularRegion which provides
+a center point (latitude and longitude) and a radius in meters which defines the area
+covered by the region or an outer bounding area for regions which are further refined by an arbitrary
+polygon.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLCircularRegion *region</Declaration>
+			
+			
+			<Anchor>//api/name/region</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/setPolyCount:</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyCount is the number of entries in the polyPoints array</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger polyCount</Declaration>
+			
+			
+			<Anchor>//api/name/polyCount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/polyCount</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyCount is the number of entries in the polyPoints array</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger polyCount</Declaration>
+			
+			
+			<Anchor>//api/name/polyCount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegion/polyCount</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyCount is the number of entries in the polyPoints array</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger polyCount</Declaration>
+			
+			
+			<Anchor>//api/name/polyCount</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/setPolyCoords:</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyPoints is an array of polyCount coordinates that
+represent the vertices of the polygon that refines the circular bounding region</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D *polyCoords</Declaration>
+			
+			
+			<Anchor>//api/name/polyCoords</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/polyCoords</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyPoints is an array of polyCount coordinates that
+represent the vertices of the polygon that refines the circular bounding region</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D *polyCoords</Declaration>
+			
+			
+			<Anchor>//api/name/polyCoords</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegion/polyCoords</TokenIdentifier>
+			<Abstract type="html">For polygon regions, polyPoints is an array of polyCount coordinates that
+represent the vertices of the polygon that refines the circular bounding region</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D *polyCoords</Declaration>
+			
+			
+			<Anchor>//api/name/polyCoords</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/setRegionType:</TokenIdentifier>
+			<Abstract type="html">A string representing the type of region: control, geofence</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *regionType</Declaration>
+			
+			
+			<Anchor>//api/name/regionType</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/regionType</TokenIdentifier>
+			<Abstract type="html">A string representing the type of region: control, geofence</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *regionType</Declaration>
+			
+			
+			<Anchor>//api/name/regionType</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLRegion/regionType</TokenIdentifier>
+			<Abstract type="html">A string representing the type of region: control, geofence</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *regionType</Declaration>
+			
+			
+			<Anchor>//api/name/regionType</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/containsCoordinate:</TokenIdentifier>
+			<Abstract type="html">Determine if a given lattitude and longitude lie within the Region or not.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>coordinate</Name>
+					<Abstract type="html">A coordinate (latitude, longitude) to test for inclusion</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the coordinate is contained with in the bounding region and where
+specified the arbitrary polygon within, NO otherwise.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsCoordinate:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/distanceFromLocation:</TokenIdentifier>
+			<Abstract type="html">Determine the distance of a location to the region.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>- (double)distanceFromLocation:(CLLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The location to use in determining distance from the region.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The distance from the region, negative values are inside the region.</Abstract></ReturnValue>
+			<Anchor>//api/name/distanceFromLocation:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/setLastDetected:</TokenIdentifier>
+			<Abstract type="html">Timestamp of last detection of this signal.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>- (void)setLastDetected:(NSTimeInterval)ts</Declaration>
+			
+			
+			<Anchor>//api/name/setLastDetected:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/type</TokenIdentifier>
+			<Abstract type="html">Type of signal.</Abstract>
+			<DeclaredIn>SWRLRegion.m</DeclaredIn>
+			
+			<Declaration>- (SWRLSignalType)type</Declaration>
+			
+			
+			<Anchor>//api/name/type</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/range</TokenIdentifier>
+			<Abstract type="html">This is the approximate range to the beacon.  This is a rough approximation.</Abstract>
+			<DeclaredIn>SWRLRegion.m</DeclaredIn>
+			
+			<Declaration>- (double)range</Declaration>
+			
+			
+			<Anchor>//api/name/range</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/lastDetected</TokenIdentifier>
+			<Abstract type="html">Timestamp of last detection of this signal.</Abstract>
+			<DeclaredIn>SWRLRegion.m</DeclaredIn>
+			
+			<Declaration>- (NSTimeInterval)lastDetected</Declaration>
+			
+			
+			<Anchor>//api/name/lastDetected</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
 		
         
         

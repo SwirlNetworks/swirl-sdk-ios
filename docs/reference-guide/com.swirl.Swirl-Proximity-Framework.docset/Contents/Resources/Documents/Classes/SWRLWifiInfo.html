@@ -56,18 +56,6 @@
 	
 	<optgroup label="Properties">
 		
-		<option value="//api/name/attributes">attributes</option>
-		
-		<option value="//api/name/detected">detected</option>
-		
-		<option value="//api/name/error">error</option>
-		
-		<option value="//api/name/labels">labels</option>
-		
-		<option value="//api/name/location">location</option>
-		
-		<option value="//api/name/name">name</option>
-		
 		<option value="//api/name/rssi">rssi</option>
 		
 	</optgroup>
@@ -78,7 +66,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/resolvedIdentifier">- resolvedIdentifier</option>
+		<option value="//api/name/lastDetected">- lastDetected</option>
 		
 		<option value="//api/name/type">- type</option>
 		
@@ -103,7 +91,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : NSObject</td>
+	<td><a href="../Classes/SWRLSignal.html">SWRLSignal</a> : <a href="../Classes/SWRLObject.html">SWRLObject</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>SWRLWifiManager.h<br />SWRLWifiManager.m</td>
@@ -135,88 +123,6 @@ SSIDs and listed BSSIDs are not reported.</p>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/name" title="name"></a>
-	<h3 class="method-title"><code><a href="#//api/name/name">&nbsp;&nbsp;name</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The name is the SSID of the wifi network.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *name</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/location" title="location"></a>
-	<h3 class="method-title"><code><a href="#//api/name/location">&nbsp;&nbsp;location</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The Location (and Placement) associated with this wifi network</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) SWRLLocation *location</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/rssi" title="rssi"></a>
 	<h3 class="method-title"><code><a href="#//api/name/rssi">&nbsp;&nbsp;rssi</a></code>
 </h3>
@@ -257,170 +163,6 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 		</div>
 	</div>
-</div><div class="section-method">
-	<a name="//api/name/detected" title="detected"></a>
-	<h3 class="method-title"><code><a href="#//api/name/detected">&nbsp;&nbsp;detected</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>An timeIntervalSince1970 timestamp of when the network was first detected</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSTimeInterval detected</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/attributes" title="attributes"></a>
-	<h3 class="method-title"><code><a href="#//api/name/attributes">&nbsp;&nbsp;attributes</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Attributes associated to this network via the platform</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSDictionary *attributes</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/labels" title="labels"></a>
-	<h3 class="method-title"><code><a href="#//api/name/labels">&nbsp;&nbsp;labels</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Labels associated to this network via the platform</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/error" title="error"></a>
-	<h3 class="method-title"><code><a href="#//api/name/error">&nbsp;&nbsp;error</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Error (if present)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSError *error</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLWifiManager.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
 </div>
 						</div>
 						
@@ -430,6 +172,47 @@ SSIDs and listed BSSIDs are not reported.</p>
 
 						<div class="task-list">
 							<div class="section-method">
+	<a name="//api/name/lastDetected" title="lastDetected"></a>
+	<h3 class="method-title"><code><a href="#//api/name/lastDetected">&ndash;&nbsp;lastDetected</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Timestamp of last detection of this signal.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSTimeInterval)lastDetected</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/type" title="type"></a>
 	<h3 class="method-title"><code><a href="#//api/name/type">&ndash;&nbsp;type</a></code>
 </h3>
@@ -464,48 +247,7 @@ SSIDs and listed BSSIDs are not reported.</p>
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/resolvedIdentifier" title="resolvedIdentifier"></a>
-	<h3 class="method-title"><code><a href="#//api/name/resolvedIdentifier">&ndash;&nbsp;resolvedIdentifier</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>This is the swirl internal <a href="#//api/name/identifier">identifier</a></p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSString *)resolvedIdentifier</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">SWRLLocation.h</code></p>
+				<p><code class="declared-in-ref">SWRLSignal.h</code></p>
 			</div>
 			
 			
@@ -526,7 +268,7 @@ SSIDs and listed BSSIDs are not reported.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-11</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-05-23</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
