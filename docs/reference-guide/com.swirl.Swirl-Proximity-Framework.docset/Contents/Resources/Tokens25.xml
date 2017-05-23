@@ -1,39 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/SWRLRegionManagerDelegate.html">
+	<File path="Protocols/SWRLBeaconScannerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/SWRLRegionManagerDelegate</TokenIdentifier>
-			<Abstract type="html">Protocl which defines the callbacks from the SWRLRegionManager.</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/SWRLBeaconScannerDelegate</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconScannerDelegate protocol is how the built in beacon scanners communicate discovered beacons to the rest
+of the system.</Abstract>
+			<DeclaredIn>SWRLBeaconScanner.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLRegionManagerDelegate/regionManager:didEnterRegions:exitRegions:</TokenIdentifier>
-			<Abstract type="html">Called whenever the set of entered and/or exited regions changes</Abstract>
-			<DeclaredIn>SWRLRegionManager.h</DeclaredIn>
-			
-			<Declaration>- (void)regionManager:(SWRLRegionManager *)manager didEnterRegions:(NSSet&lt;SWRLRegion*&gt; *)entered exitRegions:(NSSet&lt;SWRLRegion*&gt; *)exited</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>manager</Name>
-					<Abstract type="html">The SWRLRegionManager</Abstract>
-				</Parameter><Parameter>
-					<Name>entered</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been entered</Abstract>
-				</Parameter><Parameter>
-					<Name>exited</Name>
-					<Abstract type="html">A set of SWRLRegions representing the regions that have been exited</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/regionManager:didEnterRegions:exitRegions:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
 		
         
         

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLWifiInfo.html">
+	<File path="Classes/SWRLVisit.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLWifiInfo</TokenIdentifier>
-			<Abstract type="html">A SWRLWifiInfo object is a SWRLSignal which represents a wifi access point that the mobile device is or was
-connected to.  In order to activate detection, the SSIDs of the networks you are interested in need to be
-white-listed in the platform and all of the BSSIDs need to be added.  Any wifi events not related to the white-listed
-SSIDs and listed BSSIDs are not reported.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLVisit</TokenIdentifier>
+			<Abstract type="html">A SWRLVisit object encapsulates information about places that the user has been. Visit objects are created by
+the framework and delivered by the SWRLVisitManager object to its delegate after it receives relevant signal events
+from other managers running within the framework.  It monitors the SWRLBeaconManagerDelegate, the SWRLWifiManagerDelegate
+and the SWRLRegionManagerDelegate for events related to locations and translates those events into logical visit
+events.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
             
 			
 			<NodeRef refid="20"/>
@@ -16,45 +17,9 @@ SSIDs and listed BSSIDs are not reported.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setName:</TokenIdentifier>
-			<Abstract type="html">The name is the SSID of the wifi network.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/name</TokenIdentifier>
-			<Abstract type="html">The name is the SSID of the wifi network.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/name</TokenIdentifier>
-			<Abstract type="html">The name is the SSID of the wifi network.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setLocation:</TokenIdentifier>
-			<Abstract type="html">The Location (and Placement) associated with this wifi network</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setLocation:</TokenIdentifier>
+			<Abstract type="html">The Location of the visit.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLLocation *location</Declaration>
 			
@@ -64,9 +29,9 @@ SSIDs and listed BSSIDs are not reported.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/location</TokenIdentifier>
-			<Abstract type="html">The Location (and Placement) associated with this wifi network</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/location</TokenIdentifier>
+			<Abstract type="html">The Location of the visit.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLLocation *location</Declaration>
 			
@@ -76,9 +41,9 @@ SSIDs and listed BSSIDs are not reported.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/location</TokenIdentifier>
-			<Abstract type="html">The Location (and Placement) associated with this wifi network</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/location</TokenIdentifier>
+			<Abstract type="html">The Location of the visit.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
 			<Declaration>@property (nonatomic, readonly) SWRLLocation *location</Declaration>
 			
@@ -88,206 +53,146 @@ SSIDs and listed BSSIDs are not reported.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setRssi:</TokenIdentifier>
-			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setArrivalDate:</TokenIdentifier>
+			<Abstract type="html">The date of the most recent enter or distantPast if not entered.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *arrivalDate</Declaration>
 			
 			
-			<Anchor>//api/name/rssi</Anchor>
+			<Anchor>//api/name/arrivalDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/rssi</TokenIdentifier>
-			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/arrivalDate</TokenIdentifier>
+			<Abstract type="html">The date of the most recent enter or distantPast if not entered.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *arrivalDate</Declaration>
 			
 			
-			<Anchor>//api/name/rssi</Anchor>
+			<Anchor>//api/name/arrivalDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/rssi</TokenIdentifier>
-			<Abstract type="html">The Signal strength (if available) associated with the detection event.</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/arrivalDate</TokenIdentifier>
+			<Abstract type="html">The date of the most recent enter or distantPast if not entered.</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int rssi</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *arrivalDate</Declaration>
 			
 			
-			<Anchor>//api/name/rssi</Anchor>
+			<Anchor>//api/name/arrivalDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setDetected:</TokenIdentifier>
-			<Abstract type="html">An timeIntervalSince1970 timestamp of when the network was first detected</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setDepartureDate:</TokenIdentifier>
+			<Abstract type="html">The date of the most recent exit or distantFuture if not yet exited</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *departureDate</Declaration>
 			
 			
-			<Anchor>//api/name/detected</Anchor>
+			<Anchor>//api/name/departureDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/detected</TokenIdentifier>
-			<Abstract type="html">An timeIntervalSince1970 timestamp of when the network was first detected</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/departureDate</TokenIdentifier>
+			<Abstract type="html">The date of the most recent exit or distantFuture if not yet exited</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *departureDate</Declaration>
 			
 			
-			<Anchor>//api/name/detected</Anchor>
+			<Anchor>//api/name/departureDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/detected</TokenIdentifier>
-			<Abstract type="html">An timeIntervalSince1970 timestamp of when the network was first detected</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/departureDate</TokenIdentifier>
+			<Abstract type="html">The date of the most recent exit or distantFuture if not yet exited</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSTimeInterval detected</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSDate *departureDate</Declaration>
 			
 			
-			<Anchor>//api/name/detected</Anchor>
+			<Anchor>//api/name/departureDate</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setAttributes:</TokenIdentifier>
-			<Abstract type="html">Attributes associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setDwellTime:</TokenIdentifier>
+			<Abstract type="html">The accumulated dwell across potentially multiple enters and exits</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *attributes</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval dwellTime</Declaration>
 			
 			
-			<Anchor>//api/name/attributes</Anchor>
+			<Anchor>//api/name/dwellTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/attributes</TokenIdentifier>
-			<Abstract type="html">Attributes associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/dwellTime</TokenIdentifier>
+			<Abstract type="html">The accumulated dwell across potentially multiple enters and exits</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *attributes</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval dwellTime</Declaration>
 			
 			
-			<Anchor>//api/name/attributes</Anchor>
+			<Anchor>//api/name/dwellTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/attributes</TokenIdentifier>
-			<Abstract type="html">Attributes associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/dwellTime</TokenIdentifier>
+			<Abstract type="html">The accumulated dwell across potentially multiple enters and exits</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSDictionary *attributes</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval dwellTime</Declaration>
 			
 			
-			<Anchor>//api/name/attributes</Anchor>
+			<Anchor>//api/name/dwellTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setLabels:</TokenIdentifier>
-			<Abstract type="html">Labels associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setElapsedTime:</TokenIdentifier>
+			<Abstract type="html">The total elapsed time since the first enter until now or the last exit time</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval elapsedTime</Declaration>
 			
 			
-			<Anchor>//api/name/labels</Anchor>
+			<Anchor>//api/name/elapsedTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/labels</TokenIdentifier>
-			<Abstract type="html">Labels associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/elapsedTime</TokenIdentifier>
+			<Abstract type="html">The total elapsed time since the first enter until now or the last exit time</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval elapsedTime</Declaration>
 			
 			
-			<Anchor>//api/name/labels</Anchor>
+			<Anchor>//api/name/elapsedTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/labels</TokenIdentifier>
-			<Abstract type="html">Labels associated to this network via the platform</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/elapsedTime</TokenIdentifier>
+			<Abstract type="html">The total elapsed time since the first enter until now or the last exit time</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) NSArray&lt;NSString*&gt; *labels</Declaration>
-			
-			
-			<Anchor>//api/name/labels</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/setError:</TokenIdentifier>
-			<Abstract type="html">Error (if present)</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval elapsedTime</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/error</TokenIdentifier>
-			<Abstract type="html">Error (if present)</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
-			
-			
-			<Anchor>//api/name/error</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/SWRLWifiInfo/error</TokenIdentifier>
-			<Abstract type="html">Error (if present)</Abstract>
-			<DeclaredIn>SWRLWifiManager.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSError *error</Declaration>
-			
-			
-			<Anchor>//api/name/error</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/type</TokenIdentifier>
-			<Abstract type="html">Type of signal.</Abstract>
-			<DeclaredIn>SWRLWifiManager.m</DeclaredIn>
-			
-			<Declaration>- (SWRLSignalType)type</Declaration>
-			
-			
-			<Anchor>//api/name/type</Anchor>
-            <NodeRef refid="20"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLWifiInfo/resolvedIdentifier</TokenIdentifier>
-			<Abstract type="html">This is the swirl internal identifier</Abstract>
-			<DeclaredIn>SWRLWifiManager.m</DeclaredIn>
-			
-			<Declaration>- (NSString *)resolvedIdentifier</Declaration>
-			
-			
-			<Anchor>//api/name/resolvedIdentifier</Anchor>
+			<Anchor>//api/name/elapsedTime</Anchor>
             <NodeRef refid="20"/>
 		</Token>
 		

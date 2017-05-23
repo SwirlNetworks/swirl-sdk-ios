@@ -1,18 +1,254 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/SWRLBluetoothScanner.html">
+	<File path="Classes/SWRLBeaconManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/SWRLBluetoothScanner</TokenIdentifier>
-			<Abstract type="html">The SWRLBluetoothScanner is a beacon scanner that uses the CoreBluetooth APIs to scan for BLE advertisements and reports
-those advertisements to the rest of the system.  By default, the scanner monitors for FEEB and FEAA service types which
-correspond to SecureCast and Eddystone respectively.  The set of protocols to scan for can be customized through Settings.</Abstract>
-			<DeclaredIn>SWRLBeaconScanner.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/SWRLBeaconManager</TokenIdentifier>
+			<Abstract type="html">The SWRLBeaconManager class is instantiated by the framework to coordinate and manage SWRLBeacons.  An instance
+of this class is created when the framework is initialized and started when the SWRLSwirl start: is called.
+For the most part, you do not need to interact with this class directly.  If you are interested in beacon level
+events and transitions, then you would add a delegate through the Swirl class and implement delegate methods.
+For information about the delegate methods you use to receive events, see SWRLBeaconManagerDelegate.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="4"/>
 		</Token>
 		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setNearest:</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/nearest</TokenIdentifier>
+			<Abstract type="html">The beacon currently determined to be closest to the mobile device.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) SWRLBeacon *nearest</Declaration>
+			
+			
+			<Anchor>//api/name/nearest</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setAllBeacons:</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/allBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/allBeacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/allBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/allBeacons</TokenIdentifier>
+			<Abstract type="html">All of the beacons currently managed by the beacon manager, including beacons that may be in an error state.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, nullable) NSArray&lt;SWRLBeacon*&gt; *allBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/allBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setActiveBeacons:</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/activeBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeBeacons</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/activeBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/activeBeacons</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeBeacons</Declaration>
+			
+			
+			<Anchor>//api/name/activeBeacons</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/setActiveDevices:</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			
+			
+			<Anchor>//api/name/activeDevices</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeDevices</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			
+			
+			<Anchor>//api/name/activeDevices</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLBeaconManager/activeDevices</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager, de-duped by peripheral</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly, nullable) NSArray&lt;SWRLBeacon*&gt; *activeDevices</Declaration>
+			
+			
+			<Anchor>//api/name/activeDevices</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeBeacons:</TokenIdentifier>
+			<Abstract type="html">All of the active beacons currently managed by the beacon manager with a max age.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;SWRLBeacon*&gt; *)activeBeacons:(NSTimeInterval)age</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>age</Name>
+					<Abstract type="html">Maximum age for beacons returned</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/activeBeacons:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/activeDevices:rssi:flags:</TokenIdentifier>
+			<Abstract type="html">All of the active devices currently managed by the beacon manager, filtered
+by age, rssi and flags.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;SWRLBeacon*&gt; *)activeDevices:(NSTimeInterval)age rssi:(int)rssi flags:(SWRLBeaconFilter)flags</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>age</Name>
+					<Abstract type="html">Maximum age for beacon devices returned.</Abstract>
+				</Parameter><Parameter>
+					<Name>rssi</Name>
+					<Abstract type="html">Only signals stronger than this value will be returned.</Abstract>
+				</Parameter><Parameter>
+					<Name>flags</Name>
+					<Abstract type="html">See SWRLBeaconFilter for values</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/activeDevices:rssi:flags:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beaconWithIdentifier:urn:</TokenIdentifier>
+			<Abstract type="html">Find a beacon by identifier or URN return nil.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (SWRLBeacon *)beaconWithIdentifier:(nullable NSString *)identifier urn:(nullable NSString *)urn</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">Swirl returned identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>urn</Name>
+					<Abstract type="html">an alternate beacon urn to look for</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconWithIdentifier:urn:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeaconManager/beaconWithIdentifier:urn:timeout:queue:completion:</TokenIdentifier>
+			<Abstract type="html">Find a beacon by identifier or URN will complete when discovered, or resolved as parameters determine.</Abstract>
+			<DeclaredIn>SWRLBeaconManager.h</DeclaredIn>
+			
+			<Declaration>- (void)beaconWithIdentifier:(nullable NSString *)identifier urn:(nullable NSString *)urn timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue completion:(void ( ^ ) ( SWRLBeacon *_Nullable , NSError *_Nullable ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>identifier</Name>
+					<Abstract type="html">Swirl returned identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>urn</Name>
+					<Abstract type="html">Alternative beacon urn to look for</Abstract>
+				</Parameter><Parameter>
+					<Name>timeout</Name>
+					<Abstract type="html">Interval to remain pending, after which the operation will timeout</Abstract>
+				</Parameter><Parameter>
+					<Name>queue</Name>
+					<Abstract type="html">dispatch_queue to return completion on</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">completion to call with result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/beaconWithIdentifier:urn:timeout:queue:completion:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
 		
         
         
