@@ -19,7 +19,8 @@ extern NSString *const SWRLSettingApiPingWindow;            // API Ping Window. 
 extern NSString *const SWRLSettingUserInfo;                 // UserInfo. This is the option which backs the userInfo property on Swirl. 
 extern NSString *const SWRLSettingUseLocationFenced;        // Location detection in the SDK can use regions to detect location changes. Default is YES 
 extern NSString *const SWRLSettingUseLocationSignificant;   // Location detection in the SDK can use significant location change detection. Default is NO. 
-extern NSString *const SWRLSettingLocationFenceMin;         // Minimium size of the userFence in meters. Default is 30.0 
+extern NSString *const SWRLSettingDeferredDelay;            // delay in seconds, for deferred startup tasks
+extern NSString *const SWRLSettingLocationFenceMin;         // Minimium size of the userFence in meters. Default is 30.0
 extern NSString *const SWRLSettingLocationFenceMax;         // Maximum size of the userFence in meters. Default is 5000.0 
 extern NSString *const SWRLSettingLocationForegroundGpsMin; // Minimum interval between GPS samples on foreground event (once per foreground). Default is 300.0 seconds 
 extern NSString *const SWRLSettingLocationHistory;          // An array of location change information. Mostly for debugging 
@@ -56,7 +57,7 @@ extern NSString *const SWRLSettingBeaconExpiration;         // Interval to contr
 extern NSString *const SWRLSettingLastResetTime;            // Time of last reset/settings initialization 
 extern NSString *const SWRLSettingConfigEnabled;            // Enable administration/configuration: connect to beacons, include errored beacons, etc 
 extern NSString *const SWRLSettingConfigBeaconServices;     // Comma separated list of additional configuration services to scan for.  Default is FFC0 
-extern NSString *const SWRLSettingGoogleBeaconApiKey;       // Google Proximity Beacon API Key 
+extern NSString *const SWRLSettingGoogleBeaconApiKey;       // Google Proximity Beacon API Key
 
 extern NSString *const SWRLSettingsDidChangeNotification;
 extern NSString *const SWRLSettingsDefaultsChanged;
