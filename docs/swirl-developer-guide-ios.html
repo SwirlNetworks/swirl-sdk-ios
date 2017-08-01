@@ -38,6 +38,7 @@
 <li><a href="#verify-tools-and-targets">Verify Tools and Targets</a></li>
 <li><a href="#add-framework-to-your-application">Add Framework to your Application</a></li>
 <li><a href="#make-code-changes">Make Code Changes</a></li>
+<li><a href="#pushio-integration">PushIO Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -161,6 +162,18 @@ If you are requesting location tracking always permission, and you wish to detec
     <span class="pl-c"><span class="pl-c">//</span> ...other application startup code...</span>
     <span class="pl-k">return</span> <span class="pl-c1">YES</span>;
 }</pre></div>
+<h3>
+<a id="user-content-pushio-integration" class="anchor" name="pushio-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PushIO Integration</h3>
+<p>In order to integrate the PushIO SDK with the Swirl SDK you will need to include two key-value pairs in the Swirl SDK's User Info.</p>
+<ol>
+<li>"oid" - Provides an identifier for a specific user. The identifier could be an email address, for example.</li>
+<li>"oapi_key" - Provides the PushIO API Key used by your app.</li>
+</ol>
+<p>These two values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSMutableDictionary</span> *userInfo = [<span class="pl-c1">NSMutableDictionary</span> <span class="pl-c1">new</span>];
+userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oid<span class="pl-pds">"</span></span>] = &lt;PushIO Identifier&gt;;
+userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oapi_key<span class="pl-pds">"</span></span>] = [[PushIOManager <span class="pl-c1">sharedInstance</span>] <span class="pl-c1">getAPIKey</span>];
+[[SWRLSwirl <span class="pl-c1">shared</span>] <span class="pl-c1">setUserInfo:</span>userInfo];</pre></div>
 <!-- END-CONTENT -->
 						</article>
 					</div>
