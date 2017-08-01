@@ -10,6 +10,7 @@
   - [Verify Tools and Targets](#verify-tools-and-targets)
   - [Add Framework to your Application](#add-framework-to-your-application)
   - [Make Code Changes](#make-code-changes)
+  - [PushIO Integration](#pushio-integration)
 
 ## Understanding Swirl
 ![](./images/sdk3-architecture-overview.png)
@@ -130,4 +131,18 @@ A lot of time and effort has been put into making the Swirl SDK as simple as pos
     // ...other application startup code...
     return YES;
 }
+```
+
+### PushIO Integration
+In order to integrate the PushIO SDK with the Swirl SDK you will need to include two key-value pairs in the Swirl SDK's User Info.
+ 1. "oid" - Provides an identifier for a specific user. The identifier could be an email address, for example.
+ 2. "oapi_key" - Provides the PushIO API Key used by your app.
+ 
+ These two values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.
+
+```objective-c
+NSMutableDictionary *userInfo = [NSMutableDictionary new];
+userInfo[@"oid"] = <PushIO Identifier>;
+userInfo[@"oapi_key"] = [[PushIOManager sharedInstance] getAPIKey];
+[[SWRLSwirl shared] setUserInfo:userInfo];
 ```
