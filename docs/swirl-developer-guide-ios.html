@@ -38,7 +38,7 @@
 <li><a href="#verify-tools-and-targets">Verify Tools and Targets</a></li>
 <li><a href="#add-framework-to-your-application">Add Framework to your Application</a></li>
 <li><a href="#make-code-changes">Make Code Changes</a></li>
-<li><a href="#responsys-integration">Oracle Responsys Mobile SDK Integration</a></li>
+<li><a href="#oracle-responsys-mobile-sdk-integration">Oracle Responsys Mobile SDK Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -163,7 +163,7 @@ If you are requesting location tracking always permission, and you wish to detec
     <span class="pl-k">return</span> <span class="pl-c1">YES</span>;
 }</pre></div>
 <h3>
-<a id="user-content-responsys-integration" class="anchor" name="responsys-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Oracle Responsys Mobile SDK Integration</h3>
+<a id="user-content-oracle-responsys-mobile-sdk-integration" class="anchor" name="oracle-responsys-mobile-sdk-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Oracle Responsys Mobile SDK Integration</h3>
 <p>In order to integrate the Oracle Responsys Mobile SDK (formerly Push IO) with the Swirl SDK you will need to include two key-value pairs in the Swirl SDK's User Info.</p>
 <ol>
 <li>"oid" - Provides an identifier for a specific user. The identifier could be an email address, for example.</li>
@@ -171,7 +171,7 @@ If you are requesting location tracking always permission, and you wish to detec
 </ol>
 <p>These two values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.</p>
 <div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSMutableDictionary</span> *userInfo = [<span class="pl-c1">NSMutableDictionary</span> <span class="pl-c1">new</span>];
-userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oid<span class="pl-pds">"</span></span>] = &lt;PushIO Identifier&gt;;
+userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oid<span class="pl-pds">"</span></span>] = <span class="pl-s"><span class="pl-pds">"</span>&lt;Identifier&gt;<span class="pl-pds">"</span></span>;
 userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oapi_key<span class="pl-pds">"</span></span>] = [[PushIOManager <span class="pl-c1">sharedInstance</span>] <span class="pl-c1">getAPIKey</span>];
 [[SWRLSwirl <span class="pl-c1">shared</span>] <span class="pl-c1">setUserInfo:</span>userInfo];</pre></div>
 <!-- END-CONTENT -->
