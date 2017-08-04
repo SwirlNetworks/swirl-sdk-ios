@@ -10,7 +10,7 @@
   - [Verify Tools and Targets](#verify-tools-and-targets)
   - [Add Framework to your Application](#add-framework-to-your-application)
   - [Make Code Changes](#make-code-changes)
-  - [Oracle Responsys Mobile SDK Integration](#responsys-integration)
+  - [Oracle Responsys Mobile SDK Integration](#oracle-responsys-mobile-sdk-integration)
 
 ## Understanding Swirl
 ![](./images/sdk3-architecture-overview.png)
@@ -142,7 +142,7 @@ In order to integrate the Oracle Responsys Mobile SDK (formerly Push IO) with th
 
 ```objective-c
 NSMutableDictionary *userInfo = [NSMutableDictionary new];
-userInfo[@"oid"] = <PushIO Identifier>;
+userInfo[@"oid"] = "<Identifier>";
 userInfo[@"oapi_key"] = [[PushIOManager sharedInstance] getAPIKey];
 [[SWRLSwirl shared] setUserInfo:userInfo];
 ```
