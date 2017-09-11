@@ -134,15 +134,17 @@ A lot of time and effort has been put into making the Swirl SDK as simple as pos
 ```
 
 ### Oracle Responsys Mobile SDK Integration
-In order to integrate the Oracle Responsys Mobile SDK (formerly Push IO) with the Swirl SDK you will need to include two key-value pairs in the Swirl SDK's User Info.
+In order to integrate the Oracle Responsys Mobile SDK (formerly Push IO) with the Swirl SDK you will need to include three key-value pairs in the Swirl SDK's User Info.
  1. "oid" - Provides an identifier for a specific user. The identifier could be an email address, for example.
  2. "oapi_key" - Provides the Oracle Responsys Mobile SDK API Key used by your app.
+ 3. "odevice_id" - An identifier used by the Oracle Responsys Mobile SDK to identify a device.
  
- These two values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.
+These three values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.
 
 ```objective-c
 NSMutableDictionary *userInfo = [NSMutableDictionary new];
 userInfo[@"oid"] = "<Identifier>";
 userInfo[@"oapi_key"] = [[PushIOManager sharedInstance] getAPIKey];
+userInfo[@"odevice_id"] = [[PushIOManager sharedInstance] getDeviceID];
 [[SWRLSwirl shared] setUserInfo:userInfo];
 ```
