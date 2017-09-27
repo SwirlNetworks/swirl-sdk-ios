@@ -205,82 +205,70 @@ can override viewControllerForContent to change the default.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentURL:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentURL:</TokenIdentifier>
 			<Abstract type="html">Called when content of type URL is received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentURL:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)didReceiveContentURL:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received as part of a notification</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didReceiveContentURL:fromNotification:</Anchor>
+			<Anchor>//api/name/didReceiveContentURL:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentSwirl:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentSwirl:</TokenIdentifier>
 			<Abstract type="html">Called when content of type Swirl is received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentSwirl:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)didReceiveContentSwirl:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received as part of a notification</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didReceiveContentSwirl:fromNotification:</Anchor>
+			<Anchor>//api/name/didReceiveContentSwirl:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentCustom:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContentCustom:</TokenIdentifier>
 			<Abstract type="html">Called when content of type Custom is received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContentCustom:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)didReceiveContentCustom:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received as part of a notification</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didReceiveContentCustom:fromNotification:</Anchor>
+			<Anchor>//api/name/didReceiveContentCustom:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContent:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/didReceiveContent:</TokenIdentifier>
 			<Abstract type="html">Called when content of any type is received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)didReceiveContent:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)didReceiveContent:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content that was just received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received as part of a notification.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/didReceiveContent:fromNotification:</Anchor>
+			<Anchor>//api/name/didReceiveContent:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -340,7 +328,7 @@ can override viewControllerForContent to change the default.</Abstract>
 			<Abstract type="html">Called before a local notification is generated.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)shouldShowNotification:(UILocalNotification *)note content:(SWRLContent *)content</Declaration>
+			<Declaration>- (BOOL)shouldShowNotification:(id)note content:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>note</Name>
@@ -352,6 +340,26 @@ can override viewControllerForContent to change the default.</Abstract>
 			</Parameters>
 			<ReturnValue><Abstract type="html">YES if you want to display the notification, NO if you do not.</Abstract></ReturnValue>
 			<Anchor>//api/name/shouldShowNotification:content:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/shouldShowNotificationForContent:completion:</TokenIdentifier>
+			<Abstract type="html">Called before a local notification is generated. (async)</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)shouldShowNotificationForContent:(SWRLContent *)content completion:(void ( ^ ) ( SWRLContent *, BOOL ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>content</Name>
+					<Abstract type="html">The content from which the notification has been generated.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">The completion to call when ready to display or reject</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/shouldShowNotificationForContent:completion:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
@@ -448,19 +456,22 @@ show a toastView, return nil.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showContentViewController:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/showContentViewController:wait:</TokenIdentifier>
 			<Abstract type="html">Called to present interstitial content.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)showContentViewController:(SWRLContent *)content</Declaration>
+			<Declaration>- (void)showContentViewController:(SWRLContent *)content wait:(BOOL)wait</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content containing the URL to display.</Abstract>
+				</Parameter><Parameter>
+					<Name>wait</Name>
+					<Abstract type="html">Show the window immediately or wait for load first</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/showContentViewController:</Anchor>
+			<Anchor>//api/name/showContentViewController:wait:</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		

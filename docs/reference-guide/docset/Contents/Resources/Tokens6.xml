@@ -161,6 +161,42 @@ automatically delay making further content requests until the dwell triggers hav
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setCustomType:</TokenIdentifier>
+			<Abstract type="html">The identifying string associated with a custom type or nil</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *customType</Declaration>
+			
+			
+			<Anchor>//api/name/customType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/customType</TokenIdentifier>
+			<Abstract type="html">The identifying string associated with a custom type or nil</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *customType</Declaration>
+			
+			
+			<Anchor>//api/name/customType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/customType</TokenIdentifier>
+			<Abstract type="html">The identifying string associated with a custom type or nil</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *customType</Declaration>
+			
+			
+			<Anchor>//api/name/customType</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setReceived:</TokenIdentifier>
 			<Abstract type="html">The epoch (1/1/70) timestamp that represents when this content was originally received.</Abstract>
 			<DeclaredIn>SWRLContent.h</DeclaredIn>
@@ -197,13 +233,49 @@ automatically delay making further content requests until the dwell triggers hav
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setFromNotification:</TokenIdentifier>
+			<Abstract type="html">Content was received through an notification launch</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromNotification</Declaration>
+			
+			
+			<Anchor>//api/name/fromNotification</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/fromNotification</TokenIdentifier>
+			<Abstract type="html">Content was received through an notification launch</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromNotification</Declaration>
+			
+			
+			<Anchor>//api/name/fromNotification</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/fromNotification</TokenIdentifier>
+			<Abstract type="html">Content was received through an notification launch</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromNotification</Declaration>
+			
+			
+			<Anchor>//api/name/fromNotification</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setNotification:</TokenIdentifier>
 			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
 of the notification that was sent or would be sent. Accessing this property does not cause
 any notifications to be sent.</Abstract>
 			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			<Declaration>@property (nonatomic, readonly) id notification</Declaration>
 			
 			
 			<Anchor>//api/name/notification</Anchor>
@@ -217,7 +289,7 @@ of the notification that was sent or would be sent. Accessing this property does
 any notifications to be sent.</Abstract>
 			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			<Declaration>@property (nonatomic, readonly) id notification</Declaration>
 			
 			
 			<Anchor>//api/name/notification</Anchor>
@@ -231,7 +303,7 @@ of the notification that was sent or would be sent. Accessing this property does
 any notifications to be sent.</Abstract>
 			<DeclaredIn>SWRLContent.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) UILocalNotification *notification</Declaration>
+			<Declaration>@property (nonatomic, readonly) id notification</Declaration>
 			
 			
 			<Anchor>//api/name/notification</Anchor>

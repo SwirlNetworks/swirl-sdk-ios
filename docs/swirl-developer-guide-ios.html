@@ -132,7 +132,13 @@
 <h4>
 <a id="user-content-modify-the-infoplist" class="anchor" name="modify-the-infoplist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modify the Info.plist</h4>
 <p><strong>Location Services</strong>
-Edit the Info.plist and ensure that <code>NSLocationAlwaysUsageDescription</code> or <code>NSLocationWhenInUseUsageDescription</code> exists with a user-visible usage description.  Location services will not work without one of these modes being set.  The SDK can function in either mode, but if you want to be able to receive background notifications, NSLocationAlwaysUsageDescription is required.</p>
+Edit the Info.plist and ensure that <code>NSLocationAlwaysUsageDescription</code> or <code>NSLocationWhenInUseUsageDescription</code> exists with a user-visible usage description.  Location services will not work without one of these modes being set.  The SDK can function in either mode, but if you want to be able to receive background notifications, <code>NSLocationAlwaysUsageDescription</code> is required.</p>
+<p><em><strong>Note</strong></em> - iOS 11 now requires 3 keys in Info.plist in order to request Always location services:</p>
+<ol>
+<li><code>NSLocationAlwaysUsageDescription</code></li>
+<li><code>NSLocationAlwaysAndWhenInUseUsageDescription</code></li>
+<li><code>NSLocationWhenInUseUsageDescription</code></li>
+</ol>
 <p><strong>Bluetooth Services</strong>
 If you are requesting location tracking always permission, and you wish to detect BLE beacons in the background, then you need to include the appropriate “Background Mode” permission.</p>
 <ol>
@@ -166,16 +172,27 @@ If you are requesting location tracking always permission, and you wish to detec
 <a id="user-content-oracle-responsys-mobile-sdk-integration" class="anchor" name="oracle-responsys-mobile-sdk-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Oracle Responsys Mobile SDK Integration</h3>
 <p>In order to integrate the Oracle Responsys Mobile SDK (formerly Push IO) with the Swirl SDK you will need to include three key-value pairs in the Swirl SDK's User Info.</p>
 <ol>
-<li>"oid" - Provides an identifier for a specific user. The identifier could be an email address, for example.</li>
-<li>"oapi_key" - Provides the Oracle Responsys Mobile SDK API Key used by your app.</li>
-<li>"odevice_id" - An identifier used by the Oracle Responsys Mobile SDK to identify a device.</li>
+<li>"oapi_key" - (required) Provides the Oracle Responsys Mobile SDK API Key used by your app.</li>
+<li>"odevice_id" - (required) An identifier used by the Oracle Responsys Mobile SDK to identify a mobile device.</li>
+<li>"oid" - (optional*) Provides a unique identifier for a mobile device user that is linked in Responsys to a known user profile. An example of an "oid" identifier could be an email address or a customer ID for example.</li>
 </ol>
+<p>* In order to utilize Responsys Programs via Swirl-mapped Responsys custom events, “oid” is required. In the absence of "oid", Swirl will utilize the "odevice_id" for direct triggering of Responsys push campaigns.</p>
 <p>These three values should be included in a dictionary which is then set as the Swirl SDK's User Info. The following code snippet demonstrates a simple example of how to do this.</p>
 <div class="highlight highlight-source-objc"><pre><span class="pl-c1">NSMutableDictionary</span> *userInfo = [<span class="pl-c1">NSMutableDictionary</span> <span class="pl-c1">new</span>];
-userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oid<span class="pl-pds">"</span></span>] = <span class="pl-s"><span class="pl-pds">"</span>&lt;Identifier&gt;<span class="pl-pds">"</span></span>;
 userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oapi_key<span class="pl-pds">"</span></span>] = [[PushIOManager <span class="pl-c1">sharedInstance</span>] <span class="pl-c1">getAPIKey</span>];
 userInfo[<span class="pl-s"><span class="pl-pds">@"</span>odevice_id<span class="pl-pds">"</span></span>] = [[PushIOManager <span class="pl-c1">sharedInstance</span>] <span class="pl-c1">getDeviceID</span>];
+userInfo[<span class="pl-s"><span class="pl-pds">@"</span>oid<span class="pl-pds">"</span></span>] = <span class="pl-s"><span class="pl-pds">"</span>&lt;Identifier&gt;<span class="pl-pds">"</span></span>;
 [[SWRLSwirl <span class="pl-c1">shared</span>] <span class="pl-c1">setUserInfo:</span>userInfo];</pre></div>
+<h3>
+<a id="user-content-kouponmedia-mobile-sdk-integration" class="anchor" name="kouponmedia-mobile-sdk-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>KouponMedia Mobile SDK Integration</h3>
+<p>The Swirlx sample application includes source code for a custom content handler that integrates with Koupon Media's offer system.  The sample module gets an offerId attribute from the custom content creative and uses that id in API calls to Koupon Media's servers in order to add an offer for the user and to fetch attributes about that offer for the purpose of creating a contextual notification.  The sample code modifies the content with the notification and then allows the modified content to flow through the system.</p>
+<p>To instantiate the <code>KouponMediaManager</code> you need the API Key, API Secret and User identifier for your KouponMedia account and you need to construct the object and add it as a delegate to Swirls multi-delegate event bus.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c"><span class="pl-c">//</span> You will need an account, api key and secret from Koupon Media to use this manager</span>
+[[Swirl <span class="pl-c1">shared</span>] <span class="pl-c1">addDelegate:</span>[[KouponMediaManager <span class="pl-c1">alloc</span>] <span class="pl-c1">initWithKey:</span><span class="pl-s"><span class="pl-pds">@"</span>KOUPON-API-KEY<span class="pl-pds">"</span></span> <span class="pl-c1">secret:</span><span class="pl-s"><span class="pl-pds">@"</span>KOUPON-SECRET<span class="pl-pds">"</span></span> <span class="pl-c1">user:</span><span class="pl-s"><span class="pl-pds">@"</span>KOUPON-USER<span class="pl-pds">"</span></span>]];</pre></div>
+<p>You will also need to change the URLs in the KouponMediaManager source code as the ones in the sample code point to the KouponMedia sandbox environment:</p>
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">define</span> <span class="pl-en">KM_BASE_URL</span>                 <span class="pl-s"><span class="pl-pds">@"</span>https://consumer.sandbox1.kouponmedia.com/v2<span class="pl-pds">"</span></span>
+#<span class="pl-k">define</span> <span class="pl-en">KM_DEFAULT_VIEWER_URL</span>       <span class="pl-s"><span class="pl-pds">@"</span>https://offer-sandbox1.kou.pn/OfferViewer/Redirect.aspx?property_code=swirl_mobilecapture&amp;offers=<span class="pl-c1">%@</span><span class="pl-pds">"</span></span></pre></div>
+<p>Finally, by default the sample code pops a mobile Safari window that points to the default KouponMedia mobile offier viewer.  If you have tightly integrated the KM sdk and fuctionality into your application and have an offer inbox that you want to direct the user to when they encounter a Swirl placement tied to an offer or interact with a notification generated by such an encounter, then you will need to set the property <code>offerViewerURL</code> to a custom URL scheme that can direct the user to that inbox.</p>
 <!-- END-CONTENT -->
 						</article>
 					</div>
