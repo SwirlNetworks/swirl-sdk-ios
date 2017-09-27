@@ -18,13 +18,6 @@
 #define SWRLBeaconInvalidRange      ( 999)
 #define SWRLBeaconEnteredRSSI       (-1)
 
-typedef struct _SWRLRssiParameters {
-    int             minSamples;
-    NSTimeInterval  optSampleInterval;
-    NSTimeInterval  maxSampleInterval;
-    NSTimeInterval  sampleResolution;
-} SWRLRssiParameters;
-
 /** Beacon state relative to current threshold set for the beacon. */
 typedef NS_ENUM(int, SWRLBeaconState) {
     /**
@@ -107,6 +100,7 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
  */
 
 - (NSString *)serial;
+
 /**
  * Retreive the protocol of the underlying advertisements
  */
@@ -118,11 +112,16 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
 - (NSString *)protocolDescription;
 
 /**
+ * Retreive the address of the beacon device
+ */
+- (NSString *)address;
+
+/**
  * Is the beacon in a connectable state
  */
 - (BOOL) isConnectable;
 
-/** 
+/**
  * Retreive the peripheral of the beacon if possible.
  */
 - (SWRLPeripheral *)peripheral;
@@ -132,11 +131,19 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
  */
 - (SWRLObject *)partner;
 
+/**
+ * Customize RSSI smoothing parameters
+ *  opt_sample_age - seconds to average over
+ *  max_sample_age - max seconds to average over if not min samples
+ *  min_samples    - min samples required
+ * @param params Smoothing parameters
+ */
+- (void) setRssiParameters:(NSDictionary *)params;
+
 // ====================================================================================================================
 // Internal use
 // ====================================================================================================================
 
-+ (void) setRssiParameters:(SWRLRssiParameters *)params;
 
 - (instancetype)initWithAdvertisement:(SWRLBeaconAdvertisement *)advertisement;
 - (BOOL) isAdvertisement:(SWRLBeaconAdvertisement *)advertisement;

@@ -12,9 +12,11 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <AdSupport/ASIdentifierManager.h>
 #import <PassKit/PassKit.h>
+#import <UserNotifications/UserNotifications.h>
 
-#define SWRLSwirlDomain                 @"com.swirl"
-#define SWRLSwirlVersion                @"3.4"
+#define SWRLSwirlDomain(x)              (x @"swirl.com")
+#define SWRLSwirlReverseDomain          @"com.swirl"
+#define SWRLSwirlVersion                @"3.5"
 #define SWRLCachePath                   @"~/Library/Caches/"
 #define SWRLSettingsPath                @"~/Library/Application Support/"
 
@@ -29,8 +31,8 @@
                                             NSLocalizedFailureReasonErrorKey : exception.reason }]
 #define NSError(d,ecode,msg)            [NSError errorWithDomain:d code:ecode userInfo:@{NSLocalizedDescriptionKey:msg}]
 
-#define SWRLError(ecode,msg)            NSError(SWRLSwirlDomain,ecode,msg)
-#define SWRLErrorFromException(e)       NSErrorFromException(SWRLSwirlDomain, e)
+#define SWRLError(ecode,msg)            NSError(SWRLSwirlReverseDomain,ecode,msg)
+#define SWRLErrorFromException(e)       NSErrorFromException(SWRLSwirlReverseDomain, e)
 
 #define SWRLErrorPending()              SWRLError(-999, @"The operation is pending")
 #define SWRLErrorUnknown()              SWRLError(-1, @"An unknown error occurred")
@@ -44,8 +46,12 @@
 #define SWRLErrorAccess()               SWRLError(-9, @"The operation was not permitted")
 #define SWRLErrorNotConnectable()       SWRLError(-20, @"The device is not connectable")
 #define SWRLErrorNotConnected()         SWRLError(-21, @"The device is not connected")
+#define SWRLErrorManufacturer(m)        SWRLError(-30, ([NSString stringWithFormat:@"Unknown manufacturer: '%@'", m]))
+#define SWRLErrorModel(m)               SWRLError(-31, ([NSString stringWithFormat:@"Unknown model: '%@'", m]))
+#define SWRLErrorGattVerification(k)    SWRLError(-32, ([NSString stringWithFormat:@"GATT verification failed: key='%@'", k]))
+#define SWRLErrorGattInvalid()          SWRLError(-33, @"GATT invalid")
 
-#define SWRLErrorProgress(area,progress) [NSError errorWithDomain:SWRLSwirlDomain code:100 \
+#define SWRLErrorProgress(area,progress) [NSError errorWithDomain:SWRLSwirlReverseDomain code:100 \
                                         userInfo:@{NSLocalizedDescriptionKey:@"", SWRLErrorAreaKey:@(area), SWRLErrorProgressKey:@(progress)}]
 
 #define SWRLErrorEquals(e1, e2)         (e1.code == e2.code)
@@ -87,14 +93,19 @@ OBJC_EXTERN NSString *__attribute__((overloadable)) description(NSError *error);
 #if DEBUG
 #define Log_d(fmt, args...)             SWRLLog(@(__FILE__), @"D", fmt, ##args)
 #define Log_v(fmt, args...)             SWRLLog(@(__FILE__), @"V", fmt, ##args)
+#define Log_n(fmt, args...)             SWRLNotify(fmt, ##args)
 #else
 #define Log_d(fmt, args...)
 #define Log_v(fmt, args...)
+#define Log_n(fmt, args...)
 #endif
 #define Log_0(fmt, args...)
 
 void SWRLLog(NSString *tag, NSString *level, NSString *const fmt, ...) NS_FORMAT_FUNCTION(3,4);
-void SWRLLogSetLevel(NSString *level);
+void SWRLNotify(NSString *const fmt, ...) NS_FORMAT_FUNCTION(1,2);
+void SWRLLogSetLevel(NSString *level, NSString *filter);
+void SWRLLogSetPath(NSString *path); /* only works in DEBUG builds */
+void SWRLLogReset(void);
 
 // =====================================================================================================================
 // TIME
@@ -141,6 +152,13 @@ NS_INLINE NSDictionary *appendArray(NSDictionary *d, NSString *property, NSArray
     NSMutableDictionary *md = d ? [d mutableCopy] : [NSMutableDictionary new];
     md[property] = [(md[property] ? md[property] : [NSMutableArray new]) arrayByAddingObjectsFromArray:append];
     return md;
+}
+
+NS_INLINE BOOL arrayContainsString_nocase(NSArray<NSString*>* array, NSString *value) {
+    for (NSString *s in array)
+        if ([s caseInsensitiveCompare:value] == NSOrderedSame)
+            return YES;
+    return NO;
 }
 
 #endif

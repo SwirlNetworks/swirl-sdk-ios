@@ -56,42 +56,38 @@
  *  Called when content of type URL is received.
  *
  *  @param content  The content that was just received.
- *  @param fromNotification The content was received as part of a notification
  *  @discussion The default implementation just forwards the event via the delegate interface.
  */
-- (void) didReceiveContentURL:(SWRLContent *)content fromNotification:(BOOL)fromNotification;
+- (void) didReceiveContentURL:(SWRLContent *)content;
+
 /**
  *  Called when content of type Swirl is received.
  *
  *  @param content  The content that was just received.
- *  @param fromNotification The content was received as part of a notification
  *  @discussion The default implementation just forwards the event via the delegate interface.
  */
-- (void) didReceiveContentSwirl:(SWRLContent *)content fromNotification:(BOOL)fromNotification;
+- (void) didReceiveContentSwirl:(SWRLContent *)content;
 /**
  *  Called when content of type Custom is received.
  *
  *  @param content  The content that was just received.
- *  @param fromNotification The content was received as part of a notification
  *  @discussion The default implementation just forwards the event via the delegate interface.
  */
-- (void) didReceiveContentCustom:(SWRLContent *)content fromNotification:(BOOL)fromNotification;
+- (void) didReceiveContentCustom:(SWRLContent *)content;
 /**
  *  Called when content of any type is received.
  *
  *  @param content  The content that was just received.
- *  @param fromNotification The content was received as part of a notification.
  *
  *  @discussion This is the first method called when content is received.  Note that content can be received
- *  from the platform or it can be received as part of processing a notificaton.  When UILocalNotifications are opened
- *  this method will be called with `fromNotification` equal to `YES`.  The default implementation of this method sets `lastContent`
+ *  from the platform or it can be received as part of processing a notificaton. The default implementation of this method sets `lastContent`
  *  and its timestamp, switches on content type to call the type specific variants of `didReceiveContent...` and
  *  starts the display process for either a background notification or foreground content experience.
  *
  *  @warning This method is critical to the proper operation of the SWRLContentManager. If you override this
  *  method, you must pass this message to `super`.
  */
-- (void) didReceiveContent:(SWRLContent *)content fromNotification:(BOOL)fromNotification;
+- (void) didReceiveContent:(SWRLContent *)content;
 
 /** @name Controlling Content Display */
 /**
@@ -138,7 +134,19 @@
  *  the content parameter and either return YES to continue the action or NO to suppress it.
  *  The default implementation always returns YES.
  */
-- (BOOL) shouldShowNotification:(UILocalNotification *)note content:(SWRLContent *)content;
+- (BOOL) shouldShowNotification:(id)note content:(SWRLContent *)content;
+
+/**
+ *  Called before a local notification is generated. (async)
+ *
+ *  @param content  The content from which the notification has been generated.
+ *  @param completion The completion to call when ready to display or reject
+ *
+ *  @discussion If you need to control the display of certain notifications, you can override this method and inspect
+ *  the content parameter and either return YES to continue the action or NO to suppress it.  The default implementation
+ *  of this method calls the synchronous version above.
+ */
+- (void) shouldShowNotificationForContent:(SWRLContent *)content completion:(void (^)(SWRLContent *, BOOL))completion;
 
 /**
  * Called after the SWRLContentViewController has been shown.  The default implementation of
@@ -191,6 +199,8 @@
  *  Called to present interstitial content.
  *
  *  @param content The content containing the URL to display.
+ *  @param wait Show the window immediately or wait for load first
+ *
  *  @discussion The default implementation of this method creates the SWRLContentViewController if it does not exist
  *  and begins asynchronously loading that content.  When the content load completes, it calls the 
  *  `shouldShowContentView` method to see if the content should be display and logs an event if the display is
@@ -198,7 +208,7 @@
  *  @warning It is not recommended that you override this method.  If for some reason you need to, you should make sure to
  *  call the implementation in `super`.
  */
-- (void) showContentViewController:(SWRLContent *)content;
+- (void) showContentViewController:(SWRLContent *)content wait:(BOOL)wait;
 
 /**
  *  Call this method to force display of the SWRLContentToastView
@@ -273,23 +283,21 @@
  *  Tells the delegate that content of type URL has been received.
  *  @param manager The SWRLContentManager reporting the event
  *  @param content The content object that was received.
- *  @param fromNotification The content was received from a notification event (open)
  */
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content fromNotification:(BOOL)fromNotification;
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content;
 /**
  *  Tells the delegate that content of type Swirl has been received.
  *  @param manager The SWRLContentManager reporting the event
  *  @param content The content object that was received.
- *  @param fromNotification The content was received from a notification event (open)
  */
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content  fromNotification:(BOOL)fromNotification;
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content;
 /**
- *  Tells the delegate that content of type Custom has been received.
+ *  Tells the delegate that content of type Custom has been received (asynch version) which allows custom content to go out to another server before completing.
  *  @param manager The SWRLContentManager reporting the event
  *  @param content The content object that was received.
- *  @param fromNotification The content was received from a notification event (open)
+ *  @param completion called when content is ready (content passed here may be different from original content)
  */
-- (void) contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content  fromNotification:(BOOL)fromNotification;
+- (void) contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content completion:(void (^)(SWRLContent *content))completion;
 
 /**
  * Tells the delegate that the content view controller has been shown
@@ -311,7 +319,6 @@
  * The following events are produced by the ContentMnager for analytics
  */
 
-extern NSString *const SWRLEventContent;
 extern NSString *const SWRLEventNotificationDisable;
 extern NSString *const SWRLEventNotificationAbsent;
 extern NSString *const SWRLEventNotificationRejected;
@@ -320,11 +327,15 @@ extern NSString *const SWRLEventNotificationSentNoSound;
 extern NSString *const SWRLEventNotificationSent;
 extern NSString *const SWRLEventNotificationTimeout;
 extern NSString *const SWRLEventNotificationOpen;
-
-extern NSString *const SWRLEventImpressionViewed;
+extern NSString *const SWRLEventNotificationDismiss;
 extern NSString *const SWRLEventImpressionRejected;
+extern NSString *const SWRLEventImpressionViewed;
+extern NSString *const SWRLEventImpressionTouched;
+extern NSString *const SWRLEventImpressionOfferRedeemed;
+extern NSString *const SWRLEventImpressionWalletRedeeemed;
+extern NSString *const SWRLEventImpressionTapArea;
 extern NSString *const SWRLEventImpressionShared;
 extern NSString *const SWRLEventImpressionSaved;
-extern NSString *const SWRLEventImpressionTimeout;
+extern NSString *const SWRLEventImpressionTimeout; // content was received, but not foregrounded before 15m
 
 #endif

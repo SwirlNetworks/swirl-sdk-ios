@@ -15,6 +15,7 @@
 @class SWRLPartner;
 @class SWRLLocation_Config;
 @class SWRLBeacon_Config;
+@class SWRLBeaconHandler;
 
 // =====================================================================================================================
 // Config
@@ -31,6 +32,10 @@ typedef enum  {
 
 @interface SWRLConfig : NSObject
 + (void) setDefaultQueue:(dispatch_queue_t)queue;
++ (void) jsonRequest:(NSString *)url body:(NSDictionary *)body completion:(void (^)(int,NSDictionary *, NSError *))completion;
+
++ (SWRLBeaconHandler *) beaconHandlerForManufacturer:(NSString *)manufacturer;
++ (void) setBeaconHandler:(SWRLBeaconHandler *)handler forManufacturer:(NSString *)manufacturer;
 @end
 
 // =====================================================================================================================
@@ -74,13 +79,17 @@ extern NSString * const SWRLRoleBeaconManager_Write;
 @property (nonatomic, readonly) NSString *notes;
 @property (nonatomic, readonly) NSData *data;
 
+- (instancetype)initWithDictionary:(NSDictionary *)properties data:(NSData *)data;
+
+- (float) versionNum;
+
 - (void) load:(void (^)(NSError *))completion;
 
 - (void) download:(SWRLPeripheral *)peripheral completion:(void (^)(NSError *))completion;
 
 + (void) firmwareAllVersions:(void (^)(NSArray<SWRLBeaconFirmware*>*, NSError *))completion;
 + (void) firmwareVersionsForManufacturer:(NSString *)manufacturer model:(NSString *)model completion:(void (^)(NSArray<SWRLBeaconFirmware*>*, NSError *))completion;
-+ (void)firmwareLatestForManufaturer:(NSString *)manufacturer model:(NSString *)model completion:(void (^)(SWRLBeaconFirmware *, NSError *))completion;
++ (void) firmwareLatestForManufacturer:(NSString *)manufacturer model:(NSString *)model completion:(void (^)(SWRLBeaconFirmware *, NSError *))completion;
 
 @end
 
@@ -88,8 +97,8 @@ typedef NSDictionary<NSString*,NSDictionary*> SWRLBeaconConfigurationInfo;
 
 @interface SWRLBeaconConfiguration : SWRLObject
 
-+ (void) configurationsWithPartner:(SWRLPartner *)partner
-                 completion:(void (^)(SWRLBeaconConfigurationInfo *, NSArray<SWRLBeaconConfiguration*>*, NSError*))completion;
++ (void) configurationsForPartner:(SWRLPartner *)partner completion:(void (^)(NSArray<SWRLBeaconConfiguration*> *, NSError *))completion;
+
 @end
 
 // =====================================================================================================================
@@ -115,6 +124,7 @@ typedef NSDictionary<NSString*,NSDictionary*> SWRLBeaconConfigurationInfo;
 @property (nonatomic) double y;
 @property (nonatomic) double radius;
 
+- (instancetype)initWithX:(double)x y:(double)y;
 - (instancetype)initWithX:(double)x y:(double)y radius:(double)radius;
 @end
 
@@ -123,8 +133,13 @@ typedef NSDictionary<NSString*,NSDictionary*> SWRLBeaconConfigurationInfo;
 // =====================================================================================================================
 
 @interface SWRLFloorplan : SWRLObject
-@property (readonly) NSString *	imageIdentifier;
-@property (readonly) NSString *	locationIdentifier;
+
+- (UIImage *) image;
+- (int) height;
+- (int) width;
+- (SWRLLocation_Config *)location;
+- (void) imageWithCompletion:(void (^)(UIImage *image, NSError *error))completion;
+
 @end
 
 // =====================================================================================================================
@@ -132,20 +147,23 @@ typedef NSDictionary<NSString*,NSDictionary*> SWRLBeaconConfigurationInfo;
 // =====================================================================================================================
 
 @interface SWRLLocation_Config : SWRLLocation
-@property (nonatomic, readonly) NSString * partnerIdentfier;
-@property (nonatomic, readonly) NSDictionary<NSString *,SWRLFloorplan*> *floorplans;
+@property (nonatomic, readonly) NSString *partnerIdentifier;
+@property (nonatomic, readonly) NSArray<SWRLFloorplan*> *floorplans;
 @property (nonatomic, readonly) NSArray<SWRLBeacon_Config*> *beacons;
 
 - (instancetype)initWithDictionary:(NSDictionary *)properties;
 
 - (SWRLFloorplan *)floorplan:(NSString *)floorplanId;
 
+- (SWRLBeacon_Config *) findBeaconByIdentifier:(NSString *)identifier;
+- (SWRLBeacon_Config *) findBeaconBySerial:(NSString *)serial;
+
 - (double)distance;
+- (NSString *)locationName;
 - (NSString *)locationDescription;
 - (NSString *)addressDescription;
 
-- (void) registerBeacon:(SWRLBeacon *)beacon placement:(SWRLPlacement *)placement force:(BOOL)force
-             completion:(void (^)(SWRLBeacon_Config *, NSError *))completion;
+- (void) createBeacon:(SWRLBeacon *)beacon placement:(SWRLPlacement *)placement completion:(void (^)(SWRLBeacon_Config *, NSError *))completion;
 
 - (void) load:(void (^)(NSError *))completion;
 
@@ -156,9 +174,6 @@ typedef NSDictionary<NSString*,NSDictionary*> SWRLBeaconConfigurationInfo;
 // =====================================================================================================================
 // Beacon (Configuration)
 // =====================================================================================================================
-
-extern NSString *const SWRLImageTagNear;
-extern NSString *const SWRLImageTagFar;
 
 /**
  * SWRLBeacon_Config 
@@ -175,11 +190,15 @@ extern NSString *const SWRLImageTagFar;
 - (instancetype)initWithDictionary:(NSDictionary *)properties location:(SWRLLocation_Config *)location;
 - (void) load:(void (^)(NSError *))completion;
 
+- (NSString *) mac_address;
 - (double) battery;
+- (BOOL) needsUpdate;
 
 - (void) beginConfiguration;
 - (void) abortConfiguration;
 - (void) commitConfiguration:(BOOL)force completion:(void (^)(NSError *))completion;
+
++ (void) connectForConfiguration:(SWRLBeacon *)beacon timeout:(NSTimeInterval)timeout completion:(void (^)(SWRLBeacon *, NSError *))completion;
 
 - (void) setFirmware:(SWRLBeaconFirmware *)firmware;
 
@@ -194,11 +213,21 @@ extern NSString *const SWRLImageTagFar;
 
 - (void) setFloorplanLocation:(SWRLFloorplan *)floorplan marker:(SWRLImageMarker *)marker;
 
-- (void) setImage:(UIImage *)image tag:(NSString *)tag;
-- (void) imageWithTag:(NSString *)tag completion:(void (^)(UIImage *, NSError *)) completion;
+- (void) setFarImage:(UIImage *)image;
+- (void) setNearImage:(UIImage *)image;
+- (UIImage *) farImage;
+- (UIImage *) nearImage;
+- (void) farImageWithCompletion:(void (^)(UIImage *, NSError *)) completion;
+- (void) nearImageWithCompletion:(void (^)(UIImage *, NSError *)) completion;
 
-- (void) setImageMarker:(SWRLImageMarker *)marker tag:(NSString *)tag;
-- (SWRLImageMarker *)imageMarkerForTag:(NSString *)tag;
+- (void) setFarImageMarker:(SWRLImageMarker *)marker;
+- (void) setNearImageMarker:(SWRLImageMarker *)marker;
+- (SWRLImageMarker *)farImageMarker;
+- (SWRLImageMarker *)nearImageMarker;
+
+- (NSDictionary *)deviceConfigurationState;
+- (NSDictionary *)serverConfigurationState;
+- (void) setServerConfigurationState:(NSDictionary *)serverState;
 
 + (void) commitFirmware:(SWRLBeaconFirmware *)firmware beacon:(SWRLBeacon *)beacon urn:(NSString *)upgradeURN completion:(void (^)(NSError *))completion;
 
@@ -207,8 +236,32 @@ extern NSString *const SWRLImageTagFar;
 @interface SWRLBeacon (Config)
 - (void) connectWithTimeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
                  completion:(void (^)(SWRLPeripheral *, NSError *))completion;
+- (void) clearPeripheral;
 @end
 
+@interface SWRLBluetoothScanner (Config)
+- (void) startScanning;
+- (void) stopScanning;
+- (void) removePeripheralWithIdentifier:(NSUUID *)identifier;
+@end
 
+@interface SWRLBeaconManager (Config)
+- (SWRLBeacon *) beaconWithIdentifier:(NSString *)identifier serial:(NSString *)serial urn:(NSString *)urn peripheral:(BOOL)peripheral;
+- (void) beaconWithIdentifier:(NSString *)identifier serial:(NSString *)serial urn:(NSString *)urn peripheral:(BOOL)peripheral timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
+				   completion:(void (^)(SWRLBeacon *, NSError *))completion;
+@end
+
+// =====================================================================================================================
+// Beacon Handler
+// =====================================================================================================================
+
+extern id const SWRLBeaconHandler_InvalidConfig;
+
+@interface SWRLBeaconHandler : NSObject
+- (void) unlockBeacon:(SWRLBeacon *)beacon completion:(void (^)(NSError *error))completion;
+- (NSDictionary<NSString *,id> *) bodyForCreateBeacon:(SWRLBeacon *)beacon;
+- (void) postCreateBeacon:(SWRLBeacon_Config *)configBeacon peripheralBeacon:(SWRLBeacon *)peripheralBeacon completion:(void (^)(NSError *error))completion;
+- (NSArray<NSDictionary<NSString *,id> *> *) gattForBeacon:(SWRLBeacon_Config *)beacon firmwareVersion:(NSString *)firmwareVersion config:(NSDictionary *)config;
+@end
 
 #endif

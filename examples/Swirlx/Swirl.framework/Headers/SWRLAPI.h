@@ -22,8 +22,9 @@
 @property (nonatomic, readonly) NSString *          apiKey;
 @property (nonatomic, readonly) NSString *          arbitrationKey;
 @property (nonatomic, readonly) NSString *          userKey;
-@property (nonatomic) NSDictionary *                userInfo;
 @property (nonatomic, readonly) NSString *          partnerName;
+@property (nonatomic) NSDictionary *                userInfo;
+@property (nonatomic) NSData *                      deviceToken;
 
 - (void) httpRequest:(NSString *)url headers:(NSDictionary *)headers body:(NSData *)body completion:(void (^)(NSURLResponse *response, NSData *data, NSError *error))completion;
 - (void) jsonRequest:(NSString *)url headers:(NSDictionary *)headers data:(NSData *)body completion:(void (^)(int status, NSDictionary *result, NSError *error))completion;

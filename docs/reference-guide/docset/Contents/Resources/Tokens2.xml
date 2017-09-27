@@ -186,6 +186,18 @@ Eddystone beacons, this would include TLM data base-64 encoded.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/address</TokenIdentifier>
+			<Abstract type="html">Retreive the address of the beacon device</Abstract>
+			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)address</Declaration>
+			
+			
+			<Anchor>//api/name/address</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/isConnectable</TokenIdentifier>
 			<Abstract type="html">Is the beacon in a connectable state</Abstract>
 			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
@@ -218,6 +230,26 @@ Eddystone beacons, this would include TLM data base-64 encoded.</Abstract>
 			
 			
 			<Anchor>//api/name/partner</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLBeacon/setRssiParameters:</TokenIdentifier>
+			<Abstract type="html">Customize RSSI smoothing parameters
+optsampleage - seconds to average over
+maxsampleage - max seconds to average over if not min samples
+min_samples    - min samples required</Abstract>
+			<DeclaredIn>SWRLBeacon.h</DeclaredIn>
+			
+			<Declaration>- (void)setRssiParameters:(NSDictionary *)params</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>params</Name>
+					<Abstract type="html">Smoothing parameters</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRssiParameters:</Anchor>
             <NodeRef refid="2"/>
 		</Token>
 		

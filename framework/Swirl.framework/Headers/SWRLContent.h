@@ -67,9 +67,17 @@ extern NSString *const SWRLNotificationContentKey;
  */
 @property (nonatomic, readonly) SWRLContentType      type;
 /**
+ * The identifying string associated with a custom type or nil
+ */
+@property (nonatomic, readonly) NSString *           customType;
+/**
  * The epoch (1/1/70) timestamp that represents when this content was originally received.
  */
 @property (nonatomic, readonly) NSTimeInterval       received;
+/**
+ * Content was received through an notification launch
+ */
+@property (nonatomic, readonly) BOOL                 fromNotification;
 
 /**
  * The notification associated with this content.  You can access this field at any time to get a copy
@@ -80,7 +88,10 @@ extern NSString *const SWRLNotificationContentKey;
  * `@{ @"com.swirl" : @{ SWRLNotificationContentKey: self.content }}; 
  * which enables a SWRLContent object to be recreated from a notification.
  */
-@property (nonatomic, readonly) UILocalNotification *notification;
+@property (nonatomic, readonly) id notification;
+
+@property (nonatomic, readonly) NSString *notificationTitle;
+@property (nonatomic, readonly) NSString *notificationBody;
 
 /**
  * The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
@@ -103,9 +114,13 @@ extern NSString *const SWRLNotificationContentKey;
  */
 @property (nonatomic, nullable, readonly) UIImage *thumbnail;
 
-- (instancetype)initWithContent:(NSDictionary *)content visit:(nullable SWRLVisit *)visit;
+- (void) notificationWithAttachments:(void (^)(id note))completion;
+
+- (instancetype)initWithContent:(NSDictionary *)content visit:(nullable SWRLVisit *)visit fromNotification:(BOOL)fromNotification;
 - (void) setReceived:(NSTimeInterval)received;
 - (void) setThumbnail:(UIImage *)thumbnail;
+
++ (BOOL) useNewNotifications;
 
 @end
 

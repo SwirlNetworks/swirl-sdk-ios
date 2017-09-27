@@ -17,13 +17,13 @@
 @property (nonatomic, readonly)   id                  object;
 
 - (instancetype)initWithTag:(NSString *)tag object:(id)object timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
-                 completion:(void (^)(NSError *))completion operation:(void (^)())operation;
+                 completion:(void (^)(NSError *))completion operation:(void (^)(void))operation;
 
 - (void) setTag:(NSString *)tag object:(id)object timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
-     completion:(void (^)(NSError *))completion operation:(void (^)())operation;
+     completion:(void (^)(NSError *))completion operation:(void (^)(void))operation;
 
 - (void) executeWithTag:(NSString *)tag object:(id)object  timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
-                 completion:(void (^)(NSError *))completion operation:(void (^)())operation;
+                 completion:(void (^)(NSError *))completion operation:(void (^)(void))operation;
 
 - (void) executeWithObject:(id)object;
 - (void) execute;
@@ -41,7 +41,7 @@
 - (void) unlock;
 
 + (SWRLAsync *)asyncWithTag:(NSString *)tag object:(id)object timeout:(NSTimeInterval)timeout queue:(dispatch_queue_t)queue
-                       completion:(void (^)(NSError *))completion operation:(void (^)())operation;
+                       completion:(void (^)(NSError *))completion operation:(void (^)(void))operation;
 @end
 
 #endif

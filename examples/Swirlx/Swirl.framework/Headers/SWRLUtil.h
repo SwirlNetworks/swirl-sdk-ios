@@ -14,6 +14,7 @@
 
 @interface SWRLCrypt : NSObject
 + (NSData *)sha1:(NSString *)source;
++ (NSData *)hmac_sha1:(NSString *)source key:(NSData *)key;
 + (NSData *)sha256:(NSString *)source;
 + (NSData *)hmac_sha256:(NSString *)source key:(NSData *)key;
 + (NSData *)encrypt:(NSData *)input key:(NSData *)key;
@@ -32,6 +33,7 @@
 + (NSData *)dataWithBase64String:(NSString *)base64String;
 + (NSData *)dataWithHexString:(NSString *)hexString;
 + (NSString *)stringWithData:(NSData *)data;
++ (NSString *)hexStringWithData:(NSData *)data;
 @end
 
 // =====================================================================================================================
@@ -84,7 +86,10 @@
 // SWRLBackground
 // =====================================================================================================================
 
-@interface SWRLBackground : NSObject
+@interface SWRLApplication : NSObject
++ (void) openURL:(NSURL *)url completion:(void (^)(BOOL))completion;
++ (void) openURL:(NSURL *)url options:(NSDictionary *)options completion:(void (^)(BOOL))completion;
+
 + (NSTimeInterval)  timeRemaining;
 + (void)            requestTime;
 + (BOOL)            background;

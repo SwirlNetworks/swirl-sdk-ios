@@ -230,6 +230,42 @@ events to your app.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/setDeviceToken:</TokenIdentifier>
+			<Abstract type="html">Device token for remote push notification registration.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/deviceToken</TokenIdentifier>
+			<Abstract type="html">Device token for remote push notification registration.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLSwirl/deviceToken</TokenIdentifier>
+			<Abstract type="html">Device token for remote push notification registration.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) NSData *deviceToken</Declaration>
+			
+			
+			<Anchor>//api/name/deviceToken</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/addDelegate:</TokenIdentifier>
 			<Abstract type="html">Add a delegate to the internal delegate bus</Abstract>
 			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
@@ -395,19 +431,40 @@ After calling this function, the sdk will be in a stopped state.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/setLogLevel:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/streamMessage:</TokenIdentifier>
+			<Abstract type="html">Stream custom message to the live event stream.  Flushes any pending
+events at the same time.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)streamMessage:(NSDictionary *)msg</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>msg</Name>
+					<Abstract type="html">Data to stream (JSON encodable)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/streamMessage:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/setLogLevel:filter:</TokenIdentifier>
 			<Abstract type="html">Control the log level.  Default level is @&quot;W&quot;</Abstract>
 			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
 			
-			<Declaration>+ (void)setLogLevel:(NSString *)level</Declaration>
+			<Declaration>+ (void)setLogLevel:(NSString *)level filter:(nullable NSString *)filter</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>level</Name>
 					<Abstract type="html">@&quot;E&quot;, @&quot;W&quot;, @&quot;I&quot; for error, warning or info levels, anything else will disable.</Abstract>
+				</Parameter><Parameter>
+					<Name>filter</Name>
+					<Abstract type="html">nil or comma separated list of modules to include</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setLogLevel:</Anchor>
+			<Anchor>//api/name/setLogLevel:filter:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		

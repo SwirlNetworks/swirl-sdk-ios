@@ -34,9 +34,13 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Notifying you of exciting content nearby</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Notifying you of exciting content nearby</string>
 	<key>NSLocationUsageDescription</key>
+	<string>Notifying you of exciting content nearby</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Notifying you of exciting content nearby</string>
 	<key>UIBackgroundModes</key>
 	<array>

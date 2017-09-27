@@ -56,6 +56,8 @@
 	
 	<optgroup label="Properties">
 		
+		<option value="//api/name/deviceToken">deviceToken</option>
+		
 		<option value="//api/name/error">error</option>
 		
 		<option value="//api/name/location">location</option>
@@ -74,7 +76,7 @@
 	
 	<optgroup label="Class Methods">
 		
-		<option value="//api/name/setLogLevel:">+ setLogLevel:</option>
+		<option value="//api/name/setLogLevel:filter:">+ setLogLevel:filter:</option>
 		
 		<option value="//api/name/shared">+ shared</option>
 		
@@ -103,6 +105,8 @@
 		<option value="//api/name/start:">- start:</option>
 		
 		<option value="//api/name/stop">- stop</option>
+		
+		<option value="//api/name/streamMessage:">- streamMessage:</option>
 		
 	</optgroup>
 	
@@ -400,6 +404,47 @@ protocols broadcast to the mult-delegate bus.</p>
 		    
 
 			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSDictionary *userInfo</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deviceToken" title="deviceToken"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deviceToken">&nbsp;&nbsp;deviceToken</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Device token for remote push notification registration.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSData *deviceToken</code></div>
 
 		    
 			
@@ -991,8 +1036,62 @@ you are running Swirl in a manual <a href="#//api/name/location">location</a> mo
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/setLogLevel:" title="setLogLevel:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setLogLevel:">+&nbsp;setLogLevel:</a></code>
+	<a name="//api/name/streamMessage:" title="streamMessage:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/streamMessage:">&ndash;&nbsp;streamMessage:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stream custom message to the live event stream.  Flushes any pending
+events at the same time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)streamMessage:(NSDictionary *)<em>msg</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>msg</code></th>
+						<td><p>Data to stream (JSON encodable)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SWRLSwirl.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLogLevel:filter:" title="setLogLevel:filter:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLogLevel:filter:">+&nbsp;setLogLevel:filter:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1007,7 +1106,7 @@ you are running Swirl in a manual <a href="#//api/name/location">location</a> mo
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setLogLevel:(NSString *)<em>level</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setLogLevel:(NSString *)<em>level</em> filter:(nullable NSString *)<em>filter</em></code></div>
 
 		    
 			
@@ -1018,6 +1117,11 @@ you are running Swirl in a manual <a href="#//api/name/location">location</a> mo
 					<tr>
 						<th scope="row" class="argument-name"><code>level</code></th>
 						<td><p>@&ldquo;E&rdquo;, @&ldquo;W&rdquo;, @&ldquo;I&rdquo; for <a href="#//api/name/error">error</a>, warning or info levels, anything else will disable.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filter</code></th>
+						<td><p>nil or comma separated list of modules to include</p></td>
 					</tr>
 				
 				</table>
@@ -1155,7 +1259,7 @@ Default classes: <a href="../Classes/SWRLVisitManager.html">SWRLVisitManager</a>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-06-06</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-09-27</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

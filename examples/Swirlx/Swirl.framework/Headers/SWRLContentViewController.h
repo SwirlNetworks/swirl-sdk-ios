@@ -58,10 +58,11 @@
  * loadContent is called by the SWRLContentManager when content is received.
  *
  * @param content The content to load.
+ * @param wait Amount of time to wait for pre-load..completion will be called when load complete or this time expires
  * @param completion The block that is executed with the content load completes (or fails).
  *
  */
-- (void) loadContent:(SWRLContent *)content completion:(void (^)(NSError *))completion;
+- (void) loadContent:(SWRLContent *)content wait:(NSTimeInterval)wait completion:(void (^)(NSError *))completion;
 
 /**
  * Called before the loading view is shown.

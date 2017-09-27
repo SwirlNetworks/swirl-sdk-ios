@@ -187,6 +187,27 @@ specified the arbitrary polygon within, NO otherwise.</Abstract></ReturnValue>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/containsLocation:accuracy:</TokenIdentifier>
+			<Abstract type="html">Determine if a give location (plus tolerance) is within a circular region.
+Polygon regions will default to strict containment.</Abstract>
+			<DeclaredIn>SWRLRegion.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)containsLocation:(CLLocation *)location accuracy:(CLLocationDistance)accuracy</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">to test</Abstract>
+				</Parameter><Parameter>
+					<Name>accuracy</Name>
+					<Abstract type="html">maximum tolerance to allow (accuracy of the location will be used, clipped to this value)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if within the region, NO otherwise</Abstract></ReturnValue>
+			<Anchor>//api/name/containsLocation:accuracy:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLRegion/distanceFromLocation:</TokenIdentifier>
 			<Abstract type="html">Determine the distance of a location to the region.</Abstract>
 			<DeclaredIn>SWRLRegion.h</DeclaredIn>

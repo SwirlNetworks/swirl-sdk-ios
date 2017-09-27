@@ -30,6 +30,8 @@ typedef NS_ENUM(int, SWRLBeaconProtocol) {
     SWRLBeaconProtocolSwirl         = 31,
     /** Kontakt */
     SWRLBeaconProtocolKontakt       = 40,
+	/** Generic */
+	SWRLBeaconProtocolGeneric       = 50,
 };
     
 /**
@@ -67,6 +69,8 @@ typedef NS_ENUM(int, SWRLBeaconProtocol) {
 - (void) setExtraInfo:(NSString *)extraInfo;
 - (id)copyWithZone:(nullable NSZone *)zone;
 
+- (NSString *)namespaceString; // eddystone UID namespace
+
 + (SWRLBeaconAdvertisement *)beaconAdvertisementWithData:(NSDictionary *)data rssi:(int)rssi timestamp:(NSTimeInterval)timestamp device:(NSUUID *)device;
 + (SWRLBeaconAdvertisement *)beaconAdvertisementWithIdentifier:(NSString *)identifier rssi:(int)rssi timestamp:(NSTimeInterval)timestamp;
 + (NSString *)uniquePrefix:(NSString *)identifier;
@@ -78,6 +82,7 @@ typedef NS_ENUM(int, SWRLBeaconProtocol) {
 
 + (void) setGenericMode:(BOOL)generic;
 + (void) setConfigEnabled:(BOOL)enabled;
++ (NSArray<NSString*>*)parseIdentifier:(NSString *)identifier;
 
 @end
 

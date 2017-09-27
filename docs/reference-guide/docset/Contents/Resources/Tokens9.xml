@@ -278,22 +278,25 @@ dismissViewControllerAnimated:</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentViewController/loadContent:completion:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentViewController/loadContent:wait:completion:</TokenIdentifier>
 			<Abstract type="html">loadContent is called by the SWRLContentManager when content is received.</Abstract>
 			<DeclaredIn>SWRLContentViewController.h</DeclaredIn>
 			
-			<Declaration>- (void)loadContent:(SWRLContent *)content completion:(void ( ^ ) ( NSError *))completion</Declaration>
+			<Declaration>- (void)loadContent:(SWRLContent *)content wait:(NSTimeInterval)wait completion:(void ( ^ ) ( NSError *))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content to load.</Abstract>
+				</Parameter><Parameter>
+					<Name>wait</Name>
+					<Abstract type="html">Amount of time to wait for pre-load..completion will be called when load complete or this time expires</Abstract>
 				</Parameter><Parameter>
 					<Name>completion</Name>
 					<Abstract type="html">The block that is executed with the content load completes (or fails).</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/loadContent:completion:</Anchor>
+			<Anchor>//api/name/loadContent:wait:completion:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		

@@ -36,11 +36,11 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentURL:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentURL:</TokenIdentifier>
 			<Abstract type="html">Tells the delegate that content of type URL has been received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentURL:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
@@ -48,22 +48,19 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 				</Parameter><Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content object that was received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received from a notification event (open)</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/contentManager:didReceiveContentURL:fromNotification:</Anchor>
+			<Anchor>//api/name/contentManager:didReceiveContentURL:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentSwirl:fromNotification:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentSwirl:</TokenIdentifier>
 			<Abstract type="html">Tells the delegate that content of type Swirl has been received.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentSwirl:(SWRLContent *)content</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
@@ -71,22 +68,19 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 				</Parameter><Parameter>
 					<Name>content</Name>
 					<Abstract type="html">The content object that was received.</Abstract>
-				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received from a notification event (open)</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/contentManager:didReceiveContentSwirl:fromNotification:</Anchor>
+			<Anchor>//api/name/contentManager:didReceiveContentSwirl:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentCustom:fromNotification:</TokenIdentifier>
-			<Abstract type="html">Tells the delegate that content of type Custom has been received.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/intfm/SWRLContentManagerDelegate/contentManager:didReceiveContentCustom:completion:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that content of type Custom has been received (asynch version) which allows custom content to go out to another server before completing.</Abstract>
 			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
 			
-			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content fromNotification:(BOOL)fromNotification</Declaration>
+			<Declaration>- (void)contentManager:(SWRLContentManager *)manager didReceiveContentCustom:(SWRLContent *)content completion:(void ( ^ ) ( SWRLContent *content ))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>manager</Name>
@@ -95,12 +89,12 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</Abstrac
 					<Name>content</Name>
 					<Abstract type="html">The content object that was received.</Abstract>
 				</Parameter><Parameter>
-					<Name>fromNotification</Name>
-					<Abstract type="html">The content was received from a notification event (open)</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">called when content is ready (content passed here may be different from original content)</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/contentManager:didReceiveContentCustom:fromNotification:</Anchor>
+			<Anchor>//api/name/contentManager:didReceiveContentCustom:completion:</Anchor>
             <NodeRef refid="26"/>
 		</Token>
 		

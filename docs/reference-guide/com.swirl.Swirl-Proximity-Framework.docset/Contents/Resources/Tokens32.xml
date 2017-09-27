@@ -93,6 +93,16 @@
             <NodeRef refid="32"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLBeaconProtocolGeneric</TokenIdentifier>
+            <Abstract type="html">Generic</Abstract>
+            <Declaration>SWRLBeaconProtocolGeneric</Declaration>
+            
+            <DeclaredIn>SWRLBeaconAdvertisement.h</DeclaredIn>
+            
+            <NodeRef refid="32"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

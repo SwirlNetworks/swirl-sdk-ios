@@ -42,7 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
  * correspond to SecureCast and Eddystone respectively.  The set of protocols to scan for can be customized through Settings.
  */
 
-@interface SWRLBluetoothScanner : SWRLBeaconScanner @end
+@interface SWRLBluetoothScanner : SWRLBeaconScanner
++ (SWRLBluetoothScanner *)shared;
+@end
 
 NS_ASSUME_NONNULL_END
 

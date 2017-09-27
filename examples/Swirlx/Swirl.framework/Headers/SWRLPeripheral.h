@@ -13,6 +13,7 @@
 
 @interface SWRLPeripheral : SWRLAsync
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSUUID *identifier;
 @property (nonatomic, readonly) NSNumber *rssi;
 @property (nonatomic, readonly) NSArray<CBCharacteristic*> *characteristics;
 @property (nonatomic, readonly) NSMutableDictionary<NSString*,NSData*> *changes;
@@ -36,7 +37,7 @@
 
 - (void) notifyValue:(BOOL)notify forKey:(NSString *)key completion:(void (^)(CBCharacteristic *, NSData *, NSError *))completion;
 
-- (void) writeValues:(NSDictionary<NSString*,NSData*>*)keyValues timeout:(NSTimeInterval)timeout completion:(void (^)(NSError *))completion;
+- (void) writeValues:(NSArray<NSDictionary<NSString *,id> *> *)values timeout:(NSTimeInterval)timeout completion:(void (^)(NSError *))completion;
 - (void) writeValue:(NSData *)value forKey:(NSString *)key timeout:(NSTimeInterval)timeout completion:(void (^)(NSError *))completion;
 - (void) writeValue:(NSData *)value forCharacteristic:(CBCharacteristic *)characteristic timeout:(NSTimeInterval)timeout completion:(void (^)(NSError *))completion;
 
@@ -52,6 +53,7 @@
 - (NSData *) valueForKey:(NSString *)key;
 
 - (uint8_t) byteForKey:(NSString *)key;
+- (uint16_t) shortForKey:(NSString *)key;
 - (void) setByte:(uint8_t)value forKey:(NSString *)key;
 
 + (SWRLPeripheral *)activePeripheral:(CBPeripheral *)peripheral;

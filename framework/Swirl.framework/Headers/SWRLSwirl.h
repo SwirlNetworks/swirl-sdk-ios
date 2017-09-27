@@ -80,6 +80,8 @@ protocols broadcast to the mult-delegate bus.
 @property (nonatomic, readonly) NSString *      userKey;
 /** A dictionary of property values that are associated with this device/user. */
 @property (nonatomic)           NSDictionary *  userInfo;
+/** Device token for remote push notification registration. */
+@property (nonatomic)           NSData *        deviceToken;
 
 /** ====================================================================================================================
  * @name Managing Delegates
@@ -188,14 +190,23 @@ protocols broadcast to the mult-delegate bus.
  */
 - (void) logEvent:(NSString *)event data:(NSString *)data;
 
+/**
+ * Stream custom message to the live event stream.  Flushes any pending
+ * events at the same time.
+ * @param msg Data to stream (JSON encodable)
+ */
+- (void) streamMessage:(NSDictionary *)msg;
+
 - (instancetype)init;
 - (instancetype)init:(NSArray<Class>*)classes;
 
 /**
  * Control the log level.  Default level is @"W"
  * @param level @"E", @"W", @"I" for error, warning or info levels, anything else will disable.
+ * @param filter nil or comma separated list of modules to include
  */
-+ (void) setLogLevel:(NSString *)level;
++ (void) setLogLevel:(NSString *)level filter:(nullable NSString *)filter;
++ (void) setLogLevel:(NSString *)level filter:(nullable NSString *)filter path:(NSString *)path;
 
 /**
  *  Swirl is a singleton.  You use shared to get access to the shared instance.

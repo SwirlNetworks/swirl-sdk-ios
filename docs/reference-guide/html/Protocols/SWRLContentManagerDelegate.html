@@ -62,11 +62,11 @@
 		
 		<option value="//api/name/contentManager:didDismissContentViewController:">- contentManager:didDismissContentViewController:</option>
 		
-		<option value="//api/name/contentManager:didReceiveContentCustom:fromNotification:">- contentManager:didReceiveContentCustom:fromNotification:</option>
+		<option value="//api/name/contentManager:didReceiveContentCustom:completion:">- contentManager:didReceiveContentCustom:completion:</option>
 		
-		<option value="//api/name/contentManager:didReceiveContentSwirl:fromNotification:">- contentManager:didReceiveContentSwirl:fromNotification:</option>
+		<option value="//api/name/contentManager:didReceiveContentSwirl:">- contentManager:didReceiveContentSwirl:</option>
 		
-		<option value="//api/name/contentManager:didReceiveContentURL:fromNotification:">- contentManager:didReceiveContentURL:fromNotification:</option>
+		<option value="//api/name/contentManager:didReceiveContentURL:">- contentManager:didReceiveContentURL:</option>
 		
 		<option value="//api/name/contentManager:didRequestContentForVisit:">- contentManager:didRequestContentForVisit:</option>
 		
@@ -183,8 +183,8 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/contentManager:didReceiveContentURL:fromNotification:" title="contentManager:didReceiveContentURL:fromNotification:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentURL:fromNotification:">&ndash;&nbsp;contentManager:didReceiveContentURL:fromNotification:</a></code>
+	<a name="//api/name/contentManager:didReceiveContentURL:" title="contentManager:didReceiveContentURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentURL:">&ndash;&nbsp;contentManager:didReceiveContentURL:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -199,7 +199,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentURL:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentURL:(SWRLContent *)<em>content</em></code></div>
 
 		    
 			
@@ -215,11 +215,6 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>content</code></th>
 						<td><p>The content object that was received.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>fromNotification</code></th>
-						<td><p>The content was received from a notification event (open)</p></td>
 					</tr>
 				
 				</table>
@@ -246,8 +241,8 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/contentManager:didReceiveContentSwirl:fromNotification:" title="contentManager:didReceiveContentSwirl:fromNotification:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentSwirl:fromNotification:">&ndash;&nbsp;contentManager:didReceiveContentSwirl:fromNotification:</a></code>
+	<a name="//api/name/contentManager:didReceiveContentSwirl:" title="contentManager:didReceiveContentSwirl:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentSwirl:">&ndash;&nbsp;contentManager:didReceiveContentSwirl:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -262,7 +257,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentSwirl:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentSwirl:(SWRLContent *)<em>content</em></code></div>
 
 		    
 			
@@ -278,11 +273,6 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>content</code></th>
 						<td><p>The content object that was received.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>fromNotification</code></th>
-						<td><p>The content was received from a notification event (open)</p></td>
 					</tr>
 				
 				</table>
@@ -309,8 +299,8 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/contentManager:didReceiveContentCustom:fromNotification:" title="contentManager:didReceiveContentCustom:fromNotification:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentCustom:fromNotification:">&ndash;&nbsp;contentManager:didReceiveContentCustom:fromNotification:</a></code>
+	<a name="//api/name/contentManager:didReceiveContentCustom:completion:" title="contentManager:didReceiveContentCustom:completion:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/contentManager:didReceiveContentCustom:completion:">&ndash;&nbsp;contentManager:didReceiveContentCustom:completion:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -320,12 +310,12 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Tells the delegate that content of type Custom has been received.</p>
+				<p>Tells the delegate that content of type Custom has been received (asynch version) which allows custom content to go out to another server before completing.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentCustom:(SWRLContent *)<em>content</em> fromNotification:(BOOL)<em>fromNotification</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)contentManager:(SWRLContentManager *)<em>manager</em> didReceiveContentCustom:(SWRLContent *)<em>content</em> completion:(void ( ^ ) ( SWRLContent *content ))<em>completion</em></code></div>
 
 		    
 			
@@ -344,8 +334,8 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>fromNotification</code></th>
-						<td><p>The content was received from a notification event (open)</p></td>
+						<th scope="row" class="argument-name"><code>completion</code></th>
+						<td><p>called when content is ready (content passed here may be different from original content)</p></td>
 					</tr>
 				
 				</table>
@@ -502,7 +492,7 @@ when you added the delegate. See addDelegate:queue: addDelegate:queue:)</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-06-06</p>
+						<p class="copyright">Copyright &copy; 2017 Swirl. All rights reserved. Updated: 2017-09-27</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -8,6 +8,7 @@
 #import <Swirl/Swirl.h>
 #import "AppDelegate.h"
 #import "ContentManager.h"
+#import "KouponMediaManager.h"
 
 @implementation AppDelegate {
     CLLocationManager *locationManager; // used for requesting location permissions
@@ -23,7 +24,6 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-	[SWRLBackground requestTime];
 }
 
 // =====================================================================================================================
@@ -49,11 +49,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[Swirl shared] addDelegate:[ContentManager new]];
     
+    // KouponMediaManager is provided with source code as a sample custom content integration with KouponMedia
+    // You will need an account, api key and secret from Koupon Media to use this manager
+    // [[Swirl shared] addDelegate:[[KouponMediaManager alloc] initWithKey:@"KOUPON-API-KEY" secret:@"KOUPON-SECRET" user:@"KOUPON-USER"]];
+    
     // NOTE: because this a test application with some configurable options, we will write this
     // api-key to those options, but in a normal application this would not be required
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"swirl_options"] == nil) {
-        #error "REPLACE-YOUR-API-KEY"
-        NSDictionary *options = @{ SWRLSettingApiKey : @"REPLACE-WITH-YOUR-API-KEY" }; // ADD-YOUR-API-KEY
+        //#error "REPLACE-YOUR-API-KEY"
+        NSDictionary *options = @{ SWRLSettingApiKey : @"P1" /* @"REPLACE-WITH-YOUR-API-KEY" */ }; // ADD-YOUR-API-KEY
         [[NSUserDefaults standardUserDefaults] setObject:options forKey:@"swirl_options"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

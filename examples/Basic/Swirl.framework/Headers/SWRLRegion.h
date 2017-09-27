@@ -51,6 +51,16 @@
 - (BOOL) containsCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
+ * Determine if a give location (plus tolerance) is within a circular region.
+ * Polygon regions will default to strict containment.
+ *
+ * @param location to test
+ * @param accuracy maximum tolerance to allow (accuracy of the location will be used, clipped to this value)
+ * @returns YES if within the region, NO otherwise
+ */
+- (BOOL) containsLocation:(CLLocation *)location accuracy:(CLLocationDistance)accuracy;
+
+/**
  * Determine the distance of a location to the region.
  * @param location The location to use in determining distance from the region.
  * @returns The distance from the region, negative values are inside the region.
@@ -61,6 +71,8 @@
 - (void) setLastDetected:(NSTimeInterval)ts;
 
 @end
+
+extern NSString *const SWRLRegionPrefix; // com.swirl.region.
 
 #endif
 
