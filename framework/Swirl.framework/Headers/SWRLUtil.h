@@ -22,6 +22,7 @@
 + (NSData *)decrypt:(NSData *)input iv:(NSData *)iv key:(NSData *)key padding:(BOOL)padding;
 + (NSString *)hexDigest:(NSData *)data;
 + (NSString *)hexDigest:(NSData *)data offset:(int)off;
++ (NSString *)hexString:(NSData *)data;
 + (NSString *)randomString:(int)length;
 @end
 

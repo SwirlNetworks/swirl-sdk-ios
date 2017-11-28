@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://swirl.com/Swirl/Swirl.atom/20170927114717</id>
+    <id>http://swirl.com/Swirl/Swirl.atom/20171127074253</id>
     <title type="text">Swirl Proximity Framework Documentation</title>
     <rights>Copyright © 2017 Swirl. All rights reserved.</rights>
     <link rel="self" href="http://swirl.com/Swirl/Swirl.atom"></link>
     <docset:publisherName>Swirl</docset:publisherName>
     <docset:publisherID>com.swirl.documentation</docset:publisherID>
-    <updated>2017-09-27T11:47:17-07:00</updated>
+    <updated>2017-11-27T07:42:53-08:00</updated>
     <entry>
-        <id>tag:swirl.com,2017-09-27:com.swirl.Swirl-Proximity-Framework/1.0.0</id>
+        <id>tag:swirl.com,2017-11-27:com.swirl.Swirl-Proximity-Framework/1.0.0</id>
         <title type="text">Swirl Proximity Framework Documentation</title>
-        <updated>2017-09-27T11:47:17-07:00</updated>
+        <updated>2017-11-27T07:42:53-08:00</updated>
         <content type="text">Swirl Proximity Framework Documentation (v1.0.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http:/swirl.com/Swirl/com.swirl.Swirl-Proximity-Framework-1.0.xar" length="904130"></link>
+        <link rel="enclosure" type="application/octet-stream" href="http:/swirl.com/Swirl/com.swirl.Swirl-Proximity-Framework-1.0.xar" length="908228"></link>
         <docset:identifier>com.swirl.Swirl-Proximity-Framework</docset:identifier>
         <docset:version>1.0.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>

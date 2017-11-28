@@ -26,6 +26,10 @@ There are a number of additional documents and resources available to facilitate
   Support and Testing Services. Swirl appreciates publishers willing to share their integrated application for Swirl testing. This is an added service that we provide you to ensure that your app has been properly integrated with our SDK. Please contact your Swirl Account Manager to schedule this testing.
 
 ## Release Notes
+**Version:** `3.5.1` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `11/27/17`
+<p>
+Fix multi-app arbitration bug.
+<p>
 **Version:** `3.5` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Date:** `09/15/17`
 <p>
 Bug fixes, custom event streaming, custom content integrations and samples.
