@@ -7,6 +7,8 @@
 
 #import <Swirl/Swirl.h>
 #import "AppDelegate.h"
+#import "ContentManager.h"
+
 
 @implementation AppDelegate {
     CLLocationManager *locationManager; // used for requesting location permissions
@@ -15,14 +17,25 @@
 - (void) requestPermissions:(UIApplication *)application {
     [(locationManager = [[CLLocationManager alloc] init]) requestAlwaysAuthorization];
     
-    UIUserNotificationSettings *settings = [application currentUserNotificationSettings];
-    settings = [UIUserNotificationSettings settingsForTypes:settings.types|UIUserNotificationTypeAlert|UIUserNotificationTypeSound
-                                                 categories:settings.categories];
-    [application registerUserNotificationSettings:settings];
+    if ([UIDevice currentDevice].systemVersion.floatValue < 10.0) {
+        UIUserNotificationSettings *settings = [application currentUserNotificationSettings];
+        settings = [UIUserNotificationSettings settingsForTypes:settings.types|UIUserNotificationTypeAlert|UIUserNotificationTypeSound
+                                                     categories:settings.categories];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else {
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionAlert|UNAuthorizationOptionSound)
+            completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                NSLog(@"notification permissions granted=%d (error=%@)", granted, error);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [application registerForRemoteNotifications];
+                });
+            }];
+    }
 }
 
 // =====================================================================================================================
-// application:didReceiveLocalNotifications:
+// application:didReceiveLocalNotification:
 //
 //  Need to hook this and pass notifications to the Swirl SDK.  Swirl will ignore notifications that are not Swirl notifications
 //  otherwise, it will dispatch the attached content.  If you do not hook this, then notifications will not work in the
@@ -42,10 +55,10 @@
 // =====================================================================================================================
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[Swirl shared] addDelegate:[SWRLContentManager new]];
+    [[Swirl shared] addDelegate:[ContentManager new]];
 
-	#error "REPLACE-YOUR-API-KEY"
-	[[Swirl shared] start:@{ SWRLSettingApiKey: @"REPLACE-YOUR-API-KEY" }];
+	#error "REPLACE-WITH-YOUR-API-KEY"
+	[[Swirl shared] start:@{ SWRLSettingApiKey: @"REPLACE-WITH-YOUR-API-KEY" }];
     
     [self requestPermissions:application];
     return YES;

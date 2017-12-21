@@ -24,6 +24,7 @@
 #import <Swirl/SWRLContentManager.h>
 #import <Swirl/SWRLContentToastView.h>
 #import <Swirl/SWRLContentViewController.h>
+#import <Swirl/SWRLNotificationService.h>
 #import <Swirl/SWRLSwirl.h>
 #import <Swirl/SWRLConfig.h>                /* for admin/configuration */
 #import <Swirl/SWRLPeripheral.h>            /* for admin/configuration */

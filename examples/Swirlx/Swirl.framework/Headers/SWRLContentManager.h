@@ -256,12 +256,22 @@
 - (SWRLContentViewController *)viewControllerForContent;
 
 /**
+ * Override this to handle any URLs that are opened either from a URL content or a URL widget from
+ * any interstitial content.
+ * @param url the url to open
+ * @param completion the completion to call (with success/failure flag)
+ */
+- (void) openURL:(NSURL *)url completion:(void (^)(BOOL))completion;
+
+/**
  *  Call this to access the last content manager created.  
  *  This method is provided as a convenience to save the programmer from having to keep a reference to the content manager
  *  or subclass it added when Swirl was started.
  */
 
 + (SWRLContentManager *)shared;
+
+- (void)handleNotification:(id)object;
 
 @end
 
@@ -330,6 +340,7 @@ extern NSString *const SWRLEventNotificationOpen;
 extern NSString *const SWRLEventNotificationDismiss;
 extern NSString *const SWRLEventImpressionRejected;
 extern NSString *const SWRLEventImpressionViewed;
+extern NSString *const SWRLEventImpressionViewedMinimized;
 extern NSString *const SWRLEventImpressionTouched;
 extern NSString *const SWRLEventImpressionOfferRedeemed;
 extern NSString *const SWRLEventImpressionWalletRedeeemed;
@@ -337,5 +348,15 @@ extern NSString *const SWRLEventImpressionTapArea;
 extern NSString *const SWRLEventImpressionShared;
 extern NSString *const SWRLEventImpressionSaved;
 extern NSString *const SWRLEventImpressionTimeout; // content was received, but not foregrounded before 15m
+extern NSString *const SWRLEventImpression1;
+extern NSString *const SWRLEventImpression2;
+extern NSString *const SWRLEventImpression3;
+extern NSString *const SWRLEventImpression4;
+extern NSString *const SWRLEventImpression5;
+extern NSString *const SWRLEventImpression6;
+extern NSString *const SWRLEventImpression7;
+extern NSString *const SWRLEventImpression8;
+extern NSString *const SWRLEventImpression9;
+extern NSString *const SWRLEventImpression10;
 
 #endif

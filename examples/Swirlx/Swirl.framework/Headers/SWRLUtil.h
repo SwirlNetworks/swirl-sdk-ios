@@ -63,6 +63,7 @@
 + (CLLocation *)locationWithDictionary:(NSDictionary *)dictionary;
 
 + (BOOL) hasBackgroundMode:(NSString *)mode;
++ (BOOL) isProductionVersion;
 @end
 
 // =====================================================================================================================

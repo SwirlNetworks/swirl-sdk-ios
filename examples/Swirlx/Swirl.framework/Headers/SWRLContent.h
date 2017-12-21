@@ -28,6 +28,10 @@ typedef NS_ENUM(int, SWRLContentType) {
      * Swirl create for web content displayed via interstitial
      */
     SWRLContentTypeSwirl,
+    /**
+     * Swirl type for 3rd party URL creatives via interstitial
+     */
+    SWRLContentTypeSwirlURL
 };
 
 /**
@@ -80,6 +84,11 @@ extern NSString *const SWRLNotificationContentKey;
 @property (nonatomic, readonly) BOOL                 fromNotification;
 
 /**
+ * Content was received through a schedule push campaign
+ */
+@property (nonatomic, readonly) BOOL                 fromAPS;
+
+/**
  * The notification associated with this content.  You can access this field at any time to get a copy
  * of the notification that was sent or would be sent. Accessing this property does not cause
  * any notifications to be sent. 
@@ -92,6 +101,7 @@ extern NSString *const SWRLNotificationContentKey;
 
 @property (nonatomic, readonly) NSString *notificationTitle;
 @property (nonatomic, readonly) NSString *notificationBody;
+@property (nonatomic, readonly) NSString *notificationMedia;
 
 /**
  * The URL associated with this content.  For SWRLContentTypeURL this is the deep link URL, For SWRLContentTypeSwirl this
@@ -114,11 +124,11 @@ extern NSString *const SWRLNotificationContentKey;
  */
 @property (nonatomic, nullable, readonly) UIImage *thumbnail;
 
-- (void) notificationWithAttachments:(void (^)(id note))completion;
 
 - (instancetype)initWithContent:(NSDictionary *)content visit:(nullable SWRLVisit *)visit fromNotification:(BOOL)fromNotification;
 - (void) setReceived:(NSTimeInterval)received;
 - (void) setThumbnail:(UIImage *)thumbnail;
+- (id) notification:(nullable NSArray *)attachments;
 
 + (BOOL) useNewNotifications;
 

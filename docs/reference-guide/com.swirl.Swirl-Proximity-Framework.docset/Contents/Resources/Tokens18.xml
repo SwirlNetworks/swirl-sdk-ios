@@ -449,6 +449,19 @@ events at the same time.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLSwirl/flushEvents</TokenIdentifier>
+			<Abstract type="html">Flush queued events.  Use with caution to avoid uncessary client-server traffic.  Outside of testing
+scenarios, this is generally not needed as the SDK will optimize and flush events at the appropriate time.</Abstract>
+			<DeclaredIn>SWRLSwirl.h</DeclaredIn>
+			
+			<Declaration>- (void)flushEvents</Declaration>
+			
+			
+			<Anchor>//api/name/flushEvents</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/SWRLSwirl/setLogLevel:filter:</TokenIdentifier>
 			<Abstract type="html">Control the log level.  Default level is @&quot;W&quot;</Abstract>
 			<DeclaredIn>SWRLSwirl.h</DeclaredIn>

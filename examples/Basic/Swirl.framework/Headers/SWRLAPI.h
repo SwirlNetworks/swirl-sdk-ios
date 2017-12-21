@@ -41,6 +41,7 @@
 - (BOOL) contentWithLocation:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
               placementEnter:(NSTimeInterval)entry completion:(void (^)(NSDictionary *, NSError *))completion;
 - (void) imageWithIdentifier:(NSString *)identifier completion:(void (^)(UIImage *image, NSError *error))completion;
+- (void) downloadURL:(NSString *)url completion:(void (^)(NSURL *fileURL, NSError *error))completion;
 - (void) uploadImage:(UIImage *)image partner:(NSString *)partner completion:(void (^)(NSDictionary *, NSError *))completion;
 - (void) logEvent:(NSString *)event data:(NSString *)data;
 - (void) flush:(BOOL)wait;

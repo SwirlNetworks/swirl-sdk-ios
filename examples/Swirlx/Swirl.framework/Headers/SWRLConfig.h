@@ -262,6 +262,7 @@ extern id const SWRLBeaconHandler_InvalidConfig;
 - (NSDictionary<NSString *,id> *) bodyForCreateBeacon:(SWRLBeacon *)beacon;
 - (void) postCreateBeacon:(SWRLBeacon_Config *)configBeacon peripheralBeacon:(SWRLBeacon *)peripheralBeacon completion:(void (^)(NSError *error))completion;
 - (NSArray<NSDictionary<NSString *,id> *> *) gattForBeacon:(SWRLBeacon_Config *)beacon firmwareVersion:(NSString *)firmwareVersion config:(NSDictionary *)config;
+- (NSString *) firmwareVersion:(SWRLBeacon *)beacon;
 @end
 
 #endif

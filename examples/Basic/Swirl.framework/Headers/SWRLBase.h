@@ -16,7 +16,7 @@
 
 #define SWRLSwirlDomain(x)              (x @"swirl.com")
 #define SWRLSwirlReverseDomain          @"com.swirl"
-#define SWRLSwirlVersion                @"3.5.1"
+#define SWRLSwirlVersion                @"3.6"
 #define SWRLCachePath                   @"~/Library/Caches/"
 #define SWRLSettingsPath                @"~/Library/Application Support/"
 
@@ -25,10 +25,10 @@
 // =====================================================================================================================
 
 #define NSExceptionFromError(e)         [NSException exceptionWithName:[NSString stringWithFormat:@"%d", (int)e.code] \
-                                                                reason:e.userInfo[NSLocalizedDescriptionKey] userInfo:nil]
+                                            reason:e.userInfo[NSLocalizedDescriptionKey] userInfo:e.userInfo]
 #define NSErrorFromException(d, e)      [NSError errorWithDomain:d code:-1 userInfo:\
-                                        @{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", exception.name], \
-                                            NSLocalizedFailureReasonErrorKey : exception.reason }]
+                                        @{  NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Exception: %@", e.name], \
+                                            NSLocalizedFailureReasonErrorKey : e.reason }]
 #define NSError(d,ecode,msg)            [NSError errorWithDomain:d code:ecode userInfo:@{NSLocalizedDescriptionKey:msg}]
 
 #define SWRLError(ecode,msg)            NSError(SWRLSwirlReverseDomain,ecode,msg)
@@ -76,12 +76,19 @@ OBJC_EXTERN NSString *__attribute__((overloadable)) description(NSError *error);
 #define if_not_dbg(X)
 #define assert_dbg(x, fmt, args...)     if (!(x)) { NSLog(@"%s (%d) " fmt, __PRETTY_FUNCTION__, __LINE__, ##args); assert(x); }
 #define assert_main_thread()			assert_dbg([NSThread isMainThread], @"not main thread")
+//#define EXCEPTION_IGNORE_BEGIN           @try {
+//#define EXCEPTION_IGNORE_END             } @catch (id e) { assert_dbg(NO, @"unexpected exception: %@", e); }
+#define EXCEPTION_IGNORE_BEGIN           @try {
+#define EXCEPTION_IGNORE_END             } @catch (id e) { Log_e(@"unexpected exception: %@", e); }
 #else
 #define if_dbg(X)
 #define if_not_dbg(X)					X
 #define assert_dbg(x, fmt, args...)
 #define assert_main_thread()
+#define EXCEPTION_IGNORE_BEGIN           @try {
+#define EXCEPTION_IGNORE_END             } @catch (id e) { Log_e(@"unexpected exception: %@", e); }
 #endif
+
 
 // =====================================================================================================================
 // LOG
@@ -134,12 +141,13 @@ void SWRLLogReset(void);
 // DICTIONARY
 // =====================================================================================================================
 
-NS_INLINE id objectForKey(NSDictionary *d, NSString *kp, id dv)                 { id v = [d valueForKeyPath:kp]; return v ? v : dv; }
-NS_INLINE NSString *stringForKey(NSDictionary *d, NSString *kp, NSString *dv)   { id v = [d valueForKeyPath:kp]; return v ? v : dv; }
-NS_INLINE BOOL boolForKey(NSDictionary *d, NSString *kp, BOOL dv)               { id v = [d valueForKeyPath:kp]; return v ? [v boolValue] : dv; }
-NS_INLINE int intForKey(NSDictionary *d, NSString *kp, int dv)                { id v = [d valueForKeyPath:kp]; return v ? [v intValue] : dv; }
-NS_INLINE double doubleForKey(NSDictionary *d, NSString *kp, double dv)         { id v = [d valueForKeyPath:kp]; return v ? [v doubleValue] : dv; }
-NS_INLINE NSTimeInterval intervalForKey(NSDictionary *d, NSString *kp, NSTimeInterval dv) { id v = [d valueForKeyPath:kp]; return v ? [v doubleValue] : dv; }
+NS_INLINE id valueForKeyPath(NSDictionary *d, NSString *kp) { @try { return [d valueForKeyPath:kp]; } @catch (NSException * e) {} @catch (id e) {} return nil;}
+NS_INLINE id objectForKey(NSDictionary *d, NSString *kp, id dv)                 { id v = valueForKeyPath(d, kp); return v ? v : dv; }
+NS_INLINE NSString *stringForKey(NSDictionary *d, NSString *kp, NSString *dv)   { id v = valueForKeyPath(d, kp); return v ? v : dv; }
+NS_INLINE BOOL boolForKey(NSDictionary *d, NSString *kp, BOOL dv)               { id v = valueForKeyPath(d, kp); return v ? [v boolValue] : dv; }
+NS_INLINE int intForKey(NSDictionary *d, NSString *kp, int dv)                { id v = valueForKeyPath(d, kp); return v ? [v intValue] : dv; }
+NS_INLINE double doubleForKey(NSDictionary *d, NSString *kp, double dv)         { id v = valueForKeyPath(d, kp); return v ? [v doubleValue] : dv; }
+NS_INLINE NSTimeInterval intervalForKey(NSDictionary *d, NSString *kp, NSTimeInterval dv) { id v = valueForKeyPath(d, kp); return v ? [v doubleValue] : dv; }
 
 NS_INLINE NSArray *arrayForKey(NSDictionary *d, NSString *k) { id value = objectForKey(d,k,nil);
     if ([value isKindOfClass:[NSArray class ]]) return value;

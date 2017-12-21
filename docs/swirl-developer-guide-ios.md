@@ -10,7 +10,9 @@
   - [Verify Tools and Targets](#verify-tools-and-targets)
   - [Add Framework to your Application](#add-framework-to-your-application)
   - [Make Code Changes](#make-code-changes)
+  - [Push Notification Notes](#push-notification-notes)
   - [Oracle Responsys Mobile SDK Integration](#oracle-responsys-mobile-sdk-integration)
+  - [KouponMedia Mobile SDK Integration](#kouponmedia-mobile-sdk-integration)
   
 ## Understanding Swirl
 ![](./images/sdk3-architecture-overview.png)
@@ -135,6 +137,93 @@ A lot of time and effort has been put into making the Swirl SDK as simple as pos
     [[Swirl shared] start:@{ SWRLSettingApiKey:APIKEY }];
     // ...other application startup code...
     return YES;
+}
+```
+### Push Notification Notes
+Swirl delivers local notifications for proximity based content and remote notifications for scheduled content.  In order to use any notifications local or remote, you will need to request permissions from the user.
+Below is code that supports iOS versions before and after 10.0 to handle both old and new style of notifications.  If you want to use the new style notifications (UserNotifications Framework) you must set the `SWRLSettingUseNewNotifications` to YES in order to force the SDK to use this style of notification.
+
+```objective-c
+
+if ([UIDevice currentDevice].systemVersion.floatValue < 10.0) {
+    UIUserNotificationSettings *settings = [application currentUserNotificationSettings];
+    settings = [UIUserNotificationSettings settingsForTypes:settings.types|UIUserNotificationTypeAlert|UIUserNotificationTypeSound
+    categories:settings.categories];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+} else {
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionAlert|UNAuthorizationOptionSound)
+    completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [application registerForRemoteNotifications];
+        });
+    }];
+}
+```
+
+#### Rich Notifications
+Swirl supports rich media notifications for iOS 10.0 and above.  In order to support notification attachments we require the application to add support for iOS UserNotification framework.
+Since the Swirl SDK still supports older iOS versions, you must set the `SWRLSettingUseNewNotifications` to YES in order to force the SDK to use this style of notification.  Also if you want to use rich notifications
+with remote notifications you will need to add a Notification Service extension.  Swirl has provided a `SWRLNotificationService` class which implements most of the needed code so that you only need to provide a stub
+implementation that derives from this class.  See below.
+
+```objective-c
+#import <UserNotifications/UserNotifications.h>
+#import <Swirl/Swirl.h>
+
+@interface NotificationService : SWRLNotificationService
+@end
+
+@implementation NotificationService
+@end
+```
+#### Local Notifications
+Local notifications can cause your application to be launched if it is not running or they can be delivered to your application when it is running in the foreground or background.  In order to ensure things are working properly, you
+need to make sure that Swirl is started from within the `didFinishLaunchingWithOptions` and that you implement  `didReceiveLocalNotification` and forward the notification to Swirl.
+
+```objective-c
+// =====================================================================================================================
+// application:didReceiveLocalNotifications:
+//
+//  Need to hook this and pass notifications to the Swirl SDK.  Swirl will ignore notifications that are not Swirl notifications
+//  otherwise, it will dispatch the attached content.  If you do not hook this, then notifications will not work in the
+//  case where the application is being launched because the user opened a notification, but it was already running and
+//  so didFinishLaunchingWithOptions is never called.
+// =====================================================================================================================
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [[Swirl shared] postObject:notification];
+}
+
+// =====================================================================================================================
+// application:didReceiveLocalNotifications:
+//
+//  Need to hook this and pass notifications to the Swirl SDK.  Swirl will ignore notifications that are not Swirl notifications
+//  otherwise, it will dispatch the attached content.  If you do not hook this, then notifications will not work in the
+//  case where the application is being launched because the user opened a notification, but it was already running and
+//  so didFinishLaunchingWithOptions is never called.
+// =====================================================================================================================
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response
+    withCompletionHandler:(void (^)(void))completionHandler {
+    [[Swirl shared] postObject:response];
+    completionHandler();
+}
+```
+#### Remote Notifications
+As of version 3.6, Swirl supports scheduled push notifications.  In order to use this feature, you will need to enable push notifications on your iOS build and get development and production certificates from your
+Apple developer account.  You will also need to upload your keys to the Swirl console.  The procedure is documented there.  For the application you will need to implement a couple of delegate callback and you will
+need to register for remote notifications and provide the deviceToken to the Swirl SDK.
+
+```objective-c
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)     (UIBackgroundFetchResult))completionHandler {
+    [[Swirl shared] postObject:userInfo];
+    completionHandler(UIBackgroundFetchResultNoData);
+}
+
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)deviceToken {
+    [Swirl shared].deviceToken = deviceToken;
 }
 ```
 

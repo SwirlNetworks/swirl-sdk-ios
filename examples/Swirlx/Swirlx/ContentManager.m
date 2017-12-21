@@ -12,7 +12,7 @@
 
 @implementation ContentManager
 
-- (BOOL) shouldShowNotification:(UILocalNotification *)note content:(SWRLContent *)content {
+- (BOOL) shouldShowNotification:(id)note content:(SWRLContent *)content {
     // Can add custom code here to alter the notification or to suppress it
     return YES;
 }
@@ -44,6 +44,10 @@
         return toast;
     }
     return nil;
+}
+
+- (void) didReceiveContent:(SWRLContent *)content {
+	[super didReceiveContent:content];
 }
 
 @end

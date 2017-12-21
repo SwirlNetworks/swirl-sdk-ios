@@ -555,6 +555,27 @@ show a toastView, return nil.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContentManager/openURL:completion:</TokenIdentifier>
+			<Abstract type="html">Override this to handle any URLs that are opened either from a URL content or a URL widget from
+any interstitial content.</Abstract>
+			<DeclaredIn>SWRLContentManager.h</DeclaredIn>
+			
+			<Declaration>- (void)openURL:(NSURL *)url completion:(void ( ^ ) ( BOOL ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">the url to open</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">the completion to call (with success/failure flag)</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/openURL:completion:</Anchor>
+            <NodeRef refid="7"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/clm/SWRLContentManager/shared</TokenIdentifier>
 			<Abstract type="html">Call this to access the last content manager created.
 This method is provided as a convenience to save the programmer from having to keep a reference to the content manager

@@ -269,6 +269,42 @@ automatically delay making further content requests until the dwell triggers hav
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setFromAPS:</TokenIdentifier>
+			<Abstract type="html">Content was received through a schedule push campaign</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromAPS</Declaration>
+			
+			
+			<Anchor>//api/name/fromAPS</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/fromAPS</TokenIdentifier>
+			<Abstract type="html">Content was received through a schedule push campaign</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromAPS</Declaration>
+			
+			
+			<Anchor>//api/name/fromAPS</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLContent/fromAPS</TokenIdentifier>
+			<Abstract type="html">Content was received through a schedule push campaign</Abstract>
+			<DeclaredIn>SWRLContent.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL fromAPS</Declaration>
+			
+			
+			<Anchor>//api/name/fromAPS</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/SWRLContent/setNotification:</TokenIdentifier>
 			<Abstract type="html">The notification associated with this content.  You can access this field at any time to get a copy
 of the notification that was sent or would be sent. Accessing this property does not cause

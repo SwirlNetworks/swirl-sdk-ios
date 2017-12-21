@@ -46,6 +46,17 @@
             <NodeRef refid="34"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/SWRLContentTypeSwirlURL</TokenIdentifier>
+            <Abstract type="html">Swirl type for 3rd party URL creatives via interstitial
+     </Abstract>
+            <Declaration>SWRLContentTypeSwirlURL</Declaration>
+            
+            <DeclaredIn>SWRLContent.h</DeclaredIn>
+            
+            <NodeRef refid="34"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

@@ -197,6 +197,12 @@ protocols broadcast to the mult-delegate bus.
  */
 - (void) streamMessage:(NSDictionary *)msg;
 
+/**
+ * Flush queued events.  Use with caution to avoid uncessary client-server traffic.  Outside of testing
+ * scenarios, this is generally not needed as the SDK will optimize and flush events at the appropriate time.
+ */
+- (void) flushEvents;
+
 - (instancetype)init;
 - (instancetype)init:(NSArray<Class>*)classes;
 

@@ -1,0 +1,6 @@
+framework module Swirl {
+  umbrella header "Swirl.h"
+
+  export *
+  module * { export * }
+}

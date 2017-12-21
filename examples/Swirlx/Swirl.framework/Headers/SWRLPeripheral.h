@@ -48,6 +48,7 @@
 - (CBService *)serviceForKey:(NSString *)serviceKey;
 - (CBCharacteristic *) characteristicForKey:(NSString *)characteristicKey;
 - (NSString *)keyForCharacteristic:(CBCharacteristic *)characteristic;
+- (void) clearCharacteristics;
 
 - (void) setValue:(NSData *)value forKey:(NSString *)key;
 - (NSData *) valueForKey:(NSString *)key;
