@@ -38,7 +38,9 @@
 <li><a href="#verify-tools-and-targets">Verify Tools and Targets</a></li>
 <li><a href="#add-framework-to-your-application">Add Framework to your Application</a></li>
 <li><a href="#make-code-changes">Make Code Changes</a></li>
+<li><a href="#push-notification-notes">Push Notification Notes</a></li>
 <li><a href="#oracle-responsys-mobile-sdk-integration">Oracle Responsys Mobile SDK Integration</a></li>
+<li><a href="#kouponmedia-mobile-sdk-integration">KouponMedia Mobile SDK Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -167,6 +169,84 @@ If you are requesting location tracking always permission, and you wish to detec
     [[Swirl <span class="pl-c1">shared</span>] <span class="pl-c1">start:</span>@{ SWRLSettingApiKey:APIKEY }];
     <span class="pl-c"><span class="pl-c">//</span> ...other application startup code...</span>
     <span class="pl-k">return</span> <span class="pl-c1">YES</span>;
+}</pre></div>
+<h3>
+<a id="user-content-push-notification-notes" class="anchor" name="push-notification-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Push Notification Notes</h3>
+<p>Swirl delivers local notifications for proximity based content and remote notifications for scheduled content.  In order to use any notifications local or remote, you will need to request permissions from the user.
+Below is code that supports iOS versions before and after 10.0 to handle both old and new style of notifications.  If you want to use the new style notifications (UserNotifications Framework) you must set the <code>SWRLSettingUseNewNotifications</code> to YES in order to force the SDK to use this style of notification.</p>
+<div class="highlight highlight-source-objc"><pre>
+<span class="pl-k">if</span> ([UIDevice <span class="pl-c1">currentDevice</span>].systemVersion.floatValue &lt; <span class="pl-c1">10.0</span>) {
+    UIUserNotificationSettings *settings = [application <span class="pl-c1">currentUserNotificationSettings</span>];
+    settings = [UIUserNotificationSettings <span class="pl-c1">settingsForTypes:</span>settings.types|UIUserNotificationTypeAlert|UIUserNotificationTypeSound
+    <span class="pl-c1">categories:</span>settings.categories];
+    [application <span class="pl-c1">registerUserNotificationSettings:</span>settings];
+    [application <span class="pl-c1">registerForRemoteNotifications</span>];
+} <span class="pl-k">else</span> {
+    [[UNUserNotificationCenter <span class="pl-c1">currentNotificationCenter</span>] <span class="pl-c1">requestAuthorizationWithOptions:</span>(UNAuthorizationOptionAlert|UNAuthorizationOptionSound)
+    <span class="pl-c1">completionHandler:</span>^(<span class="pl-c1">BOOL</span> granted, <span class="pl-c1">NSError</span> * _Nullable error) {
+        <span class="pl-c1">dispatch_async</span>(<span class="pl-c1">dispatch_get_main_queue</span>(), ^{
+            [application <span class="pl-c1">registerForRemoteNotifications</span>];
+        });
+    }];
+}</pre></div>
+<h4>
+<a id="user-content-rich-notifications" class="anchor" name="rich-notifications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rich Notifications</h4>
+<p>Swirl supports rich media notifications for iOS 10.0 and above.  In order to support notification attachments we require the application to add support for iOS UserNotification framework.
+Since the Swirl SDK still supports older iOS versions, you must set the <code>SWRLSettingUseNewNotifications</code> to YES in order to force the SDK to use this style of notification.  Also if you want to use rich notifications
+with remote notifications you will need to add a Notification Service extension.  Swirl has provided a <code>SWRLNotificationService</code> class which implements most of the needed code so that you only need to provide a stub
+implementation that derives from this class.  See below.</p>
+<div class="highlight highlight-source-objc"><pre>#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>UserNotifications/UserNotifications.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">import</span> <span class="pl-s"><span class="pl-pds">&lt;</span>Swirl/Swirl.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-k">@interface</span> <span class="pl-en">NotificationService</span> : <span class="pl-e">SWRLNotificationService</span>
+<span class="pl-k">@end</span>
+
+<span class="pl-k">@implementation</span> <span class="pl-en">NotificationService</span>
+<span class="pl-k">@end</span></pre></div>
+<h4>
+<a id="user-content-local-notifications" class="anchor" name="local-notifications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Local Notifications</h4>
+<p>Local notifications can cause your application to be launched if it is not running or they can be delivered to your application when it is running in the foreground or background.  In order to ensure things are working properly, you
+need to make sure that Swirl is started from within the <code>didFinishLaunchingWithOptions</code> and that you implement  <code>didReceiveLocalNotification</code> and forward the notification to Swirl.</p>
+<div class="highlight highlight-source-objc"><pre><span class="pl-c">// =====================================================================================================================</span>
+<span class="pl-c"><span class="pl-c">//</span> application:didReceiveLocalNotifications:</span>
+<span class="pl-c"><span class="pl-c">//</span></span>
+<span class="pl-c"><span class="pl-c">//</span>  Need to hook this and pass notifications to the Swirl SDK.  Swirl will ignore notifications that are not Swirl notifications</span>
+<span class="pl-c"><span class="pl-c">//</span>  otherwise, it will dispatch the attached content.  If you do not hook this, then notifications will not work in the</span>
+<span class="pl-c"><span class="pl-c">//</span>  case where the application is being launched because the user opened a notification, but it was already running and</span>
+<span class="pl-c"><span class="pl-c">//</span>  so didFinishLaunchingWithOptions is never called.</span>
+<span class="pl-c">// =====================================================================================================================</span>
+
+- (<span class="pl-k">void</span>)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [[Swirl <span class="pl-c1">shared</span>] <span class="pl-c1">postObject:</span>notification];
+}
+
+<span class="pl-c">// =====================================================================================================================</span>
+<span class="pl-c"><span class="pl-c">//</span> application:didReceiveLocalNotifications:</span>
+<span class="pl-c"><span class="pl-c">//</span></span>
+<span class="pl-c"><span class="pl-c">//</span>  Need to hook this and pass notifications to the Swirl SDK.  Swirl will ignore notifications that are not Swirl notifications</span>
+<span class="pl-c"><span class="pl-c">//</span>  otherwise, it will dispatch the attached content.  If you do not hook this, then notifications will not work in the</span>
+<span class="pl-c"><span class="pl-c">//</span>  case where the application is being launched because the user opened a notification, but it was already running and</span>
+<span class="pl-c"><span class="pl-c">//</span>  so didFinishLaunchingWithOptions is never called.</span>
+<span class="pl-c">// =====================================================================================================================</span>
+
+- (<span class="pl-k">void</span>)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response
+    withCompletionHandler:(<span class="pl-k">void</span> (^)(<span class="pl-k">void</span>))completionHandler {
+    [[Swirl <span class="pl-c1">shared</span>] <span class="pl-c1">postObject:</span>response];
+    <span class="pl-c1">completionHandler</span>();
+}</pre></div>
+<h4>
+<a id="user-content-remote-notifications" class="anchor" name="remote-notifications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remote Notifications</h4>
+<p>As of version 3.6, Swirl supports scheduled push notifications.  In order to use this feature, you will need to enable push notifications on your iOS build and get development and production certificates from your
+Apple developer account.  You will also need to upload your keys to the Swirl console.  The procedure is documented there.  For the application you will need to implement a couple of delegate callback and you will
+need to register for remote notifications and provide the deviceToken to the Swirl SDK.</p>
+<div class="highlight highlight-source-objc"><pre>
+- (<span class="pl-k">void</span>)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull <span class="pl-c1">NSDictionary</span> *)userInfo fetchCompletionHandler:(nonnull <span class="pl-en">void</span> (^)     (UIBackgroundFetchResult))completionHandler {
+    [[Swirl <span class="pl-c1">shared</span>] <span class="pl-c1">postObject:</span>userInfo];
+    <span class="pl-c1">completionHandler</span>(UIBackgroundFetchResultNoData);
+}
+
+- (<span class="pl-k">void</span>) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(nonnull <span class="pl-c1">NSData</span> *)deviceToken {
+    [Swirl <span class="pl-c1">shared</span>].<span class="pl-smi">deviceToken</span> = deviceToken;
 }</pre></div>
 <h3>
 <a id="user-content-oracle-responsys-mobile-sdk-integration" class="anchor" name="oracle-responsys-mobile-sdk-integration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Oracle Responsys Mobile SDK Integration</h3>
