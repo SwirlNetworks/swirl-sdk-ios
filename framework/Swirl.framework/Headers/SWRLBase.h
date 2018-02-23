@@ -16,7 +16,7 @@
 
 #define SWRLSwirlDomain(x)              (x @"swirl.com")
 #define SWRLSwirlReverseDomain          @"com.swirl"
-#define SWRLSwirlVersion                @"3.6"
+#define SWRLSwirlVersion                @"3.6.1"
 #define SWRLCachePath                   @"~/Library/Caches/"
 #define SWRLSettingsPath                @"~/Library/Application Support/"
 

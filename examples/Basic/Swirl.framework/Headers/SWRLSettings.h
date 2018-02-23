@@ -29,10 +29,11 @@ extern NSString *const SWRLSettingLocationHistory;          // An array of locat
 extern NSString *const SWRLSettingLocationHistoryMax;       // How many location changes to record. Default is 0 (location recording disabled) 
 extern NSString *const SWRLSettingContentNotifications;     // Boolean allow notifications for content.  Default is YES. 
 extern NSString *const SWRLSettingContentDelay;             // Minimum number of seconds allowed between notification delivery. Default is 30.0 
-extern NSString *const SWRLSettingContentLoadDelay;         // Number of seconds to preload before showing content default is 5
-extern NSString *const SWRLSettingContentLoadingTimeout;    // Default timeout for loading spinner. Default is 15.0 seconds
+extern NSString *const SWRLSettingContentLoadDelay;         // Number of seconds to preload before showing content default is 5.0
+extern NSString *const SWRLSettingContentSpinnerTimeout;    // Default timeout for loading spinner. Default is 5.0 seconds
 extern NSString *const SWRLSettingContentTimeout;           // Default expiration for content that was received, but not yet displayed. Default is 900.0 seconds
 extern NSString *const SWRLSettingContentCode;              // If content is being requested with a demo or content code.
+extern NSString *const SWRLSettingContentUseFullScreen;     // Use extended areas on larger phones. Default YES.
 extern NSString *const SWRLSettingContentShowToast;         // Boolean that controls whether or not to show the content toast view when content is dismissed. 
 extern NSString *const SWRLSettingContentShowToastFirst;    // Boolean that controls whether or not to show the content toast before showing the full view. 
 extern NSString *const SWRLSettingContentShowToolbar;       // Boolean that controls whether or not to show the content toolbar. 
