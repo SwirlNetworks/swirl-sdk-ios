@@ -8,6 +8,7 @@
 
 #import <Swirl/SWRLBase.h>
 #import <Swirl/SWRLUtil.h>
+#import <Swirl/SWRLApplication.h>
 #import <Swirl/SWRLObject.h>
 #import <Swirl/SWRLSignal.h>
 #import <Swirl/SWRLLocation.h>

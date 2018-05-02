@@ -156,6 +156,8 @@ typedef NSMutableArray<SWRLBeaconAdvertisement*> SWRLAdvertisements;
 - (SWRLBeaconScanner *)scanner;
 - (void)setScanner:(SWRLBeaconScanner *)scanner;
 
+- (NSString *)longDescription;
+
 @end
 
 #endif

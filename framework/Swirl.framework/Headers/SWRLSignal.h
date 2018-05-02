@@ -114,11 +114,12 @@ typedef NS_ENUM(int, SWRLSignalType) {
  */
 - (NSArray<SWRLAttachment*>*)attachmentsWithType:(NSString *)type;
 
-
 @property (nonatomic) NSTimeInterval lastEventTime;
 
 - (instancetype) initWithDictionary:(nullable NSDictionary *)info urn:(nullable NSString *)urn;
 - (void) setError:(NSError *)error;
+
+- (NSString *)longDescription;
 
 @end
 

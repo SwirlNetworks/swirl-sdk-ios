@@ -34,6 +34,16 @@
  * \returns Array of Placement Visits that are not ended
  */
 - (NSArray<SWRLVisit*>*) activePlacementVisits;
+
+/**
+ * Gets all visit records (active or otherwise) for a given location.
+ * @param location The location for which to collect visit records
+ * \returns Array of Visits for the location
+ */
+- (NSArray<SWRLVisit*>*)allVisitsForLocation:(SWRLLocation *)location;
+
++ (SWRLVisitManager *)shared;
+
 @end
 
 /**

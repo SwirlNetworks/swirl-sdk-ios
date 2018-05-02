@@ -52,6 +52,23 @@ to least-specific and farthest.  The sort order is Beacon, Wifi, Region and by d
             <NodeRef refid="21"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisitManager/allVisitsForLocation:</TokenIdentifier>
+			<Abstract type="html">Gets all visit records (active or otherwise) for a given location.</Abstract>
+			<DeclaredIn>SWRLVisitManager.h</DeclaredIn>
+			
+			<Declaration>- (NSArray&lt;SWRLVisit*&gt; *)allVisitsForLocation:(SWRLLocation *)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract type="html">The location for which to collect visit records</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Array of Visits for the location</Abstract></ReturnValue>
+			<Anchor>//api/name/allVisitsForLocation:</Anchor>
+            <NodeRef refid="21"/>
+		</Token>
+		
         
         
 	</File>

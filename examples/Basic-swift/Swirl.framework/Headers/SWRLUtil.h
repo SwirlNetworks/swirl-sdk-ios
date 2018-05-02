@@ -1,6 +1,6 @@
 /*
  * SWRLUtil.h
- * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ * Copyright 2015-2018 Swirl Networks, Inc. All Rights Reserved.
  */
 
 #ifndef __SWRLUTIL__
@@ -82,19 +82,6 @@
 @interface SWRLImage : NSObject
 + (UIImage *)scaleImage:(UIImage *)image scale:(double)scale radius:(CGFloat)radius;
 + (UIImage *)imageFromView:(UIView *)view;
-@end
-
-// =====================================================================================================================
-// SWRLBackground
-// =====================================================================================================================
-
-@interface SWRLApplication : NSObject
-+ (void) openURL:(NSURL *)url completion:(void (^)(BOOL))completion;
-+ (void) openURL:(NSURL *)url options:(NSDictionary *)options completion:(void (^)(BOOL))completion;
-
-+ (NSTimeInterval)  timeRemaining;
-+ (void)            requestTime;
-+ (BOOL)            background;
 @end
 
 #endif

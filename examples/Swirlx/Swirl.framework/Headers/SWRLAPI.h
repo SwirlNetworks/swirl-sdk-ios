@@ -37,8 +37,8 @@
 - (void) regionsWithCoordinate:(CLLocationCoordinate2D)coord completion:(void (^)(NSArray *regions, NSDictionary *area, NSTimeInterval expires, NSError *error))completion;
 - (void) wifiWithIdentifier:(NSString *)identifier rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
 - (void) beaconWithIdentifier:(NSString *)identifier extraInfo:(NSString *)extraInfo rssi:(int)rssi completion:(void (^)(NSDictionary *result, NSError *error))completion;
-- (void) contentWithInfo:(NSDictionary *)info completion:(void (^)(NSDictionary *, NSDictionary *, NSError*))completion;
-- (BOOL) contentWithLocation:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
+- (void) contentWithInfo:(NSDictionary *)info post:(NSDictionary *)post completion:(void (^)(NSDictionary *, NSDictionary *, NSError*))completion;
+- (BOOL) contentWithType:(NSString *)type location:(SWRLLocation *)location locationDwell:(NSTimeInterval)ldwell placementDwell:(NSTimeInterval)cdwell
               placementEnter:(NSTimeInterval)entry completion:(void (^)(NSDictionary *, NSError *))completion;
 - (void) imageWithIdentifier:(NSString *)identifier completion:(void (^)(UIImage *image, NSError *error))completion;
 - (void) downloadURL:(NSString *)url completion:(void (^)(NSURL *fileURL, NSError *error))completion;

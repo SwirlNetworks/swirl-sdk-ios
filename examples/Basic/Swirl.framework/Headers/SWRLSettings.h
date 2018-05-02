@@ -18,6 +18,11 @@ extern NSString *const SWRLSettingApiPingEnabled;           // API Ping Enabled.
 extern NSString *const SWRLSettingApiPingWindow;            // API Ping Window.  Seconds over which to randomize device registration 
 extern NSString *const SWRLSettingUserInfo;                 // UserInfo. This is the option which backs the userInfo property on Swirl. 
 extern NSString *const SWRLSettingDeferredDelay;            // Delay in seconds, for deferred startup tasks
+extern NSString *const SWRLSettingBackgroundTimeout;        // Background runtime expectation (minimized against the OS limit). Default is 0 (os timeout only)
+extern NSString *const SWRLSettingBackgroundLocationTime;   // Location event processing time. Default:30.0
+extern NSString *const SWRLSettingBackgroundBluetoothTime;  // Bluetooth event processing time. Default:30.0
+extern NSString *const SWRLSettingBackgroundIBeaconTime;    // IBeacon event processing time. Default:30.0
+extern NSString *const SWRLSettingBackgroundApiTime;        // API processing tme. Default: 10.0 (before and after call)
 extern NSString *const SWRLSettingUseLocationFenced;        // Location detection in the SDK can use regions to detect location changes. Default is YES
 extern NSString *const SWRLSettingUseLocationSignificant;   // Location detection in the SDK can use significant location change detection. Default is YES. 
 extern NSString *const SWRLSettingLocationFenceMin;         // Minimium size of the userFence in meters. Default is 100.0 (if background location enabled), 10.0 otherwise

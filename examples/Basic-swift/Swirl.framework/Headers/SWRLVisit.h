@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSTimeInterval		dwellTime;
 /** The total elapsed time since the first enter until now or the last exit time */
 @property (nonatomic, readonly) NSTimeInterval      elapsedTime;
+/** The time of the first enter */
+@property (nonatomic, readonly) NSTimeInterval       firstEnter;
 
 - (instancetype) initWithLocation:(SWRLLocation *)location visit:(nullable SWRLVisit *)visit;
 - (instancetype) parentVisit;

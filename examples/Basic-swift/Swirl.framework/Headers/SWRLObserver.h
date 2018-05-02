@@ -1,6 +1,6 @@
 /*
  * SWRLStore.h
- * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ * Copyright 2015-2018 Swirl Networks, Inc. All Rights Reserved.
  */
 
 #import <Foundation/Foundation.h>

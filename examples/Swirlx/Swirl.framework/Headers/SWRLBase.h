@@ -1,6 +1,6 @@
 /*
  * SWRLBase.h
- * Copyright 2015-2016 Swirl Networks, Inc. All Rights Reserved.
+ * Copyright 2015-2018 Swirl Networks, Inc. All Rights Reserved.
  */
 
 #ifndef __SWRLBASE__
@@ -16,7 +16,7 @@
 
 #define SWRLSwirlDomain(x)              (x @"swirl.com")
 #define SWRLSwirlReverseDomain          @"com.swirl"
-#define SWRLSwirlVersion                @"3.6.1"
+#define SWRLSwirlVersion                @"3.7"
 #define SWRLCachePath                   @"~/Library/Caches/"
 #define SWRLSettingsPath                @"~/Library/Application Support/"
 

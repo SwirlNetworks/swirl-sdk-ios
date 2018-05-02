@@ -1,6 +1,6 @@
 /*
  * SWRLPeripheral.h
- * Copyright 2015-2017 Swirl Networks, Inc. All Rights Reserved.
+ * Copyright 2015-2018 Swirl Networks, Inc. All Rights Reserved.
  */
 
 #ifndef __SWRLPERIPHERAL__

@@ -196,6 +196,42 @@ events.</Abstract>
             <NodeRef refid="20"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/setFirstEnter:</TokenIdentifier>
+			<Abstract type="html">The time of the first enter</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval firstEnter</Declaration>
+			
+			
+			<Anchor>//api/name/firstEnter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/SWRLVisit/firstEnter</TokenIdentifier>
+			<Abstract type="html">The time of the first enter</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval firstEnter</Declaration>
+			
+			
+			<Anchor>//api/name/firstEnter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/SWRLVisit/firstEnter</TokenIdentifier>
+			<Abstract type="html">The time of the first enter</Abstract>
+			<DeclaredIn>SWRLVisit.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSTimeInterval firstEnter</Declaration>
+			
+			
+			<Anchor>//api/name/firstEnter</Anchor>
+            <NodeRef refid="20"/>
+		</Token>
+		
         
         
 	</File>
