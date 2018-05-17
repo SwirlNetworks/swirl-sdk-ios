@@ -15,7 +15,8 @@ extern NSString *const SWRLSettingApiSecret;                // API Secret.  This
 extern NSString *const SWRLSettingApiEnabled;               // API Enabled.  Failsafe used to disable the SDK remotely if necessary. Default:YES. 
 extern NSString *const SWRLSettingApiHost;                  // API Host.  This is primarily used internally for switching between testing and live infrastrucures. 
 extern NSString *const SWRLSettingApiPingEnabled;           // API Ping Enabled.  Default: YES 
-extern NSString *const SWRLSettingApiPingWindow;            // API Ping Window.  Seconds over which to randomize device registration 
+extern NSString *const SWRLSettingApiPingWindow;            // API Ping Window.  Seconds over which to randomize device registration
+extern NSString *const SWRLSettingApiIncludeLatLong;        // API include lat/long with event stream.  Default:NO
 extern NSString *const SWRLSettingUserInfo;                 // UserInfo. This is the option which backs the userInfo property on Swirl. 
 extern NSString *const SWRLSettingDeferredDelay;            // Delay in seconds, for deferred startup tasks
 extern NSString *const SWRLSettingBackgroundTimeout;        // Background runtime expectation (minimized against the OS limit). Default is 0 (os timeout only)
